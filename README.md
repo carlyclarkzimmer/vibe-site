@@ -45,6 +45,8 @@ pnpm test
 - [CONTRIBUTING.md](CONTRIBUTING.md) — contribution and review workflow
 - [Architecture](docs/ARCHITECTURE.md) — system structure and boundaries
 - [Content guide](docs/CONTENT_GUIDE.md) — safe campaign-content editing
+- [Carly's site playbook](CARLY_PLAYBOOK.md) — how Carly can request and
+  approve navigation, page, and content changes
 - [Architecture decisions](docs/adr/) — significant technical decisions
 
 ## Deployment
