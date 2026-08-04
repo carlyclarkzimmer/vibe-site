@@ -4,6 +4,16 @@ This file is the shared operating guide for human developers and autonomous
 agents working on Beyond the Bottleneck. Follow it for all changes in this
 repository. If a user request conflicts with this file, the user request wins.
 
+Read these documents before substantial work:
+
+- `docs/ARCHITECTURE.md` for system boundaries and extension rules
+- `CONTRIBUTING.md` for branches, checks, and review expectations
+- `docs/CONTENT_GUIDE.md` for copy, contributor, date, and image ownership
+- `docs/adr/` for accepted architectural decisions
+
+Add an ADR when changing a durable route, component, content, styling,
+integration, or deployment boundary.
+
 ## Project purpose
 
 Beyond the Bottleneck is a long-form landing page for Carly Clark Zimmer's free
@@ -21,9 +31,16 @@ and conversion flow.
 
 ## Current product state
 
-- The full landing page is implemented in `app/page.tsx`.
-- Global responsive styling is in `app/globals.css`.
-- Site metadata and the root layout are in `app/layout.tsx`.
+- The landing page is composed in `app/(campaigns)/page.tsx`.
+- Shared campaign chrome is owned by `app/(campaigns)/layout.tsx` and
+  `components/campaign/`.
+- Global reset behavior is in `app/globals.css`; brand tokens are in
+  `styles/tokens.css`; component styling is colocated in CSS Modules.
+- Structured campaign content is in
+  `content/campaigns/beyond-the-bottleneck.ts`.
+- Long-form campaign copy is in route-owned sections under
+  `app/(campaigns)/_components/`.
+- Site metadata and the root document shell are in `app/layout.tsx`.
 - Brand photography is stored in `public/`.
 - Contributor cards intentionally contain placeholders.
 - The registration form is visual only. It does not yet send data to an email
@@ -67,8 +84,9 @@ responsive presentation.
 
 ## Copy rules
 
-Carly's supplied launch copy is the source of truth. The current approved page
-copy lives in `app/page.tsx`.
+Carly's supplied launch copy is the source of truth. Repeatable structured copy
+lives in `content/campaigns/beyond-the-bottleneck.ts`; distinctive long-form
+copy lives in `app/(campaigns)/_components/`.
 
 - Do not silently rewrite, shorten, proofread, or "improve" branded copy.
 - Preserve intentional voice, repetition, punctuation, capitalization, and
@@ -87,7 +105,7 @@ copy lives in `app/page.tsx`.
 - TypeScript
 - vinext `0.0.50`
 - Vite `8.0.13`
-- Tailwind CSS `4.2.1`, plus custom CSS in `app/globals.css`
+- Tailwind CSS `4.2.1`, plus CSS custom properties and CSS Modules
 - Cloudflare Worker-compatible output
 - Optional Drizzle/D1 scaffolding is present but unused
 
@@ -98,10 +116,16 @@ speculatively.
 
 ## Repository map
 
-- `app/page.tsx` — landing-page structure and content
-- `app/globals.css` — brand system, layout, animations, and breakpoints
-- `app/layout.tsx` — document shell and metadata
+- `app/(campaigns)/page.tsx` — current campaign composition
+- `app/(campaigns)/layout.tsx` — campaign shell ownership
+- `app/(campaigns)/_components/` — route-owned narrative sections
+- `app/globals.css` — reset and truly global behavior
+- `app/layout.tsx` — root document shell and metadata
 - `app/chatgpt-auth.ts` — optional starter auth helpers; currently unused
+- `components/campaign/` — reusable campaign structures
+- `components/ui/` — brand-aware UI primitives without campaign copy
+- `content/campaigns/` — typed repeatable campaign content
+- `styles/tokens.css` — shared brand, spacing, focus, and motion tokens
 - `public/` — brand imagery and static assets
 - `worker/index.ts` — Worker entrypoint
 - `vite.config.ts` — vinext and Sites build configuration
@@ -217,4 +241,3 @@ When a requirement is unclear:
 4. Surface decisions that affect conversion, privacy, publication, or ongoing
    maintenance.
 5. Leave the repository buildable and explain what changed.
-

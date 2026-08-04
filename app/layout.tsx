@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { campaignMeta } from "../content/campaigns/beyond-the-bottleneck";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Beyond the Bottleneck | Free Audio Series",
-  description: "Honest conversations with thriving online business owners who stopped turning their freedom back into a job.",
+  title: campaignMeta.title,
+  description: campaignMeta.description,
   icons: { icon: "/favicon.svg" },
 };
 

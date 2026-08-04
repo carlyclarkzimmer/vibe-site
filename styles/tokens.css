@@ -1,0 +1,25 @@
+:root {
+  --color-ink: #090909;
+  --color-paper: #ffffff;
+  --color-surface-muted: #f4f4f2;
+  --color-accent: #991f5d;
+  --color-border: #d5d5d2;
+  --color-text-muted: #d7d7d7;
+
+  --font-display: Georgia, "Times New Roman", serif;
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-interface: Arial, Helvetica, sans-serif;
+
+  --space-section-inline: 8vw;
+  --space-section-block: 130px;
+  --space-section-inline-mobile: 24px;
+  --space-section-block-mobile: 85px;
+
+  --width-content: 1240px;
+  --width-reading: 820px;
+
+  --border-standard: 1px solid var(--color-border);
+  --focus-ring: 3px solid color-mix(in srgb, var(--color-accent) 72%, white);
+  --transition-standard: 180ms ease;
+  --layer-navigation: 5;
+}
