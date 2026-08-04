@@ -4,6 +4,16 @@ This file is the shared operating guide for human developers and autonomous
 agents working on Beyond the Bottleneck. Follow it for all changes in this
 repository. If a user request conflicts with this file, the user request wins.
 
+Read these documents before substantial work:
+
+- `docs/ARCHITECTURE.md` for system boundaries and extension rules
+- `CONTRIBUTING.md` for branches, checks, and review expectations
+- `docs/CONTENT_GUIDE.md` for copy, contributor, date, and image ownership
+- `docs/adr/` for accepted architectural decisions
+
+Add an ADR when changing a durable route, component, content, styling,
+integration, or deployment boundary.
+
 ## Project purpose
 
 Beyond the Bottleneck is a long-form landing page for Carly Clark Zimmer's free
@@ -217,4 +227,3 @@ When a requirement is unclear:
 4. Surface decisions that affect conversion, privacy, publication, or ongoing
    maintenance.
 5. Leave the repository buildable and explain what changed.
-
