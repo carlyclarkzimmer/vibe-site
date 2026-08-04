@@ -6,6 +6,7 @@ repository. If a user request conflicts with this file, the user request wins.
 
 Read these documents before substantial work:
 
+- `CARLY_PLAYBOOK.md` for the owner-facing editing and approval workflow
 - `docs/ARCHITECTURE.md` for system boundaries and extension rules
 - `CONTRIBUTING.md` for branches, checks, and review expectations
 - `docs/CONTENT_GUIDE.md` for copy, contributor, date, and image ownership
@@ -132,6 +133,11 @@ speculatively.
 - `.openai/hosting.json` — Sites project binding
 - `tests/` — rendered-output checks
 - `db/`, `drizzle/`, `examples/d1/` — unused persistence scaffolding
+
+When Carly requests a navigation, page, or content change, treat her as the
+site owner: preserve her approved copy, implement the requested composition,
+and return a preview-oriented handoff. Follow `CARLY_PLAYBOOK.md` for approval
+boundaries. Do not require Carly to edit TypeScript manually.
 
 Do not delete unused starter infrastructure merely because it appears unused.
 Remove it only as part of an intentional cleanup that has been validated
