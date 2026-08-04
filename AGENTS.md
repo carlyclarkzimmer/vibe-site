@@ -10,6 +10,7 @@ Read these documents before substantial work:
 - `docs/ARCHITECTURE.md` for system boundaries and extension rules
 - `CONTRIBUTING.md` for branches, checks, and review expectations
 - `docs/CONTENT_GUIDE.md` for copy, contributor, date, and image ownership
+- `docs/EMAIL_OPT_IN_RUNBOOK.md` when adding or changing an email opt-in form
 - `docs/adr/` for accepted architectural decisions
 
 Add an ADR when changing a durable route, component, content, styling,

@@ -37,6 +37,11 @@ test("server-renders the Beyond the Bottleneck campaign", async () => {
   assert.match(html, /Contributor name/i);
   assert.match(html, /type="email"/i);
   assert.match(html, /id="email"/i);
+  assert.match(html, /fields\[first_name\]/i);
+  assert.match(html, /data-drip-embedded-form="318414890"/i);
+  assert.match(html, /beyond-the-bottleneck-listening-tour/i);
+  assert.match(html, /href="\/privacy"/i);
+  assert.match(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
   assert.doesNotMatch(html, /codex-preview/i);
   assert.doesNotMatch(html, /Your site is taking shape/i);
   assert.doesNotMatch(html, /react-loading-skeleton/i);
@@ -53,4 +58,16 @@ test("serves an accessible campaign shell", async () => {
   assert.match(html, /href="#register"/i);
   assert.match(html, /alt="Carly Clark Zimmer smiling outdoors"/i);
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
+});
+
+test("serves branded signup status and privacy pages", async () => {
+  const [thankYouResponse, privacyResponse] = await Promise.all([
+    render("/thank-you?status=registered"),
+    render("/privacy"),
+  ]);
+
+  assert.equal(thankYouResponse.status, 200);
+  assert.match(await thankYouResponse.text(), /You’re in/i);
+  assert.equal(privacyResponse.status, 200);
+  assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });

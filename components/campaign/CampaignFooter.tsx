@@ -7,7 +7,10 @@ export function CampaignFooter() {
         b.
       </a>
       <p>Beyond the Bottleneck © 2026</p>
-      <a href="#top">Back to top ↑</a>
+      <div className={styles.links}>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="#top">Back to top ↑</a>
+      </div>
     </footer>
   );
 }

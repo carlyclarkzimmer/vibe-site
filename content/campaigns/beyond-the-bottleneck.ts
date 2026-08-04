@@ -101,6 +101,13 @@ export const registrationContent = {
   headingItalic: "on the other side.",
   description:
     "Join me for Beyond the Bottleneck and hear how thriving online business owners stopped turning their freedom back into a job, what they changed, and what opened up when they did.",
+  emailCapture: {
+    provider: "drip",
+    formId: "318414890",
+    action: "https://www.getdrip.com/forms/318414890/submissions",
+    campaignTag: "beyond-the-bottleneck-listening-tour",
+    generalMarketingTag: "general-email",
+  },
   details: [
     "Begins October 5th",
     "Short audio interviews, each 20 minutes or less.",

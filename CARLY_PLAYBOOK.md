@@ -53,8 +53,62 @@ Carly must explicitly approve:
   deployment.
 - Destructive changes to photography or existing content.
 
-The registration form is currently visual only; it does not collect or send
-registrations.
+The Beyond the Bottleneck registration form is wired to Drip but is not ready
+to be described as live until its production URLs are configured and the
+end-to-end inbox test has passed. Do not claim registration works before that
+test.
+
+## Adding a page with an email opt-in
+
+Tell the agent the outcome in plain language. You do not need to edit
+TypeScript or install a form yourself. Include the approved page copy, images,
+CTA, and where it belongs in navigation. If the page collects email addresses,
+also provide:
+
+- The campaign name and the Drip tag for people who register (for example,
+  `beyond-the-bottleneck-listening-tour`).
+- Whether to collect first name as well as email.
+- Whether the optional general-email checkbox should appear, and the tag it
+  should apply when selected.
+- Whether this campaign uses double opt-in. Beyond the Bottleneck uses **Disabled**:
+  people register immediately without a confirmation email. Changing this is a
+  campaign and consent decision, so tell the agent explicitly.
+- The specific resource or campaign emails a registrant should expect.
+- Any approved changes to the privacy policy or consent wording.
+
+The agent will reuse the site’s email-capture design and wire the campaign to
+the supplied Drip Embedded Form. The agent will ask for the generated Drip form
+configuration, not an API key, password, or other secret.
+
+### What to configure in Drip
+
+Create one Drip Embedded Form per campaign. Set up the fields, campaign tag,
+opt-in behavior, and any campaign workflow in Drip. Copy the complete
+**Settings and Code** snippet for the form and give it to the agent.
+
+After the page is deployed at its real public domain, Beyond the Bottleneck uses
+this post-submission URL in Drip:
+
+- Post-submission: `https://YOUR-DOMAIN/thank-you?status=registered`
+
+The post-confirmation URL is unused when double opt-in is disabled. If a future
+campaign uses double opt-in, ask the agent to configure both thank-you states.
+
+`YOUR-DOMAIN` is the actual live site URL, not `localhost`, a preview URL, or
+text to be added to the codebase.
+
+### Ready-to-use request
+
+> Add a new campaign page for [campaign]. Use this approved copy: [paste
+> copy]. Add it to navigation as [label]. It should collect [email / first
+> name and email]. Use this Drip campaign tag: `[tag]`. [Include / do not
+> include] the optional general-email checkbox; if included, use the tag
+> `[tag]`. Use double opt-in [setting]. Here is the Drip Embedded Form Settings
+> and Code snippet: [paste snippet, without API keys or passwords]. Do not
+> publish until I approve the preview and complete the inbox test.
+
+For the full agent implementation and testing workflow, see
+[`docs/EMAIL_OPT_IN_RUNBOOK.md`](docs/EMAIL_OPT_IN_RUNBOOK.md).
 
 ## Preview and handoff
 
@@ -80,4 +134,3 @@ mobile view, and any form or privacy behavior personally.
 > Compose a page for [purpose]. Here is the approved copy, section order, CTA,
 > and image guidance: ... Keep placeholders visible where information is
 > missing and tell me what I still need to approve.
-

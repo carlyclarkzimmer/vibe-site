@@ -7,11 +7,16 @@
 }
 
 .footer p,
-.footer > a:last-child {
+.links {
   font-family: var(--font-interface);
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.links {
+  display: flex;
+  gap: 24px;
 }
 
 .monogram {
@@ -24,5 +29,10 @@
   .footer {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .links {
+    flex-direction: column;
+    gap: 12px;
   }
 }
