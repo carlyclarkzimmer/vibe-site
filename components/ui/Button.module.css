@@ -1,0 +1,47 @@
+.button {
+  display: inline-block;
+  border: 1px solid transparent;
+  padding: 18px 28px;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition-standard),
+    border-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+.accent {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+}
+
+.accent:hover {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+}
+
+.dark {
+  border-color: var(--color-ink);
+  background: var(--color-ink);
+  color: white;
+}
+
+.outline {
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.outlineLight {
+  border-color: white;
+  color: white;
+}
+
+.outline:hover,
+.outlineLight:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+}

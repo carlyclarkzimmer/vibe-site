@@ -1,0 +1,30 @@
+.ticker {
+  overflow: hidden;
+  padding: 18px 0;
+  background: var(--color-accent);
+  color: white;
+  white-space: nowrap;
+}
+
+.ticker > div {
+  width: max-content;
+  animation: ticker 26s linear infinite;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+}
+
+.ticker b {
+  margin: 0 28px;
+}
+
+@keyframes ticker {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker > div {
+    animation: none;
+  }
+}

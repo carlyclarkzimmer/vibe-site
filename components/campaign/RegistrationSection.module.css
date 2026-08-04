@@ -1,0 +1,95 @@
+.register {
+  background: var(--color-ink);
+  color: white;
+  text-align: center;
+}
+
+.register h2 {
+  max-width: 1200px;
+  margin: 30px auto 50px;
+  font-size: clamp(64px, 8vw, 125px);
+}
+
+.description {
+  max-width: 760px;
+  margin: 0 auto 55px;
+  color: #dddddd;
+}
+
+.register form {
+  max-width: 760px;
+  margin: auto;
+  text-align: left;
+}
+
+.register label {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.register form div {
+  display: flex;
+  margin-top: 10px;
+}
+
+.register input {
+  min-width: 0;
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #666666;
+  outline: none;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+}
+
+.register input:focus {
+  border-color: white;
+}
+
+.register button {
+  padding: 20px 30px;
+  border: 0;
+  background: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.details {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 35px 0;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.finalLine {
+  max-width: 800px;
+  margin: 70px auto 0;
+  font-size: 28px;
+}
+
+@media (max-width: 600px) {
+  .register h2 {
+    font-size: 55px;
+  }
+
+  .register form div,
+  .details {
+    flex-direction: column;
+  }
+
+  .register button {
+    padding: 20px;
+  }
+
+  .finalLine {
+    font-size: 24px;
+  }
+}

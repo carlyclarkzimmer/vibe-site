@@ -1,0 +1,10 @@
+.section {
+  padding: var(--space-section-block) var(--space-section-inline);
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--space-section-block-mobile)
+      var(--space-section-inline-mobile);
+  }
+}
