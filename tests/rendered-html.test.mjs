@@ -36,7 +36,7 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
   assert.doesNotMatch(html, /carlyclarkzimmer\.com\/services/i);
-  assert.match(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
+  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
   assert.doesNotMatch(html, /codex-preview/i);
   assert.doesNotMatch(html, /Your site is taking shape/i);
   assert.doesNotMatch(html, /react-loading-skeleton/i);
@@ -130,6 +130,7 @@ test("serves the campaign without shared site navigation", async () => {
     html,
     /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
   );
+  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
   assert.match(
     html,
     /name="g-recaptcha-response-data\[form_submission\]"/i,
