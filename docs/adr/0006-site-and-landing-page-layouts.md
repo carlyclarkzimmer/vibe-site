@@ -13,7 +13,9 @@ contracts:
   `SiteShell`, including shared navigation and footer.
 - `(landing)` provides campaign and conversion routes without shared site
   navigation. Beyond the Bottleneck lives at `/beyond-the-bottleneck` and uses
-  only its campaign-specific navigation and CTAs.
+  only campaign-specific navigation and CTAs when the campaign calls for them.
+  Its current composition omits the campaign header and begins directly with
+  the hero.
 
 The root layout remains responsible only for document-wide concerns. Page type
 is selected by route group, not by a `hideNav` option on a shared header.

@@ -23,7 +23,6 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
         unoptimized
       />
       <div className={styles.shade} />
-      <div className={styles.brand}>{content.brand}</div>
       <div className={styles.copy}>
         <Eyebrow>{content.eyebrow}</Eyebrow>
         <EditorialHeading as="h1" className={styles.title} size="hero">
@@ -39,7 +38,6 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
       <div className={styles.date}>
         <span>Begins</span>
         <strong>{launchDate}</strong>
-        <span>Listen on your own time</span>
       </div>
     </header>
   );

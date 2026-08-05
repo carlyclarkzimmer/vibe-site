@@ -13,10 +13,8 @@ import {
 import { AudienceSection } from "./_components/AudienceSection";
 import { BeliefSection } from "./_components/BeliefSection";
 import { ConversationSection } from "./_components/ConversationSection";
-import { EvidenceSection } from "./_components/EvidenceSection";
 import { FounderStorySection } from "./_components/FounderStorySection";
 import { OpeningSection } from "./_components/OpeningSection";
-import { PossibilitySection } from "./_components/PossibilitySection";
 import { QuestionSection } from "./_components/QuestionSection";
 import { SeriesIntroSection } from "./_components/SeriesIntroSection";
 
@@ -34,9 +32,7 @@ export default function BeyondTheBottleneckPage() {
       <MovingTicker items={tickerItems} />
       <AudienceSection />
       <QuestionSection />
-      <PossibilitySection />
       <ConversationSection />
-      <EvidenceSection />
       <ContributorGrid contributors={contributors} />
       <FounderStorySection />
       <BeliefSection />

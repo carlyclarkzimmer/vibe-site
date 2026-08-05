@@ -22,16 +22,6 @@
   );
 }
 
-.brand {
-  position: absolute;
-  top: 35px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-family: var(--font-display);
-  font-size: 13px;
-  letter-spacing: 0.22em;
-}
-
 .copy {
   position: absolute;
   bottom: 10%;

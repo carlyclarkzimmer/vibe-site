@@ -19,7 +19,9 @@ export function FounderStorySection() {
           <span>about the creator</span>
         </div>
         <div className={styles.aboutCopy}>
-          <Eyebrow>Why I created Beyond the Bottleneck</Eyebrow>
+          <Eyebrow className={styles.sectionEyebrow}>
+            Why I created Beyond the Bottleneck
+          </Eyebrow>
           <h2>
             I used to think being excellent meant being available{" "}
             <i>all the time.</i>
@@ -102,7 +104,7 @@ export function FounderStorySection() {
               of myself to work.
             </p>
             <p>
-              I started painting again, and that because evidence that I had a
+              I started painting again, and that became evidence that I had a
               life outside of business.
             </p>
             <p>
@@ -114,7 +116,7 @@ export function FounderStorySection() {
       </Section>
 
       <section className={styles.cage}>
-        <Eyebrow>Why this matters</Eyebrow>
+        <Eyebrow className={styles.sectionEyebrow}>Why this matters</Eyebrow>
         <h2>
           I know how easy it is to leave one cage and{" "}
           <i>accidentally build another.</i>
