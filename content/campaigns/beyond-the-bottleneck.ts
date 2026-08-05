@@ -71,5 +71,6 @@ export const registrationContent = {
     formId: "318414890",
     action: "https://www.getdrip.com/forms/318414890/submissions",
     campaignTag: "beyond-the-bottleneck-listening-tour",
+    recaptchaSiteKey: "6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP",
   },
 } as const;

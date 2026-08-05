@@ -36,7 +36,7 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
   assert.doesNotMatch(html, /carlyclarkzimmer\.com\/services/i);
-  assert.match(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
+  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
   assert.doesNotMatch(html, /codex-preview/i);
   assert.doesNotMatch(html, /Your site is taking shape/i);
   assert.doesNotMatch(html, /react-loading-skeleton/i);
@@ -125,6 +125,17 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /type="email"/i);
   assert.match(html, /fields\[first_name\]/i);
   assert.match(html, /data-drip-embedded-form="318414890"/i);
+  assert.match(html, /id="drip-ef-318414890"/i);
+  assert.match(
+    html,
+    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
+  );
+  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
+  assert.match(
+    html,
+    /name="g-recaptcha-response-data\[form_submission\]"/i,
+  );
+  assert.match(html, /data-drip-attribute="sign-up-button"/i);
   assert.match(html, /beyond-the-bottleneck-listening-tour/i);
   assert.doesNotMatch(html, /I’d also like occasional emails/i);
   assert.doesNotMatch(html, /By registering, you’ll receive listening-tour emails\./i);
@@ -142,7 +153,9 @@ test("serves branded signup status and privacy pages", async () => {
   ]);
 
   assert.equal(thankYouResponse.status, 200);
-  assert.match(await thankYouResponse.text(), /You’re in/i);
+  const thankYouHtml = await thankYouResponse.text();
+  assert.match(thankYouHtml, /You’re in/i);
+  assert.match(thankYouHtml, /href="\/beyond-the-bottleneck"/i);
   assert.equal(privacyResponse.status, 200);
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });

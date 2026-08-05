@@ -1,6 +1,7 @@
 import type { registrationContent } from "../../content/campaigns/beyond-the-bottleneck";
 import { Eyebrow } from "../ui/Eyebrow";
 import { Section } from "../ui/Section";
+import { DripRecaptcha } from "./DripRecaptcha";
 import styles from "./RegistrationSection.module.css";
 
 type RegistrationSectionProps = {
@@ -22,6 +23,7 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
       <form
         action={form.action}
         data-drip-embedded-form={form.formId}
+        id={`drip-ef-${form.formId}`}
         method="post"
       >
         <div className={styles.fields}>
@@ -50,6 +52,7 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
             type="text"
           />
         </div>
+        <DripRecaptcha siteKey={form.recaptchaSiteKey} />
         <input name="tags[]" type="hidden" value={form.campaignTag} />
         {generalMarketingTag ? (
           <label className={styles.consent} htmlFor="general-email">
@@ -69,7 +72,9 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
           You can unsubscribe at any time. <a href="/privacy">Privacy Policy</a>
         </p>
         <div className={styles.submitRow}>
-          <button type="submit">Register for free</button>
+          <button data-drip-attribute="sign-up-button" type="submit">
+            Register for free
+          </button>
         </div>
       </form>
       <footer className={styles.copyright}>© carlyclarkzimmer.com</footer>
