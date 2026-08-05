@@ -92,6 +92,14 @@
   padding-bottom: 10px;
 }
 
+.heroPortrait {
+  aspect-ratio: 1.15;
+  width: 100%;
+  margin: 0 0 30px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+
 .heroAside p {
   color: rgb(255 255 255 / 84%);
   font-size: clamp(18px, 1.6vw, 24px);
@@ -706,6 +714,11 @@
 
   .hero h1 {
     font-size: clamp(50px, 14vw, 76px);
+  }
+
+  .heroPortrait {
+    aspect-ratio: 1.1;
+    object-position: center 28%;
   }
 
   .clientIntro,

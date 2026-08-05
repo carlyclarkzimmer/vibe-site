@@ -66,6 +66,13 @@ export default function CoachingClubPage() {
             </h1>
           </div>
           <div className={styles.heroAside}>
+            <img
+              className={styles.heroPortrait}
+              src="/carly-hero.jpg"
+              alt="Carly Clark Zimmer smiling outdoors in a berry-colored jacket"
+              width={5760}
+              height={3840}
+            />
             <p>You have read the books, taken the courses, and have the clarity.</p>
             <p>
               The Laser Coaching Club is where you stop gathering more info,
