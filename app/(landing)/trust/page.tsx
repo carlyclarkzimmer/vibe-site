@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element -- preserve the local editorial crop without a framework image loader */
 import type { Metadata } from "next";
 import styles from "./page.module.css";
 
