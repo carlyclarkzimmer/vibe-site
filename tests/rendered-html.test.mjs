@@ -146,7 +146,6 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
-<<<<<<< HEAD
 test("serves the Coaching Club baseline as a focused landing page", async () => {
   const response = await render("/coaching-club");
   const html = await response.text();
