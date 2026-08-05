@@ -174,6 +174,24 @@ test("serves the Coaching Club baseline as a focused landing page", async () => 
   assert.doesNotMatch(html, /connect\.facebook\.net|leadpages|center\.io/i);
 });
 
+test("serves the Behavior Bottleneck Finder as a focused signup page", async () => {
+  const response = await render("/behavior-bottleneck-finder");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Behavior Bottleneck Finder \| Carly Clark Zimmer<\/title>/i);
+  assert.match(html, /Try the/i);
+  assert.match(html, /Behavior <em>Bottleneck<\/em> Finder/i);
+  assert.match(html, /The short-term relief behavior/i);
+  assert.match(html, /Get Two Week Access/i);
+  assert.match(html, /type="email"/i);
+  assert.match(html, /name="confirmation"/i);
+  assert.match(html, /api\.leadpages\.io\/integration\/v1\/forms\/KDj2LafsFtiGnZjjupdSYi\/submissions/i);
+  assert.match(html, /alt="Carly Clark Zimmer standing in a teal jacket/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);
+});
+
 test("serves branded signup status and privacy pages", async () => {
   const [thankYouResponse, privacyResponse] = await Promise.all([
     render("/thank-you?status=registered"),
