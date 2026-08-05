@@ -220,6 +220,21 @@ test("serves branded signup status and privacy pages", async () => {
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });
 
+test("serves the migrated legacy offer and opt-in pages", async () => {
+  for (const path of ["/2026-5-minute-laser-coach-delivery", "/trust", "/newsletter", "/newsletter-thank-you"]) {
+    const response = await render(path);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+    assert.match(html, /<main\b/i);
+  }
+  const trust = await render("/trust").then((r) => r.text());
+  assert.match(trust, /api\.leadpages\.io\/integration\/v1\/forms\/B7sBMcAGyqr6c63gNf4pEM\/submissions/i);
+  const newsletter = await render("/newsletter").then((r) => r.text());
+  assert.match(newsletter, /api\.leadpages\.io\/integration\/v1\/forms\/Bo4xxWTDurABXt97UYNVV7\/submissions/i);
+  assert.match(await render("/2026-5-minute-laser-coach-delivery").then((r) => r.text()), /player\.vimeo\.com\/video\/1059763588/i);
+});
+
 test("serves polished local site-navigation pages", async () => {
   const [servicesResponse, aboutResponse, resultsResponse, resourcesResponse, contactResponse] = await Promise.all([
     render("/services"),

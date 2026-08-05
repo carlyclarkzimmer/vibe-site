@@ -19,6 +19,10 @@ material copy changes remain separate decisions.
 | `/breakthrough/` | `/breakthrough` | Landing | Baseline composed; preview ready | Verify legacy Vimeo playback and ThriveCart checkout behavior before describing purchase as working |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
+| `/2026-5-minute-laser-coach-delivery/` | `/2026-5-minute-laser-coach-delivery` | Landing | Baseline composed | Verify ChatGPT destination and Vimeo playback |
+| `/trust/` | `/trust` | Landing | Baseline composed | Verify Leadpages submission and audio delivery behavior |
+| `/newsletter/` | `/newsletter` | Landing | Baseline composed | Verify Leadpages submission and newsletter delivery behavior |
+| `carlyclarkzimmer.lpages.co/newsletter-thank-you/` | `/newsletter-thank-you` | Landing | Baseline composed | Confirm thank-you copy and destination before publication |
 
 No route is ready for public launch solely because it has been composed. A
 route becomes launch-ready only after its content, links, forms, and any legal
