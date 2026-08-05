@@ -125,6 +125,16 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /type="email"/i);
   assert.match(html, /fields\[first_name\]/i);
   assert.match(html, /data-drip-embedded-form="318414890"/i);
+  assert.match(html, /id="drip-ef-318414890"/i);
+  assert.match(
+    html,
+    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
+  );
+  assert.match(
+    html,
+    /name="g-recaptcha-response-data\[form_submission\]"/i,
+  );
+  assert.match(html, /data-drip-attribute="sign-up-button"/i);
   assert.match(html, /beyond-the-bottleneck-listening-tour/i);
   assert.doesNotMatch(html, /I’d also like occasional emails/i);
   assert.doesNotMatch(html, /By registering, you’ll receive listening-tour emails\./i);
