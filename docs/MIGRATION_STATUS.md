@@ -13,6 +13,7 @@ launch decision.
 | `/client-results/` | `/client-results` | Site | Baseline composed | Reapprove testimonials and outcome claims |
 | `/links/` | `/links` | Site | Baseline composed | Confirm active resources and Drip forms |
 | `/contact/` | `/contact` | Site | Baseline composed | Confirm contact details and booking destination |
+| `/breakthrough/` | `/breakthrough` | Landing | Baseline composed; preview ready | Verify legacy Vimeo playback and ThriveCart checkout behavior before describing purchase as working |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
 
