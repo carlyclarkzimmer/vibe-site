@@ -1,0 +1,103 @@
+.hero {
+  min-height: min(760px, calc(100vh - 82px));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: var(--color-ink);
+  color: white;
+}
+
+.hero h1,
+.approach h2 {
+  max-width: 960px;
+  margin: 28px 0;
+  font-size: clamp(76px, 11vw, 172px);
+}
+
+.heroCopy {
+  max-width: 640px;
+  color: #dddddd;
+  font-size: 20px;
+}
+
+.hero a,
+.process a {
+  margin-top: 24px;
+}
+
+.recognition {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 9vw;
+}
+
+.recognition h2,
+.process h2 {
+  margin: 0;
+  font-size: clamp(54px, 7vw, 108px);
+}
+
+.recognition p,
+.process p,
+.approach p {
+  max-width: 650px;
+}
+
+.recognition p:first-child,
+.process p:first-child {
+  margin-top: 0;
+}
+
+.approach {
+  background: var(--color-surface-muted);
+}
+
+.approach p {
+  font-size: 22px;
+}
+
+.process {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 9vw;
+}
+
+.process > :first-child {
+  grid-column: 1 / -1;
+}
+
+.testimonial {
+  background: var(--color-accent);
+  color: white;
+  text-align: center;
+}
+
+.testimonial blockquote {
+  max-width: 950px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5vw, 72px);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.testimonial p {
+  margin: 36px auto 0;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 680px;
+  }
+
+  .recognition,
+  .process {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

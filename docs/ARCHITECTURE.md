@@ -2,8 +2,8 @@
 
 ## Purpose
 
-This repository supports an editorial campaign landing page today and a
-reusable foundation for future Carly Clark Zimmer campaign and main-site pages.
+This repository supports a navigable Carly Clark Zimmer main site and focused
+campaign landing pages.
 The architecture prioritizes clear ownership, visual consistency, and safe
 extension over a generic page-builder abstraction.
 
@@ -16,8 +16,9 @@ extension over a generic page-builder abstraction.
 - OpenAI Sites packages and deploys the Worker output.
 - D1, R2, and authentication scaffolding are present but unused.
 
-No client-side state, persistent data, account system, or live form integration
-is currently required.
+No client-side state, persistent data, or account system is currently
+required. Campaign registration submits directly to Drip through provider-owned
+embedded-form behavior.
 
 ## Dependency direction
 
@@ -41,16 +42,13 @@ Dependencies must not point upward:
 The root `app/layout.tsx` owns the HTML shell, global metadata defaults, and
 global style import.
 
-Campaign routes live in the `(campaigns)` route group. Its nested layout owns
-focused campaign chrome. Route groups do not change public URLs, so the current
-campaign remains at `/`.
+The `(site)` route group owns the shared main-site header and footer and serves
+the homepage at `/`. The `(landing)` route group owns focused campaign routes,
+including `/beyond-the-bottleneck`. Landing routes retain the brand system but
+do not render the shared main-site navigation.
 
-A future `(site)` route group should be added only after a main-site header,
-footer, navigation, and homepage have an approved design contract. Moving the
-campaign away from `/` must be an intentional launch decision that addresses
-URLs and redirects in the same change.
-
-See [ADR 0001](adr/0001-route-and-layout-strategy.md).
+See [ADR 0006](adr/0006-site-and-landing-page-layouts.md). ADR 0001 is kept as
+historical context for the original campaign-only route.
 
 ## Component ownership
 
@@ -59,6 +57,11 @@ See [ADR 0001](adr/0001-route-and-layout-strategy.md).
 Small components with stable brand contracts: buttons, eyebrow labels,
 editorial headings, and section containers. These components contain no
 campaign copy.
+
+### Site components
+
+Reusable site structures such as `SiteShell`, `SiteHeader`, and `SiteFooter`.
+They receive typed navigation content and do not contain page-specific prose.
 
 ### Campaign components
 
@@ -109,17 +112,13 @@ The hero and founder-story images have documented roles in `AGENTS.md`.
 
 ## Registration boundary
 
-`RegistrationSection` owns presentation only. A future email integration should
-use a server action or API route behind a provider-neutral boundary such as:
+`RegistrationSection` owns the site-side presentation and submits to the Drip
+Embedded Form declared in campaign content. The application does not store a
+Drip API token or proxy signups through an API route.
 
-```text
-lib/email/provider.ts
-lib/email/subscribe.ts
-```
-
-Before implementation, confirm provider, list identifier, fields, consent,
-double opt-in, spam protection, analytics, success behavior, and error
-behavior.
+Before adding a campaign form, confirm provider, form identifier, fields,
+tags, consent, double opt-in, spam protection, analytics, success behavior,
+and error behavior. See [the email opt-in runbook](EMAIL_OPT_IN_RUNBOOK.md).
 
 ## Testing
 
@@ -148,29 +147,31 @@ See [ADR 0004](adr/0004-deployment-ownership.md).
 
 ## Known limitations
 
-- Registration is presentational only.
 - Contributor content is placeholder content.
-- No main-site layout exists yet.
 - No analytics or conversion tracking is configured.
 - No final approved social-sharing image is configured.
+- Drip production redirects and end-to-end inbox testing are still pending.
+
+## Adding a site page
+
+1. Confirm that it is a navigable site page rather than a focused campaign.
+2. Create the route under `(site)`.
+3. Define approved metadata and any repeatable structured content.
+4. Compose route-owned sections from UI primitives.
+5. Add route smoke tests and validate the shared navigation on desktop and
+   mobile.
 
 ## Adding a campaign
 
-1. Create a campaign route.
+1. Create a route under `(landing)`.
 2. Define typed metadata and structured content.
 3. Compose existing campaign components.
 4. Keep novel narrative sections route-local.
-5. Add route smoke tests.
-6. Validate desktop, tablet, and mobile layouts.
-7. Add an ADR only when durable architecture changes.
-
-## Adding a main-site page
-
-1. Do not reuse campaign chrome as main-site chrome.
-2. Establish approved main-site navigation and footer contracts.
-3. Add a `(site)` layout.
-4. Reuse tokens and appropriate UI primitives.
-5. Store site navigation in one typed content module.
+5. Do not import the shared site navigation; use only campaign-specific
+   anchors and CTAs when needed.
+6. Add route smoke tests.
+7. Validate desktop, tablet, and mobile layouts.
+8. Add an ADR only when durable architecture changes.
 
 ## Promoting code to shared
 

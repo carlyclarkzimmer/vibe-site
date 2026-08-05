@@ -1,0 +1,44 @@
+.form {
+  display: grid;
+  gap: 16px;
+  max-width: 680px;
+}
+
+.form > div {
+  display: grid;
+  gap: 8px;
+}
+
+.form label {
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.form input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #777;
+  background: transparent;
+  color: white;
+  font: inherit;
+}
+
+.form button {
+  padding: 18px 24px;
+  border: 0;
+  background: var(--color-accent);
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.form p {
+  margin: 0;
+  color: #dddddd;
+  font-size: 14px;
+}

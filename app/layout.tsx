@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Script from "next/script";
-import { campaignMeta } from "../content/campaigns/beyond-the-bottleneck";
+import { siteMeta } from "../content/site/home";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: campaignMeta.title,
-  description: campaignMeta.description,
+  title: siteMeta.title,
+  description: siteMeta.description,
   icons: { icon: "/favicon.svg" },
 };
 

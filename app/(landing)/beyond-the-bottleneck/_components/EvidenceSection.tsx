@@ -1,7 +1,7 @@
-import { evidenceItems } from "../../../content/campaigns/beyond-the-bottleneck";
-import { Button } from "../../../components/ui/Button";
-import { Eyebrow } from "../../../components/ui/Eyebrow";
-import { Section } from "../../../components/ui/Section";
+import { evidenceItems } from "../../../../content/campaigns/beyond-the-bottleneck";
+import { Button } from "../../../../components/ui/Button";
+import { Eyebrow } from "../../../../components/ui/Eyebrow";
+import { Section } from "../../../../components/ui/Section";
 import styles from "./CampaignSections.module.css";
 
 export function EvidenceSection() {

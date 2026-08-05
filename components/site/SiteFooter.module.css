@@ -1,0 +1,41 @@
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 34px 4vw;
+  border-top: var(--border-standard);
+  background: white;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.footer p {
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+.footer div {
+  display: flex;
+  gap: 24px;
+}
+
+.footer a {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .footer,
+  .footer div {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer div {
+    gap: 12px;
+  }
+}

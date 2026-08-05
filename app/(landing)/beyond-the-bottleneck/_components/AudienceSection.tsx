@@ -1,6 +1,6 @@
-import { checklistItems } from "../../../content/campaigns/beyond-the-bottleneck";
-import { Eyebrow } from "../../../components/ui/Eyebrow";
-import { Section } from "../../../components/ui/Section";
+import { checklistItems } from "../../../../content/campaigns/beyond-the-bottleneck";
+import { Eyebrow } from "../../../../components/ui/Eyebrow";
+import { Section } from "../../../../components/ui/Section";
 import styles from "./CampaignSections.module.css";
 
 export function AudienceSection() {

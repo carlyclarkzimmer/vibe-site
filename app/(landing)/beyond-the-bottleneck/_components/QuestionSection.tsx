@@ -1,5 +1,5 @@
-import { fearQuestions } from "../../../content/campaigns/beyond-the-bottleneck";
-import { Eyebrow } from "../../../components/ui/Eyebrow";
+import { fearQuestions } from "../../../../content/campaigns/beyond-the-bottleneck";
+import { Eyebrow } from "../../../../components/ui/Eyebrow";
 import styles from "./CampaignSections.module.css";
 
 export function QuestionSection() {

@@ -2,7 +2,10 @@
 
 ## Status
 
-Accepted
+Superseded by [ADR 0006](0006-site-and-landing-page-layouts.md).
+
+This record describes the original single-campaign route strategy. It remains
+as historical context; ADR 0006 defines the current site and landing layouts.
 
 ## Decision
 

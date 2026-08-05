@@ -6,6 +6,11 @@ It is the shared operating procedure for Carly and agents. It supplements
 
 ## Owner handoff
 
+First, determine the page type. Email captures for a campaign, free resource,
+or offer normally belong on a **landing page** under `app/(landing)/` and must
+not render the shared site navigation. A permanent **site page** under
+`app/(site)/` can link to a focused landing page instead.
+
 The agent should help Carly provide the following, in plain language:
 
 1. Campaign/page purpose, approved copy, CTA, images, and navigation location.

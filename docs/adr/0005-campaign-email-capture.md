@@ -25,4 +25,5 @@ pages.
 - Drip form settings must explicitly configure the campaign’s double-opt-in
   behavior and matching redirects. Beyond the Bottleneck currently uses no
   double opt-in and redirects to the immediate-registration thank-you state.
-- CAPTCHA is intentionally deferred; future activation is configured in Drip.
+- Google reCAPTCHA is enabled through Drip's supplied public script. Its
+  production behavior must be verified during the end-to-end inbox test.

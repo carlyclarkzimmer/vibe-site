@@ -11,6 +11,7 @@ Read these documents before substantial work:
 - `CONTRIBUTING.md` for branches, checks, and review expectations
 - `docs/CONTENT_GUIDE.md` for copy, contributor, date, and image ownership
 - `docs/EMAIL_OPT_IN_RUNBOOK.md` when adding or changing an email opt-in form
+- `docs/MIGRATION_STATUS.md` when migrating or publishing a legacy page
 - `docs/adr/` for accepted architectural decisions
 
 Add an ADR when changing a durable route, component, content, styling,
@@ -26,27 +27,37 @@ audio series. Its job is to:
 2. Build trust through Carly's story and contributor conversations.
 3. Convert qualified visitors into listening-tour registrations.
 
-This is a single landing page, not a multi-page photography or coaching site.
-The Florence Showit template inspired its editorial design language, but this
-project must remain an original implementation shaped around Carly's content
-and conversion flow.
+This application has two intentional page types: a navigable main site and
+focused campaign landing pages. The Florence Showit template inspired its
+editorial design language, but this project must remain an original
+implementation shaped around Carly's content and conversion flow.
+
+- **Site pages** use the shared main-site navigation and footer, and help
+  visitors move between Carly's services, story, resources, and contact paths.
+- **Landing pages** keep the same brand system but omit shared site navigation.
+  They may include campaign-only anchor links and CTAs, but must not send a
+  visitor away from the campaign experience through the main-site menu.
 
 ## Current product state
 
-- The landing page is composed in `app/(campaigns)/page.tsx`.
-- Shared campaign chrome is owned by `app/(campaigns)/layout.tsx` and
+- The main site homepage is composed in `app/(site)/page.tsx`.
+- Campaign landing pages live under `app/(landing)/`; Beyond the Bottleneck is
+  at `/beyond-the-bottleneck`.
+- Shared site chrome is owned by `app/(site)/layout.tsx` and `components/site/`.
+- Campaign chrome is owned by `app/(landing)/[campaign]/layout.tsx` and
   `components/campaign/`.
 - Global reset behavior is in `app/globals.css`; brand tokens are in
   `styles/tokens.css`; component styling is colocated in CSS Modules.
 - Structured campaign content is in
   `content/campaigns/beyond-the-bottleneck.ts`.
-- Long-form campaign copy is in route-owned sections under
-  `app/(campaigns)/_components/`.
+- Long-form Beyond the Bottleneck copy is in route-owned sections under
+  `app/(landing)/beyond-the-bottleneck/_components/`.
 - Site metadata and the root document shell are in `app/layout.tsx`.
 - Brand photography is stored in `public/`.
 - Contributor cards intentionally contain placeholders.
-- The registration form is visual only. It does not yet send data to an email
-  platform or API.
+- The Beyond the Bottleneck form submits directly to Drip. It must not be
+  described as live until its production redirect and end-to-end inbox test
+  have been completed.
 - The launch date currently displayed is October 5th.
 - There is no application database, durable storage, or user account system.
 
@@ -86,9 +97,8 @@ responsive presentation.
 
 ## Copy rules
 
-Carly's supplied launch copy is the source of truth. Repeatable structured copy
-lives in `content/campaigns/beyond-the-bottleneck.ts`; distinctive long-form
-copy lives in `app/(campaigns)/_components/`.
+Carly's approved copy is the source of truth. Repeatable structured content
+lives under `content/`; distinctive long-form copy stays in its owning route.
 
 - Do not silently rewrite, shorten, proofread, or "improve" branded copy.
 - Preserve intentional voice, repetition, punctuation, capitalization, and
@@ -118,9 +128,12 @@ speculatively.
 
 ## Repository map
 
-- `app/(campaigns)/page.tsx` — current campaign composition
-- `app/(campaigns)/layout.tsx` — campaign shell ownership
-- `app/(campaigns)/_components/` — route-owned narrative sections
+- `app/(site)/page.tsx` — main-site homepage composition
+- `app/(site)/layout.tsx` — shared site shell ownership
+- `app/(landing)/` — campaign landing-page routes and layouts
+- `components/site/` — shared site shell and navigation
+- `app/(landing)/beyond-the-bottleneck/_components/` — route-owned Beyond the
+  Bottleneck narrative sections
 - `app/globals.css` — reset and truly global behavior
 - `app/layout.tsx` — root document shell and metadata
 - `app/chatgpt-auth.ts` — optional starter auth helpers; currently unused
@@ -135,10 +148,11 @@ speculatively.
 - `tests/` — rendered-output checks
 - `db/`, `drizzle/`, `examples/d1/` — unused persistence scaffolding
 
-When Carly requests a navigation, page, or content change, treat her as the
-site owner: preserve her approved copy, implement the requested composition,
-and return a preview-oriented handoff. Follow `CARLY_PLAYBOOK.md` for approval
-boundaries. Do not require Carly to edit TypeScript manually.
+When Carly requests a navigation, page, or content change, first identify the
+page type: **site page** or **landing page**. Treat her as the site owner:
+preserve her approved copy, implement the requested composition, and return a
+preview-oriented handoff. Follow `CARLY_PLAYBOOK.md` for approval boundaries.
+Do not require Carly to edit TypeScript manually.
 
 Do not delete unused starter infrastructure merely because it appears unused.
 Remove it only as part of an intentional cleanup that has been validated

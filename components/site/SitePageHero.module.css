@@ -1,0 +1,21 @@
+.hero {
+  min-height: min(660px, calc(100vh - 82px));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  background: var(--color-ink);
+  color: white;
+}
+
+.hero h1 {
+  max-width: 1050px;
+  margin: 28px 0;
+  font-size: clamp(66px, 10vw, 158px);
+}
+
+.hero p {
+  max-width: 680px;
+  color: #dddddd;
+  font-size: 20px;
+}

@@ -1,0 +1,30 @@
+# ADR 0006: Site and landing-page layouts
+
+## Status
+
+Accepted
+
+## Decision
+
+The app has two page types with the same design system and different navigation
+contracts:
+
+- `(site)` provides the permanent main-site experience at `/` through
+  `SiteShell`, including shared navigation and footer.
+- `(landing)` provides campaign and conversion routes without shared site
+  navigation. Beyond the Bottleneck lives at `/beyond-the-bottleneck` and uses
+  only its campaign-specific navigation and CTAs.
+
+The root layout remains responsible only for document-wide concerns. Page type
+is selected by route group, not by a `hideNav` option on a shared header.
+
+## Consequences
+
+- The main homepage can become the durable root route without turning campaign
+  journeys into navigable site pages.
+- Future site pages automatically receive the shared navigation; future landing
+  pages cannot accidentally inherit it.
+- Shared site navigation uses local relative routes. Until approved content is
+  migrated, those routes render clear placeholders rather than sending visitors
+  back to the legacy site.
+- New page requests must identify site or landing intent before implementation.

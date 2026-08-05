@@ -1,0 +1,16 @@
+.page {
+  display: grid;
+  min-height: min(720px, calc(100vh - 82px));
+  align-content: center;
+  background: var(--color-surface-muted);
+}
+
+.page h1 {
+  max-width: 900px;
+  margin: 28px 0;
+  font-size: clamp(68px, 10vw, 150px);
+}
+
+.page p {
+  max-width: 620px;
+}
