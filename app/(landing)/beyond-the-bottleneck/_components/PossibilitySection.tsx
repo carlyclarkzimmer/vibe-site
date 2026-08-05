@@ -1,6 +1,6 @@
-import { possibilityItems } from "../../../content/campaigns/beyond-the-bottleneck";
-import { Button } from "../../../components/ui/Button";
-import { Section } from "../../../components/ui/Section";
+import { possibilityItems } from "../../../../content/campaigns/beyond-the-bottleneck";
+import { Button } from "../../../../components/ui/Button";
+import { Section } from "../../../../components/ui/Section";
 import styles from "./CampaignSections.module.css";
 
 export function PossibilitySection() {

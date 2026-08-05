@@ -27,11 +27,24 @@ without approval.
 Update a date in its single typed field rather than editing multiple components.
 Never invent a date.
 
+## Page types and navigation
+
+Choose the page type before adding content:
+
+- **Site pages** are permanent navigable pages under `app/(site)/`. Shared
+  navigation belongs in `content/site/navigation.ts`, not in individual pages.
+- **Landing pages** are focused conversion pages under `app/(landing)/`. They
+  use campaign-only anchors and CTAs and must not render the shared site
+  navigation.
+
+The visual brand is shared between both types. Navigation intent is not.
+
 ## Long-form prose
 
-Distinctive narrative prose remains in route-owned section components under
-`app/(campaigns)/_components/`. This keeps writing close to its intended layout
-without forcing every paragraph into a configuration object.
+Distinctive narrative prose remains in route-owned section components. Beyond
+the Bottleneck's sections live under
+`app/(landing)/beyond-the-bottleneck/_components/`. This keeps writing close to
+its intended layout without forcing every paragraph into a configuration object.
 
 ## Contributors
 
@@ -56,7 +69,9 @@ images under clear, descriptive filenames and include useful alt text.
 
 ## Registration
 
-The current form does not submit. Before connecting it, confirm:
+Beyond the Bottleneck submits directly to Drip, but registration must not be
+described as live until its production redirect and end-to-end inbox test pass.
+Before connecting a future campaign form, confirm:
 
 1. Provider and audience/list/form identifier
 2. Required fields

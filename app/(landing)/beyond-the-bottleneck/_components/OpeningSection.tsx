@@ -1,5 +1,5 @@
-import { Eyebrow } from "../../../components/ui/Eyebrow";
-import { Section } from "../../../components/ui/Section";
+import { Eyebrow } from "../../../../components/ui/Eyebrow";
+import { Section } from "../../../../components/ui/Section";
 import styles from "./CampaignSections.module.css";
 
 export function OpeningSection() {

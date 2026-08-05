@@ -29,16 +29,42 @@ launch date, form behavior, privacy language, public access, or deployment.
 
 ## Current editing model
 
-The existing site is a composed campaign rather than a drag-and-drop CMS.
-Navigation and repeatable copy live in typed files under `content/`; page
-structure and distinctive long-form sections live in `app/`. Carly does not
-need to edit those files manually. The agent should make the changes, run the
-checks, and provide a preview.
+The site is composed in code rather than a drag-and-drop CMS. Navigation and
+repeatable copy live in typed files under `content/`; page structure and
+distinctive long-form sections live in `app/`. Carly does not need to edit
+those files manually. The agent should make the changes, run the checks, and
+provide a preview.
 
 Adding a link to an existing section is a small content change. Adding a new
 page is a normal implementation task: the agent creates the route, composes
 the page from approved copy, adds the navigation entry, and adds a smoke test.
 Do not create a generic JSON page builder just to make one new page editable.
+
+## Two kinds of pages
+
+Every request begins by choosing one page type. Tell the agent which applies;
+if you are unsure, describe the visitor's goal and the agent will help you
+choose.
+
+- **Site page:** Part of Carly's permanent website. It uses the shared site
+  navigation and footer, so visitors can move to services, About, resources,
+  and contact pages. Examples: Home, Services, About, and Contact.
+- **Landing page:** A focused campaign, offer, lead-magnet, or registration
+  page. It has the same visual brand but no shared site navigation, keeping
+  visitors inside that specific experience. It can have internal links to
+  sections on the same page.
+
+Useful request format:
+
+> Create a [site page / landing page] for [purpose]. The visitor should
+> [outcome]. Use this approved copy: [paste copy]. The CTA is [label] and goes
+> to [destination]. [For a landing page: use this Drip form/tag information.]
+
+The agent will not turn a landing page into a site page, or add the shared site
+menu to a landing page, without your approval.
+
+For pages migrating from the existing site, the agent keeps the current status
+and outstanding approvals in [`docs/MIGRATION_STATUS.md`](docs/MIGRATION_STATUS.md).
 
 ## Approval boundaries
 
@@ -99,13 +125,14 @@ text to be added to the codebase.
 
 ### Ready-to-use request
 
-> Add a new campaign page for [campaign]. Use this approved copy: [paste
-> copy]. Add it to navigation as [label]. It should collect [email / first
-> name and email]. Use this Drip campaign tag: `[tag]`. [Include / do not
-> include] the optional general-email checkbox; if included, use the tag
-> `[tag]`. Use double opt-in [setting]. Here is the Drip Embedded Form Settings
-> and Code snippet: [paste snippet, without API keys or passwords]. Do not
-> publish until I approve the preview and complete the inbox test.
+> Add a new **landing page** for [campaign]. Use this approved copy: [paste
+> copy]. Do not add the shared site navigation; use these internal section
+> links if needed: [labels]. It should collect [email / first name and email].
+> Use this Drip campaign tag: `[tag]`. [Include / do not include] the optional
+> general-email checkbox; if included, use the tag `[tag]`. Use double opt-in
+> [setting]. Here is the Drip Embedded Form Settings and Code snippet: [paste
+> snippet, without API keys or passwords]. Do not publish until I approve the
+> preview and complete the inbox test.
 
 For the full agent implementation and testing workflow, see
 [`docs/EMAIL_OPT_IN_RUNBOOK.md`](docs/EMAIL_OPT_IN_RUNBOOK.md).
