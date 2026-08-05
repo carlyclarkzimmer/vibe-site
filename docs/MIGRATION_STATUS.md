@@ -16,6 +16,7 @@ material copy changes remain separate decisions.
 | `/contact/` | `/contact` | Site | Baseline composed | Confirm contact details and booking destination |
 | `/coaching-club/` | `/coaching-club` | Landing | Preview ready | Review source inconsistencies before any later copy-polish or publication task |
 | `/behavior-bottleneck-beta-systems-showcase-2026/` | `/behavior-bottleneck-finder` | Landing | Baseline composed; preview ready | Verify legacy Leadpages submission and thank-you behavior before describing sign-up as working |
+| `/breakthrough/` | `/breakthrough` | Landing | Baseline composed; preview ready | Verify legacy Vimeo playback and ThriveCart checkout behavior before describing purchase as working |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
 

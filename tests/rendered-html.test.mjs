@@ -146,6 +146,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
+<<<<<<< HEAD
 test("serves the Coaching Club baseline as a focused landing page", async () => {
   const response = await render("/coaching-club");
   const html = await response.text();
@@ -190,6 +191,20 @@ test("serves the Behavior Bottleneck Finder as a focused signup page", async () 
   assert.match(html, /alt="Carly Clark Zimmer standing in a teal jacket/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);
+});
+
+test("Breakthrough page", async () => {
+  const response = await render("/breakthrough");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /Big Breakthroughs in/);
+  assert.match(html, /5-Minute Laser Coach/);
+  assert.match(html, /player\.vimeo\.com\/video\/1097028350/);
+  assert.match(html, /carlyclarkzimmer\.thrivecart\.com\/5-minute-laser-coach-chat-gpt-checkout/);
+  assert.match(html, /laser-coach-promo\.png/);
+  assert.match(html, /Cross-Cultural Competency, Awareness, and Equity Pledge/);
+  assert.doesNotMatch(html, /site-header/);
 });
 
 test("serves branded signup status and privacy pages", async () => {
