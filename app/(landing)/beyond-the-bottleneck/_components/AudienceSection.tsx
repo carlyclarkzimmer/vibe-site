@@ -7,39 +7,25 @@ export function AudienceSection() {
   return (
     <Section id="for-you">
       <div className={styles.splitHeading}>
-        <Eyebrow>Who this is for</Eyebrow>
-        <h2 className={styles.sectionTitle}>
-          What got you here
-          <br />
-          <i>won’t get you there.</i>
-        </h2>
+        <Eyebrow className={styles.sectionEyebrow}>Who this is for</Eyebrow>
       </div>
       <div className={styles.audienceCopy}>
-        <p className={styles.largeCopy}>
-          If you the description above feels a little too close for comfort,
-          you’re going to want to lean in and listen to these extraordinary
-          business owners who had the courage to make powerful changes.
-        </p>
-        <p>
-          They got back in the driver&apos;s seat of their own business and
-          started making decisions from a place of alignment, not pressure,
-          proving or fear of failure.
-        </p>
-        <p>
-          Now don’t get me wrong, all of those feelings where there, but they
-          stopped letting them lead.
-        </p>
         <h3>
-          How do you know if this will be worth your time? Track how many boxes
-          you check:
+          How do you know if this will be worth your time?
+          <span className={styles.checklistPrompt}>
+            Check every box that sounds like you:
+          </span>
         </h3>
       </div>
       <div className={styles.checklist}>
-        {checklistItems.map((item) => (
-          <div key={item}>
-            <span aria-hidden="true">□</span>
-            <p>{item}</p>
-          </div>
+        {checklistItems.map((item, index) => (
+          <label key={item}>
+            <input
+              aria-label={`Checklist item ${index + 1}`}
+              type="checkbox"
+            />
+            <span>{item}</span>
+          </label>
         ))}
       </div>
       <p className={styles.centerStatement}>

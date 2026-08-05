@@ -9,10 +9,12 @@ type RegistrationSectionProps = {
 
 export function RegistrationSection({ content }: RegistrationSectionProps) {
   const form = content.emailCapture;
+  const generalMarketingTag =
+    "generalMarketingTag" in form ? form.generalMarketingTag : undefined;
 
   return (
     <Section className={styles.register} id="register">
-      <Eyebrow>{content.eyebrow}</Eyebrow>
+      <Eyebrow className={styles.registerEyebrow}>{content.eyebrow}</Eyebrow>
       <h2>
         {content.headingStart} <i>{content.headingItalic}</i>
       </h2>
@@ -49,24 +51,28 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
           />
         </div>
         <input name="tags[]" type="hidden" value={form.campaignTag} />
-        <label className={styles.consent} htmlFor="general-email">
-          <input id="general-email" name="tags[]" type="checkbox" value={form.generalMarketingTag} />
-          <span>I’d also like occasional emails from Carly about future offerings.</span>
-        </label>
+        {generalMarketingTag ? (
+          <label className={styles.consent} htmlFor="general-email">
+            <input
+              id="general-email"
+              name="tags[]"
+              type="checkbox"
+              value={generalMarketingTag}
+            />
+            <span>
+              I’d also like occasional emails from Carly about future
+              offerings.
+            </span>
+          </label>
+        ) : null}
         <p className={styles.privacy}>
-          By registering, you’ll receive listening-tour emails. You can unsubscribe at any
-          time. <a href="/privacy">Privacy Policy</a>
+          You can unsubscribe at any time. <a href="/privacy">Privacy Policy</a>
         </p>
         <div className={styles.submitRow}>
           <button type="submit">Register for free</button>
         </div>
       </form>
-      <div className={styles.details}>
-        {content.details.map((detail) => (
-          <span key={detail}>{detail}</span>
-        ))}
-      </div>
-      <p className={styles.finalLine}>{content.finalLine}</p>
+      <footer className={styles.copyright}>© carlyclarkzimmer.com</footer>
     </Section>
   );
 }

@@ -1,6 +1,5 @@
 import type { ReactNode } from "react";
 import type { CampaignNavItem } from "../../content/campaigns/beyond-the-bottleneck";
-import { CampaignFooter } from "./CampaignFooter";
 import { CampaignHeader } from "./CampaignHeader";
 
 type CampaignShellProps = {
@@ -14,7 +13,6 @@ export function CampaignShell({ children, navigation, showHeader = true }: Campa
     <>
       {showHeader ? <CampaignHeader navigation={navigation} /> : null}
       <main>{children}</main>
-      <CampaignFooter />
     </>
   );
 }

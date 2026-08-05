@@ -14,7 +14,9 @@ export function BeliefSection() {
         </p>
       </div>
       <div>
-        <Eyebrow>My work is built on a simple belief</Eyebrow>
+        <Eyebrow className={styles.sectionEyebrow}>
+          My work is built on a simple belief
+        </Eyebrow>
         <h2>
           Transformation happens through evidence and intentional repetition,{" "}
           <i>not more information.</i>
