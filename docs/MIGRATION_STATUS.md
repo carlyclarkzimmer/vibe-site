@@ -14,7 +14,7 @@ material copy changes remain separate decisions.
 | `/client-results/` | `/client-results` | Site | Baseline composed | Reapprove testimonials and outcome claims |
 | `/links/` | `/links` | Site | Baseline composed | Confirm active resources and Drip forms |
 | `/contact/` | `/contact` | Site | Baseline composed | Confirm contact details and booking destination |
-| `/coaching-club/` | `/coaching-club` | Landing | Ready for baseline composition | None; preserve source inconsistencies and report them with the preview |
+| `/coaching-club/` | `/coaching-club` | Landing | Preview ready | Review source inconsistencies before any later copy-polish or publication task |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
 
