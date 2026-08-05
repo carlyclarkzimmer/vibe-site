@@ -1,8 +1,9 @@
 # Migration status
 
 Use this as the single working checklist for routes that move from the legacy
-site into this application. Update the row when Carly approves content or a
-launch decision.
+site into this application. A faithful baseline migration may proceed without
+a separate content-approval phase. Publication, redirects, integrations, and
+material copy changes remain separate decisions.
 
 | Legacy source | App route | Type | Status | Launch blocker |
 | --- | --- | --- | --- | --- |
@@ -13,6 +14,7 @@ launch decision.
 | `/client-results/` | `/client-results` | Site | Baseline composed | Reapprove testimonials and outcome claims |
 | `/links/` | `/links` | Site | Baseline composed | Confirm active resources and Drip forms |
 | `/contact/` | `/contact` | Site | Baseline composed | Confirm contact details and booking destination |
+| `/coaching-club/` | `/coaching-club` | Landing | Preview ready | Review source inconsistencies before any later copy-polish or publication task |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
 

@@ -146,6 +146,34 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
+test("serves the Coaching Club baseline as a focused landing page", async () => {
+  const response = await render("/coaching-club");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Laser Coaching Club \| Carly Clark Zimmer<\/title>/i);
+  assert.match(html, /What if the thing you have been putting off for six months/i);
+  assert.match(html, /The Laser Coaching Club is where you stop gathering more info/i);
+  assert.match(html, /Three live Pattern Breaker Power Hours/i);
+  assert.match(html, /each month\./i);
+  assert.match(html, /\$97 per month \(Founding Member Rate\)/i);
+  assert.match(html, /Anne K\./i);
+  assert.match(html, /Jennifer B\./i);
+  assert.match(html, /Jenn L\./i);
+  assert.match(
+    html,
+    /href="https:\/\/carlyclarkzimmer\.thrivecart\.com\/laser-coaching-club\/"/i,
+  );
+  assert.match(
+    html,
+    /alt="Carly Clark Zimmer seated outdoors in a berry-colored jacket"/i,
+  );
+  assert.match(html, /<footer\b/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /aria-label="Campaign navigation"/i);
+  assert.doesNotMatch(html, /connect\.facebook\.net|leadpages|center\.io/i);
+});
+
 test("serves branded signup status and privacy pages", async () => {
   const [thankYouResponse, privacyResponse] = await Promise.all([
     render("/thank-you?status=registered"),
