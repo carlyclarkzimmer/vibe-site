@@ -153,7 +153,9 @@ test("serves branded signup status and privacy pages", async () => {
   ]);
 
   assert.equal(thankYouResponse.status, 200);
-  assert.match(await thankYouResponse.text(), /You’re in/i);
+  const thankYouHtml = await thankYouResponse.text();
+  assert.match(thankYouHtml, /You’re in/i);
+  assert.match(thankYouHtml, /href="\/beyond-the-bottleneck"/i);
   assert.equal(privacyResponse.status, 200);
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });
