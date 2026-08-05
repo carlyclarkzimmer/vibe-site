@@ -46,11 +46,13 @@ test("serves the campaign without shared site navigation", async () => {
   const response = await render("/beyond-the-bottleneck");
   const html = await response.text();
 
-  assert.match(html, /aria-label="Campaign navigation"/i);
+  assert.doesNotMatch(html, /aria-label="Campaign navigation"/i);
   assert.match(html, /<main\b/i);
   assert.match(html, /<footer\b/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.match(html, /<title>Beyond the Bottleneck \| Free Audio Series<\/title>/i);
+  assert.match(html, /Real stories about the moment things finally changed\./i);
+  assert.match(html, /15-minute bingeable interviews/i);
   assert.match(html, /Begins October 5th/i);
   assert.match(html, /Register for free/i);
   assert.match(html, /Contributor name/i);

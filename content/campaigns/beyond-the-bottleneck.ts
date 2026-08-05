@@ -26,8 +26,8 @@ export const campaignNavigation: CampaignNavItem[] = [
 ];
 
 export const heroContent = {
-  brand: "BEYOND THE BOTTLENECK",
-  eyebrow: "A free, bingeable audio series",
+  brand: "Real stories about the moment things finally changed.",
+  eyebrow: "15-minute bingeable interviews",
   titleStart: "Beyond",
   titleItalic: "the",
   titleEnd: "Bottleneck",

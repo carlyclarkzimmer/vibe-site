@@ -5,7 +5,7 @@ import styles from "./CampaignSections.module.css";
 export function OpeningSection() {
   return (
     <Section className={styles.opening}>
-      <Eyebrow>You took the leap</Eyebrow>
+      <Eyebrow className={styles.openingEyebrow}>You took the leap</Eyebrow>
       <h2 className={styles.sectionTitle}>
         You left corporate to start your own business and create{" "}
         <i>more freedom</i> in your life.

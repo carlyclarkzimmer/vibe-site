@@ -8,12 +8,16 @@
   text-align: center;
 }
 
+.openingEyebrow {
+  font-size: clamp(16px, 1.5vw, 21px);
+}
+
 .columns {
   display: grid;
-  max-width: 980px;
+  max-width: var(--width-reading);
   margin: auto;
-  grid-template-columns: 1fr 1fr;
-  gap: 10vw;
+  grid-template-columns: 1fr;
+  gap: 24px;
   text-align: left;
 }
 

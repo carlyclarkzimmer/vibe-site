@@ -6,12 +6,13 @@ import { CampaignHeader } from "./CampaignHeader";
 type CampaignShellProps = {
   children: ReactNode;
   navigation: CampaignNavItem[];
+  showHeader?: boolean;
 };
 
-export function CampaignShell({ children, navigation }: CampaignShellProps) {
+export function CampaignShell({ children, navigation, showHeader = true }: CampaignShellProps) {
   return (
     <>
-      <CampaignHeader navigation={navigation} />
+      {showHeader ? <CampaignHeader navigation={navigation} /> : null}
       <main>{children}</main>
       <CampaignFooter />
     </>
