@@ -13,6 +13,7 @@ launch decision.
 | `/client-results/` | `/client-results` | Site | Baseline composed | Reapprove testimonials and outcome claims |
 | `/links/` | `/links` | Site | Baseline composed | Confirm active resources and Drip forms |
 | `/contact/` | `/contact` | Site | Baseline composed | Confirm contact details and booking destination |
+| `/coaching-club/` | `/coaching-club` (proposed) | Landing | Content harvested; approval pending | Resolve offer naming, schedule, price, testimonials, assets, links, tracking, and redirect |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
 
