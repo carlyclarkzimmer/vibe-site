@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 async function render(path = "/") {
@@ -53,6 +54,15 @@ test("serves a branded 404 with clear routes back into the site", async () => {
   assert.match(html, /href="\/">Head back home<\/a>/i);
   assert.match(html, /href="\/services"/i);
   assert.match(html, /<footer\b/i);
+});
+
+test("provides a branded recoverable site error boundary", async () => {
+  const source = await readFile(new URL("../app/error.tsx", import.meta.url), "utf8");
+
+  assert.match(source, /The site is a little borked\./i);
+  assert.match(source, /we’ll\s+be back ASAP/i);
+  assert.match(source, /onClick=\{reset\}/i);
+  assert.match(source, /href="\/"/i);
 });
 
 test("serves the campaign without shared site navigation", async () => {
