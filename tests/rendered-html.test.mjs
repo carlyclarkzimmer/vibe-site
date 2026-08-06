@@ -33,7 +33,7 @@ test("server-renders the shared-navigation homepage", async () => {
 
   assert.match(html, /<title>Carly Clark Zimmer \| Life &amp; Leadership Coach<\/title>/i);
   assert.match(html, /A Different Way Forward/i);
-  assert.match(html, /aria-label="Site navigation"/i);
+  assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
   assert.doesNotMatch(html, /carlyclarkzimmer\.com\/services/i);
@@ -53,16 +53,17 @@ test("serves a branded 404 with clear routes back into the site", async () => {
   assert.match(html, /aria-label="Site navigation"/i);
   assert.match(html, /href="\/">Head back home<\/a>/i);
   assert.match(html, /href="\/services"/i);
-  assert.match(html, /<footer\b/i);
+  assert.equal((html.match(/<footer\b/gi) ?? []).length, 1);
 });
 
 test("provides a branded recoverable site error boundary", async () => {
   const source = await readFile(new URL("../app/error.tsx", import.meta.url), "utf8");
 
   assert.match(source, /The site is a little borked\./i);
-  assert.match(source, /we’ll\s+be back ASAP/i);
+  assert.match(source, /we(?:’|')ll\s+be\s+back ASAP/i);
   assert.match(source, /onClick=\{reset\}/i);
   assert.match(source, /href="\/"/i);
+  assert.doesNotMatch(source, /SiteShell/i);
 });
 
 test("serves the campaign without shared site navigation", async () => {
