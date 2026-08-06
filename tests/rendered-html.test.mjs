@@ -227,13 +227,35 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
   assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
 });
 
-test("serves the Laser Coaching Lab welcome page as a focused landing page", async () => {
+test("serves the Communication Scripts page as a focused landing page", async () => {
   const response = await render("/scripts");
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.match(html, /<title>Laser Coach Lab<\/title>/i);
+  assert.match(html, /<title>Go-To Communication Scripts<\/title>/i);
   assert.match(html, /rel="canonical" href="\/scripts"/i);
+  assert.match(html, /Boundary Scripts/i);
+  assert.match(html, /Simple phrases\. Big impact\./i);
+  assert.match(
+    html,
+    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/fDiiXkm8GBZSPmyYfH2i3Q\//i,
+  );
+  assert.match(html, /carly-hero\.jpg/i);
+  assert.match(html, /carly-supporting\.jpg/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+});
+
+test("serves the Laser Coaching Lab welcome page at its thank-you route", async () => {
+  const response = await render("/thank-you-laser-coaching-lab");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Laser Coach Lab<\/title>/i);
+  assert.match(
+    html,
+    /rel="canonical" href="\/thank-you-laser-coaching-lab"/i,
+  );
   assert.match(html, /LASER COACHING LAB!/i);
   assert.match(html, /An email is on its way to your inbox/i);
   assert.match(html, /https:\/\/t\.me\/\+HFqmSD8GYW4wMmRh/i);

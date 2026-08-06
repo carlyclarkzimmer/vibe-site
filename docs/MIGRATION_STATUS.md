@@ -25,7 +25,8 @@ material copy changes remain separate decisions.
 | `/house/` | `/house` | Landing | Baseline composed; preview ready | Verify Leadpages submission and Walk the House delivery behavior end to end before publication |
 | `/newsletter/` | `/newsletter` | Landing | Baseline composed | Verify Leadpages submission and newsletter delivery behavior |
 | `carlyclarkzimmer.lpages.co/newsletter-thank-you/` | `/newsletter-thank-you` | Landing | Baseline composed | Confirm thank-you copy and destination before publication |
-| `/thank-you-laser-coaching-lab/` | `/scripts` | Landing | Preview ready | Confirm the approved route replacement before publication; email delivery remains provider-owned |
+| `/scripts/` | `/scripts` | Landing | Baseline restored; preview ready | Verify Leadpages submission and scripts delivery behavior before describing sign-up as working |
+| `/thank-you-laser-coaching-lab/` | `/thank-you-laser-coaching-lab` | Landing | Preview ready | Email delivery remains provider-owned |
 
 No route is ready for public launch solely because it has been composed. A
 route becomes launch-ready only after its content, links, forms, and any legal
