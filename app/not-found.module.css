@@ -1,0 +1,119 @@
+.page {
+  position: relative;
+  display: grid;
+  min-height: calc(100svh - 82px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(340px, 0.75fr);
+  overflow: hidden;
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.number {
+  align-self: end;
+  margin: 0 0 -0.08em -0.04em;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: clamp(240px, 41vw, 720px);
+  font-style: italic;
+  letter-spacing: -0.1em;
+  line-height: 0.68;
+  white-space: nowrap;
+}
+
+.message {
+  position: relative;
+  z-index: 1;
+  align-self: center;
+  max-width: 570px;
+  padding: clamp(80px, 10vw, 150px) clamp(36px, 7vw, 110px)
+    clamp(80px, 10vw, 150px) 24px;
+}
+
+.message h1 {
+  margin: 24px 0 28px;
+  font-size: clamp(54px, 6.4vw, 104px);
+  letter-spacing: -0.055em;
+  line-height: 0.88;
+}
+
+.message p {
+  max-width: 500px;
+  margin: 0;
+  color: var(--color-text-muted);
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.55;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 42px;
+}
+
+.retryButton {
+  border: 1px solid var(--color-accent);
+  padding: 18px 28px;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  cursor: pointer;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition-standard),
+    border-color var(--transition-standard);
+}
+
+.retryButton:hover {
+  border-color: var(--color-paper);
+  background: transparent;
+}
+
+.secondaryLink {
+  border-bottom: 1px solid currentColor;
+  color: var(--color-paper);
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  line-height: 1.5;
+  text-transform: uppercase;
+  transition: color var(--transition-standard);
+}
+
+.secondaryLink:hover {
+  color: var(--color-accent);
+}
+
+@media (max-width: 900px) {
+  .page {
+    min-height: calc(100svh - 82px);
+    grid-template-columns: 1fr;
+  }
+
+  .number {
+    position: absolute;
+    right: -0.06em;
+    bottom: 0;
+    color: color-mix(in srgb, var(--color-accent) 70%, transparent);
+    font-size: clamp(250px, 73vw, 560px);
+  }
+
+  .message {
+    align-self: start;
+    padding: 110px var(--space-section-inline-mobile) 220px;
+  }
+}
+
+@media (max-width: 520px) {
+  .message h1 {
+    font-size: clamp(50px, 16vw, 72px);
+  }
+
+  .actions {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 28px;
+  }
+}

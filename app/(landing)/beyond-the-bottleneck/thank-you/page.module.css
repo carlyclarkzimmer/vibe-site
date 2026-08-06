@@ -1,0 +1,41 @@
+.page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: var(--space-section-inline-mobile);
+  background: var(--color-ink);
+  color: white;
+  text-align: center;
+}
+
+.content {
+  max-width: 780px;
+}
+
+.eyebrow {
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.content h1 {
+  margin: 28px 0;
+  font-size: clamp(68px, 11vw, 150px);
+}
+
+.content p {
+  color: #dddddd;
+}
+
+.content a {
+  display: inline-block;
+  margin-top: 44px;
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-transform: uppercase;
+}

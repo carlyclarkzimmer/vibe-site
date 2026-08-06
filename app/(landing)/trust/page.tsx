@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- preserve the local editorial crop without a framework image loader */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
+import { trustEmailCapture } from "../../../content/campaigns/trust";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -8,16 +10,22 @@ export const metadata: Metadata = {
     "This five-part private podcast is your invitation to rebuild the most important asset in your business: trust.",
 };
 
-const formAction =
-  "https://api.leadpages.io/integration/v1/forms/B7sBMcAGyqr6c63gNf4pEM/submissions";
+function SignupForm({ placement }: { placement: "hero" | "story" }) {
+  const formId = `drip-ef-${trustEmailCapture.formId}-${placement}`;
+  const recaptchaInputId = `g-recaptcha-response-data-form-submission-${placement}`;
 
-function SignupForm() {
   return (
-    <form action={formAction} method="post" className={styles.form}>
+    <form
+      action={trustEmailCapture.action}
+      className={styles.form}
+      data-drip-embedded-form={trustEmailCapture.formId}
+      id={formId}
+      method="post"
+    >
       <label htmlFor="trust-first-name">First Name</label>
       <input
         id="trust-first-name"
-        name="33ad3425125f513ba1ab5e359ca21551"
+        name="fields[first_name]"
         type="text"
         placeholder="First Name"
         autoComplete="given-name"
@@ -26,13 +34,20 @@ function SignupForm() {
       <label htmlFor="trust-email">Email Address</label>
       <input
         id="trust-email"
-        name="ec3b68ece7915ca83f420c91066c7d52"
+        name="fields[email]"
         type="email"
         placeholder="Email Address"
         autoComplete="email"
         required
       />
-      <button type="submit">LISTEN HERE</button>
+      <div className={styles.honeypot} aria-hidden="true">
+        <label htmlFor={`trust-website-${placement}`}>Website</label>
+        <input autoComplete="false" id={`trust-website-${placement}`} name="website" tabIndex={-1} type="text" />
+      </div>
+      <DripRecaptcha inputId={recaptchaInputId} siteKey={trustEmailCapture.recaptchaSiteKey} />
+      <input name="tags[]" type="hidden" value={trustEmailCapture.campaignTag} />
+      <button data-drip-attribute="sign-up-button" type="submit">LISTEN HERE</button>
+      <a className={styles.privacyLink} href="/privacy" rel="noreferrer" target="_blank">Privacy Policy</a>
     </form>
   );
 }
@@ -52,7 +67,7 @@ export default function TrustPage() {
           <p className={styles.heroLead}>
             This five-part private podcast is your invitation to rebuild the most important asset in your business: <em>trust.</em>
           </p>
-          <SignupForm />
+          <SignupForm placement="hero" />
         </div>
       </section>
 
@@ -90,7 +105,7 @@ export default function TrustPage() {
           <p>I help you hear what your soul is saying first. Then we layer in aligned strategy so you have a sustainable plan for growth that supports both your impact and your well-being.</p>
           <p>When you trust yourself, everything else in your business, your clarity, your confidence, your leadership starts to click into place.</p>
           <p className={styles.closing}>This podcast will awaken the truth within you and remind you that clarity isn’t found out there. It’s been inside you all along.</p>
-          <SignupForm />
+          <SignupForm placement="story" />
         </div>
       </section>
 

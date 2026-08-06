@@ -17,6 +17,11 @@ an application API. Drip owns confirmation and subscriber state. The site owns
 the visual form, accessible field labels, privacy link, and branded thank-you
 pages.
 
+Beyond the Bottleneck owns its thank-you state at
+`/beyond-the-bottleneck/thank-you`. The generic `/thank-you` route is available
+for opt-ins that need a confirmation state without campaign-specific delivery
+content or next steps.
+
 ## Consequences
 
 - Future campaigns can reuse the registration component by supplying their own
@@ -26,4 +31,7 @@ pages.
   behavior and matching redirects. Beyond the Bottleneck currently uses no
   double opt-in and redirects to the immediate-registration thank-you state.
 - Google reCAPTCHA is enabled through Drip's supplied public script. Its
-  production behavior must be verified during the end-to-end inbox test.
+  token is requested when the visitor submits the form rather than when the
+  page loads, because tokens expire after two minutes and can only be used
+  once. Its production behavior must be verified during the end-to-end inbox
+  test.
