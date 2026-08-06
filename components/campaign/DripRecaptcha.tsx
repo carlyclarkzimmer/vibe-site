@@ -18,9 +18,13 @@ declare global {
 
 type DripRecaptchaProps = {
   siteKey: string;
+  inputId?: string;
 };
 
-export function DripRecaptcha({ siteKey }: DripRecaptchaProps) {
+export function DripRecaptcha({
+  siteKey,
+  inputId = "g-recaptcha-response-data-form-submission",
+}: DripRecaptchaProps) {
   useEffect(() => {
     const scriptSource = `https://www.recaptcha.net/recaptcha/api.js?render=${siteKey}`;
 
@@ -30,7 +34,7 @@ export function DripRecaptcha({ siteKey }: DripRecaptchaProps) {
           ?.execute(siteKey, { action: "form_submission" })
           .then((token) => {
             const input = document.getElementById(
-              "g-recaptcha-response-data-form-submission",
+              inputId,
             ) as HTMLInputElement | null;
 
             if (input) input.value = token;
@@ -43,8 +47,11 @@ export function DripRecaptcha({ siteKey }: DripRecaptchaProps) {
     );
 
     if (existingScript) {
+      existingScript.addEventListener("load", executeRecaptcha);
       executeRecaptcha();
-      return;
+      return () => {
+        existingScript.removeEventListener("load", executeRecaptcha);
+      };
     }
 
     const script = document.createElement("script");
@@ -55,13 +62,13 @@ export function DripRecaptcha({ siteKey }: DripRecaptchaProps) {
     return () => {
       script.removeEventListener("load", executeRecaptcha);
     };
-  }, [siteKey]);
+  }, [inputId, siteKey]);
 
   return (
     <input
       className="g-recaptcha g-recaptcha-response"
       data-sitekey={siteKey}
-      id="g-recaptcha-response-data-form-submission"
+      id={inputId}
       name="g-recaptcha-response-data[form_submission]"
       type="hidden"
     />

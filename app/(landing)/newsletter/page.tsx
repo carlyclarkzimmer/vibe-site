@@ -1,5 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- preserve the source artwork as a local editorial cover */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
+import { newsletterEmailCapture } from "../../../content/campaigns/newsletter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -7,16 +9,27 @@ export const metadata: Metadata = {
   description: "Welcome to Decision Points — identity transition support for entrepreneurs, coaches, and creatives.",
 };
 
-const formAction = "https://api.leadpages.io/integration/v1/forms/Bo4xxWTDurABXt97UYNVV7/submissions";
-
 function SignupForm() {
   return (
-    <form action={formAction} method="post" className={styles.form}>
+    <form
+      action={newsletterEmailCapture.action}
+      className={styles.form}
+      data-drip-embedded-form={newsletterEmailCapture.formId}
+      id={`drip-ef-${newsletterEmailCapture.formId}`}
+      method="post"
+    >
       <label htmlFor="newsletter-first-name">First Name</label>
-      <input id="newsletter-first-name" name="33ad3425125f513ba1ab5e359ca21551" type="text" placeholder="First Name" autoComplete="given-name" required />
+      <input id="newsletter-first-name" name="fields[first_name]" type="text" placeholder="First Name" autoComplete="given-name" required />
       <label htmlFor="newsletter-email">Email Address</label>
-      <input id="newsletter-email" name="ec3b68ece7915ca83f420c91066c7d52" type="email" placeholder="Email Address" autoComplete="email" required />
-      <button type="submit">Join the Newsletter</button>
+      <input id="newsletter-email" name="fields[email]" type="email" placeholder="Email Address" autoComplete="email" required />
+      <div className={styles.honeypot} aria-hidden="true">
+        <label htmlFor="newsletter-website">Website</label>
+        <input autoComplete="false" id="newsletter-website" name="website" tabIndex={-1} type="text" />
+      </div>
+      <DripRecaptcha siteKey={newsletterEmailCapture.recaptchaSiteKey} />
+      <input name="tags[]" type="hidden" value={newsletterEmailCapture.campaignTag} />
+      <button data-drip-attribute="sign-up-button" type="submit">Join the Newsletter</button>
+      <a className={styles.privacyLink} href="/privacy" rel="noreferrer" target="_blank">Privacy Policy</a>
     </form>
   );
 }

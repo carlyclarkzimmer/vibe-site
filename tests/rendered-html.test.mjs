@@ -238,9 +238,25 @@ test("serves the migrated legacy offer and opt-in pages", async () => {
     assert.match(html, /<main\b/i);
   }
   const trust = await render("/trust").then((r) => r.text());
-  assert.match(trust, /api\.leadpages\.io\/integration\/v1\/forms\/B7sBMcAGyqr6c63gNf4pEM\/submissions/i);
+  assert.equal((trust.match(/data-drip-embedded-form="390335848"/gi) ?? []).length, 2);
+  assert.match(trust, /id="drip-ef-390335848-hero"/i);
+  assert.match(trust, /id="drip-ef-390335848-story"/i);
+  assert.match(trust, /https:\/\/www\.getdrip\.com\/forms\/390335848\/submissions/i);
+  assert.match(trust, /Trust Issues Podcast/i);
+  assert.match(trust, /id="g-recaptcha-response-data-form-submission-hero"/i);
+  assert.match(trust, /id="g-recaptcha-response-data-form-submission-story"/i);
+  assert.equal((trust.match(/href="\/privacy"[^>]*target="_blank"/gi) ?? []).length, 2);
+  assert.doesNotMatch(trust, /api\.leadpages\.io/i);
   const newsletter = await render("/newsletter").then((r) => r.text());
-  assert.match(newsletter, /api\.leadpages\.io\/integration\/v1\/forms\/Bo4xxWTDurABXt97UYNVV7\/submissions/i);
+  assert.match(newsletter, /data-drip-embedded-form="186265682"/i);
+  assert.match(newsletter, /id="drip-ef-186265682"/i);
+  assert.match(newsletter, /https:\/\/www\.getdrip\.com\/forms\/186265682\/submissions/i);
+  assert.match(newsletter, /name="fields\[first_name\]"/i);
+  assert.match(newsletter, /name="fields\[email\]"/i);
+  assert.match(newsletter, /General Email List/i);
+  assert.match(newsletter, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(newsletter, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.doesNotMatch(newsletter, /api\.leadpages\.io/i);
   assert.match(await render("/2026-5-minute-laser-coach-delivery").then((r) => r.text()), /player\.vimeo\.com\/video\/1059763588/i);
 });
 
