@@ -23,6 +23,7 @@ material copy changes remain separate decisions.
 | `/trust/` | `/trust` | Landing | Baseline composed | Verify Leadpages submission and audio delivery behavior |
 | `/newsletter/` | `/newsletter` | Landing | Baseline composed | Verify Leadpages submission and newsletter delivery behavior |
 | `carlyclarkzimmer.lpages.co/newsletter-thank-you/` | `/newsletter-thank-you` | Landing | Baseline composed | Confirm thank-you copy and destination before publication |
+| `/scripts/` | `/scripts` | Landing | Preview ready | Verify Leadpages submission and scripts delivery behavior before describing sign-up as working |
 
 No route is ready for public launch solely because it has been composed. A
 route becomes launch-ready only after its content, links, forms, and any legal

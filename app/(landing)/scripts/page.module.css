@@ -1,0 +1,287 @@
+.page {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 820px;
+  place-items: center;
+  overflow: hidden;
+  padding: clamp(72px, 10vw, 144px) var(--space-section-inline);
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+}
+
+.heroImage::after {
+  position: absolute;
+  inset: 0;
+  background: rgb(0 0 0 / 58%);
+  content: "";
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 51% center;
+}
+
+.offer {
+  position: relative;
+  width: min(100%, 940px);
+  padding: clamp(48px, 7vw, 88px);
+  border-top: 7px solid var(--color-accent);
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 28%);
+  text-align: center;
+}
+
+.eyebrow,
+.sectionLabel {
+  margin: 0 0 20px;
+  color: var(--color-accent);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.offer h1,
+.aboutCopy h2 {
+  margin: 0;
+  font-size: clamp(50px, 7vw, 92px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.intro {
+  max-width: 720px;
+  margin: 30px auto 0;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.55;
+}
+
+.benefits {
+  max-width: 700px;
+  margin: 42px auto 0;
+  padding: 34px 0;
+  border-block: var(--border-standard);
+  text-align: left;
+}
+
+.benefits h2 {
+  margin: 0 0 20px;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.benefits ul,
+.credentials ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefits li {
+  position: relative;
+  padding: 7px 0 7px 30px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.benefits li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  content: "→";
+}
+
+.promise {
+  margin: 32px auto 0;
+  color: var(--color-accent);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.primaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: min(100%, 420px);
+  margin-top: 32px;
+  padding: 18px 34px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background-color var(--transition-standard), color var(--transition-standard);
+}
+
+.primaryCta:hover {
+  background: var(--color-ink);
+  color: white;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(320px, 0.76fr) minmax(0, 1fr);
+  column-gap: clamp(52px, 8vw, 130px);
+  padding: var(--space-section-block) var(--space-section-inline);
+  background: var(--color-surface-muted);
+}
+
+.portrait {
+  grid-row: span 2;
+  min-height: 820px;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.aboutCopy {
+  max-width: 720px;
+}
+
+.aboutCopy h2 {
+  margin-bottom: 18px;
+  font-size: clamp(50px, 6vw, 82px);
+}
+
+.role {
+  margin: 0 0 42px;
+  color: var(--color-accent);
+  font-family: var(--font-interface);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.aboutCopy > p:not(.sectionLabel, .role) {
+  max-width: 660px;
+  margin: 24px 0;
+  font-size: 18px;
+  line-height: 1.62;
+}
+
+.credentials {
+  max-width: 720px;
+  margin-top: 64px;
+  padding-top: 42px;
+  border-top: var(--border-standard);
+}
+
+.credentials ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 34px;
+}
+
+.credentials li {
+  position: relative;
+  padding: 16px 0 16px 20px;
+  border-top: var(--border-standard);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.credentials li::before {
+  position: absolute;
+  left: 0;
+  color: var(--color-accent);
+  content: "•";
+}
+
+.footer {
+  padding: 26px var(--space-section-inline);
+  background: var(--color-ink);
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: auto;
+    padding: 56px var(--space-section-inline-mobile);
+  }
+
+  .heroImage img {
+    object-position: 56% center;
+  }
+
+  .offer {
+    padding: 46px 24px 52px;
+  }
+
+  .offer h1 {
+    font-size: 51px;
+  }
+
+  .benefits li {
+    font-size: 16px;
+  }
+
+  .primaryCta {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    padding: var(--space-section-block-mobile) var(--space-section-inline-mobile);
+  }
+
+  .portrait {
+    grid-row: auto;
+    min-height: 560px;
+    margin-bottom: 64px;
+  }
+
+  .aboutCopy h2 {
+    font-size: 52px;
+  }
+
+  .credentials {
+    margin-top: 46px;
+  }
+
+  .credentials ul {
+    grid-template-columns: 1fr;
+  }
+
+  .footer {
+    padding-inline: var(--space-section-inline-mobile);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .primaryCta {
+    transition: none;
+  }
+}
