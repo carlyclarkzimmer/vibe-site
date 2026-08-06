@@ -367,6 +367,39 @@ test("serves the Trust Issues podcast delivery page", async () => {
   assert.doesNotMatch(html, /leadpages|connect\.facebook\.net|center\.io/i);
 });
 
+test("serves the Walk the House exercise landing page", async () => {
+  const response = await render("/house");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<title>Walk the House<\/title>/i);
+  assert.match(html, /rel="canonical" href="\/house"/i);
+  assert.match(html, /When Change Is Calling, Start Here:/i);
+  assert.match(html, /A guided exercise for seasoned entrepreneurs navigating/i);
+  assert.match(html, /name="33ad3425125f513ba1ab5e359ca21551"/i);
+  assert.match(html, /name="ec3b68ece7915ca83f420c91066c7d52"/i);
+  assert.match(
+    html,
+    /api\.leadpages\.io\/integration\/v1\/forms\/ix3KBV6JzqEHz438XGMfV5\/submissions/i,
+  );
+  assert.match(
+    html,
+    /resources\.lindasidhu\.com\/products\/mixermind-in-2026\/categories\/2159052927\/posts\/2194823484/i,
+  );
+  assert.match(
+    html,
+    /data-thank-you="https:\/\/carlyclarkzimmer\.com\/walk-the-house-exercise\/"/i,
+  );
+  assert.match(html, /src="\/walk-the-house-cover\.png"/i);
+  assert.match(html, /src="\/walk-the-house-rooms\.png"/i);
+  assert.match(html, /src="\/carly-supporting\.jpg"/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(
+    html,
+    /connect\.facebook\.net|center\.io|leadpages-served-by|page-analytics-property/i,
+  );
+});
+
 test("serves polished local site-navigation pages", async () => {
   const [servicesResponse, aboutResponse, resultsResponse, resourcesResponse, contactResponse] = await Promise.all([
     render("/services"),
