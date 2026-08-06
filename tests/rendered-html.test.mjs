@@ -201,6 +201,32 @@ test("serves the Behavior Bottleneck Finder as a focused signup page", async () 
   assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);
 });
 
+test("serves the Right Role mini-class as a focused landing page", async () => {
+  const response = await render("/right-role");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(
+    html,
+    /<title>How to Make Your Next Hire, the RIGHT Hire with the Kolbe Index<\/title>/i,
+  );
+  assert.match(html, /rel="canonical" href="\/right-role"/i);
+  assert.match(html, /Simplify How to Make Your Next Hire the/i);
+  assert.match(html, /Right Hire/i);
+  assert.match(html, /Here&#x27;s what you&#x27;ll learn\.\.\./i);
+  assert.match(html, /Define exactly WHO your first, or next hire is\./i);
+  assert.match(html, /The Kolbe fills the gap between equally important elements/i);
+  assert.match(html, /Training &amp; Certifications/i);
+  assert.match(
+    html,
+    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/YVEqCjmvAubzZv6Tpciov8\//i,
+  );
+  assert.match(html, /carly-hero\.jpg/i);
+  assert.match(html, /carly-supporting\.jpg/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+});
+
 test("Breakthrough page", async () => {
   const response = await render("/breakthrough");
   assert.equal(response.status, 200);
