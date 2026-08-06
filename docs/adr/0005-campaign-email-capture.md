@@ -26,4 +26,7 @@ pages.
   behavior and matching redirects. Beyond the Bottleneck currently uses no
   double opt-in and redirects to the immediate-registration thank-you state.
 - Google reCAPTCHA is enabled through Drip's supplied public script. Its
-  production behavior must be verified during the end-to-end inbox test.
+  token is requested when the visitor submits the form rather than when the
+  page loads, because tokens expire after two minutes and can only be used
+  once. Its production behavior must be verified during the end-to-end inbox
+  test.
