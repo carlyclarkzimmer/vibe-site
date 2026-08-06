@@ -17,6 +17,11 @@ an application API. Drip owns confirmation and subscriber state. The site owns
 the visual form, accessible field labels, privacy link, and branded thank-you
 pages.
 
+Beyond the Bottleneck owns its thank-you state at
+`/beyond-the-bottleneck/thank-you`. The earlier `/thank-you` route redirects to
+that campaign-specific URL so existing Drip configuration and saved links keep
+working during the transition.
+
 ## Consequences
 
 - Future campaigns can reuse the registration component by supplying their own

@@ -49,7 +49,7 @@ Drip for a campaign without double opt-in:
 
 | Setting | Value |
 | --- | --- |
-| Post-submission redirect | `https://YOUR-DOMAIN/thank-you?status=registered` |
+| Post-submission redirect | `https://YOUR-DOMAIN/beyond-the-bottleneck/thank-you?status=registered` |
 
 If a future campaign uses double opt-in, configure `status=check-email` for
 post-submission and `status=confirmed` for post-confirmation with matching

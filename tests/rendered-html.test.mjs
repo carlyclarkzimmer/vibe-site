@@ -324,17 +324,27 @@ test("Breakthrough page", async () => {
 
 test("serves branded signup status and privacy pages", async () => {
   const [thankYouResponse, privacyResponse] = await Promise.all([
-    render("/thank-you?status=registered"),
+    render("/beyond-the-bottleneck/thank-you?status=registered"),
     render("/privacy"),
   ]);
 
   assert.equal(thankYouResponse.status, 200);
   const thankYouHtml = await thankYouResponse.text();
   assert.match(thankYouHtml, /You’re in/i);
-  assert.match(thankYouHtml, /href="\/"/i);
-  assert.match(thankYouHtml, /Return to the homepage/i);
+  assert.match(thankYouHtml, /href="\/beyond-the-bottleneck"/i);
+  assert.match(thankYouHtml, /Return to Beyond the Bottleneck/i);
   assert.equal(privacyResponse.status, 200);
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
+});
+
+test("redirects the legacy thank-you URL to the campaign-specific page", async () => {
+  const response = await render("/thank-you?status=registered");
+
+  assert.equal(response.status, 307);
+  assert.equal(
+    response.headers.get("location"),
+    "http://localhost/beyond-the-bottleneck/thank-you",
+  );
 });
 
 test("serves the migrated legacy offer and opt-in pages", async () => {
