@@ -260,6 +260,25 @@ test("serves the migrated legacy offer and opt-in pages", async () => {
   assert.match(await render("/2026-5-minute-laser-coach-delivery").then((r) => r.text()), /player\.vimeo\.com\/video\/1059763588/i);
 });
 
+test("serves the Trust Issues podcast delivery page", async () => {
+  const response = await render("/trust-issues");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+
+  assert.match(html, /<title>Trust Issues Private Podcast<\/title>/i);
+  assert.match(html, /name="keywords" content="navigating change,identity uplevel,rebuilding after success"/i);
+  assert.match(html, /rel="canonical" href="\/trust-issues"/i);
+  assert.match(html, /This five-part private podcast is your invitation/i);
+  assert.match(html, /podcasts\.apple\.com\/us\/podcast\/trust-issues\/id1846677283/i);
+  assert.match(html, /open\.spotify\.com\/show\/1tuGbg3VTegweHUkPiGoLj/i);
+  assert.match(html, /podcasts\.helloaudio\.fm\/playlistPlayer/i);
+  assert.match(html, /Cross-Cultural Competency, Awareness, and Equity Pledge/i);
+  assert.match(html, /alt="Carly Clark Zimmer smiling in a berry-colored jacket"/i);
+  assert.doesNotMatch(html, /data-drip-embedded-form/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /leadpages|connect\.facebook\.net|center\.io/i);
+});
+
 test("serves polished local site-navigation pages", async () => {
   const [servicesResponse, aboutResponse, resultsResponse, resourcesResponse, contactResponse] = await Promise.all([
     render("/services"),
