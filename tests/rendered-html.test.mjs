@@ -430,19 +430,18 @@ test("serves the Walk the House exercise landing page", async () => {
   assert.match(html, /rel="canonical" href="\/house"/i);
   assert.match(html, /When Change Is Calling, Start Here:/i);
   assert.match(html, /A guided exercise for seasoned entrepreneurs navigating/i);
-  assert.match(html, /name="33ad3425125f513ba1ab5e359ca21551"/i);
-  assert.match(html, /name="ec3b68ece7915ca83f420c91066c7d52"/i);
-  assert.match(
-    html,
-    /api\.leadpages\.io\/integration\/v1\/forms\/ix3KBV6JzqEHz438XGMfV5\/submissions/i,
-  );
+  assert.match(html, /data-drip-embedded-form="145041708"/i);
+  assert.match(html, /id="drip-ef-145041708"/i);
+  assert.match(html, /https:\/\/www\.getdrip\.com\/forms\/145041708\/submissions/i);
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /name="fields\[email\]"/i);
+  assert.match(html, /Walk the House/i);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.doesNotMatch(html, /api\.leadpages\.io/i);
   assert.match(
     html,
     /resources\.lindasidhu\.com\/products\/mixermind-in-2026\/categories\/2159052927\/posts\/2194823484/i,
-  );
-  assert.match(
-    html,
-    /data-thank-you="https:\/\/carlyclarkzimmer\.com\/walk-the-house-exercise\/"/i,
   );
   assert.match(html, /src="\/walk-the-house-cover\.png"/i);
   assert.match(html, /src="\/walk-the-house-rooms\.png"/i);

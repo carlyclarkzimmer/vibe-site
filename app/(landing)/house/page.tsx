@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- preserve approved and verified page imagery without destructive processing */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
 import { houseLandingPage } from "../../../content/campaigns/house";
 import styles from "./page.module.css";
 
@@ -53,14 +54,14 @@ export default function HousePage() {
             <form
               action={houseLandingPage.form.action}
               className={styles.form}
-              data-thank-you={houseLandingPage.form.thankYouUrl}
+              data-drip-embedded-form={houseLandingPage.form.formId}
+              id={`drip-ef-${houseLandingPage.form.formId}`}
               method="post"
-              target="_top"
             >
               <label htmlFor="house-first-name">First Name</label>
               <input
                 id="house-first-name"
-                name={houseLandingPage.form.firstNameField}
+                name="fields[first_name]"
                 type="text"
                 placeholder="First Name"
                 autoComplete="given-name"
@@ -68,7 +69,7 @@ export default function HousePage() {
               <label htmlFor="house-email">Email Address</label>
               <input
                 id="house-email"
-                name={houseLandingPage.form.emailField}
+                name="fields[email]"
                 type="email"
                 placeholder="Email Address"
                 autoComplete="email"
@@ -86,7 +87,10 @@ export default function HousePage() {
                   tabIndex={-1}
                 />
               </div>
-              <button type="submit">Access the Exercise</button>
+              <DripRecaptcha siteKey={houseLandingPage.form.recaptchaSiteKey} />
+              <input name="tags[]" type="hidden" value={houseLandingPage.form.campaignTag} />
+              <button data-drip-attribute="sign-up-button" type="submit">Access the Exercise</button>
+              <a className={styles.privacyLink} href="/privacy" rel="noreferrer" target="_blank">Privacy Policy</a>
             </form>
           </div>
         </div>

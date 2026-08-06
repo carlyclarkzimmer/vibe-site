@@ -12,10 +12,10 @@ export const houseLandingPage = {
   mixermindUrl:
     "https://resources.lindasidhu.com/products/mixermind-in-2026/categories/2159052927/posts/2194823484",
   form: {
-    action:
-      "https://api.leadpages.io/integration/v1/forms/ix3KBV6JzqEHz438XGMfV5/submissions",
-    firstNameField: "33ad3425125f513ba1ab5e359ca21551",
-    emailField: "ec3b68ece7915ca83f420c91066c7d52",
-    thankYouUrl: "https://carlyclarkzimmer.com/walk-the-house-exercise/",
+    provider: "drip",
+    formId: "145041708",
+    action: "https://www.getdrip.com/forms/145041708/submissions",
+    campaignTag: "Walk the House",
+    recaptchaSiteKey: "6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP",
   },
 } as const;
