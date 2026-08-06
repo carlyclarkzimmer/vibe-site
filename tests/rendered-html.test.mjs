@@ -36,6 +36,8 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
+  assert.doesNotMatch(html, /href="\/client-results"/i);
+  assert.doesNotMatch(html, /href="\/links"/i);
   assert.doesNotMatch(html, /carlyclarkzimmer\.com\/services/i);
   assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
   assert.doesNotMatch(html, /codex-preview/i);

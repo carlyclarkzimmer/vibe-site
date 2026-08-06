@@ -7,8 +7,6 @@ export const siteNavigation: SiteNavigationItem[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Work With Carly" },
   { href: "/about", label: "About" },
-  { href: "/client-results", label: "Client Results" },
-  { href: "/links", label: "Resources" },
   { href: "/contact", label: "Contact" },
 ] as const;
 
