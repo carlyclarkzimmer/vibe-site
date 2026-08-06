@@ -227,6 +227,44 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
   assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
 });
 
+test("serves the Simplify Hiring with Kolbe delivery page", async () => {
+  const response = await render("/training-simplify-hiring-with-kolbe");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Simplify Hiring with Kolbe<\/title>/i);
+  assert.match(
+    html,
+    /rel="canonical" href="\/training-simplify-hiring-with-kolbe"/i,
+  );
+  assert.match(html, /How to Make Your Next Hire, the/i);
+  assert.match(html, /RIGHT Hire!/i);
+  assert.match(
+    html,
+    /player\.vimeo\.com\/video\/915632476\?h=6126dfe951/i,
+  );
+  assert.match(html, /title="Simplify Hiring with Kolbe"/i);
+  assert.match(
+    html,
+    /The Kolbe fills the gap between equally important elements of values, mission, and personality/i,
+  );
+  assert.match(html, /Your NEXT STEP\.\.\./i);
+  assert.match(
+    html,
+    /href="https:\/\/carlyclarkzimmer\.thrivecart\.com\/kolbe-session\/"/i,
+  );
+  assert.match(html, /Book Certified Kolbe Session with Carly/i);
+  assert.match(html, /carly-supporting\.jpg/i);
+  assert.match(html, /kolbe-certified\.png/i);
+  assert.match(html, /PROFESSIONALLY TRAINED, SEVEN\+ YEARS EXPERIENCE/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(
+    html,
+    /api\.leadpages\.io|connect\.facebook\.net|center\.io|leadpages/i,
+  );
+  assert.doesNotMatch(html, /Drama Triangle/i);
+});
+
 test("Breakthrough page", async () => {
   const response = await render("/breakthrough");
   assert.equal(response.status, 200);
