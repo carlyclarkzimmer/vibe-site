@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { sitePrimaryCta } from "../../../content/site/navigation";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = { title: "About | Carly Clark Zimmer" };
@@ -181,14 +180,13 @@ export default function AboutPage() {
             of us who can choose differently, I think we have a responsibility
             to.
           </p>
-          <h2>Did the New Year&apos;s Eve part make your stomach drop?</h2>
-          <p>
-            If that&apos;s a version of your own life right now,{" "}
-            <a href={sitePrimaryCta.href}>
+          <h2>
+            If the New Year&apos;s Eve story resonated{" "}
+            <a href="https://carlyclarkzimmer.as.me/">
               click here to book a recommendation call
             </a>{" "}
             and let&apos;s talk about it.
-          </p>
+          </h2>
         </div>
       </section>
     </>

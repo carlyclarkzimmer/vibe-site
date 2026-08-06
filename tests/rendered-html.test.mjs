@@ -45,6 +45,40 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.doesNotMatch(html, /react-loading-skeleton/i);
 });
 
+test("serves the full Services page inside the shared site shell", async () => {
+  const response = await render("/services");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(
+    html,
+    /<title>Carly Clark Zimmer \| Clarity for Life and Business Transitions<\/title>/i,
+  );
+  assert.match(
+    html,
+    /name="description" content="For people who know something needs to change but are unsure what comes next\./i,
+  );
+  assert.match(
+    html,
+    /rel="canonical" href="https:\/\/carlyclarkzimmer\.com\/services\/"/i,
+  );
+  assert.match(html, /property="og:title" content="When What You Built No Longer Fits"/i);
+  assert.match(
+    html,
+    /property="og:image" content="https:\/\/carlyclarkzimmer\.com\/services-social\.png"/i,
+  );
+  assert.match(html, /name="twitter:card" content="summary_large_image"/i);
+  assert.match(html, /Ways to Work Together/i);
+  assert.match(html, /Decision Map Intensive/i);
+  assert.match(html, /Identity Uplevel/i);
+  assert.match(html, /Laser Coaching Club/i);
+  assert.match(html, /What happens when you wait/i);
+  assert.match(html, /Book A Recommendation Call/i);
+  assert.match(html, /services-intro-carly\.jpg/i);
+  assert.match(html, /services-uplevel-carly\.jpg/i);
+  assert.match(html, /aria-label="Site navigation"/i);
+});
+
 test("serves a branded 404 with clear routes back into the site", async () => {
   const response = await render("/this-page-does-not-exist");
   const html = await response.text();

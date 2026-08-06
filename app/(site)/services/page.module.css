@@ -1,0 +1,380 @@
+.hero,
+.darkSplit,
+.waitSection {
+  background: #090000;
+  color: white;
+}
+
+.hero {
+  padding: clamp(76px, 9vw, 132px) 7vw;
+}
+
+.readingWidth {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  margin: 0 0 28px;
+  font-size: clamp(48px, 5.4vw, 76px);
+  text-align: center;
+}
+
+.hero p {
+  margin: 0 0 30px;
+  color: white;
+  font-family: var(--font-interface);
+  font-size: clamp(17px, 1.45vw, 21px);
+  line-height: 1.45;
+}
+
+.hero p:last-child {
+  margin-bottom: 0;
+}
+
+.intro {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
+  gap: clamp(42px, 7vw, 110px);
+  padding: clamp(70px, 9vw, 130px) 7vw;
+  background: #f1f1f1;
+}
+
+.introImage {
+  padding-top: 36px;
+  border-top: 1px solid #8d8d8d;
+}
+
+.introImage img {
+  max-width: 445px;
+  margin: 0 auto;
+}
+
+.introCopy p {
+  font-family: var(--font-interface);
+  font-size: 16px;
+  line-height: 1.52;
+}
+
+.introCopy a,
+.textLink {
+  color: #e53978;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+.introCopy .accentLead {
+  margin: 0 0 28px;
+  color: #e53978;
+  font-weight: 700;
+}
+
+.introQuote {
+  grid-column: 1 / -1;
+  max-width: 880px;
+  margin: 30px auto 0;
+  padding: clamp(36px, 5vw, 70px);
+  border: 1px solid #b7b7b7;
+  background: white;
+}
+
+.introQuote p {
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.35;
+}
+
+.introQuote footer,
+.finalTestimonial footer {
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.option {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(300px, 0.75fr);
+  align-items: stretch;
+  background: white;
+}
+
+.optionReverse {
+  grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+  background: #f9f9f8;
+}
+
+.optionCopy {
+  padding: clamp(72px, 9vw, 132px) 7vw;
+}
+
+.optionLabel {
+  margin: 0 0 16px;
+  color: #e53978;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.option h2,
+.club h2 {
+  margin: 0 0 50px;
+  font-size: clamp(52px, 6vw, 86px);
+}
+
+.option h3,
+.detailBand h3 {
+  margin: 34px 0 14px;
+  font-size: clamp(25px, 2.5vw, 36px);
+  line-height: 1.08;
+}
+
+.option p,
+.option li,
+.darkSplit li,
+.detailBand li,
+.waitSection li,
+.club p,
+.recommendation p {
+  font-family: var(--font-interface);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.option ul,
+.darkSplit ul,
+.detailBand ul,
+.waitSection ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.option li,
+.darkSplit li,
+.detailBand li,
+.waitSection li {
+  position: relative;
+  margin-bottom: 12px;
+  padding-left: 22px;
+}
+
+.option li::before,
+.darkSplit li::before,
+.detailBand li::before,
+.waitSection li::before {
+  position: absolute;
+  left: 0;
+  content: "•";
+}
+
+.optionColumns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 44px;
+}
+
+.subhead {
+  margin: -28px 0 36px;
+  color: #686868;
+  font-weight: 700;
+}
+
+.button {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 17px 24px;
+  background: #e53978;
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: background var(--transition-standard);
+}
+
+.button:hover {
+  background: var(--color-accent);
+}
+
+.squareImage,
+.portraitImage {
+  height: 100%;
+  object-fit: cover;
+}
+
+.darkSplit {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8vw;
+  padding: clamp(72px, 9vw, 130px) 7vw;
+}
+
+.darkSplit h2,
+.waitSection h2,
+.recommendation h2 {
+  margin: 0;
+  font-size: clamp(50px, 6vw, 84px);
+}
+
+.darkSplit li,
+.waitSection li {
+  margin-bottom: 20px;
+  color: white;
+}
+
+.detailBand {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8vw;
+  padding: clamp(70px, 8vw, 116px) 7vw;
+  border-top: 1px solid #aaa;
+}
+
+.detailBand h3 {
+  margin-top: 0;
+}
+
+.waitSection {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8vw;
+  padding: clamp(70px, 8vw, 116px) 7vw;
+}
+
+.club {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 8vw;
+  padding: clamp(76px, 10vw, 150px) 7vw;
+}
+
+.club .optionLabel,
+.club h2 {
+  grid-column: 1;
+}
+
+.club h2 {
+  margin-bottom: 0;
+}
+
+.club > div {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+.textLink {
+  display: inline-block;
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.recommendation {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 8vw;
+  padding: clamp(72px, 9vw, 130px) 7vw;
+  border-top: 1px solid #b2b2b2;
+}
+
+.finalTestimonial {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
+  align-items: stretch;
+  background: #f1f1f1;
+}
+
+.finalTestimonial blockquote {
+  margin: 0;
+  padding: clamp(72px, 9vw, 130px) 7vw;
+}
+
+.finalTestimonial blockquote p {
+  font-size: clamp(30px, 3.2vw, 50px);
+  line-height: 1.08;
+}
+
+.finalTestimonial img {
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .intro,
+  .option,
+  .optionReverse,
+  .darkSplit,
+  .detailBand,
+  .waitSection,
+  .club,
+  .recommendation,
+  .finalTestimonial {
+    grid-template-columns: 1fr;
+  }
+
+  .introImage img {
+    max-width: 560px;
+  }
+
+  .optionColumns {
+    grid-template-columns: 1fr;
+  }
+
+  .squareImage,
+  .portraitImage {
+    max-height: 700px;
+    object-position: center 25%;
+  }
+
+  .club .optionLabel,
+  .club h2,
+  .club > div {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .club h2 {
+    margin-bottom: 16px;
+  }
+
+  .finalTestimonial img {
+    max-height: 720px;
+    object-position: center 20%;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero,
+  .intro,
+  .optionCopy,
+  .darkSplit,
+  .detailBand,
+  .waitSection,
+  .club,
+  .recommendation,
+  .finalTestimonial blockquote {
+    padding-right: 24px;
+    padding-left: 24px;
+  }
+
+  .hero h1 {
+    text-align: left;
+  }
+
+  .intro {
+    gap: 30px;
+  }
+
+  .introQuote {
+    padding: 28px 24px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

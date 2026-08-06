@@ -264,13 +264,13 @@
 }
 
 .callout {
-  align-items: center;
+  align-items: stretch;
   grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
 }
 
 .calloutImage {
   position: relative;
-  min-height: 500px;
+  min-height: 560px;
   overflow: hidden;
 }
 
@@ -279,16 +279,26 @@
   object-position: center 38%;
 }
 
+.callout > div:last-child {
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .callout > div > p:first-child {
   max-width: 680px;
   font-family: var(--font-display);
-  font-size: clamp(28px, 3vw, 44px);
+  font-size: clamp(30px, 2.7vw, 42px);
   letter-spacing: -0.03em;
-  line-height: 1.15;
+  line-height: 1.16;
 }
 
 .callout h2 {
-  margin-top: 68px;
+  margin: 42px 0 0;
+  font-size: clamp(34px, 3.2vw, 50px);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
 }
 
 .callout a {
@@ -415,5 +425,18 @@
 
   .missionGrid {
     gap: 52px;
+  }
+
+  .callout > div:last-child {
+    min-height: auto;
+  }
+
+  .callout > div > p:first-child {
+    font-size: 30px;
+  }
+
+  .callout h2 {
+    margin-top: 34px;
+    font-size: 36px;
   }
 }
