@@ -23,6 +23,7 @@ material copy changes remain separate decisions.
 | `/2026-5-minute-laser-coach-delivery/` | `/2026-5-minute-laser-coach-delivery` | Landing | Baseline composed | Verify ChatGPT destination and Vimeo playback |
 | `/trust/` | `/trust` | Landing | Baseline composed | Verify Leadpages submission and audio delivery behavior |
 | `/house/` | `/house` | Landing | Baseline composed; preview ready | Verify Leadpages submission and Walk the House delivery behavior end to end before publication |
+| `/pattern-breaker/` | `/pattern-breaker` | Landing | Baseline composed; preview ready | Verify both Leadpages submissions and training delivery behavior end to end before publication |
 | `/newsletter/` | `/newsletter` | Landing | Baseline composed | Verify Leadpages submission and newsletter delivery behavior |
 | `carlyclarkzimmer.lpages.co/newsletter-thank-you/` | `/newsletter-thank-you` | Landing | Baseline composed | Confirm thank-you copy and destination before publication |
 | `/scripts/` | `/scripts` | Landing | Baseline restored; preview ready | Verify Leadpages submission and scripts delivery behavior before describing sign-up as working |
