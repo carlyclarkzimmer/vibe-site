@@ -175,7 +175,7 @@ test("serves the Coaching Club baseline as a focused landing page", async () => 
 });
 
 test("serves the Behavior Bottleneck Finder as a focused signup page", async () => {
-  const response = await render("/behavior-bottleneck-finder");
+  const response = await render("/behavior-bottleneck-beta-systems-showcase-2026");
   const html = await response.text();
 
   assert.equal(response.status, 200);
