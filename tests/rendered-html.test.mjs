@@ -432,6 +432,69 @@ test("serves the Walk the House exercise landing page", async () => {
   );
 });
 
+test("serves the Pattern Breaker training as a focused landing page", async () => {
+  const response = await render("/pattern-breaker");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>The Pattern Behind the Problem<\/title>/i);
+  assert.match(html, /rel="canonical" href="\/pattern-breaker"/i);
+  assert.match(html, /You already know what needs to change\./i);
+  assert.match(html, /The gap is in the follow-through\./i);
+  assert.match(html, /Name the pattern/i);
+  assert.match(html, /Interrupt it precisely/i);
+  assert.match(html, /Input your text in this area/i);
+  assert.match(html, /Ready to stop circling\?/i);
+  assert.equal(
+    (
+      html.match(
+        /name="33ad3425125f513ba1ab5e359ca21551"/gi,
+      ) ?? []
+    ).length,
+    2,
+  );
+  assert.equal(
+    (
+      html.match(
+        /name="ec3b68ece7915ca83f420c91066c7d52"/gi,
+      ) ?? []
+    ).length,
+    2,
+  );
+  assert.equal(
+    (
+      html.match(
+        /name="9d9d7b20bab90c16e7e8473b4dffb2bc"/gi,
+      ) ?? []
+    ).length,
+    2,
+  );
+  assert.match(
+    html,
+    /api\.leadpages\.io\/integration\/v1\/forms\/MoRK7DvxRXQcsNtkVLaYYo\/submissions/i,
+  );
+  assert.match(
+    html,
+    /api\.leadpages\.io\/integration\/v1\/forms\/mELWZfNbNLsaLuvYzHaSZZ\/submissions/i,
+  );
+  assert.equal(
+    (
+      html.match(
+        /data-thank-you="https:\/\/carlyclarkzimmer\.lpages\.co\/newsletter-thank-you\/"/gi,
+      ) ?? []
+    ).length,
+    2,
+  );
+  assert.match(html, /src="\/carly-hero\.jpg"/i);
+  assert.match(html, /src="\/carly-supporting\.jpg"/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /aria-label="Campaign navigation"/i);
+  assert.doesNotMatch(
+    html,
+    /connect\.facebook\.net|center\.io|leadpages-served-by|page-analytics-property/i,
+  );
+});
+
 test("serves polished local site-navigation pages", async () => {
   const [servicesResponse, aboutResponse, resultsResponse, resourcesResponse, contactResponse] = await Promise.all([
     render("/services"),

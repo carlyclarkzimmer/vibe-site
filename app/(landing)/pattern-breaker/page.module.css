@@ -1,0 +1,348 @@
+.page {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(480px, 0.92fr);
+  min-height: 100svh;
+  background: var(--color-ink);
+}
+
+.heroImage {
+  min-height: 760px;
+  overflow: hidden;
+}
+
+.heroImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 54% center;
+}
+
+.heroPanel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(48px, 6vw, 96px);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.kicker {
+  margin: 0 0 40px;
+  font-family: var(--font-interface);
+  font-size: clamp(36px, 4.7vw, 74px);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+  text-transform: uppercase;
+}
+
+.kicker strong {
+  color: var(--color-accent);
+}
+
+.hero h1 {
+  max-width: 760px;
+  margin: 0;
+  font-size: clamp(46px, 5vw, 80px);
+  line-height: 0.98;
+}
+
+.hero h1 em {
+  color: var(--color-accent);
+  font-weight: 400;
+}
+
+.intro {
+  max-width: 720px;
+  margin: 38px 0;
+  color: rgb(255 255 255 / 82%);
+  font-size: clamp(17px, 1.5vw, 22px);
+  line-height: 1.55;
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+  width: 100%;
+  max-width: 720px;
+}
+
+.form > label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  min-height: 52px;
+  padding: 13px 15px;
+  border: 1px solid #8b8b8b;
+  border-radius: 0;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.form button {
+  min-height: 60px;
+  border: 1px solid var(--color-accent);
+  border-radius: 0;
+  background: var(--color-accent);
+  color: var(--color-paper);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition:
+    background-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+.form button:hover {
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+.form input:focus-visible,
+.form textarea:focus-visible,
+.form button:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 4px;
+}
+
+.honeypot {
+  position: absolute;
+  left: -9999px;
+}
+
+.outcomes {
+  padding: var(--space-section-block) var(--space-section-inline);
+}
+
+.outcomes ol {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0 clamp(44px, 8vw, 120px);
+  width: min(100%, var(--width-content));
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.outcomes li {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 20px;
+  border-top: var(--border-standard);
+  padding: 34px 0 42px;
+}
+
+.outcomes li > span {
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.outcomes h3 {
+  margin: 0 0 12px;
+  font-size: clamp(28px, 3vw, 44px);
+}
+
+.outcomes li p {
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 21px);
+  line-height: 1.55;
+}
+
+.placeholder,
+.summary {
+  width: min(100%, 920px);
+  margin-inline: auto;
+}
+
+.placeholder {
+  margin-top: 46px;
+  font-family: var(--font-interface);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.summary {
+  margin-top: 70px;
+  margin-bottom: 0;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 4.1vw, 58px);
+  line-height: 1.12;
+  text-align: center;
+}
+
+.invitation {
+  padding: var(--space-section-block) var(--space-section-inline);
+  background: var(--color-ink);
+  color: var(--color-paper);
+}
+
+.invitationInner {
+  width: min(100%, 920px);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.invitation h2 {
+  margin: 0;
+  color: var(--color-accent);
+  font-size: clamp(58px, 8vw, 118px);
+}
+
+.invitation p {
+  margin: 32px auto 42px;
+  color: rgb(255 255 255 / 82%);
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1.45;
+}
+
+.invitation .form {
+  margin-inline: auto;
+  text-align: left;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: minmax(340px, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(52px, 8vw, 120px);
+  align-items: start;
+  width: min(100%, var(--width-content));
+  margin: 0 auto;
+  padding: var(--space-section-block) var(--space-section-inline);
+}
+
+.portrait {
+  min-height: 780px;
+  margin: 0;
+  overflow: hidden;
+}
+
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.aboutCopy {
+  font-size: clamp(18px, 1.6vw, 22px);
+  line-height: 1.5;
+}
+
+.aboutCopy h2 {
+  margin: 0 0 42px;
+  color: var(--color-accent);
+  font-size: clamp(54px, 6vw, 88px);
+}
+
+.aboutCopy p {
+  margin: 0 0 27px;
+}
+
+.footer {
+  padding: 28px var(--space-section-inline);
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-interface);
+  font-size: 11px;
+  text-align: center;
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .heroImage {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .heroPanel {
+    padding-inline: var(--space-section-inline-mobile);
+  }
+
+  .outcomes,
+  .invitation,
+  .about {
+    padding-inline: var(--space-section-inline-mobile);
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .portrait {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+}
+
+@media (max-width: 620px) {
+  .heroImage {
+    aspect-ratio: 1 / 1;
+  }
+
+  .heroPanel {
+    padding-block: 54px 68px;
+  }
+
+  .kicker {
+    margin-bottom: 30px;
+  }
+
+  .outcomes {
+    padding-block: 76px;
+  }
+
+  .outcomes ol {
+    grid-template-columns: 1fr;
+  }
+
+  .outcomes li {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .summary {
+    margin-top: 48px;
+  }
+
+  .invitation,
+  .about {
+    padding-block: 76px;
+  }
+}
