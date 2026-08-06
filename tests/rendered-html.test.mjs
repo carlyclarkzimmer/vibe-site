@@ -42,6 +42,19 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.doesNotMatch(html, /react-loading-skeleton/i);
 });
 
+test("serves a branded 404 with clear routes back into the site", async () => {
+  const response = await render("/this-page-does-not-exist");
+  const html = await response.text();
+
+  assert.equal(response.status, 404);
+  assert.match(html, /This page has left the building\./i);
+  assert.match(html, /zapped by the internet gods/i);
+  assert.match(html, /aria-label="Site navigation"/i);
+  assert.match(html, /href="\/">Head back home<\/a>/i);
+  assert.match(html, /href="\/services"/i);
+  assert.match(html, /<footer\b/i);
+});
+
 test("serves the campaign without shared site navigation", async () => {
   const response = await render("/beyond-the-bottleneck");
   const html = await response.text();
