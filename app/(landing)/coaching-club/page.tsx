@@ -653,35 +653,6 @@ export default function CoachingClubPage() {
       </section>
 
       <footer className={styles.footer}>
-        <div className={styles.pledge}>
-          <p>
-            <em>Cross-Cultural Competency, Awareness, and Equity Pledge:</em>
-          </p>
-          <p>
-            I stand in solidarity with Black, Brown, Indigenous, Minority
-            Ethnic, and People of Colour, &nbsp;LGBTQ+ &amp; those who hold
-            culturally and systemically marginalized identities to dismantle
-            systemic racism. I pledge to continue to comb through my cultural
-            bias, vet coaching tools and philosophies, and question business
-            systems &amp; practices for their equality and effectiveness instead
-            of blindly following what has been done before.
-          </p>
-          <p>
-            Anti-Racism and Hate Speech: We are committed to building an
-            anti-racist business and do not tolerate hate speech, racism,
-            bigotry, sexism, or bullying of any kind.
-          </p>
-          <p>
-            We do our very best to provide a safe, trauma-informed space for
-            people of all identities to learn, grow, ask questions, and provide
-            their own valuable insight and feedback for us all to learn from.
-          </p>
-          <p>
-            After all, if you&apos;ve read this far, you know that this is
-            everything I&apos;m here to dismantle both systemically and within
-            ourselves.
-          </p>
-        </div>
         <p className={styles.copyright}>
           © carlyclarkzimmer.com Balance by the Bay, LLC 2026
         </p>

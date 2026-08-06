@@ -94,13 +94,6 @@ export default function TrustPage() {
         </div>
       </section>
 
-      <section className={styles.pledge}>
-        <div>
-          <p className={styles.pledgeTitle}><strong><em>Cross-Cultural Competency, Awareness, and Equity Pledge:</em></strong></p>
-          <p>I stand in solidarity with Black, Brown, Indigenous, Minority Ethnic, and People of Colour, LGBTQIA+ &amp; those who hold culturally and systemically marginalized identities to dismantle systemic racism. I pledge to continue to comb through my cultural bias, vet coaching tools and philosophies, and question business systems &amp; practices for their equality and effectiveness instead of blindly following what has been done before. After all, if you&apos;ve read this far you know that this is everything I&apos;m here to dismantle both systemically and within ourselves.</p>
-          <p>My communities have a strict vetting process so that we can provide a safe, trauma-informed space for people of all identities to learn, grow, ask questions, and provide their own valuable insight and feedback for us all to learn from.</p>
-        </div>
-      </section>
     </div>
   );
 }

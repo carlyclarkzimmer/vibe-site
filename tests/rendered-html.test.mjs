@@ -247,11 +247,42 @@ test("serves polished local site-navigation pages", async () => {
   assert.equal(servicesResponse.status, 200);
   assert.match(await servicesResponse.text(), /Decision Map Intensive/i);
   assert.equal(aboutResponse.status, 200);
-  assert.match(await aboutResponse.text(), /Where my lens was built/i);
+  const aboutHtml = await aboutResponse.text();
+  assert.match(aboutHtml, /It was New Year&#x27;s Eve, and I was hiding/i);
+  assert.match(aboutHtml, /So I rebuilt how I worked/i);
+  assert.doesNotMatch(aboutHtml, /Photo placeholder/i);
+  assert.match(
+    aboutHtml,
+    /src="\/carly-finished-painting-landscape\.png"/i,
+  );
+  assert.match(
+    aboutHtml,
+    /Carly Clark Zimmer smiling in a magenta velvet jacket/i,
+  );
+  assert.doesNotMatch(aboutHtml, />0[1-5]<\/span>/i);
+  assert.match(aboutHtml, /book a recommendation call/i);
   assert.equal(resultsResponse.status, 200);
   assert.match(await resultsResponse.text(), /Rochelle Y/i);
   assert.equal(resourcesResponse.status, 200);
   assert.match(await resourcesResponse.text(), /Email signup is being prepared/i);
   assert.equal(contactResponse.status, 200);
   assert.match(await contactResponse.text(), /carly@carlyclarkzimmer.com/i);
+});
+
+test("renders the approved equity pledge once on every page type", async () => {
+  for (const path of ["/", "/about", "/beyond-the-bottleneck", "/coaching-club", "/breakthrough", "/trust"]) {
+    const response = await render(path);
+    assert.equal(response.status, 200);
+    const html = await response.text();
+    assert.equal(
+      (html.match(/<h2 id="equity-pledge-heading">/gi) ?? []).length,
+      1,
+      `${path} should render one equity pledge`,
+    );
+    assert.match(html, /My communities have a strict vetting process/i);
+    assert.ok(
+      html.indexOf('id="equity-pledge-heading"') < html.lastIndexOf("Privacy Policy"),
+      `${path} should place the pledge above the legal footer`,
+    );
+  }
 });

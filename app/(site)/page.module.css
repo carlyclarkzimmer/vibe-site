@@ -18,13 +18,19 @@
   inset: 0;
   background:
     linear-gradient(
-      90deg,
-      rgb(0 0 0 / 82%) 0%,
-      rgb(0 0 0 / 58%) 35%,
-      rgb(0 0 0 / 12%) 70%,
-      rgb(0 0 0 / 4%) 100%
+      180deg,
+      transparent 0%,
+      rgb(0 0 0 / 5%) 30%,
+      rgb(0 0 0 / 22%) 58%,
+      rgb(0 0 0 / 56%) 100%
     ),
-    linear-gradient(0deg, rgb(0 0 0 / 38%) 0%, transparent 45%);
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 38%) 0%,
+      rgb(0 0 0 / 22%) 35%,
+      rgb(0 0 0 / 4%) 70%,
+      rgb(0 0 0 / 4%) 100%
+    );
 }
 
 .heroContent {
@@ -137,8 +143,13 @@
 
   .heroOverlay {
     background:
-      linear-gradient(0deg, rgb(0 0 0 / 84%) 0%, rgb(0 0 0 / 25%) 72%),
-      linear-gradient(90deg, rgb(0 0 0 / 20%), transparent);
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgb(0 0 0 / 12%) 42%,
+        rgb(0 0 0 / 74%) 100%
+      ),
+      linear-gradient(90deg, rgb(0 0 0 / 8%), transparent);
   }
 
   .heroContent {

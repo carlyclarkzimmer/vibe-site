@@ -1,0 +1,40 @@
+.pledge {
+  padding: clamp(52px, 7vw, 88px) var(--space-section-inline);
+  border-top: 4px solid var(--color-accent);
+  background: var(--color-ink);
+  color: white;
+}
+
+.inner {
+  width: min(100%, 980px);
+  margin: 0 auto;
+}
+
+.pledge h2 {
+  margin: 0 0 24px;
+  color: white;
+  font-family: var(--font-display);
+  font-size: clamp(20px, 2.2vw, 30px);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.pledge p {
+  max-width: 900px;
+  margin: 16px 0 0;
+  color: #d8d8d8;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+@media (max-width: 600px) {
+  .pledge {
+    padding: 48px var(--space-section-inline-mobile);
+  }
+
+  .pledge p {
+    font-size: 13px;
+  }
+}

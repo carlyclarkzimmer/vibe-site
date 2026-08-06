@@ -6,7 +6,7 @@ export const siteMeta = {
 
 export const homeContent = {
   hero: {
-    eyebrow: "Life & Leadership Coach",
+    eyebrow: "Leadership and Behavioral Change Coach",
     title: "A Different Way Forward",
     description:
       "One day you wake up and realize the life you built feels like a tight box, and you're ready for change. That’s the moment our work begins.",
