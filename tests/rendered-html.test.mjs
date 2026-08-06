@@ -289,6 +289,33 @@ test("serves the Simplify Hiring with Kolbe delivery page", async () => {
   assert.doesNotMatch(html, /Drama Triangle/i);
 });
 
+test("serves the Walk the House exercise delivery page", async () => {
+  const response = await render("/walk-the-house-exercise");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Walk the House Exercise<\/title>/i);
+  assert.match(html, /rel="canonical" href="\/walk-the-house-exercise"/i);
+  assert.match(html, /A guided exercise for seasoned entrepreneurs navigating/i);
+  assert.match(html, /identity up-level/i);
+  assert.match(html, /player\.vimeo\.com\/video\/1152679286\?h=8ccf143908/i);
+  assert.match(html, /title="Walk the House Exercise"/i);
+  assert.match(html, /drive\.google\.com\/file\/d\/1OPD_Zk8vYEKoEvtqgyMtXt7K77RUhngd\/view/i);
+  assert.match(html, /Click here to access the companion guide/i);
+  assert.match(html, /Think HGTV Nate Berkus and Jeremiah Brent energy/i);
+  assert.match(html, /The goal is simple\./i);
+  assert.match(html, /voxer\.app\.link\/profile\?username=carlyclarkzimmer/i);
+  assert.match(html, /mailto:carly@carlyclarkzimmer\.com/i);
+  assert.match(html, /instagram\.com\/carlyclarkzimmer/i);
+  assert.match(html, /carly-supporting\.jpg/i);
+  assert.match(html, /Hey there! I&#x27;m Carly\./i);
+  assert.match(html, /© Balance by the Bay, LLC 2026/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+  assert.doesNotMatch(html, /aria-label="Campaign navigation"/i);
+  assert.doesNotMatch(html, /leadpages|connect\.facebook\.net|center\.io|googletagmanager/i);
+  assert.doesNotMatch(html, /Heart-Centered Coach Newsletter Sign-Up/i);
+});
+
 test("Breakthrough page", async () => {
   const response = await render("/breakthrough");
   assert.equal(response.status, 200);
