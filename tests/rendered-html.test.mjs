@@ -227,26 +227,18 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
   assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
 });
 
-test("serves the Communication Scripts page as a focused landing page", async () => {
+test("serves the Laser Coaching Lab welcome page as a focused landing page", async () => {
   const response = await render("/scripts");
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.match(html, /<title>Go-To Communication Scripts<\/title>/i);
+  assert.match(html, /<title>Laser Coach Lab<\/title>/i);
   assert.match(html, /rel="canonical" href="\/scripts"/i);
-  assert.match(html, /Boundary Scripts/i);
-  assert.match(html, /Simple phrases\. Big impact\./i);
-  assert.match(html, /Inside You&#x27;ll Find:/i);
-  assert.match(html, /Kind but firm phrases to set limits on your time and energy\./i);
-  assert.match(html, /I&#x27;m Carly Clark Zimmer,/i);
-  assert.match(html, /Certified Life and Leadership Coach/i);
-  assert.match(html, /Eight \+ Years of Coaching Experience/i);
-  assert.match(
-    html,
-    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/fDiiXkm8GBZSPmyYfH2i3Q\//i,
-  );
-  assert.match(html, /carly-hero\.jpg/i);
+  assert.match(html, /LASER COACHING LAB!/i);
+  assert.match(html, /An email is on its way to your inbox/i);
+  assert.match(html, /https:\/\/t\.me\/\+HFqmSD8GYW4wMmRh/i);
   assert.match(html, /carly-supporting\.jpg/i);
+  assert.doesNotMatch(html, /Get the Scripts/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
 });
