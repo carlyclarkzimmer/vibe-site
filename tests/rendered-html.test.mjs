@@ -186,7 +186,16 @@ test("serves the Behavior Bottleneck Finder as a focused signup page", async () 
   assert.match(html, /Get Two Week Access/i);
   assert.match(html, /type="email"/i);
   assert.match(html, /name="confirmation"/i);
-  assert.match(html, /api\.leadpages\.io\/integration\/v1\/forms\/KDj2LafsFtiGnZjjupdSYi\/submissions/i);
+  assert.match(html, /data-drip-embedded-form="699148655"/i);
+  assert.match(html, /id="drip-ef-699148655"/i);
+  assert.match(html, /https:\/\/www\.getdrip\.com\/forms\/699148655\/submissions/i);
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /name="fields\[email\]"/i);
+  assert.match(html, /Behavior Bottleneck Finder Beta/i);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
+  assert.match(html, /href="\/privacy"/i);
+  assert.doesNotMatch(html, /api\.leadpages\.io/i);
   assert.match(html, /alt="Carly Clark Zimmer standing in a teal jacket/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);

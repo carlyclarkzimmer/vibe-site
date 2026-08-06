@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-img-element -- static legacy asset served directly */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
+import { behaviorBottleneckFinderEmailCapture } from "../../../content/campaigns/behavior-bottleneck-finder";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
   title: "Behavior Bottleneck Finder | Carly Clark Zimmer",
 };
-
-const formAction = "https://api.leadpages.io/integration/v1/forms/KDj2LafsFtiGnZjjupdSYi/submissions";
 
 export default function BehaviorBottleneckFinderPage() {
   return (
@@ -51,19 +51,25 @@ export default function BehaviorBottleneckFinderPage() {
           <p className={styles.sectionLabel}>Two-week beta access</p>
           <h2>See the pattern that&apos;s been keeping you stuck.</h2>
         </div>
-        <form action={formAction} method="post" target="_top" className={styles.form}>
+        <form
+          action={behaviorBottleneckFinderEmailCapture.action}
+          className={styles.form}
+          data-drip-embedded-form={behaviorBottleneckFinderEmailCapture.formId}
+          id={`drip-ef-${behaviorBottleneckFinderEmailCapture.formId}`}
+          method="post"
+        >
           <label htmlFor="bottleneck-first-name">First Name</label>
-          <input id="bottleneck-first-name" name="33ad3425125f513ba1ab5e359ca21551" type="text" autoComplete="given-name" maxLength={500} placeholder="First Name" />
+          <input id="bottleneck-first-name" name="fields[first_name]" type="text" autoComplete="given-name" maxLength={500} placeholder="First Name" />
           <label htmlFor="bottleneck-email">Email Address</label>
-          <input id="bottleneck-email" name="ec3b68ece7915ca83f420c91066c7d52" type="email" autoComplete="email" maxLength={500} placeholder="Email Address" required />
+          <input id="bottleneck-email" name="fields[email]" type="email" autoComplete="email" maxLength={500} placeholder="Email Address" required />
           <div className={styles.consent}>
-            <p>I understand that I&apos;m receiving complimentary two week access to the Behavior Bottleneck Finder and that Carly will follow up with a short feedback form about my experience.</p>
+            <p>I understand that I&apos;m receiving complimentary two week access to the Behavior Bottleneck Finder and that Carly will follow up with a short feedback form about my experience. <a href="/privacy">Privacy Policy</a></p>
             <label htmlFor="bottleneck-consent"><input id="bottleneck-consent" name="confirmation" type="checkbox" value="true" required />Yes, I agree to share feedback.</label>
           </div>
           <div className={styles.honeypot} aria-hidden="true"><label htmlFor="confirm-existence">If you are human, leave this blank.</label><input id="confirm-existence" name="confirm-existence" tabIndex={-1} autoComplete="off" /></div>
-          <input name="confirmation-description" type="hidden" value="I understand that I’m receiving complimentary two week access to the Behavior Bottleneck Finder and that Carly will follow up with a short feedback form about my experience." />
-          <input name="confirmation-label" type="hidden" value="Yes, I agree to share feedback. " />
-          <button type="submit">Get Two Week Access</button>
+          <DripRecaptcha siteKey={behaviorBottleneckFinderEmailCapture.recaptchaSiteKey} />
+          <input name="tags[]" type="hidden" value={behaviorBottleneckFinderEmailCapture.campaignTag} />
+          <button data-drip-attribute="sign-up-button" type="submit">Get Two Week Access</button>
         </form>
       </section>
 
