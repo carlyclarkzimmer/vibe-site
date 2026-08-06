@@ -63,13 +63,14 @@ export default function BehaviorBottleneckFinderPage() {
           <label htmlFor="bottleneck-email">Email Address</label>
           <input id="bottleneck-email" name="fields[email]" type="email" autoComplete="email" maxLength={500} placeholder="Email Address" required />
           <div className={styles.consent}>
-            <p>I understand that I&apos;m receiving complimentary two week access to the Behavior Bottleneck Finder and that Carly will follow up with a short feedback form about my experience. <a href="/privacy">Privacy Policy</a></p>
+            <p>I understand that I&apos;m receiving complimentary two week access to the Behavior Bottleneck Finder and that Carly will follow up with a short feedback form about my experience.</p>
             <label htmlFor="bottleneck-consent"><input id="bottleneck-consent" name="confirmation" type="checkbox" value="true" required />Yes, I agree to share feedback.</label>
           </div>
           <div className={styles.honeypot} aria-hidden="true"><label htmlFor="confirm-existence">If you are human, leave this blank.</label><input id="confirm-existence" name="confirm-existence" tabIndex={-1} autoComplete="off" /></div>
           <DripRecaptcha siteKey={behaviorBottleneckFinderEmailCapture.recaptchaSiteKey} />
           <input name="tags[]" type="hidden" value={behaviorBottleneckFinderEmailCapture.campaignTag} />
           <button data-drip-attribute="sign-up-button" type="submit">Get Two Week Access</button>
+          <a className={styles.privacyLink} href="/privacy" rel="noreferrer" target="_blank">Privacy Policy</a>
         </form>
       </section>
 

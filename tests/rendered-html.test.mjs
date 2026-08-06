@@ -194,7 +194,7 @@ test("serves the Behavior Bottleneck Finder as a focused signup page", async () 
   assert.match(html, /Behavior Bottleneck Finder Beta/i);
   assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
   assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
-  assert.match(html, /href="\/privacy"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
   assert.doesNotMatch(html, /api\.leadpages\.io/i);
   assert.match(html, /alt="Carly Clark Zimmer standing in a teal jacket/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
