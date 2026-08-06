@@ -337,14 +337,16 @@ test("serves branded signup status and privacy pages", async () => {
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });
 
-test("redirects the legacy thank-you URL to the campaign-specific page", async () => {
-  const response = await render("/thank-you?status=registered");
+test("serves a generic thank-you page without campaign delivery copy", async () => {
+  const response = await render("/thank-you");
+  const html = await response.text();
 
-  assert.equal(response.status, 307);
-  assert.equal(
-    response.headers.get("location"),
-    "http://localhost/beyond-the-bottleneck/thank-you",
-  );
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Thank You \| Carly Clark Zimmer<\/title>/i);
+  assert.match(html, /Your submission has been received/i);
+  assert.match(html, /href="\/"/i);
+  assert.match(html, /Return to the homepage/i);
+  assert.doesNotMatch(html, /Beyond the Bottleneck|listening-tour details/i);
 });
 
 test("serves the migrated legacy offer and opt-in pages", async () => {

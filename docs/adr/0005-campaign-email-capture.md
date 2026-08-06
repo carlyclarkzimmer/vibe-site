@@ -18,9 +18,9 @@ the visual form, accessible field labels, privacy link, and branded thank-you
 pages.
 
 Beyond the Bottleneck owns its thank-you state at
-`/beyond-the-bottleneck/thank-you`. The earlier `/thank-you` route redirects to
-that campaign-specific URL so existing Drip configuration and saved links keep
-working during the transition.
+`/beyond-the-bottleneck/thank-you`. The generic `/thank-you` route is available
+for opt-ins that need a confirmation state without campaign-specific delivery
+content or next steps.
 
 ## Consequences
 
