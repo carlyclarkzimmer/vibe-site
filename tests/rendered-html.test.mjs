@@ -277,14 +277,26 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
   assert.match(html, /Define exactly WHO your first, or next hire is\./i);
   assert.match(html, /The Kolbe fills the gap between equally important elements/i);
   assert.match(html, /Training &amp; Certifications/i);
+  assert.match(html, /id="drip-ef-933352998"/i);
   assert.match(
     html,
-    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/YVEqCjmvAubzZv6Tpciov8\//i,
+    /https:\/\/www\.getdrip\.com\/forms\/933352998\/submissions/i,
   );
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /<input[^>]*required[^>]*name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /name="tags\[\]"[^>]*value="Kolbe-Right-Role"/i);
+  assert.match(
+    html,
+    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
+  );
+  assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.doesNotMatch(html, /serve-leadbox|api\.leadpages\.io/i);
   assert.match(html, /carly-hero\.jpg/i);
   assert.match(html, /carly-supporting\.jpg/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
-  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+  assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);
 });
 
 test("serves the Communication Scripts page as a focused landing page", async () => {

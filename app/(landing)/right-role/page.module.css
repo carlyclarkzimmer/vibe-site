@@ -65,12 +65,65 @@
   font-style: normal;
 }
 
-.primaryCta {
+.form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+  width: min(100%, 610px);
+  margin-top: 34px;
+}
+
+.formField {
+  display: grid;
+  gap: 7px;
+}
+
+.formField:nth-child(3) {
+  grid-column: 1 / -1;
+}
+
+.formField label {
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.formField label span {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.formField input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  background: white;
+  color: var(--color-ink);
+  font: 16px/1.4 var(--font-interface);
+}
+
+.formField input:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
-  margin-top: 34px;
   padding: 17px 30px;
   border: 1px solid var(--color-ink);
   background: var(--color-accent);
@@ -84,8 +137,24 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.primaryCta:hover {
+.form button:hover {
   background: var(--color-ink);
+}
+
+.form button:focus-visible,
+.privacyLink:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.privacyLink {
+  align-self: center;
+  width: fit-content;
+  color: var(--color-ink);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .lessons {
@@ -258,7 +327,15 @@
     font-size: 50px;
   }
 
-  .primaryCta {
+  .form {
+    grid-template-columns: 1fr;
+  }
+
+  .formField:nth-child(3) {
+    grid-column: auto;
+  }
+
+  .form button {
     width: 100%;
   }
 
@@ -291,7 +368,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryCta {
+  .form button {
     transition: none;
   }
 }
