@@ -1,43 +1,86 @@
 import type { Metadata } from "next";
-import { SitePageHero } from "../../../components/site/SitePageHero";
-import { Button } from "../../../components/ui/Button";
-import { Section } from "../../../components/ui/Section";
-import { contactContent } from "../../../content/site/migration-pages";
-import styles from "../_components/SitePages.module.css";
+import styles from "./page.module.css";
 
-export const metadata: Metadata = { title: "Contact | Carly Clark Zimmer" };
+const title = "Contact | Carly Clark Zimmer";
+const description =
+  "If you'd like to explore working together, please feel free to reach out to Carly directly.";
+const canonicalUrl = "https://carlyclarkzimmer.com/contact/";
+const socialImageUrl = "https://carlyclarkzimmer.com/og.png";
+
+export const metadata: Metadata = {
+  title,
+  description,
+  alternates: { canonical: canonicalUrl },
+  openGraph: {
+    type: "website",
+    siteName: "Carly Clark Zimmer",
+    title,
+    description,
+    url: canonicalUrl,
+    images: [
+      {
+        url: socialImageUrl,
+        width: 1731,
+        height: 909,
+        alt: "Carly Clark Zimmer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [socialImageUrl],
+  },
+};
 
 export default function ContactPage() {
   return (
-    <>
-      <SitePageHero {...contactContent} />
-      <Section className={styles.contactGrid}>
-        <article className={styles.contactCard}>
-          <h2>Coaching</h2>
-          <p>For mentorship, coaching, and support, start with Carly directly.</p>
-          <a href="mailto:carly@carlyclarkzimmer.com">carly@carlyclarkzimmer.com</a>
-        </article>
-        <article className={styles.contactCard}>
-          <h2>Speaking</h2>
-          <p>For guest teaching, speaking, and podcast appearances, send the details to support.</p>
-          <a href="mailto:support@carlyclarkzimmer.com">support@carlyclarkzimmer.com</a>
-        </article>
-        <article className={styles.contactCard}>
-          <h2>Client support</h2>
-          <p>Existing clients can reach the support team for technical help.</p>
-          <a href="mailto:support@carlyclarkzimmer.com">support@carlyclarkzimmer.com</a>
-        </article>
-      </Section>
-      <Section className={`${styles.split} ${styles.muted}`}>
-        <h2>Prefer to talk it through?</h2>
-        <div>
+    <div className={styles.contactPage}>
+      <section className={styles.contactHero}>
+        <div className={styles.contactPanel}>
+          <h1>Contact Info</h1>
           <p>
-            Book a consultation to talk about what is changing, what is getting in the way, and
-            what support might be useful.
+            If you&apos;d like to explore working together, please feel free to
+            reach out to Carly directly.
           </p>
-          <Button href="https://carlyclarkzimmer.as.me">Book a consultation</Button>
+          <p>
+            Email:{" "}
+            <a href="mailto:carly@carlyclarkzimmer.com">
+              carly@carlyclarkzimmer.com
+            </a>
+          </p>
+          <p>
+            For guest teaching, speaking, or podcast guest appearances, please
+            reach out to{" "}
+            <a href="mailto:carly@carlyclarkzimmer.com">
+              carly@carlyclarkzimmer.com
+            </a>{" "}
+            with details.
+          </p>
         </div>
-      </Section>
-    </>
+      </section>
+
+      <section className={styles.solidarity}>
+        <p>
+          <em>
+            I stand in solidarity with Black, Brown, Indigenous, Minority
+            Ethnic, and People of Colour, LGBTQIA &amp; those who hold
+            culturally and systemically marginalized identities to dismantle
+            systemic racism.
+          </em>{" "}
+          I pledge to continue to personally comb through my cultural bias,
+          business systems &amp; practices, former coach training &amp; theories
+          to dismantle the systems of oppression in our society and within
+          myself, and the programs and communities I facilitate.
+        </p>
+        <p>
+          My communities have a strict vetting process so that we can provide a
+          safe, trauma-informed space for people of all identities to learn,
+          grow, ask questions, and provide their own valuable insight and
+          feedback for us all to learn from.
+        </p>
+      </section>
+    </div>
   );
 }

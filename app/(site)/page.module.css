@@ -1,11 +1,46 @@
 .hero {
+  position: relative;
   min-height: min(760px, calc(100vh - 82px));
+  overflow: hidden;
+  background: var(--color-ink);
+  color: white;
+}
+
+.heroImage {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(0 0 0 / 5%) 30%,
+      rgb(0 0 0 / 22%) 58%,
+      rgb(0 0 0 / 56%) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 38%) 0%,
+      rgb(0 0 0 / 22%) 35%,
+      rgb(0 0 0 / 4%) 70%,
+      rgb(0 0 0 / 4%) 100%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
   display: flex;
+  min-height: min(760px, calc(100vh - 82px));
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  background: var(--color-ink);
-  color: white;
 }
 
 .hero h1,
@@ -15,10 +50,17 @@
   font-size: clamp(76px, 11vw, 172px);
 }
 
+.hero h1 {
+  max-width: 760px;
+  margin-left: -0.06em;
+  text-wrap: balance;
+}
+
 .heroCopy {
-  max-width: 640px;
-  color: #dddddd;
+  max-width: 560px;
+  color: #f2f2f2;
   font-size: 20px;
+  text-shadow: 0 1px 18px rgb(0 0 0 / 35%);
 }
 
 .hero a,
@@ -93,6 +135,34 @@
 @media (max-width: 760px) {
   .hero {
     min-height: 680px;
+  }
+
+  .heroImage {
+    object-position: 58% center;
+  }
+
+  .heroOverlay {
+    background:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgb(0 0 0 / 12%) 42%,
+        rgb(0 0 0 / 74%) 100%
+      ),
+      linear-gradient(90deg, rgb(0 0 0 / 8%), transparent);
+  }
+
+  .heroContent {
+    min-height: 680px;
+  }
+
+  .hero h1 {
+    max-width: 560px;
+    font-size: clamp(64px, 19vw, 102px);
+  }
+
+  .heroCopy {
+    font-size: 18px;
   }
 
   .recognition,

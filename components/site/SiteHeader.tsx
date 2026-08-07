@@ -8,7 +8,7 @@ export function SiteHeader() {
     <header className={styles.header}>
       <nav className={styles.navigation} aria-label="Site navigation">
         <Link className={styles.monogram} href="/" aria-label="Carly Clark Zimmer home">
-          c.
+          ccz
         </Link>
         <div className={styles.desktopLinks}>
           {siteNavigation.map((item) => (

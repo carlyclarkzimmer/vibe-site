@@ -1,0 +1,442 @@
+.hero {
+  position: relative;
+  min-height: min(820px, calc(100vh - 82px));
+  overflow: hidden;
+  padding: var(--space-section-block) var(--space-section-inline);
+  background: var(--color-ink);
+  color: white;
+}
+
+.heroImage {
+  z-index: 0;
+  filter: grayscale(1) contrast(1.08);
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.heroOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(0 0 0 / 5%) 28%,
+      rgb(0 0 0 / 24%) 56%,
+      rgb(0 0 0 / 66%) 100%
+    ),
+    linear-gradient(
+      90deg,
+      rgb(0 0 0 / 42%) 0%,
+      rgb(0 0 0 / 24%) 38%,
+      rgb(0 0 0 / 4%) 72%
+    );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: min(650px, calc(100vh - 242px));
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.hero h1 {
+  max-width: 950px;
+  margin: 0 0 38px;
+  font-size: clamp(70px, 9.6vw, 148px);
+  letter-spacing: -0.06em;
+  line-height: 0.88;
+  text-wrap: balance;
+}
+
+.heroContent > p {
+  max-width: 800px;
+  margin: 0;
+  color: #f2f2f2;
+  font-size: 19px;
+  line-height: 1.65;
+  text-shadow: 0 1px 18px rgb(0 0 0 / 40%);
+}
+
+.opening,
+.lens,
+.lifeBack,
+.callout {
+  display: grid;
+  grid-template-columns: minmax(180px, 0.45fr) minmax(0, 1.25fr);
+  gap: clamp(50px, 9vw, 150px);
+  padding: clamp(90px, 11vw, 164px) var(--space-section-inline);
+}
+
+.opening {
+  display: block;
+}
+
+.opening .openingCopy {
+  max-width: none;
+}
+
+.chapter {
+  display: block;
+}
+
+.chapter p {
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.openingCopy,
+.lensCopy,
+.lifeCopy,
+.missionGrid > div,
+.callout > div {
+  max-width: 820px;
+}
+
+.opening h2,
+.lens h2,
+.lifeBack h2,
+.mission h2,
+.callout h2,
+.rebuild h2 {
+  margin: 0 0 44px;
+  font-size: clamp(50px, 6.4vw, 98px);
+  letter-spacing: -0.052em;
+  line-height: 0.96;
+}
+
+.opening p,
+.lensCopy > p,
+.lifeCopy > p,
+.missionGrid p,
+.callout p,
+.rebuild > p {
+  margin: 0 0 26px;
+  font-size: 17px;
+  line-height: 1.75;
+}
+
+.realization {
+  padding: clamp(88px, 12vw, 170px) var(--space-section-inline);
+  background: var(--color-accent);
+  color: white;
+}
+
+.realization p {
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(64px, 9vw, 138px);
+  font-style: italic;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  text-align: center;
+}
+
+.lens,
+.lifeBack {
+  grid-template-columns: minmax(320px, 0.8fr) minmax(0, 1.2fr);
+  align-items: stretch;
+}
+
+.lens {
+  display: block;
+}
+
+.lens .lensCopy {
+  max-width: none;
+}
+
+.lensCopy .chapter,
+.lifeCopy .chapter {
+  margin-bottom: 54px;
+}
+
+.emphasis {
+  margin-top: 48px !important;
+  font-family: var(--font-display);
+  font-size: clamp(32px, 3.5vw, 52px) !important;
+  letter-spacing: -0.035em;
+  line-height: 1.08 !important;
+}
+
+.rebuild {
+  padding: clamp(94px, 12vw, 174px) var(--space-section-inline);
+  background: #f1f1f1;
+}
+
+.rebuild .chapter,
+.mission .chapter {
+  margin-bottom: 68px;
+}
+
+.rebuild h2,
+.rebuild > p {
+  width: min(100%, 950px);
+}
+
+.rebuild > p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.lifeBack {
+  position: relative;
+  display: flex;
+  min-height: 760px;
+  align-items: flex-end;
+  justify-content: flex-end;
+  overflow: hidden;
+  background: var(--color-ink);
+  color: white;
+}
+
+.lifeBackground {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.lifeBack .heroOverlay {
+  background:
+    linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(0 0 0 / 4%) 38%,
+      rgb(0 0 0 / 30%) 100%
+    ),
+    linear-gradient(
+      90deg,
+      transparent 0%,
+      rgb(0 0 0 / 12%) 42%,
+      rgb(0 0 0 / 56%) 100%
+    );
+}
+
+.lifeBack .lifeCopy {
+  position: relative;
+  z-index: 2;
+  width: min(58%, 760px);
+  margin-left: auto;
+}
+
+.lifeBack h2 {
+  margin-bottom: 38px;
+  font-size: clamp(64px, 7vw, 112px);
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+  text-wrap: balance;
+}
+
+.lifeBack .lifeCopy > p {
+  color: #f2f2f2;
+  font-size: 19px;
+  line-height: 1.65;
+  text-shadow: 0 1px 18px rgb(0 0 0 / 40%);
+}
+
+.mission {
+  padding: clamp(94px, 12vw, 174px) var(--space-section-inline);
+  background: var(--color-ink);
+  color: white;
+}
+
+.missionGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 0.75fr);
+  gap: clamp(64px, 10vw, 160px);
+}
+
+.mission h2 {
+  margin: 0;
+}
+
+.missionGrid p {
+  color: #dddddd;
+}
+
+.callout {
+  align-items: stretch;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+}
+
+.calloutImage {
+  position: relative;
+  min-height: 560px;
+  overflow: hidden;
+}
+
+.calloutImage img {
+  object-fit: cover;
+  object-position: center 38%;
+}
+
+.callout > div:last-child {
+  display: flex;
+  min-height: 560px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.callout > div > p:first-child {
+  max-width: 680px;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 2.7vw, 42px);
+  letter-spacing: -0.03em;
+  line-height: 1.16;
+}
+
+.callout h2 {
+  margin: 42px 0 0;
+  font-size: clamp(34px, 3.2vw, 50px);
+  letter-spacing: -0.035em;
+  line-height: 1.08;
+}
+
+.callout a {
+  color: var(--color-accent);
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 760px;
+    padding: var(--space-section-block-mobile)
+      var(--space-section-inline-mobile);
+  }
+
+  .heroImage {
+    object-position: center 42%;
+  }
+
+  .heroOverlay {
+    background:
+      linear-gradient(
+        180deg,
+        transparent 0%,
+        rgb(0 0 0 / 12%) 38%,
+        rgb(0 0 0 / 82%) 100%
+      ),
+      linear-gradient(90deg, rgb(0 0 0 / 10%), transparent);
+  }
+
+  .heroContent {
+    min-height: 640px;
+  }
+
+  .hero h1 {
+    font-size: clamp(60px, 18vw, 86px);
+  }
+
+  .heroContent > p {
+    font-size: 16px;
+  }
+
+  .opening,
+  .lens,
+  .lifeBack,
+  .missionGrid,
+  .callout {
+    grid-template-columns: 1fr;
+  }
+
+  .opening,
+  .lens,
+  .lifeBack,
+  .callout,
+  .mission,
+  .rebuild {
+    padding: 76px var(--space-section-inline-mobile);
+  }
+
+  .opening,
+  .lens,
+  .lifeBack,
+  .callout {
+    gap: 48px;
+  }
+
+  .lifeBack {
+    min-height: 900px;
+    align-items: flex-end;
+  }
+
+  .lifeBack .lifeCopy {
+    width: 100%;
+  }
+
+  .lifeBack .heroOverlay {
+    background: linear-gradient(
+      180deg,
+      transparent 0%,
+      rgb(0 0 0 / 10%) 38%,
+      rgb(0 0 0 / 72%) 100%
+    );
+  }
+
+  .lifeBack h2 {
+    font-size: clamp(56px, 15vw, 78px);
+  }
+
+  .lifeBack .lifeCopy > p {
+    font-size: 16px;
+  }
+
+  .opening h2,
+  .lens h2,
+  .lifeBack h2,
+  .mission h2,
+  .callout h2,
+  .rebuild h2 {
+    font-size: 48px;
+  }
+
+  .realization {
+    padding: 82px var(--space-section-inline-mobile);
+  }
+
+  .realization p {
+    font-size: 54px;
+  }
+
+  .photoPlaceholder,
+  .callout .photoPlaceholder {
+    min-height: 440px;
+  }
+
+  .lifeCopy {
+    order: 2;
+  }
+
+  .lifeBack .photoPlaceholder {
+    order: 1;
+  }
+
+  .missionGrid {
+    gap: 52px;
+  }
+
+  .callout > div:last-child {
+    min-height: auto;
+  }
+
+  .callout > div > p:first-child {
+    font-size: 30px;
+  }
+
+  .callout h2 {
+    margin-top: 34px;
+    font-size: 36px;
+  }
+}

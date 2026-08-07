@@ -1,0 +1,110 @@
+.contactPage {
+  background: white;
+}
+
+:global(body):has(.contactPage) > aside {
+  display: none;
+}
+
+.contactHero {
+  position: relative;
+  min-height: 595px;
+  background-image: url("/carly-contact-portrait.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.contactPanel {
+  position: absolute;
+  top: 76px;
+  right: 6.3vw;
+  width: min(55%, 750px);
+  min-height: 442px;
+  padding: 52px 52px 46px;
+  background: #050101;
+  color: white;
+}
+
+.contactPanel h1 {
+  margin: 0 0 25px;
+  font-size: clamp(34px, 3vw, 44px);
+  font-variant: small-caps;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.contactPanel p {
+  max-width: 640px;
+  margin: 0 0 30px;
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.contactPanel p:last-child {
+  margin-bottom: 0;
+}
+
+.contactPanel a {
+  color: inherit;
+}
+
+.contactPanel p:last-child a {
+  font-weight: 700;
+}
+
+.solidarity {
+  padding: 145px 4vw 120px;
+  background: #050101;
+  color: white;
+  text-align: center;
+}
+
+.solidarity p {
+  max-width: 1260px;
+  margin: 0 auto;
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.solidarity em {
+  font-style: italic;
+}
+
+@media (max-width: 800px) {
+  .contactHero {
+    display: flex;
+    min-height: 760px;
+    align-items: flex-end;
+    padding: 0 var(--space-section-inline-mobile) 42px;
+    background-position: 33% center;
+  }
+
+  .contactPanel {
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    min-height: auto;
+    padding: 36px 30px;
+  }
+
+  .contactPanel h1 {
+    font-size: 38px;
+  }
+
+  .contactPanel p {
+    font-size: 16px;
+  }
+
+  .solidarity {
+    padding: 78px var(--space-section-inline-mobile);
+  }
+
+  .solidarity p {
+    font-size: 16px;
+  }
+}
