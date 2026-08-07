@@ -1,4 +1,4 @@
-# ADR 0018: Pattern Breaker Drip email capture
+# ADR 0019: Pattern Breaker Drip email capture
 
 ## Status
 
