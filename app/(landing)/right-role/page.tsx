@@ -75,6 +75,10 @@ export default function RightRolePage() {
             id={`drip-ef-${rightRoleEmailCapture.formId}`}
             method="post"
           >
+            <p className={styles.formIntro}>
+              Ready to make your next hire the right hire? Share your details
+              below and I&apos;ll send the mini-class straight to your inbox.
+            </p>
             <div className={styles.formField}>
               <label htmlFor="right-role-first-name">First Name</label>
               <input
@@ -84,7 +88,7 @@ export default function RightRolePage() {
                 type="text"
               />
             </div>
-            <div className={styles.formField}>
+            <div className={`${styles.formField} ${styles.fullWidth}`}>
               <label htmlFor="right-role-email">Email Address</label>
               <input
                 autoComplete="email"

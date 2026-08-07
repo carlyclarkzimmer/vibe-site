@@ -78,8 +78,15 @@
   gap: 7px;
 }
 
-.formField:nth-child(3) {
+.formIntro,
+.fullWidth {
   grid-column: 1 / -1;
+}
+
+.formIntro {
+  margin: 0 0 2px;
+  font-size: 17px;
+  line-height: 1.5;
 }
 
 .formField label {
@@ -331,7 +338,8 @@
     grid-template-columns: 1fr;
   }
 
-  .formField:nth-child(3) {
+  .formIntro,
+  .fullWidth {
     grid-column: auto;
   }
 
