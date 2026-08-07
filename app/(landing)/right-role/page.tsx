@@ -80,20 +80,26 @@ export default function RightRolePage() {
               below and I&apos;ll send the mini-class straight to your inbox.
             </p>
             <div className={styles.formField}>
-              <label htmlFor="right-role-first-name">First Name</label>
+              <label htmlFor="right-role-first-name">
+                First Name <span>(Optional)</span>
+              </label>
               <input
                 autoComplete="given-name"
                 id="right-role-first-name"
                 name="fields[first_name]"
+                placeholder="Your first name"
                 type="text"
               />
             </div>
-            <div className={`${styles.formField} ${styles.fullWidth}`}>
-              <label htmlFor="right-role-email">Email Address</label>
+            <div className={styles.formField}>
+              <label htmlFor="right-role-email">
+                Email Address <strong>(Required)</strong>
+              </label>
               <input
                 autoComplete="email"
                 id="right-role-email"
                 name="fields[email]"
+                placeholder="you@example.com"
                 required
                 type="email"
               />
@@ -105,6 +111,7 @@ export default function RightRolePage() {
               <input
                 id="right-role-social-media"
                 name="fields[social_media]"
+                placeholder="@yourhandle or profile link"
                 type="text"
               />
             </div>
@@ -127,7 +134,7 @@ export default function RightRolePage() {
               value={rightRoleEmailCapture.campaignTag}
             />
             <button data-drip-attribute="sign-up-button" type="submit">
-              Instant Access
+              Send Me the Mini-Class
             </button>
             <a
               className={styles.privacyLink}

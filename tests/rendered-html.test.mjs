@@ -281,6 +281,8 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
     html,
     /Share your details below and I&#x27;ll send the mini-class straight to your inbox\./i,
   );
+  assert.match(html, /Send Me the Mini-Class/i);
+  assert.match(html, /placeholder="you@example\.com"/i);
   assert.match(html, /id="drip-ef-933352998"/i);
   assert.match(
     html,
