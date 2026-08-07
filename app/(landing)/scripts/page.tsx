@@ -96,7 +96,7 @@ export default function ScriptsPage() {
               required
               type="email"
             />
-            <label htmlFor="scripts-social-media">Social Media</label>
+            <label htmlFor="scripts-social-media">Social Media (Optional)</label>
             <input
               autoComplete="url"
               id="scripts-social-media"

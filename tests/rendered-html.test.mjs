@@ -304,6 +304,7 @@ test("serves the Communication Scripts page as a focused landing page", async ()
   assert.match(html, /name="fields\[first_name\]"/i);
   assert.match(html, /name="fields\[email\]"/i);
   assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /Social Media \(Optional\)/i);
   assert.match(html, /value="Communication Scripts Opt-In"/);
   assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
   assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
