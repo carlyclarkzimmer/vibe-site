@@ -437,6 +437,7 @@ test("serves a generic thank-you page without campaign delivery copy", async () 
   assert.equal(response.status, 200);
   assert.match(html, /<title>Thank You \| Carly Clark Zimmer<\/title>/i);
   assert.match(html, /Your submission has been received/i);
+  assert.match(html, /Check your email for a message from me!/i);
   assert.match(html, /href="\/"/i);
   assert.match(html, /Return to the homepage/i);
   assert.doesNotMatch(html, /Beyond the Bottleneck|listening-tour details/i);
