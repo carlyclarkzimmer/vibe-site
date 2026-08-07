@@ -493,9 +493,29 @@ test("serves the Pattern Breaker training as a focused landing page", async () =
   assert.match(html, /Input your text in this area/i);
   assert.match(html, /Ready to stop circling\?/i);
   assert.equal(
+    (html.match(/data-drip-embedded-form="300703732"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[first_name\]"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[email\]"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[social_media\]"/gi) ?? []).length,
+    2,
+  );
+  assert.match(
+    html,
+    /https:\/\/www\.getdrip\.com\/forms\/300703732\/submissions/i,
+  );
+  assert.equal(
     (
       html.match(
-        /name="33ad3425125f513ba1ab5e359ca21551"/gi,
+        /value="Pattern Breaker Email Opt-in"/gi,
       ) ?? []
     ).length,
     2,
@@ -503,35 +523,25 @@ test("serves the Pattern Breaker training as a focused landing page", async () =
   assert.equal(
     (
       html.match(
-        /name="ec3b68ece7915ca83f420c91066c7d52"/gi,
-      ) ?? []
-    ).length,
-    2,
-  );
-  assert.equal(
-    (
-      html.match(
-        /name="9d9d7b20bab90c16e7e8473b4dffb2bc"/gi,
+        /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/gi,
       ) ?? []
     ).length,
     2,
   );
   assert.match(
     html,
-    /api\.leadpages\.io\/integration\/v1\/forms\/MoRK7DvxRXQcsNtkVLaYYo\/submissions/i,
+    /id="g-recaptcha-response-data-form-submission-pattern-breaker-hero"/i,
   );
   assert.match(
     html,
-    /api\.leadpages\.io\/integration\/v1\/forms\/mELWZfNbNLsaLuvYzHaSZZ\/submissions/i,
+    /id="g-recaptcha-response-data-form-submission-pattern-breaker-invitation"/i,
   );
   assert.equal(
-    (
-      html.match(
-        /data-thank-you="https:\/\/carlyclarkzimmer\.lpages\.co\/newsletter-thank-you\/"/gi,
-      ) ?? []
-    ).length,
+    (html.match(/href="\/privacy"[^>]*target="_blank"/gi) ?? []).length,
     2,
   );
+  assert.doesNotMatch(html, /api\.leadpages\.io/i);
+  assert.doesNotMatch(html, /general-email/i);
   assert.match(html, /src="\/carly-hero\.jpg"/i);
   assert.match(html, /src="\/carly-supporting\.jpg"/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);

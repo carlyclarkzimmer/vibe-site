@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- approved project photography is served without destructive processing */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
 import { patternBreakerPage } from "../../../content/campaigns/pattern-breaker";
 import styles from "./page.module.css";
 
@@ -18,24 +19,25 @@ export const metadata: Metadata = {
 };
 
 type SignupFormProps = {
-  action: string;
   buttonLabel: string;
   idPrefix: string;
 };
 
-function SignupForm({ action, buttonLabel, idPrefix }: SignupFormProps) {
+function SignupForm({ buttonLabel, idPrefix }: SignupFormProps) {
+  const form = patternBreakerPage.form;
+
   return (
     <form
-      action={action}
+      action={form.action}
       className={styles.form}
-      data-thank-you={patternBreakerPage.forms.thankYouUrl}
+      data-drip-embedded-form={form.formId}
+      id={`drip-ef-${form.formId}-${idPrefix}`}
       method="post"
-      target="_top"
     >
       <label htmlFor={`${idPrefix}-first-name`}>First Name</label>
       <input
         id={`${idPrefix}-first-name`}
-        name={patternBreakerPage.forms.firstNameField}
+        name="fields[first_name]"
         type="text"
         placeholder="First Name"
         autoComplete="given-name"
@@ -43,7 +45,7 @@ function SignupForm({ action, buttonLabel, idPrefix }: SignupFormProps) {
       <label htmlFor={`${idPrefix}-email`}>Email Address</label>
       <input
         id={`${idPrefix}-email`}
-        name={patternBreakerPage.forms.emailField}
+        name="fields[email]"
         type="email"
         placeholder="Email Address"
         autoComplete="email"
@@ -52,22 +54,37 @@ function SignupForm({ action, buttonLabel, idPrefix }: SignupFormProps) {
       <label htmlFor={`${idPrefix}-social`}>Social Media (Optional)</label>
       <textarea
         id={`${idPrefix}-social`}
-        name={patternBreakerPage.forms.socialMediaField}
+        name="fields[social_media]"
         placeholder="Social Media (Optional)"
       />
       <div className={styles.honeypot} aria-hidden="true">
-        <label htmlFor={`${idPrefix}-confirm-existence`}>
+        <label htmlFor={`${idPrefix}-website`}>
           If you are human, leave this blank.
         </label>
         <input
-          id={`${idPrefix}-confirm-existence`}
-          name="confirm-existence"
+          id={`${idPrefix}-website`}
+          name="website"
           type="text"
           autoComplete="off"
           tabIndex={-1}
         />
       </div>
-      <button type="submit">{buttonLabel}</button>
+      <DripRecaptcha
+        inputId={`g-recaptcha-response-data-form-submission-${idPrefix}`}
+        siteKey={form.recaptchaSiteKey}
+      />
+      <input name="tags[]" type="hidden" value={form.campaignTag} />
+      <button data-drip-attribute="sign-up-button" type="submit">
+        {buttonLabel}
+      </button>
+      <a
+        className={styles.privacyLink}
+        href="/privacy"
+        rel="noreferrer"
+        target="_blank"
+      >
+        Privacy Policy
+      </a>
     </form>
   );
 }
@@ -121,7 +138,6 @@ export default function PatternBreakerPage() {
           </h1>
           <p className={styles.intro}>{patternBreakerPage.description}</p>
           <SignupForm
-            action={patternBreakerPage.forms.hero.action}
             buttonLabel="Access the Class"
             idPrefix="pattern-breaker-hero"
           />
@@ -160,7 +176,6 @@ export default function PatternBreakerPage() {
             enough to actually change.
           </p>
           <SignupForm
-            action={patternBreakerPage.forms.invitation.action}
             buttonLabel="Join the Bootcamp"
             idPrefix="pattern-breaker-invitation"
           />
