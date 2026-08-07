@@ -312,6 +312,10 @@ test("serves the Communication Scripts page as a focused landing page", async ()
   assert.match(html, /rel="canonical" href="\/scripts"/i);
   assert.match(html, /Boundary Scripts/i);
   assert.match(html, /Simple phrases\. Big impact\./i);
+  assert.match(
+    html,
+    /Share your details below and I&#x27;ll send the go-to communication scripts straight to your inbox\./i,
+  );
   assert.match(html, /id="drip-ef-88996381"/i);
   assert.match(
     html,

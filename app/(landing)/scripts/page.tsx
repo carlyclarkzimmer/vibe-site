@@ -74,6 +74,11 @@ export default function ScriptsPage() {
           <p className={styles.promise}>
             <em>Let’s make boundaries that feel as good to set as they are to keep!</em>
           </p>
+          <p className={styles.formIntro}>
+            Ready for words that make tricky conversations feel a little
+            easier? Share your details below and I&apos;ll send the go-to
+            communication scripts straight to your inbox.
+          </p>
           <form
             action={communicationScriptsEmailCapture.action}
             className={styles.form}
