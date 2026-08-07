@@ -1,9 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- approved static brand photography */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
+import { communicationScriptsEmailCapture } from "../../../content/campaigns/communication-scripts";
 import styles from "./page.module.css";
-
-const scriptsFormUrl =
-  "https://carlyclarkzimmer.com/serve-leadbox/fDiiXkm8GBZSPmyYfH2i3Q/";
 
 const description = [
   "Simple, powerful phrases to help you say “no” with grace, set limits on your time, and communicate with kindness—all while staying true to yourself.",
@@ -75,9 +74,65 @@ export default function ScriptsPage() {
           <p className={styles.promise}>
             <em>Let’s make boundaries that feel as good to set as they are to keep!</em>
           </p>
-          <a className={styles.primaryCta} href={scriptsFormUrl}>
-            Get the Scripts
-          </a>
+          <form
+            action={communicationScriptsEmailCapture.action}
+            className={styles.form}
+            data-drip-embedded-form={communicationScriptsEmailCapture.formId}
+            id={`drip-ef-${communicationScriptsEmailCapture.formId}`}
+            method="post"
+          >
+            <label htmlFor="scripts-first-name">First Name</label>
+            <input
+              autoComplete="given-name"
+              id="scripts-first-name"
+              name="fields[first_name]"
+              type="text"
+            />
+            <label htmlFor="scripts-email">Email Address</label>
+            <input
+              autoComplete="email"
+              id="scripts-email"
+              name="fields[email]"
+              required
+              type="email"
+            />
+            <label htmlFor="scripts-social-media">Social Media</label>
+            <input
+              autoComplete="url"
+              id="scripts-social-media"
+              name="fields[social_media]"
+              type="text"
+            />
+            <div aria-hidden="true" className={styles.honeypot}>
+              <label htmlFor="scripts-website">Website</label>
+              <input
+                autoComplete="off"
+                id="scripts-website"
+                name="website"
+                tabIndex={-1}
+                type="text"
+              />
+            </div>
+            <DripRecaptcha
+              siteKey={communicationScriptsEmailCapture.recaptchaSiteKey}
+            />
+            <input
+              name="tags[]"
+              type="hidden"
+              value={communicationScriptsEmailCapture.campaignTag}
+            />
+            <button data-drip-attribute="sign-up-button" type="submit">
+              Get the Scripts
+            </button>
+            <a
+              className={styles.privacyLink}
+              href="/privacy"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Privacy Policy
+            </a>
+          </form>
         </div>
       </section>
 

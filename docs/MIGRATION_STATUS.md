@@ -26,7 +26,7 @@ material copy changes remain separate decisions.
 | `/pattern-breaker/` | `/pattern-breaker` | Landing | Drip configured; preview ready | Verify Drip redirect, subscriber state, campaign tag, workflow, and training delivery end to end |
 | `/newsletter/` | `/newsletter` | Landing | Baseline composed | Verify Leadpages submission and newsletter delivery behavior |
 | `carlyclarkzimmer.lpages.co/newsletter-thank-you/` | `/newsletter-thank-you` | Landing | Baseline composed | Confirm thank-you copy and destination before publication |
-| `/scripts/` | `/scripts` | Landing | Baseline restored; preview ready | Verify Leadpages submission and scripts delivery behavior before describing sign-up as working |
+| `/scripts/` | `/scripts` | Landing | Drip form enabled; preview ready | Configure the production redirect and verify submission, tag, and scripts delivery end to end before describing sign-up as working |
 | `/thank-you-laser-coaching-lab/` | `/thank-you-laser-coaching-lab` | Landing | Preview ready | Email delivery remains provider-owned |
 
 No route is ready for public launch solely because it has been composed. A

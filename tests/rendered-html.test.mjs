@@ -296,14 +296,24 @@ test("serves the Communication Scripts page as a focused landing page", async ()
   assert.match(html, /rel="canonical" href="\/scripts"/i);
   assert.match(html, /Boundary Scripts/i);
   assert.match(html, /Simple phrases\. Big impact\./i);
+  assert.match(html, /id="drip-ef-88996381"/i);
   assert.match(
     html,
-    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/fDiiXkm8GBZSPmyYfH2i3Q\//i,
+    /https:\/\/www\.getdrip\.com\/forms\/88996381\/submissions/i,
   );
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /value="Communication Scripts Opt-In"/);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
   assert.match(html, /carly-hero\.jpg/i);
   assert.match(html, /carly-supporting\.jpg/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
-  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+  assert.doesNotMatch(
+    html,
+    /serve-leadbox|api\.leadpages\.io|connect\.facebook\.net|center\.io/i,
+  );
 });
 
 test("serves the Laser Coaching Lab welcome page at its thank-you route", async () => {
