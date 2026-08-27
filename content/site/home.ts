@@ -6,7 +6,7 @@ export const siteMeta = {
 
 export const homeContent = {
   hero: {
-    eyebrow: "Leadership and Behavioral Change Coach",
+    eyebrow: "Behavior Change Coach, ICF, PCC",
     title: "Build a business that leaves room for life.",
     description:
       "Finding your business bottleneck is the fastest and most effective way to build a business that doesn’t depend on you for everything, so you can truly LIVE your life outside of it.",
@@ -14,12 +14,11 @@ export const homeContent = {
     ctaHref: "/services",
   },
   recognition: {
-    heading: "You have outgrown the structure.",
+    heading: "You built the business. Now you want your life back.",
     paragraphs: [
-      "You learned how to function under pressure. You learned fast. You learned well. People noticed.",
-      "Over time, you became the person others relied on. For a while, that felt good.",
-      "What you built worked. On paper, your life still looks successful. But somewhere along the way, something changed.",
-      "Nothing is broken. You have simply outgrown the structure you are living in.",
+      "Maybe your business is profitable, your clients are happy, and from the outside, it looks like it’s working.",
+      "But behind the scenes, you’re still the one everything depends on.",
+      "You’re answering too quickly, carrying too much, pushing your own priorities aside, and telling yourself you’ll fix it when things calm down.",
     ],
   },
   approach: {
