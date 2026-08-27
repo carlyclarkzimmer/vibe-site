@@ -70,6 +70,7 @@ export default function HomePage() {
           alt="Carly Clark Zimmer in a flowing metallic dress"
           fill
           sizes="100vw"
+          unoptimized
         />
         <div className={styles.servicesPanel}>
           <div className={styles.servicesIntro}>
