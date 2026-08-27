@@ -94,16 +94,6 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-      <Section className={styles.process}>
-        <Eyebrow>{homeContent.process.eyebrow}</Eyebrow>
-        <h2>{homeContent.process.heading}</h2>
-        <div>
-          {homeContent.process.paragraphs.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
-        </div>
-        <Button href={homeContent.hero.ctaHref}>{homeContent.hero.cta}</Button>
-      </Section>
       <Section className={styles.testimonial}>
         <blockquote>“{homeContent.testimonial.quote}”</blockquote>
         <p>{homeContent.testimonial.attribution}</p>

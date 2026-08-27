@@ -68,16 +68,6 @@ export const homeContent = {
       },
     ],
   },
-  process: {
-    eyebrow: "How I Work",
-    heading: "Calm. Exact. Practical.",
-    paragraphs: [
-      "I work by slowing things down just enough to see what is actually creating the friction.",
-      "We identify the load-bearing beliefs, roles, and behaviors you have been living inside. This is where it becomes clear what is structural and what is situational.",
-      "Practical adjustments become obvious. What needs to be dismantled is named cleanly so we can redesign what comes next.",
-      "You leave with a clear set of priorities, practical first steps, and a noticeable shift from internal tension to direction.",
-    ],
-  },
   testimonial: {
     quote:
       "Before working with Carly, I was constantly busy but unclear. Our work brought clarity to my priorities, how I structure my time, and how I move forward in my business without burning myself out.",

@@ -57,8 +57,7 @@
   text-shadow: 0 1px 18px rgb(0 0 0 / 35%);
 }
 
-.heroCta,
-.process a {
+.heroCta {
   margin-top: 40px;
 }
 
@@ -89,20 +88,17 @@
 }
 
 .recognition h2,
-.approach h2,
-.process h2 {
+.approach h2 {
   margin: 0;
   font-size: clamp(46px, 6vw, 92px);
 }
 
 .recognition p,
-.process p,
 .approach p {
   max-width: 650px;
 }
 
-.recognition p:first-child,
-.process p:first-child {
+.recognition p:first-child {
   margin-top: 0;
 }
 
@@ -218,19 +214,6 @@
   text-align: right;
 }
 
-.process {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-  gap: 9vw;
-  background: var(--color-paper);
-}
-
-.process > :first-child {
-  grid-column: 1 / -1;
-}
-
 .testimonial {
   position: relative;
   z-index: 1;
@@ -243,7 +226,7 @@
   max-width: 950px;
   margin: 0 auto;
   font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 72px);
+  font-size: clamp(19px, 2.5vw, 36px);
   letter-spacing: -0.04em;
   line-height: 1;
 }
@@ -295,8 +278,7 @@
     margin-top: 36px;
   }
 
-  .recognition,
-  .process {
+  .recognition {
     grid-template-columns: 1fr;
     gap: 40px;
   }
