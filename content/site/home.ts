@@ -7,10 +7,10 @@ export const siteMeta = {
 export const homeContent = {
   hero: {
     eyebrow: "Leadership and Behavioral Change Coach",
-    title: "A Different Way Forward",
+    title: "Build a business that leaves room for life.",
     description:
-      "One day you wake up and realize the life you built feels like a tight box, and you're ready for change. That’s the moment our work begins.",
-    cta: "Explore services",
+      "Finding your business bottleneck is the fastest and most effective way to build a business that doesn’t depend on you for everything, so you can truly LIVE your life outside of it.",
+    cta: "Let’s Find the Bottleneck",
     ctaHref: "/services",
   },
   recognition: {

@@ -32,20 +32,14 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding-top: clamp(70px, 10vh, 120px);
-}
-
-.hero h1 {
-  max-width: 960px;
-  margin: 28px 0;
-  font-size: clamp(76px, 11vw, 172px);
+  padding-top: clamp(140px, 17vh, 190px);
 }
 
 .hero h1 {
   max-width: min(88vw, 1120px);
   margin: 24px 0 0 -0.035em;
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 8vw, 7rem);
+  font-size: clamp(3.75rem, 6.2vw, 5.6rem);
   font-weight: 400;
   letter-spacing: -0.02em;
   line-height: 0.92;
@@ -187,7 +181,7 @@
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(3rem, 14vw, 4.8rem);
+    font-size: clamp(2.75rem, 12vw, 4.1rem);
     line-height: 0.92;
   }
 
