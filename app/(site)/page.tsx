@@ -11,7 +11,7 @@ export default function HomePage() {
       <Section as="header" className={styles.hero} id="home-hero">
         <Image
           className={styles.heroImage}
-          src="/homepage-editorial-hero.png"
+          src="/homepage-teal-close-hero.jpg"
           alt="Carly Clark Zimmer seated in a teal jacket"
           fill
           priority
