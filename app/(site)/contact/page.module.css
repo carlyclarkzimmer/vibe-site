@@ -21,7 +21,7 @@
   width: min(55%, 750px);
   min-height: 442px;
   padding: 52px 52px 46px;
-  background: #050101;
+  background: var(--color-ink);
   color: white;
 }
 
@@ -56,7 +56,7 @@
 
 .solidarity {
   padding: 145px 4vw 120px;
-  background: #050101;
+  background: var(--color-ink);
   color: white;
   text-align: center;
 }

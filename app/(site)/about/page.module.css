@@ -56,7 +56,7 @@
 .heroContent > p {
   max-width: 800px;
   margin: 0;
-  color: #f2f2f2;
+  color: var(--color-surface-muted);
   font-size: 19px;
   line-height: 1.65;
   text-shadow: 0 1px 18px rgb(0 0 0 / 40%);
@@ -170,7 +170,7 @@
 
 .rebuild {
   padding: clamp(94px, 12vw, 174px) var(--space-section-inline);
-  background: #f1f1f1;
+  background: var(--color-surface-muted);
 }
 
 .rebuild .chapter,
@@ -237,7 +237,7 @@
 }
 
 .lifeBack .lifeCopy > p {
-  color: #f2f2f2;
+  color: var(--color-surface-muted);
   font-size: 19px;
   line-height: 1.65;
   text-shadow: 0 1px 18px rgb(0 0 0 / 40%);
@@ -260,7 +260,7 @@
 }
 
 .missionGrid p {
-  color: #dddddd;
+  color: var(--color-text-muted);
 }
 
 .callout {

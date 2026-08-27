@@ -14,7 +14,7 @@ const bodoniModa = Bodoni_Moda({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--font-bodoni-moda",
-  weight: ["400"],
+  weight: ["400", "700"],
 });
 
 const ebGaramond = EB_Garamond({
@@ -32,7 +32,7 @@ const cormorantGaramond = Cormorant_Garamond({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["500"],
+  weight: ["500", "700", "800"],
 });
 
 export const metadata: Metadata = {

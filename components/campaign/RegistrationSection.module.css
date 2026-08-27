@@ -18,7 +18,7 @@
 .description {
   max-width: 760px;
   margin: 0 auto 55px;
-  color: #dddddd;
+  color: var(--color-text-muted);
 }
 
 .register form {
@@ -29,7 +29,7 @@
 
 .copyright {
   margin-top: 72px;
-  color: #dddddd;
+  color: var(--color-text-muted);
   font-family: var(--font-interface);
   font-size: 10px;
   letter-spacing: 0.16em;
@@ -58,7 +58,7 @@
   min-width: 0;
   flex: 1;
   padding: 20px;
-  border: 1px solid #666666;
+  border: 1px solid var(--color-field-border);
   outline: none;
   background: transparent;
   color: white;
@@ -98,7 +98,7 @@
   gap: 10px;
   align-items: flex-start;
   margin-top: 22px;
-  color: #dddddd;
+  color: var(--color-text-muted);
   font-family: var(--font-body);
   font-size: 15px !important;
   letter-spacing: normal !important;
@@ -108,7 +108,7 @@
 
 .privacy {
   margin: 18px 0 0;
-  color: #dddddd;
+  color: var(--color-text-muted);
   font-size: 14px;
 }
 

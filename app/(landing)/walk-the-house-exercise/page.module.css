@@ -30,7 +30,7 @@
 .portrait figcaption span { margin-top: 7px; font: 700 9px var(--font-interface); letter-spacing: .13em; text-transform: uppercase; }
 .aboutCopy { align-self: center; width: min(100%, 760px); padding: clamp(80px, 10vw, 150px) clamp(36px, 8vw, 120px); }
 .aboutCopy p { margin: 0 0 27px; font: 17px/1.62 var(--font-interface); }
-.aboutCopy p:first-child { margin-bottom: 48px; color: #e5a6c6; font: 400 clamp(42px, 5vw, 68px)/1 var(--font-display); }
+.aboutCopy p:first-child { margin-bottom: 48px; color: var(--color-accent); font: 400 clamp(42px, 5vw, 68px)/1 var(--font-display); }
 .footer { padding: 32px var(--space-section-inline); background: var(--color-accent); color: var(--color-paper); font: 700 10px var(--font-interface); letter-spacing: .15em; text-align: center; text-transform: uppercase; }
 @media (max-width: 820px) {
   .hero { min-height: auto; padding-inline: 28px; }

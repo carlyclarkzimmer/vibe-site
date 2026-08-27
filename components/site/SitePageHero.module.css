@@ -16,6 +16,6 @@
 
 .hero p {
   max-width: 680px;
-  color: #dddddd;
+  color: var(--color-text-muted);
   font-size: 20px;
 }

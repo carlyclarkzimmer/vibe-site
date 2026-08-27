@@ -1,7 +1,7 @@
 .hero,
 .darkSplit,
 .waitSection {
-  background: #090000;
+  background: var(--color-ink);
   color: white;
 }
 
@@ -37,12 +37,12 @@
   grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
   gap: clamp(42px, 7vw, 110px);
   padding: clamp(70px, 9vw, 130px) 7vw;
-  background: #f1f1f1;
+  background: var(--color-surface-muted);
 }
 
 .introImage {
   padding-top: 36px;
-  border-top: 1px solid #8d8d8d;
+  border-top: 1px solid var(--color-border);
 }
 
 .introImage img {
@@ -58,7 +58,7 @@
 
 .introCopy a,
 .textLink {
-  color: #e53978;
+  color: var(--color-accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
@@ -66,7 +66,7 @@
 
 .introCopy .accentLead {
   margin: 0 0 28px;
-  color: #e53978;
+  color: var(--color-accent);
   font-weight: 700;
 }
 
@@ -75,7 +75,7 @@
   max-width: 880px;
   margin: 30px auto 0;
   padding: clamp(36px, 5vw, 70px);
-  border: 1px solid #b7b7b7;
+  border: 1px solid var(--color-border);
   background: white;
 }
 
@@ -102,7 +102,7 @@
 
 .optionReverse {
   grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
-  background: #f9f9f8;
+  background: var(--color-surface-muted);
 }
 
 .optionCopy {
@@ -111,7 +111,7 @@
 
 .optionLabel {
   margin: 0 0 16px;
-  color: #e53978;
+  color: var(--color-accent);
   font-family: var(--font-interface);
   font-size: 12px;
   font-weight: 700;
@@ -179,7 +179,7 @@
 
 .subhead {
   margin: -28px 0 36px;
-  color: #686868;
+  color: var(--color-text-subtle);
   font-weight: 700;
 }
 
@@ -187,7 +187,7 @@
   display: inline-block;
   margin-top: 24px;
   padding: 17px 24px;
-  background: #e53978;
+  background: var(--color-accent);
   color: white;
   font-family: var(--font-interface);
   font-size: 12px;
@@ -232,7 +232,7 @@
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8vw;
   padding: clamp(70px, 8vw, 116px) 7vw;
-  border-top: 1px solid #aaa;
+  border-top: 1px solid var(--color-border);
 }
 
 .detailBand h3 {
@@ -278,14 +278,14 @@
   grid-template-columns: 0.9fr 1.1fr;
   gap: 8vw;
   padding: clamp(72px, 9vw, 130px) 7vw;
-  border-top: 1px solid #b2b2b2;
+  border-top: 1px solid var(--color-border);
 }
 
 .finalTestimonial {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
   align-items: stretch;
-  background: #f1f1f1;
+  background: var(--color-surface-muted);
 }
 
 .finalTestimonial blockquote {

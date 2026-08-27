@@ -13,19 +13,19 @@
 .memberNote p {
   max-width: 980px;
   margin: 0 auto;
-  font-family: var(--font-interface);
+  font-family: var(--font-body);
   font-size: clamp(15px, 1.7vw, 20px);
   line-height: 1.5;
   letter-spacing: 0.025em;
 }
 
 .memberNote a {
-  color: #f26ca7;
+  color: var(--color-accent);
   text-underline-offset: 0.2em;
 }
 
 .memberNote a span {
-  color: #cfdf31;
+  color: var(--color-accent);
 }
 
 .memberNote a:focus-visible,
@@ -77,7 +77,7 @@
 
 .signupCard h1 {
   margin: 0 0 30px;
-  font-family: var(--font-interface);
+  font-family: var(--font-display);
   font-size: clamp(22px, 2.4vw, 32px);
   font-weight: 700;
   line-height: 1.25;
@@ -93,7 +93,7 @@
   width: 100%;
   height: auto;
   margin-bottom: 24px;
-  border-bottom: 4px solid #cfdf31;
+  border-bottom: 4px solid var(--color-accent);
 }
 
 .form {
@@ -116,7 +116,7 @@
   width: 100%;
   min-height: 50px;
   padding: 12px 14px;
-  border: 1px solid #8b8b8b;
+  border: 1px solid var(--color-field-border);
   border-radius: 0;
   background: var(--color-paper);
   color: var(--color-ink);
@@ -175,7 +175,7 @@
 }
 
 .promise strong {
-  color: #f26ca7;
+  color: var(--color-accent);
 }
 
 .exercise {
@@ -273,7 +273,7 @@
   gap: 8px;
   padding: 28px var(--space-section-inline);
   background: var(--color-ink);
-  color: #cfdf31;
+  color: var(--color-accent);
   font-family: var(--font-interface);
   font-size: 11px;
   text-align: center;

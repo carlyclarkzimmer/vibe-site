@@ -32,7 +32,7 @@
 .differenceGrid h3 { margin: 0 0 10px; font-size: 21px; }
 .differenceGrid p { margin: 0; font-size: 17px; line-height: 1.55; }
 .socialProof { background: var(--color-paper); text-align: center; }
-.permission { color: #616161; font-family: var(--font-interface); font-size: 12px; }
+.permission { color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 12px; }
 .quote { max-width: 780px; margin: 42px auto 76px; padding: 38px; border-block: var(--border-standard); text-align: left; }
 .stars { color: var(--color-accent); font-size: 24px; }
 blockquote { margin: 20px 0; font-size: clamp(22px, 2.6vw, 34px); line-height: 1.27; }

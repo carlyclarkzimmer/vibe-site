@@ -19,7 +19,7 @@
 .form input {
   width: 100%;
   padding: 16px;
-  border: 1px solid #777;
+  border: 1px solid var(--color-field-border);
   background: transparent;
   color: white;
   font: inherit;
@@ -39,6 +39,6 @@
 
 .form p {
   margin: 0;
-  color: #dddddd;
+  color: var(--color-text-muted);
   font-size: 14px;
 }

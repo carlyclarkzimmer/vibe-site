@@ -224,7 +224,7 @@
 .credentials li::before {
   position: absolute;
   left: 0;
-  color: #e87db0;
+  color: var(--color-accent);
   content: "→";
 }
 
