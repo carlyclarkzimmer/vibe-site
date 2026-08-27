@@ -63,6 +63,37 @@ export default function HomePage() {
           {homeContent.approach.cta}
         </Button>
       </Section>
+      <Section className={styles.servicesShowcase}>
+        <Image
+          className={styles.servicesShowcaseImage}
+          src="/carly-services-showcase.jpg"
+          alt="Carly Clark Zimmer gesturing in a teal jacket"
+          fill
+          sizes="100vw"
+        />
+        <div className={styles.servicesPanel}>
+          <div className={styles.servicesIntro}>
+            <Eyebrow>{homeContent.servicesShowcase.eyebrow}</Eyebrow>
+            <h2>{homeContent.servicesShowcase.heading}</h2>
+          </div>
+          <div className={styles.servicesList}>
+            {homeContent.servicesShowcase.services.map((service, index) => (
+              <article className={styles.serviceItem} key={service.title}>
+                <div>
+                  <p className={styles.servicePrompt}>
+                    <strong>{service.prompt}</strong>
+                  </p>
+                  <h3>{service.title}</h3>
+                </div>
+                <p className={styles.serviceDescription}>{service.description}</p>
+                <span className={styles.serviceNumber} aria-hidden="true">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </Section>
       <Section className={styles.process}>
         <Eyebrow>{homeContent.process.eyebrow}</Eyebrow>
         <h2>{homeContent.process.heading}</h2>

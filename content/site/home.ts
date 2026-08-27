@@ -39,6 +39,35 @@ export const homeContent = {
     cta: "Find Your Next Step",
     ctaHref: "/services",
   },
+  servicesShowcase: {
+    eyebrow: "Work With Carly",
+    heading: "Ways to Work Together",
+    services: [
+      {
+        prompt: "Need quick clarity?",
+        title: "⚡️ 5-Minute Laser Coach",
+        description: "Cut through the overthinking and find your next move.",
+      },
+      {
+        prompt: "Want to change one pattern?",
+        title: "The Pattern Interrupt",
+        description:
+          "30 days to identify one bottleneck, interrupt it, and build evidence that you can choose differently.",
+      },
+      {
+        prompt: "Want ongoing support?",
+        title: "The Living Business Lounge",
+        description:
+          "Group coaching for the real-life decisions, boundaries, and patterns that come up as your business evolves.",
+      },
+      {
+        prompt: "Ready for deeper change?",
+        title: "Business Restoration Method",
+        description:
+          "Private coaching to change the patterns and structure keeping your business dependent on you.",
+      },
+    ],
+  },
   process: {
     eyebrow: "How I Work",
     heading: "Calm. Exact. Practical.",

@@ -32,7 +32,8 @@ test("server-renders the shared-navigation homepage", async () => {
   const html = await response.text();
 
   assert.match(html, /<title>Carly Clark Zimmer \| Life &amp; Leadership Coach<\/title>/i);
-  assert.match(html, /A Different Way Forward/i);
+  assert.match(html, /Build a business that leaves room for life\./i);
+  assert.match(html, /The Living Business Lounge/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
