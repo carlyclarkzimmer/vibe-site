@@ -20,13 +20,24 @@ export const homeContent = {
       "But behind the scenes, you’re still the one everything depends on.",
       "You’re answering too quickly, carrying too much, pushing your own priorities aside, and telling yourself you’ll fix it when things calm down.",
     ],
+    emphasis:
+      "But things never seem to \"calm down\". The right time never appears and quarter after quarter, your life outside of work has all but disappeared.",
   },
   approach: {
-    heading: "This is where things get simpler.",
+    heading: "Most business owners try to solve the problem at the surface.",
+    surfaceAttempts: [
+      "The invest in business coach searching for the strategy what will save them.",
+      "Or a better a new productivity system.",
+      "They enforce new boundaries for a while but them slip into old habits.",
+    ],
+    emphasis:
+      "Those things can help, but if the same automatic patterns are still running underneath, the bottleneck usually finds a new way to come back.",
     description:
-      "When what you built no longer fits, clarity does not come from trying harder. It comes from removing what is outdated and restoring your ability to make clear, aligned decisions.",
-    supporting:
-      "My work is about identifying where your life or business is misaligned at the foundation and redesigning the structure so it can hold who you are now and what you want to create next.",
+      "My work helps you identify the behavior keeping you overextended, understand what’s driving it, and make different decisions until those choices become part of how your business actually operates.",
+    closing:
+      "So you’re not just getting temporary relief. You’re building a business that no longer requires you to carry everything. ✨",
+    cta: "Find Your Next Step",
+    ctaHref: "/services",
   },
   process: {
     eyebrow: "How I Work",

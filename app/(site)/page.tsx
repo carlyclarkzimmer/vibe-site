@@ -38,12 +38,30 @@ export default function HomePage() {
           {homeContent.recognition.paragraphs.map((paragraph) => (
             <p key={paragraph}>{paragraph}</p>
           ))}
+          <p>
+            <strong>{homeContent.recognition.emphasis}</strong>
+          </p>
         </div>
       </Section>
       <Section className={styles.approach}>
         <h2>{homeContent.approach.heading}</h2>
+        {homeContent.approach.surfaceAttempts.map((paragraph) => (
+          <p key={paragraph}>{paragraph}</p>
+        ))}
+        <p>
+          <strong>{homeContent.approach.emphasis}</strong>
+        </p>
         <p>{homeContent.approach.description}</p>
-        <p>{homeContent.approach.supporting}</p>
+        <p>
+          <strong>{homeContent.approach.closing}</strong>
+        </p>
+        <Button
+          className={styles.approachCta}
+          href={homeContent.approach.ctaHref}
+          variant="outline"
+        >
+          {homeContent.approach.cta}
+        </Button>
       </Section>
       <Section className={styles.process}>
         <Eyebrow>{homeContent.process.eyebrow}</Eyebrow>
