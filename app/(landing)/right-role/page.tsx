@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element -- approved static brand photography */
 import type { Metadata } from "next";
+import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
+import { rightRoleEmailCapture } from "../../../content/campaigns/right-role";
 import styles from "./page.module.css";
-
-const accessUrl = "https://carlyclarkzimmer.com/serve-leadbox/YVEqCjmvAubzZv6Tpciov8/";
 
 export const metadata: Metadata = {
   title: "How to Make Your Next Hire, the RIGHT Hire with the Kolbe Index",
@@ -68,9 +68,83 @@ export default function RightRolePage() {
             need so that you can feel supported as a leader instead of spending
             costly time and energy managing people.
           </p>
-          <a className={styles.primaryCta} href={accessUrl}>
-            Instant Access
-          </a>
+          <form
+            action={rightRoleEmailCapture.action}
+            className={styles.form}
+            data-drip-embedded-form={rightRoleEmailCapture.formId}
+            id={`drip-ef-${rightRoleEmailCapture.formId}`}
+            method="post"
+          >
+            <p className={styles.formIntro}>
+              Ready to make your next hire the right hire? Share your details
+              below and I&apos;ll send the mini-class straight to your inbox.
+            </p>
+            <div className={styles.formField}>
+              <label htmlFor="right-role-first-name">
+                First Name <span>(Optional)</span>
+              </label>
+              <input
+                autoComplete="given-name"
+                id="right-role-first-name"
+                name="fields[first_name]"
+                placeholder="Your first name"
+                type="text"
+              />
+            </div>
+            <div className={styles.formField}>
+              <label htmlFor="right-role-email">
+                Email Address <strong>(Required)</strong>
+              </label>
+              <input
+                autoComplete="email"
+                id="right-role-email"
+                name="fields[email]"
+                placeholder="you@example.com"
+                required
+                type="email"
+              />
+            </div>
+            <div className={styles.formField}>
+              <label htmlFor="right-role-social-media">
+                Social Media <span>(Optional)</span>
+              </label>
+              <input
+                id="right-role-social-media"
+                name="fields[social_media]"
+                placeholder="@yourhandle or profile link"
+                type="text"
+              />
+            </div>
+            <div aria-hidden="true" className={styles.honeypot}>
+              <label htmlFor="right-role-website">Website</label>
+              <input
+                autoComplete="off"
+                id="right-role-website"
+                name="website"
+                tabIndex={-1}
+                type="text"
+              />
+            </div>
+            <DripRecaptcha
+              siteKey={rightRoleEmailCapture.recaptchaSiteKey}
+            />
+            <input
+              name="tags[]"
+              type="hidden"
+              value={rightRoleEmailCapture.campaignTag}
+            />
+            <button data-drip-attribute="sign-up-button" type="submit">
+              Send Me the Mini-Class
+            </button>
+            <a
+              className={styles.privacyLink}
+              href="/privacy"
+              rel="noreferrer"
+              target="_blank"
+            >
+              Privacy Policy
+            </a>
+          </form>
         </div>
       </section>
 

@@ -14,6 +14,7 @@ export default function ThankYouPage() {
         <p className={styles.eyebrow}>Thank you</p>
         <h1>You’re in.</h1>
         <p>Your submission has been received.</p>
+        <p>Check your email for a message from me!</p>
         <Link href="/">Return to the homepage</Link>
       </div>
     </main>

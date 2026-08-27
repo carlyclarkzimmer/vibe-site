@@ -115,16 +115,56 @@
   font-weight: 700;
 }
 
-.primaryCta {
+.formIntro {
+  max-width: 560px;
+  margin: 22px auto 0;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.form {
+  display: grid;
+  max-width: 560px;
+  margin: 24px auto 0;
+  text-align: left;
+}
+
+.form label {
+  margin: 18px 0 7px;
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.form > input:not([type="hidden"]) {
+  width: 100%;
+  padding: 15px 16px;
+  border: 1px solid rgb(0 0 0 / 34%);
+  border-radius: 0;
+  background: white;
+  color: var(--color-ink);
+  font: inherit;
+}
+
+.form > input:not([type="hidden"]):focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.form button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: min(100%, 420px);
+  width: 100%;
   margin-top: 32px;
   padding: 18px 34px;
   border: 1px solid var(--color-accent);
+  border-radius: 0;
   background: var(--color-accent);
   color: white;
+  cursor: pointer;
   font-family: var(--font-interface);
   font-size: 13px;
   font-weight: 700;
@@ -133,9 +173,28 @@
   transition: background-color var(--transition-standard), color var(--transition-standard);
 }
 
-.primaryCta:hover {
+.form button:hover {
   background: var(--color-ink);
   color: white;
+}
+
+.privacyLink {
+  justify-self: center;
+  margin-top: 14px;
+  font-family: var(--font-interface);
+  font-size: 11px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.honeypot {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
 
 .about {
@@ -247,11 +306,6 @@
     font-size: 16px;
   }
 
-  .primaryCta {
-    width: 100%;
-    min-width: 0;
-  }
-
   .about {
     grid-template-columns: 1fr;
     padding: var(--space-section-block-mobile) var(--space-section-inline-mobile);
@@ -281,7 +335,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryCta {
+  .form button {
     transition: none;
   }
 }

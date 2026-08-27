@@ -82,8 +82,8 @@
   white-space: nowrap;
 }
 
-.form input,
-.form textarea {
+.form > input:not([type="hidden"]),
+.form > textarea {
   width: 100%;
   min-height: 52px;
   padding: 13px 15px;
@@ -94,7 +94,7 @@
   font: inherit;
 }
 
-.form textarea {
+.form > textarea {
   min-height: 100px;
   resize: vertical;
 }
@@ -121,11 +121,22 @@
   color: var(--color-ink);
 }
 
-.form input:focus-visible,
-.form textarea:focus-visible,
-.form button:focus-visible {
+.form > input:not([type="hidden"]):focus-visible,
+.form > textarea:focus-visible,
+.form button:focus-visible,
+.privacyLink:focus-visible {
   outline: var(--focus-ring);
   outline-offset: 4px;
+}
+
+.privacyLink {
+  justify-self: center;
+  color: inherit;
+  font-family: var(--font-interface);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
 }
 
 .honeypot {

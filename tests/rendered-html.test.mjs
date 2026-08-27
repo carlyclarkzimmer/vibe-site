@@ -279,12 +279,30 @@ test("serves the Right Role mini-class as a focused landing page", async () => {
   assert.match(html, /Training &amp; Certifications/i);
   assert.match(
     html,
-    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/YVEqCjmvAubzZv6Tpciov8\//i,
+    /Share your details below and I&#x27;ll send the mini-class straight to your inbox\./i,
   );
+  assert.match(html, /Send Me the Mini-Class/i);
+  assert.match(html, /placeholder="you@example\.com"/i);
+  assert.match(html, /id="drip-ef-933352998"/i);
+  assert.match(
+    html,
+    /https:\/\/www\.getdrip\.com\/forms\/933352998\/submissions/i,
+  );
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /<input[^>]*required[^>]*name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /name="tags\[\]"[^>]*value="Kolbe-Right-Role"/i);
+  assert.match(
+    html,
+    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
+  );
+  assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.doesNotMatch(html, /serve-leadbox|api\.leadpages\.io/i);
   assert.match(html, /carly-hero\.jpg/i);
   assert.match(html, /carly-supporting\.jpg/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
-  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+  assert.doesNotMatch(html, /connect\.facebook\.net|center\.io/i);
 });
 
 test("serves the Communication Scripts page as a focused landing page", async () => {
@@ -298,12 +316,27 @@ test("serves the Communication Scripts page as a focused landing page", async ()
   assert.match(html, /Simple phrases\. Big impact\./i);
   assert.match(
     html,
-    /https:\/\/carlyclarkzimmer\.com\/serve-leadbox\/fDiiXkm8GBZSPmyYfH2i3Q\//i,
+    /Share your details below and I&#x27;ll send the go-to communication scripts straight to your inbox\./i,
   );
+  assert.match(html, /id="drip-ef-88996381"/i);
+  assert.match(
+    html,
+    /https:\/\/www\.getdrip\.com\/forms\/88996381\/submissions/i,
+  );
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /Social Media \(Optional\)/i);
+  assert.match(html, /value="Communication Scripts Opt-In"/);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
   assert.match(html, /carly-hero\.jpg/i);
   assert.match(html, /carly-supporting\.jpg/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
-  assert.doesNotMatch(html, /api\.leadpages\.io|connect\.facebook\.net|center\.io/i);
+  assert.doesNotMatch(
+    html,
+    /serve-leadbox|api\.leadpages\.io|connect\.facebook\.net|center\.io/i,
+  );
 });
 
 test("serves the Laser Coaching Lab welcome page at its thank-you route", async () => {
@@ -426,6 +459,7 @@ test("serves a generic thank-you page without campaign delivery copy", async () 
   assert.equal(response.status, 200);
   assert.match(html, /<title>Thank You \| Carly Clark Zimmer<\/title>/i);
   assert.match(html, /Your submission has been received/i);
+  assert.match(html, /Check your email for a message from me!/i);
   assert.match(html, /href="\/"/i);
   assert.match(html, /Return to the homepage/i);
   assert.doesNotMatch(html, /Beyond the Bottleneck|listening-tour details/i);
@@ -527,9 +561,29 @@ test("serves the Pattern Breaker training as a focused landing page", async () =
   assert.match(html, /Input your text in this area/i);
   assert.match(html, /Ready to stop circling\?/i);
   assert.equal(
+    (html.match(/data-drip-embedded-form="300703732"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[first_name\]"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[email\]"/gi) ?? []).length,
+    2,
+  );
+  assert.equal(
+    (html.match(/name="fields\[social_media\]"/gi) ?? []).length,
+    2,
+  );
+  assert.match(
+    html,
+    /https:\/\/www\.getdrip\.com\/forms\/300703732\/submissions/i,
+  );
+  assert.equal(
     (
       html.match(
-        /name="33ad3425125f513ba1ab5e359ca21551"/gi,
+        /value="Pattern Breaker Email Opt-in"/gi,
       ) ?? []
     ).length,
     2,
@@ -537,35 +591,25 @@ test("serves the Pattern Breaker training as a focused landing page", async () =
   assert.equal(
     (
       html.match(
-        /name="ec3b68ece7915ca83f420c91066c7d52"/gi,
-      ) ?? []
-    ).length,
-    2,
-  );
-  assert.equal(
-    (
-      html.match(
-        /name="9d9d7b20bab90c16e7e8473b4dffb2bc"/gi,
+        /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/gi,
       ) ?? []
     ).length,
     2,
   );
   assert.match(
     html,
-    /api\.leadpages\.io\/integration\/v1\/forms\/MoRK7DvxRXQcsNtkVLaYYo\/submissions/i,
+    /id="g-recaptcha-response-data-form-submission-pattern-breaker-hero"/i,
   );
   assert.match(
     html,
-    /api\.leadpages\.io\/integration\/v1\/forms\/mELWZfNbNLsaLuvYzHaSZZ\/submissions/i,
+    /id="g-recaptcha-response-data-form-submission-pattern-breaker-invitation"/i,
   );
   assert.equal(
-    (
-      html.match(
-        /data-thank-you="https:\/\/carlyclarkzimmer\.lpages\.co\/newsletter-thank-you\/"/gi,
-      ) ?? []
-    ).length,
+    (html.match(/href="\/privacy"[^>]*target="_blank"/gi) ?? []).length,
     2,
   );
+  assert.doesNotMatch(html, /api\.leadpages\.io/i);
+  assert.doesNotMatch(html, /general-email/i);
   assert.match(html, /src="\/carly-hero\.jpg"/i);
   assert.match(html, /src="\/carly-supporting\.jpg"/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);

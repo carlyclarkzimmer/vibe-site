@@ -65,12 +65,76 @@
   font-style: normal;
 }
 
-.primaryCta {
+.form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  width: min(100%, 610px);
+  margin-top: 34px;
+  padding-top: 28px;
+  border-top: var(--border-standard);
+}
+
+.formField {
+  display: grid;
+  gap: 8px;
+}
+
+.formIntro {
+  margin: 0 0 4px;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.formField label {
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+}
+
+.formField label span,
+.formField label strong {
+  color: var(--color-text-muted);
+  font-weight: 400;
+}
+
+.formField input {
+  width: 100%;
+  min-height: 54px;
+  padding: 14px 16px;
+  border: 1px solid var(--color-ink);
+  border-radius: 0;
+  background: white;
+  color: var(--color-ink);
+  font: 16px/1.4 var(--font-interface);
+}
+
+.formField input::placeholder {
+  color: #666;
+  opacity: 1;
+}
+
+.formField input:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: fit-content;
-  margin-top: 34px;
+  width: 100%;
+  min-height: 56px;
   padding: 17px 30px;
   border: 1px solid var(--color-ink);
   background: var(--color-accent);
@@ -84,8 +148,24 @@
   transition: background-color 160ms ease, color 160ms ease;
 }
 
-.primaryCta:hover {
+.form button:hover {
   background: var(--color-ink);
+}
+
+.form button:focus-visible,
+.privacyLink:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: var(--focus-offset);
+}
+
+.privacyLink {
+  justify-self: center;
+  width: fit-content;
+  color: var(--color-ink);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 .lessons {
@@ -258,7 +338,12 @@
     font-size: 50px;
   }
 
-  .primaryCta {
+  .form {
+    gap: 18px;
+    padding-top: 24px;
+  }
+
+  .form button {
     width: 100%;
   }
 
@@ -291,7 +376,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .primaryCta {
+  .form button {
     transition: none;
   }
 }
