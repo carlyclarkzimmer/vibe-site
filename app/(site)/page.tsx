@@ -67,7 +67,7 @@ export default function HomePage() {
         <Image
           className={styles.servicesShowcaseImage}
           src="/carly-services-showcase.jpg"
-          alt="Carly Clark Zimmer gesturing in a teal jacket"
+          alt="Carly Clark Zimmer in a flowing metallic dress"
           fill
           sizes="100vw"
         />
