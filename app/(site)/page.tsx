@@ -8,10 +8,10 @@ import styles from "./page.module.css";
 export default function HomePage() {
   return (
     <>
-      <Section as="header" className={styles.hero}>
+      <Section as="header" className={styles.hero} id="home-hero">
         <Image
           className={styles.heroImage}
-          src="/carly-site-hero.png"
+          src="/homepage-editorial-hero.png"
           alt="Carly Clark Zimmer seated in a teal jacket"
           fill
           priority
@@ -23,7 +23,13 @@ export default function HomePage() {
           <Eyebrow>{homeContent.hero.eyebrow}</Eyebrow>
           <h1>{homeContent.hero.title}</h1>
           <p className={styles.heroCopy}>{homeContent.hero.description}</p>
-          <Button href={homeContent.hero.ctaHref}>{homeContent.hero.cta}</Button>
+          <Button
+            className={styles.heroCta}
+            href={homeContent.hero.ctaHref}
+            variant="outlineLight"
+          >
+            {homeContent.hero.cta}
+          </Button>
         </div>
       </Section>
       <Section className={styles.recognition}>

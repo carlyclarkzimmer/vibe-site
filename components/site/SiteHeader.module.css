@@ -4,6 +4,13 @@
   background: white;
 }
 
+:global(body:has(#home-hero)) .header {
+  position: absolute;
+  inset: 0 0 auto;
+  background: transparent;
+  color: white;
+}
+
 .navigation {
   display: flex;
   min-height: 82px;
@@ -12,6 +19,10 @@
   gap: 28px;
   padding: 0 3.5vw;
   border-bottom: var(--border-standard);
+}
+
+:global(body:has(#home-hero)) .navigation {
+  border-color: rgb(255 255 255 / 35%);
 }
 
 .monogram {
@@ -35,6 +46,23 @@
 .desktopLinks a:hover,
 .mobileMenu a:hover {
   color: var(--color-accent);
+}
+
+:global(body:has(#home-hero)) .desktopLinks a:hover {
+  color: white;
+  opacity: 0.7;
+}
+
+:global(body:has(#home-hero)) .navigation > a:not(.monogram) {
+  border-color: white;
+  background: transparent;
+  color: white;
+}
+
+:global(body:has(#home-hero)) .navigation > a:not(.monogram):hover {
+  border-color: white;
+  background: white;
+  color: var(--color-ink);
 }
 
 .mobileMenu {
@@ -68,6 +96,7 @@
     padding: 24px;
     border: var(--border-standard);
     background: white;
+    color: var(--color-ink);
     box-shadow: 0 20px 40px rgb(0 0 0 / 10%);
   }
 
