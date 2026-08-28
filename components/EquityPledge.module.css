@@ -8,6 +8,7 @@
 .inner {
   width: min(100%, 980px);
   margin: 0 auto;
+  text-align: center;
 }
 
 .pledge h2 {
@@ -23,7 +24,7 @@
 
 .pledge p {
   max-width: 900px;
-  margin: 16px 0 0;
+  margin: 16px auto 0;
   color: var(--color-text-muted);
   font-size: 14px;
   line-height: 1.7;

@@ -266,6 +266,20 @@
   line-height: 1.04;
 }
 
+.serviceItem h3 a {
+  color: inherit;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: color 220ms ease, text-decoration-color 220ms ease;
+}
+
+.serviceItem h3 a:hover,
+.serviceItem h3 a:focus-visible {
+  color: var(--color-accent);
+  text-decoration-color: currentcolor;
+}
+
 .serviceDescription {
   margin: 0;
   font-size: 20px;

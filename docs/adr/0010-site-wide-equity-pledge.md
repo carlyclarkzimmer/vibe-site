@@ -12,6 +12,9 @@ the shared legal footer. Its copy is stored in
 `content/site/equity-pledge.ts`, and its presentation is owned by the shared
 `EquityPledge` component.
 
+The heading and both approved paragraphs are centered within the pledge's
+constrained reading width.
+
 Route-specific copies of the same pledge are removed so visitors do not see
 duplicate or inconsistent versions. The root layout therefore owns this single
 required closing statement and the final legal footer in addition to

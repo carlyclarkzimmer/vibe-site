@@ -111,7 +111,13 @@ export default function HomePage() {
                   <p className={styles.servicePrompt}>
                     <strong>{service.prompt}</strong>
                   </p>
-                  <h3>{service.title}</h3>
+                  <h3>
+                    {"href" in service ? (
+                      <a href={service.href}>{service.title}</a>
+                    ) : (
+                      service.title
+                    )}
+                  </h3>
                 </div>
                 <p className={styles.serviceDescription}>{service.description}</p>
                 <span className={styles.serviceNumber} aria-hidden="true">
