@@ -76,12 +76,14 @@ export const homeContent = {
         prompt: "Need quick clarity?",
         title: "⚡️ 5-Minute Laser Coach",
         href: "/breakthrough",
+        newTab: true,
         description: "Cut through the overthinking and find your next move.",
       },
       {
         prompt: "Want to change one pattern?",
         title: "The Pattern Interrupt",
         href: "https://carlyclarkzimmer.thrivecart.com/the-pattern-interrupt/",
+        newTab: true,
         description:
           "30 days to identify one bottleneck, interrupt it, and build evidence that you can choose differently.",
       },
@@ -89,6 +91,7 @@ export const homeContent = {
         prompt: "Want ongoing support?",
         title: "The Living Business Lounge",
         href: "https://app.acuityscheduling.com/catalog/21337638/?productId=2269284&clearCart=true",
+        newTab: true,
         description:
           "Group coaching for the real-life decisions, boundaries, and patterns that come up as your business evolves.",
       },

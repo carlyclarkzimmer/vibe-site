@@ -190,9 +190,18 @@
   position: relative;
   z-index: 1;
   min-height: 100vh;
-  padding: clamp(90px, 10vw, 150px) 8vw;
-  overflow: hidden;
+  padding: 0 8vw clamp(90px, 10vw, 150px);
+  overflow: clip;
   background: var(--color-surface-dark);
+}
+
+.servicesBackdrop {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+  height: 100svh;
+  margin: 0 -8vw -100svh;
+  overflow: hidden;
 }
 
 .servicesShowcaseImage {
@@ -202,19 +211,18 @@
   filter: saturate(0.9);
 }
 
-.servicesShowcase::after {
+.servicesOverlay {
   position: absolute;
   z-index: 1;
   inset: 0;
   background: linear-gradient(90deg, rgb(8 7 6 / 68%) 0%, rgb(8 7 6 / 38%) 48%, rgb(8 7 6 / 12%) 100%);
-  content: "";
 }
 
 .servicesPanel {
   position: relative;
   z-index: 2;
   max-width: 1180px;
-  margin: 0 auto;
+  margin: clamp(90px, 10vw, 150px) auto 0;
   padding: clamp(56px, 7vw, 104px) clamp(30px, 7vw, 92px);
   background: rgb(255 255 255 / 85%);
   box-shadow: 0 24px 80px rgb(0 0 0 / 18%);
@@ -268,10 +276,10 @@
 
 .serviceItem h3 a {
   color: inherit;
-  text-decoration-color: transparent;
+  text-decoration-color: currentcolor;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.16em;
-  transition: color 220ms ease, text-decoration-color 220ms ease;
+  transition: color 220ms ease;
 }
 
 .serviceItem h3 a:hover,
@@ -382,7 +390,16 @@
 
   .servicesShowcase {
     min-height: auto;
-    padding: 70px 24px;
+    padding: 0 24px 70px;
+  }
+
+  .servicesBackdrop {
+    margin-inline: -24px;
+    margin-bottom: -100svh;
+  }
+
+  .servicesPanel {
+    margin-top: 70px;
   }
 
   .servicesPanel {

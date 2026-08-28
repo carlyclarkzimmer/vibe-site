@@ -91,14 +91,17 @@ export default function HomePage() {
         </div>
       </Section>
       <Section className={styles.servicesShowcase}>
-        <Image
-          className={styles.servicesShowcaseImage}
-          src="/carly-services-showcase.jpg"
-          alt="Carly Clark Zimmer in a flowing metallic dress"
-          fill
-          sizes="100vw"
-          unoptimized
-        />
+        <div className={styles.servicesBackdrop}>
+          <Image
+            className={styles.servicesShowcaseImage}
+            src="/carly-services-showcase.jpg"
+            alt="Carly Clark Zimmer in a flowing metallic dress"
+            fill
+            sizes="100vw"
+            unoptimized
+          />
+          <div className={styles.servicesOverlay} aria-hidden="true" />
+        </div>
         <div className={styles.servicesPanel}>
           <div className={styles.servicesIntro}>
             <Eyebrow>{homeContent.servicesShowcase.eyebrow}</Eyebrow>
@@ -113,7 +116,13 @@ export default function HomePage() {
                   </p>
                   <h3>
                     {"href" in service ? (
-                      <a href={service.href}>{service.title}</a>
+                      <a
+                        href={service.href}
+                        target={"newTab" in service && service.newTab ? "_blank" : undefined}
+                        rel={"newTab" in service && service.newTab ? "noreferrer" : undefined}
+                      >
+                        {service.title}
+                      </a>
                     ) : (
                       service.title
                     )}

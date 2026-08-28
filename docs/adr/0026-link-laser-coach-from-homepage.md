@@ -18,6 +18,10 @@ page, “The Living Business Lounge” to its approved Acuity catalog page, and
 editorial title styling and use the brand accent for hover and keyboard-focus
 feedback.
 
+All service titles use a visible underline. The Laser Coach, Pattern Interrupt,
+and Living Business Lounge open in new tabs; Business Restoration Method stays
+in the current tab.
+
 ## Consequences
 
 Visitors can move directly from the homepage service overview to the matching
