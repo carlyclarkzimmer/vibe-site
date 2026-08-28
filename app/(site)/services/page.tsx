@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "../../../components/ui/Button";
 import { Section } from "../../../components/ui/Section";
-import { homeContent } from "../../../content/site/home";
 import styles from "./page.module.css";
 
 const decisionMapHref =
@@ -82,23 +81,30 @@ export default function ServicesPage() {
         </section>
 
         <Section className={styles.approach}>
-          <h2>{homeContent.approach.heading}</h2>
-          {homeContent.approach.surfaceAttempts.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+          <h2>
+            <span>The goal isn’t to burn it all down.</span>
+            <span>It’s to stop recreating the parts that are wearing you out.</span>
+          </h2>
           <p>
-            <strong>{homeContent.approach.emphasis}</strong>
+            <strong>What I see happen all the time is this:</strong> a woman builds a business that
+            looks successful on paper, but behind the scenes she’s exhausted, working too much,
+            and starting to resent how little life she has outside of it.
           </p>
-          <p>{homeContent.approach.description}</p>
           <p>
-            <strong>{homeContent.approach.closing}</strong>
+            And usually, the problem isn’t that she’s doing something wrong.
+          </p>
+          <p>
+            It’s that the same habits and behaviors that helped her build the business in the first
+            place are now the very things making it harder to grow without sacrificing more of
+            herself.
           </p>
           <Button
             className={styles.approachCta}
-            href={homeContent.approach.ctaHref}
+            href="https://carlyclarkzimmer.as.me/schedule/21337638"
+            newTab
             variant="outline"
           >
-            {homeContent.approach.cta}
+            Book a Recommendation Call
           </Button>
         </Section>
 

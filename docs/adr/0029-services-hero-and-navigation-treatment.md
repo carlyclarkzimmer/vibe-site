@@ -30,6 +30,13 @@ Render the homepage approach section, using its existing approved content and
 CTA, immediately beneath the Services hero. Keep the existing Services opening
 content, image, and first testimonial after that copied section.
 
+Give the copied Services section its own approved headline at 80% of the
+homepage section's display scale. Use Services-specific approved body copy and
+use the approved “Book a Recommendation Call” button label. Link that CTA to
+Carly's approved scheduling page and open it in a new tab. The shared Button
+primitive accepts an explicit `newTab` option so external CTA behavior remains
+safe and intentional.
+
 Keep the complete navigation visible through desktop and tablet widths. Switch
 to the existing compact menu only below 760px, where displaying every link and
 the primary CTA would cause crowding or overflow.

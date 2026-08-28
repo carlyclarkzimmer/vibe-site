@@ -81,7 +81,19 @@
 .approach h2 {
   max-width: 1100px;
   margin: 0;
-  font-size: clamp(46px, 6vw, 92px);
+  font-size: clamp(36.8px, 4.8vw, 73.6px);
+}
+
+.approach h2 span {
+  display: block;
+}
+
+.approach h2 span + span {
+  margin-top: 0.18em;
+}
+
+.approach h2 + p {
+  margin-top: clamp(44px, 5vw, 76px);
 }
 
 .approach p {
