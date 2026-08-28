@@ -8,38 +8,39 @@
 
 .contactHero {
   position: relative;
-  min-height: 595px;
-  background-image: url("/carly-contact-portrait.jpg");
-  background-position: center;
-  background-size: cover;
+  min-height: 680px;
+  background: var(--color-ink);
 }
 
 .contactPanel {
-  position: absolute;
-  top: 76px;
-  right: 6.3vw;
-  width: min(55%, 750px);
-  min-height: 442px;
-  padding: 52px 52px 46px;
-  background: var(--color-ink);
+  display: flex;
+  width: 100%;
+  min-height: 680px;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(64px, 8vw, 120px) clamp(42px, 6vw, 92px);
+  background: transparent;
   color: white;
+  text-align: center;
 }
 
 .contactPanel h1 {
-  margin: 0 0 25px;
-  font-size: clamp(34px, 3vw, 44px);
-  font-variant: small-caps;
-  letter-spacing: 0.02em;
-  line-height: 1;
+  margin: 0 0 clamp(28px, 4vw, 42px);
+  font-family: var(--font-display);
+  font-size: clamp(46px, 6vw, 92px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
 }
 
 .contactPanel p {
   max-width: 640px;
   margin: 0 0 30px;
   color: white;
-  font-family: var(--font-interface);
-  font-size: 18px;
-  line-height: 1.55;
+  font-family: var(--font-body);
+  font-size: clamp(21.6px, 1.62vw, 25.2px);
+  line-height: 1.62;
 }
 
 .contactPanel p:last-child {
@@ -51,60 +52,22 @@
 }
 
 .contactPanel p:last-child a {
-  font-weight: 700;
-}
-
-.solidarity {
-  padding: 145px 4vw 120px;
-  background: var(--color-ink);
-  color: white;
-  text-align: center;
-}
-
-.solidarity p {
-  max-width: 1260px;
-  margin: 0 auto;
-  color: white;
   font-family: var(--font-interface);
-  font-size: 18px;
-  line-height: 1.65;
-}
-
-.solidarity em {
-  font-style: italic;
+  font-weight: 700;
 }
 
 @media (max-width: 800px) {
   .contactHero {
-    display: flex;
-    min-height: 760px;
-    align-items: flex-end;
-    padding: 0 var(--space-section-inline-mobile) 42px;
-    background-position: 33% center;
+    min-height: auto;
   }
 
   .contactPanel {
-    position: relative;
-    top: auto;
-    right: auto;
     width: 100%;
     min-height: auto;
-    padding: 36px 30px;
+    padding: 64px var(--space-section-inline-mobile) 72px;
   }
 
   .contactPanel h1 {
-    font-size: 38px;
-  }
-
-  .contactPanel p {
-    font-size: 16px;
-  }
-
-  .solidarity {
-    padding: 78px var(--space-section-inline-mobile);
-  }
-
-  .solidarity p {
-    font-size: 16px;
+    font-size: clamp(46px, 14vw, 68px);
   }
 }

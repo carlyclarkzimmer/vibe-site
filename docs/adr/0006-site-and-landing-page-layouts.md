@@ -20,6 +20,10 @@ contracts:
 The root layout remains responsible only for document-wide concerns. Page type
 is selected by route group, not by a `hideNav` option on a shared header.
 
+The shared site navigation uses 18px interface text for its links, primary CTA,
+and mobile menu label. Tighter responsive gaps preserve the complete desktop
+and tablet navigation while the CCZ monogram retains its approved scale.
+
 ## Consequences
 
 - The main homepage can become the durable root route without turning campaign

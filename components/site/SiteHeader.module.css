@@ -5,7 +5,9 @@
 }
 
 :global(body:has(#home-hero)) .header,
-:global(body:has(#services-hero)) .header {
+:global(body:has(#services-hero)) .header,
+:global(body:has(#about-hero)) .header,
+:global(body:has(#contact-hero)) .header {
   position: absolute;
   inset: 0 0 auto;
   background: transparent;
@@ -17,13 +19,15 @@
   min-height: 82px;
   align-items: center;
   justify-content: space-between;
-  gap: 28px;
-  padding: 0 3.5vw;
+  gap: clamp(14px, 2vw, 28px);
+  padding: 0 2.5vw;
   border-bottom: var(--border-standard);
 }
 
 :global(body:has(#home-hero)) .navigation,
-:global(body:has(#services-hero)) .navigation {
+:global(body:has(#services-hero)) .navigation,
+:global(body:has(#about-hero)) .navigation,
+:global(body:has(#contact-hero)) .navigation {
   border-color: rgb(255 255 255 / 35%);
 }
 
@@ -43,11 +47,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: clamp(18px, 2.8vw, 42px);
+  gap: clamp(10px, 1.4vw, 22px);
   font-family: var(--font-interface);
-  font-size: 10px;
+  font-size: 18px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.navigation > a:not(.monogram) {
+  font-size: 18px;
 }
 
 .desktopLinks a:hover,
@@ -56,20 +64,26 @@
 }
 
 :global(body:has(#home-hero)) .desktopLinks a:hover,
-:global(body:has(#services-hero)) .desktopLinks a:hover {
+:global(body:has(#services-hero)) .desktopLinks a:hover,
+:global(body:has(#about-hero)) .desktopLinks a:hover,
+:global(body:has(#contact-hero)) .desktopLinks a:hover {
   color: white;
   opacity: 0.7;
 }
 
 :global(body:has(#home-hero)) .navigation > a:not(.monogram),
-:global(body:has(#services-hero)) .navigation > a:not(.monogram) {
+:global(body:has(#services-hero)) .navigation > a:not(.monogram),
+:global(body:has(#about-hero)) .navigation > a:not(.monogram),
+:global(body:has(#contact-hero)) .navigation > a:not(.monogram) {
   border-color: white;
   background: transparent;
   color: white;
 }
 
 :global(body:has(#home-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#services-hero)) .navigation > a:not(.monogram):hover {
+:global(body:has(#services-hero)) .navigation > a:not(.monogram):hover,
+:global(body:has(#about-hero)) .navigation > a:not(.monogram):hover,
+:global(body:has(#contact-hero)) .navigation > a:not(.monogram):hover {
   border-color: white;
   background: white;
   color: var(--color-ink);
@@ -88,7 +102,7 @@
   .mobileMenu {
     display: block;
     font-family: var(--font-interface);
-    font-size: 10px;
+    font-size: 18px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }

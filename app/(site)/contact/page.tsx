@@ -37,7 +37,7 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className={styles.contactPage}>
-      <section className={styles.contactHero}>
+      <section className={styles.contactHero} id="contact-hero">
         <div className={styles.contactPanel}>
           <h1>Contact Info</h1>
           <p>
@@ -59,27 +59,6 @@ export default function ContactPage() {
             with details.
           </p>
         </div>
-      </section>
-
-      <section className={styles.solidarity}>
-        <p>
-          <em>
-            I stand in solidarity with Black, Brown, Indigenous, Minority
-            Ethnic, and People of Colour, LGBTQIA &amp; those who hold
-            culturally and systemically marginalized identities to dismantle
-            systemic racism.
-          </em>{" "}
-          I pledge to continue to personally comb through my cultural bias,
-          business systems &amp; practices, former coach training &amp; theories
-          to dismantle the systems of oppression in our society and within
-          myself, and the programs and communities I facilitate.
-        </p>
-        <p>
-          My communities have a strict vetting process so that we can provide a
-          safe, trauma-informed space for people of all identities to learn,
-          grow, ask questions, and provide their own valuable insight and
-          feedback for us all to learn from.
-        </p>
       </section>
     </div>
   );

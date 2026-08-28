@@ -7,53 +7,55 @@ export const metadata: Metadata = { title: "About | Carly Clark Zimmer" };
 export default function AboutPage() {
   return (
     <>
-      <header className={styles.hero}>
-        <Image
-          className={styles.heroImage}
-          src="/carly-red-sweater-working.jpg"
-          alt="Carly Clark Zimmer working at her laptop in a red sweater"
-          fill
-          priority
-          sizes="100vw"
-          unoptimized
-        />
-        <div className={styles.heroOverlay} aria-hidden="true" />
-        <div className={styles.heroContent}>
-          <h1>It was New Year&apos;s Eve, and I was hiding.</h1>
-          <p>
-            Everyone I loved was downstairs. My husband, my cousin who&apos;s
-            also my best friend, her partner, all of them laughing by a lake in
-            the Berkshires, watching the sunset and making incredible memories
-            together. While I was upstairs, hunched over Slack, finishing the
-            last details of a client&apos;s launch. Just ONE more message. It
-            was always “one more thing to handle” before I could let myself go
-            down and be part of my own night.
-          </p>
-        </div>
-      </header>
+      <div className={styles.heroSequence}>
+        <header className={styles.hero} id="about-hero">
+          <Image
+            className={styles.heroImage}
+            src="/carly-red-sweater-working.jpg"
+            alt="Carly Clark Zimmer working at her laptop in a red sweater"
+            fill
+            priority
+            sizes="100vw"
+            unoptimized
+          />
+          <div className={styles.heroOverlay} aria-hidden="true" />
+          <div className={styles.heroContent}>
+            <h1>It was New Year&apos;s Eve, and I was hiding.</h1>
+            <p>
+              Everyone I loved was downstairs. My husband, my cousin who&apos;s
+              also my best friend, her partner, all of them laughing by a lake in
+              the Berkshires, watching the sunset and making incredible memories
+              together. While I was upstairs, hunched over Slack, finishing the
+              last details of a client&apos;s launch. Just ONE more message. It
+              was always “one more thing to handle” before I could let myself go
+              down and be part of my own night.
+            </p>
+          </div>
+        </header>
 
-      <section className={styles.opening}>
-        <div className={styles.openingCopy}>
-          <h2>By the time I finally came down, the party had moved on without me.</h2>
-          <p>
-            I poured a martini I didn&apos;t need, then another, and woke up the
-            next morning with a headache and the sinking feeling that I&apos;d
-            built a business that kept pulling me out of the rooms I most wanted
-            to be in.
-          </p>
-          <p>
-            Here&apos;s how I got there. During the pandemic, my coaching
-            practice took off. I was living in Ireland, working across time
-            zones, on Zoom close to eight hours a day, and running program
-            coordination for a coaching school through its biggest cohorts ever.
-            Most of my private clients were holistic practitioners whose
-            in-person work had vanished overnight, and I felt responsible for
-            all of it: their launches, income, confidence, knowing exactly what
-            to do next. I answered messages at all hours and called it “being a
-            good coach.” I was completely fried.
-          </p>
-        </div>
-      </section>
+        <section className={styles.opening}>
+          <div className={styles.openingCopy}>
+            <h2>By the time I finally came down, the party had moved on without me.</h2>
+            <p>
+              I poured a martini I didn&apos;t need, then another, and woke up the
+              next morning with a headache and the sinking feeling that I&apos;d
+              built a business that kept pulling me out of the rooms I most wanted
+              to be in.
+            </p>
+            <p>
+              Here&apos;s how I got there. During the pandemic, my coaching
+              practice took off. I was living in Ireland, working across time
+              zones, on Zoom close to eight hours a day, and running program
+              coordination for a coaching school through its biggest cohorts ever.
+              Most of my private clients were holistic practitioners whose
+              in-person work had vanished overnight, and I felt responsible for
+              all of it: their launches, income, confidence, knowing exactly what
+              to do next. I answered messages at all hours and called it “being a
+              good coach.” I was completely fried.
+            </p>
+          </div>
+        </section>
+      </div>
 
       <section className={styles.realization}>
         <p>I knew better, which is the part that stings.</p>
