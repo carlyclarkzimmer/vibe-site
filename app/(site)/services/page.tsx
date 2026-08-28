@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Button } from "../../../components/ui/Button";
+import { Section } from "../../../components/ui/Section";
+import { homeContent } from "../../../content/site/home";
 import styles from "./page.module.css";
 
 const decisionMapHref =
@@ -56,31 +59,50 @@ function List({ children }: { children: React.ReactNode }) {
 export default function ServicesPage() {
   return (
     <>
-      <section className={styles.hero}>
+      <div className={styles.heroSequence}>
+        <section className={styles.hero} id="services-hero">
+        <Image
+          className={styles.heroImage}
+          src="/carly-services-hero.jpg"
+          alt="Carly Clark Zimmer standing in an elegant room surrounded by plants"
+          fill
+          priority
+          sizes="100vw"
+          unoptimized
+        />
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.readingWidth}>
-          <h1>Ways to Work Together</h1>
+          <h1>Business Restoration</h1>
           <p>
-            At your level, the problem is rarely intelligence or work ethic.
-            <br />
-            <strong>
-              It’s the misalignment between who you’ve become and the structure you’re still
-              operating inside.
-            </strong>
-          </p>
-          <p>
-            The right starting point depends on whether clarity is the bottleneck or whether
-            implementation and accountability are the constraint.
-          </p>
-          <p>
-            <strong>
-              And until you identify the true bottleneck, you will keep investing time and energy
-              into solving the wrong problem.
-            </strong>
+            The <strong>Business Restoration Method</strong> is private coaching for successful
+            business owners who are ready to stop overfunctioning, reclaim their time and
+            capacity, and rebuild the business around the way they actually want to work and live.
           </p>
         </div>
-      </section>
+        </section>
 
-      <section className={styles.intro}>
+        <Section className={styles.approach}>
+          <h2>{homeContent.approach.heading}</h2>
+          {homeContent.approach.surfaceAttempts.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+          <p>
+            <strong>{homeContent.approach.emphasis}</strong>
+          </p>
+          <p>{homeContent.approach.description}</p>
+          <p>
+            <strong>{homeContent.approach.closing}</strong>
+          </p>
+          <Button
+            className={styles.approachCta}
+            href={homeContent.approach.ctaHref}
+            variant="outline"
+          >
+            {homeContent.approach.cta}
+          </Button>
+        </Section>
+
+        <section className={styles.intro}>
         <div className={styles.introImage}>
           <Image
             src="/services-intro-carly.jpg"
@@ -158,7 +180,8 @@ export default function ServicesPage() {
           </p>
           <footer>—Emily J. · Fractional CFO</footer>
         </blockquote>
-      </section>
+        </section>
+      </div>
 
       <section className={styles.option}>
         <div className={styles.optionCopy}>
