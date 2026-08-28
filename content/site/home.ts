@@ -58,6 +58,8 @@ export const homeContent = {
       {
         text: "And at some point, you can’t work harder to solve a way of working that already depends on you working too hard.",
       },
+    ],
+    closingParagraphs: [
       {
         text: "That’s why my work now focuses on the patterns underneath the bottleneck, not just the calendar, boundary, or system sitting on top of it.",
       },

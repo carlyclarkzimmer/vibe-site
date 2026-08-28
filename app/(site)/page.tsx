@@ -76,12 +76,18 @@ export default function HomePage() {
         </div>
         <div className={styles.meetCarlyImage}>
           <Image
-            src="/carly-meet-headshot.jpg"
-            alt="Carly Clark Zimmer smiling in a teal jacket"
-            fill
+            src="/carly-meet-seated.jpg"
+            alt="Carly Clark Zimmer seated in a teal jacket"
+            width={1800}
+            height={2700}
             sizes="(max-width: 760px) 100vw, 42vw"
             unoptimized
           />
+        </div>
+        <div className={styles.meetCarlyClosing}>
+          {homeContent.meetCarly.closingParagraphs.map((paragraph) => (
+            <p key={paragraph.text}>{paragraph.text}</p>
+          ))}
         </div>
       </Section>
       <Section className={styles.servicesShowcase}>

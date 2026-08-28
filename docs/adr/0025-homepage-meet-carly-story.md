@@ -14,9 +14,12 @@ the available offers.
 ## Decision
 
 Add a route-owned “Meet Carly” section immediately before “Work With Carly.”
-Use Carly’s approved teal-jacket portrait, a large uppercase serif
+Use Carly’s approved seated teal-jacket portrait, a large uppercase serif
 heading, and Carly’s supplied story copy in a spacious two-column composition.
-On mobile, place the portrait before the story copy and retain left alignment.
+Present the photograph at its full natural aspect ratio rather than cropping it.
+Split the final two paragraphs into a full-width closing text block beneath the
+main story-and-image row. On mobile, stack the portrait beneath the story copy
+and retain left alignment.
 
 ## Consequences
 
