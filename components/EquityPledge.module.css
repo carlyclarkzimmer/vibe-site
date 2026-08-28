@@ -26,16 +26,12 @@
   max-width: 900px;
   margin: 16px auto 0;
   color: var(--color-text-muted);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.35;
 }
 
 @media (max-width: 600px) {
   .pledge {
     padding: 48px var(--space-section-inline-mobile);
-  }
-
-  .pledge p {
-    font-size: 13px;
   }
 }

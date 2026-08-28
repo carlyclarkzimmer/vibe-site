@@ -13,7 +13,8 @@ the shared legal footer. Its copy is stored in
 `EquityPledge` component.
 
 The heading and both approved paragraphs are centered within the pledge's
-constrained reading width.
+constrained reading width. The body copy uses the same responsive size and line
+spacing as the site's testimonial text.
 
 Route-specific copies of the same pledge are removed so visitors do not see
 duplicate or inconsistent versions. The root layout therefore owns this single

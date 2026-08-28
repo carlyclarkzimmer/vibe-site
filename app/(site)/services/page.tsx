@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { homeContent } from "../../../content/site/home";
 import { Button } from "../../../components/ui/Button";
+import { Eyebrow } from "../../../components/ui/Eyebrow";
 import { Section } from "../../../components/ui/Section";
 import styles from "./page.module.css";
 
-const decisionMapHref =
-  "https://carlyclarkzimmer.as.me/schedule/21337638/appointment/32392163/calendar/1296940?appointmentTypeIds[]=32392163";
 const recommendationHref = "https://carlyclarkzimmer.as.me/connect";
 const title = "Carly Clark Zimmer | Clarity for Life and Business Transitions";
 const description =
@@ -50,10 +50,6 @@ const claritySessionDifferences = [
   "Skilled at pattern and blind spot identification",
   "Structured intake process to avoid rehashing what you've already tried or covered",
 ];
-
-function List({ children }: { children: React.ReactNode }) {
-  return <li>{children}</li>;
-}
 
 export default function ServicesPage() {
   return (
@@ -108,135 +104,159 @@ export default function ServicesPage() {
           </Button>
         </Section>
 
-        <section className={styles.intro}>
-        <div className={styles.introImage}>
-          <Image
-            src="/services-intro-carly.jpg"
-            alt="Carly Clark Zimmer"
-            width={890}
-            height={1565}
-            priority
-            unoptimized
-          />
-        </div>
-        <div className={styles.introCopy}>
-          <p className={styles.accentLead}>
-            <strong>Options:</strong> Your Personal Decision Map created together in 90 Minutes or
-            six months of implementation support.
-          </p>
-          <p className={styles.accentLead}>
-            We work to uncover the behavior bottlenecks and create a plan of action so you can
-            redesign your role and lead decisively.
-          </p>
-          <p>
-            A recent client came to me right as she was leaving her corporate job. She felt shaky
-            about reaching out for referrals. The advice she was given was to connect with everyone
-            she knows on LinkedIn and start selling her services, and she would make “10k in 10
-            days.”
-          </p>
-          <p>
-            This was clearly not the aligned path for her. During our six months together, I helped
-            her see how much experience she had in her field, we collected evidence, we put
-            together a program for her to sell at the appropriate price, and customized a sales
-            call process so she could relax and make aligned invitations.
-          </p>
-          <p>
-            Within these six months, she booked clients and training sessions with companies. We
-            raised her prices to reflect her expertise and the amount of effort the delivery would
-            require. Because we anchored her pricing with her experience and logistical delivery
-            considerations, she confidently priced her first 10k retreat proposal. The client said
-            yes without hesitation.
-          </p>
-          <p>
-            What we did together was strategy, but it was more about her seeing herself as the
-            leader she is in her industry, with the many years of experience she has in her field
-            of restorative justice. This is the powerful identity and behavioral work I do with
-            all of my clients.
-          </p>
-          <p>
-            The hard part isn&apos;t usually the clarity. It&apos;s following through with what you
-            know you need to do. Showing up as the leader you are, enforcing boundaries when things
-            get busy, delegating when it feels uncomfortable, and staying in alignment when old
-            habits and dynamics pull you back into the day-to-day.
-          </p>
-          <p>If you want a clear roadmap, the intensive is often enough.</p>
-          <p>
-            <strong>
-              If you are unsure, <a href={recommendationHref}>book a recommendation call</a> or
-              start with the <a href={decisionMapHref}>Decision Map Intensive</a>, and we can always
-              apply that to the six months if you choose to move forward.
-            </strong>
-          </p>
-        </div>
-        <blockquote className={styles.introQuote}>
-          <p>
-            “Working with Carly leads to drastic change that was needed. My true self was buried
-            under 1000 feet of concrete. I had become someone who cared about brands, status, and
-            being a cog in the corporate wheel – things I never cared about before.
-          </p>
-          <p>
-            She helped me return to myself. Now, instead of staying up working until 2 am, my days
-            include yoga, cooking dinner, choosing my own schedule, and building a business that
-            feels right for me.
-          </p>
-          <p>
-            She’s like a wise friend who helps you identify what’s making you feel off, and then
-            brings her skills and tools as a seasoned, truth-telling coach to solve it. My therapist
-            couldn’t do that. Carly could.”
-          </p>
-          <footer>—Emily J. · Fractional CFO</footer>
-        </blockquote>
-        </section>
-      </div>
+        <Section className={styles.meetCarly}>
+          <h2>That’s where the Business Restoration Method comes in.</h2>
+          <div className={styles.meetCarlyCopy}>
+            <div className={styles.meetCarlyStory}>
+              <p>
+                We start by finding the bottlenecks that are costing you the most time, energy,
+                and capacity.
+              </p>
+              <p>
+                Then we look at the patterns underneath them, the automatic decisions, old rules,
+                and ways of working that keep recreating the same pressure.
+              </p>
+              <p>
+                From there, we rebuild the parts of the business that need to change, your
+                boundaries, access, pricing, capacity, and rhythms, so the business can keep
+                growing <strong>without depending on you for everything.</strong> ✨
+              </p>
+              <div className={styles.restorationMethod}>
+                <h3>The Business Restoration Method</h3>
 
-      <section className={styles.option}>
-        <div className={styles.optionCopy}>
-          <p className={styles.optionLabel}>Option 1</p>
-          <h2>Decision Map Intensive</h2>
-          <div className={styles.optionColumns}>
-            <div>
-              <h3>During the session, we will</h3>
-              <ul>
-                <List>
-                  Identify whether the constraint is skill, strategy, space, or something deeper —
-                  identity work.
-                </List>
-                <List>
-                  Define behavioral bottlenecks like ‘it’s faster if I do it myself,’ and the shifts
-                  required to be the person who brings that goal to life.
-                </List>
-                <List>Name the key decisions that unlock forward movement</List>
-              </ul>
-            </div>
-            <div>
-              <h3>What you leave with your Decision Map</h3>
-              <ul>
-                <List>30–60 day implementation timeline</List>
-                <List>3 concrete operational shifts</List>
-                <List>A defined boundary to enforce or dissolve</List>
-                <List>A delegation change</List>
-                <List>One to three leadership behaviors to practice</List>
-                <List>Documented decisions + deadlines</List>
-                <List>Curated support resources</List>
-              </ul>
+                <h4>1. Stop the Leaks</h4>
+                <p>
+                  We identify where your time, energy, and attention are getting drained. That
+                  might be client urgency, over-delivering, doing work your team could own, saying
+                  yes too quickly, or constantly pushing your own priorities aside.
+                </p>
+
+                <h4>2. Open the Walls</h4>
+                <p>
+                  We look at what’s driving those patterns. The people-pleasing,
+                  over-responsibility, perfectionism, old rules, and beliefs that make it hard to
+                  follow through on the way you say you want to work.
+                </p>
+
+                <h4>3. Rebuild the Business Backbone</h4>
+                <p>
+                  Then we turn those new decisions into the actual structure of your business.
+                  Pricing, access, scope, communication, capacity, delegation, and weekly rhythm
+                  all get rebuilt so the business no longer relies on you overriding yourself to
+                  keep it running.
+                </p>
+
+                <p className={styles.restorationGoal}>
+                  The goal: a business that supports your clients and revenue without costing you
+                  your life outside of it. ✨
+                </p>
+              </div>
             </div>
           </div>
-          <p>
-            <strong>This is the right place to start when clarity is the primary bottleneck.</strong>
-          </p>
-          <a className={styles.button} href={decisionMapHref}>
-            Book the Decision Map Intensive
-          </a>
-        </div>
-        <Image
-          className={styles.squareImage}
-          src="/services-intensive-carly.jpg"
-          alt="Carly Clark Zimmer seated in a bright room"
-          width={1064}
-          height={1078}
-          unoptimized
-        />
-      </section>
+          <div className={styles.meetCarlyMedia}>
+            <div className={styles.meetCarlyImage}>
+              <Image
+                src="/carly-services-restoration.jpg"
+                alt="Carly Clark Zimmer wearing a berry jacket"
+                width={3840}
+                height={5760}
+                sizes="(max-width: 760px) 100vw, 42vw"
+                unoptimized
+              />
+            </div>
+            <Button
+              className={styles.restorationApply}
+              href="https://carlyclarkzimmer.as.me/connect"
+              newTab
+              variant="outline"
+            >
+              Apply Here
+            </Button>
+          </div>
+        </Section>
+
+        <Section className={styles.servicesShowcase}>
+          <div className={styles.servicesBackdrop}>
+            <Image
+              className={styles.servicesShowcaseImage}
+              src="/carly-services-showcase.jpg"
+              alt="Carly Clark Zimmer in a flowing metallic dress"
+              fill
+              sizes="100vw"
+              unoptimized
+            />
+            <div className={styles.servicesOverlay} aria-hidden="true" />
+          </div>
+          <div className={styles.servicesPanel}>
+            <div className={styles.servicesIntro}>
+              <Eyebrow>{homeContent.servicesShowcase.eyebrow}</Eyebrow>
+              <h2>{homeContent.servicesShowcase.heading}</h2>
+            </div>
+            <div className={styles.servicesList}>
+              {homeContent.servicesShowcase.services
+                .filter((service) => service.title !== "Business Restoration Method")
+                .map((service, index) => (
+                <article className={styles.serviceItem} key={service.title}>
+                  <div>
+                    <p className={styles.servicePrompt}>
+                      <strong>{service.prompt}</strong>
+                    </p>
+                    <h3>
+                      {"href" in service ? (
+                        <a
+                          href={service.href}
+                          target={"newTab" in service && service.newTab ? "_blank" : undefined}
+                          rel={"newTab" in service && service.newTab ? "noreferrer" : undefined}
+                        >
+                          {service.title}
+                        </a>
+                      ) : (
+                        service.title
+                      )}
+                    </h3>
+                  </div>
+                  <p className={styles.serviceDescription}>{service.description}</p>
+                  <span className={styles.serviceNumber} aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                </article>
+                ))}
+            </div>
+          </div>
+        </Section>
+
+        <section className={styles.intro}>
+          <div className={styles.introCard}>
+            <div className={styles.introPortrait}>
+              <Image
+                src="/testimonial-emily.png"
+                alt="Emily J., Fractional CFO"
+                width={510}
+                height={506}
+                unoptimized
+              />
+            </div>
+            <blockquote className={styles.introQuote}>
+              <p>
+                “Working with Carly leads to drastic change that was needed. My true self was buried
+                under 1000 feet of concrete. I had become someone who cared about brands, status, and
+                being a cog in the corporate wheel – things I never cared about before.
+              </p>
+              <p>
+                She helped me return to myself. Now, instead of staying up working until 2 am, my days
+                include yoga, cooking dinner, choosing my own schedule, and building a business that
+                feels right for me.
+              </p>
+              <p>
+                She’s like a wise friend who helps you identify what’s making you feel off, and then
+                brings her skills and tools as a seasoned, truth-telling coach to solve it. My therapist
+                couldn’t do that. Carly could.”
+              </p>
+              <footer>—Emily J. · Fractional CFO</footer>
+            </blockquote>
+          </div>
+        </section>
+      </div>
 
       <section className={styles.darkSplit}>
         <div>
@@ -249,130 +269,6 @@ export default function ServicesPage() {
         </ul>
       </section>
 
-      <section className={`${styles.option} ${styles.optionReverse}`}>
-        <div className={styles.optionCopy}>
-          <p className={styles.optionLabel}>Option 2</p>
-          <h2>Identity Uplevel</h2>
-          <p className={styles.subhead}>Private one-on-one support | Six months</p>
-          <p>
-            <strong>
-              This is where we define the next level of your leadership and systematically build
-              the capacity, authority, and behavioral consistency required to sustain it.
-            </strong>
-          </p>
-          <h3>Depending on your goals, we may focus on:</h3>
-          <ul>
-            <List>
-              Leadership evolution with your team so everyone spends less time putting out fires
-              and more time on the bigger vision for the business.
-            </List>
-            <List>
-              Identity Restoration Method: My signature method to help you redesign your role,
-              whether it be in your company or in your own business. We&apos;re not “faking it until
-              you make it” here. We are focused on activating and strengthening your identity and
-              leadership authority.
-            </List>
-            <List>
-              Nervous system resilience under executive pressure by prioritizing a customized
-              restorative practice for the mind and body
-            </List>
-            <List>
-              Business and Career expansion - we can identify the skills required for you to shift
-              your role, career, or business model.
-            </List>
-          </ul>
-          <h3>What this work supports</h3>
-          <ul>
-            <List>We begin with a full Decision Map Intensive and then implement it over six months.</List>
-            <List>Big picture strategic partner to talk through your vision and ideas</List>
-            <List>
-              Leadership training and hiring support using the Kolbe index to ensure proper team
-              expansion
-            </List>
-            <List>
-              Work/life balance plan and accountability to make sure you&apos;re having an enjoyable
-              life experience.
-            </List>
-          </ul>
-        </div>
-        <Image
-          className={styles.portraitImage}
-          src="/services-uplevel-carly.jpg"
-          alt="Carly Clark Zimmer smiling outdoors"
-          width={1002}
-          height={1503}
-          unoptimized
-        />
-      </section>
-
-      <section className={styles.detailBand}>
-        <div>
-          <h3>What changes over six months</h3>
-          <ul>
-            <List>From overextended operator → strategic leader</List>
-            <List>From reactive executor → decisive authority</List>
-            <List>From burnout → sustainable expansion</List>
-          </ul>
-        </div>
-        <div>
-          <h3>Logistics</h3>
-          <ul>
-            <List>Three sessions a month</List>
-            <List>Voxer support in between</List>
-            <List>24-hour response time</List>
-            <List>Weekly high-touch accountability check-in and progress update</List>
-            <List>Lifetime access to my signature coaching Toolkit Library</List>
-          </ul>
-          <a className={styles.button} href={recommendationHref}>
-            Apply
-          </a>
-        </div>
-      </section>
-
-      <section className={styles.waitSection}>
-        <h2>What happens when you wait</h2>
-        <ul>
-          <List>
-            The cost of misdiagnosing the bottleneck - spending time, energy, and money on trying to
-            solve the wrong problems
-          </List>
-          <List>
-            The cost of identity lag at senior levels is missed promotions and financial incentives
-          </List>
-          <List>Avoidant behavior can keep you feeling stuck and resentful, especially at yourself.</List>
-          <List>
-            Accommodating behavior keeps you from speaking up and activating your authentic voice
-            with your clients, your team, or in your relationships
-          </List>
-          <List>Assuming other people&apos;s burdens keeps you too exhausted to make changes</List>
-        </ul>
-      </section>
-
-      <section className={styles.club}>
-        <p className={styles.optionLabel}>Option 3</p>
-        <h2>Laser Coaching Club</h2>
-        <div>
-          <p>
-            You already know what needs to happen. The email, the boundary, the price increase, the
-            conversation you have been rewriting in your head for two weeks. You are not confused.
-            <strong> You are stuck in the loop between knowing it and doing it.</strong>
-          </p>
-          <p>The Laser Coaching Club is where that loop ends.</p>
-          <p>
-            Three live coaching calls a month, an active community with accountability between
-            sessions, and AI-powered behavior change tools you can use on yourself and with your own
-            clients. No contracts. No content mountain to climb.
-          </p>
-          <p>
-            Just a consistent place to organize your goals and intentions, bring what&apos;s getting
-            in the way, and finally follow through with what&apos;s important to you.
-          </p>
-          <a className={styles.textLink} href="/coaching-club">
-            Learn more about the Laser Coaching Club →
-          </a>
-        </div>
-      </section>
-
       <section className={styles.recommendation}>
         <h2>Which Option is Right for You?</h2>
         <div>
@@ -381,9 +277,9 @@ export default function ServicesPage() {
             It will quickly clarify whether clarity is the bottleneck or whether ongoing
             implementation support will serve you better.
           </p>
-          <a className={styles.button} href={recommendationHref}>
+          <Button className={styles.approachCta} href={recommendationHref} variant="outline">
             Book A Recommendation Call
-          </a>
+          </Button>
         </div>
       </section>
 
@@ -398,10 +294,10 @@ export default function ServicesPage() {
           <footer>— Rochelle Y. · Founder, Restorative Dialogue Consultant</footer>
         </blockquote>
         <Image
-          src="/services-footer-carly.jpg"
-          alt="Carly Clark Zimmer, life and leadership coach"
-          width={642}
-          height={784}
+          src="/testimonial-rochelle.png"
+          alt="Rochelle Y., Founder and Restorative Dialogue Consultant"
+          width={430}
+          height={435}
           unoptimized
         />
       </section>

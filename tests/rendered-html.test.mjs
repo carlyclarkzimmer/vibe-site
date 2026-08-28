@@ -70,13 +70,16 @@ test("serves the full Services page inside the shared site shell", async () => {
   );
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
   assert.match(html, /Ways to Work Together/i);
-  assert.match(html, /Decision Map Intensive/i);
-  assert.match(html, /Identity Uplevel/i);
-  assert.match(html, /Laser Coaching Club/i);
-  assert.match(html, /What happens when you wait/i);
+  assert.match(html, /That’s where the Business Restoration Method comes in\./i);
+  assert.match(html, /Apply Here/i);
   assert.match(html, /Book A Recommendation Call/i);
-  assert.match(html, /services-intro-carly\.jpg/i);
-  assert.match(html, /services-uplevel-carly\.jpg/i);
+  assert.match(html, /carly-services-restoration\.jpg/i);
+  assert.match(html, /testimonial-emily\.png/i);
+  assert.match(html, /testimonial-rochelle\.png/i);
+  assert.doesNotMatch(html, /Decision Map Intensive/i);
+  assert.doesNotMatch(html, /Identity Uplevel/i);
+  assert.doesNotMatch(html, /Laser Coaching Club/i);
+  assert.doesNotMatch(html, /What happens when you wait/i);
   assert.match(html, /aria-label="Site navigation"/i);
 });
 
@@ -631,7 +634,7 @@ test("serves polished local site-navigation pages", async () => {
   ]);
 
   assert.equal(servicesResponse.status, 200);
-  assert.match(await servicesResponse.text(), /Decision Map Intensive/i);
+  assert.match(await servicesResponse.text(), /Business Restoration Method/i);
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
   assert.match(aboutHtml, /It was New Year&#x27;s Eve, and I was hiding/i);

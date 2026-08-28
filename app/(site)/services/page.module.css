@@ -28,6 +28,7 @@
   max-width: 1320px;
   margin: 0 auto;
   text-align: center;
+  transform: translateY(-20%);
 }
 
 .heroImage {
@@ -90,6 +91,7 @@
 
 .approach h2 span + span {
   margin-top: 0.18em;
+  font-style: italic;
 }
 
 .approach h2 + p {
@@ -107,6 +109,221 @@
   padding: 20px 46px;
   font-size: 11px;
   letter-spacing: 0.18em;
+}
+
+.meetCarly {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: start;
+  grid-template-columns: minmax(0, 0.82fr) minmax(340px, 1fr);
+  gap: clamp(64px, 8vw, 128px);
+  background: var(--color-paper);
+}
+
+.meetCarlyCopy {
+  padding-top: clamp(18px, 3vw, 44px);
+}
+
+.meetCarly h2 {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  font-size: clamp(36.8px, 4.8vw, 73.6px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-transform: none;
+}
+
+.meetCarlyStory {
+  max-width: 660px;
+}
+
+.meetCarlyStory p {
+  margin: 0 0 1.25em;
+  font-size: clamp(18px, 1.35vw, 21px);
+  line-height: 1.62;
+}
+
+.meetCarlyStory p:last-child {
+  margin-bottom: 0;
+}
+
+.restorationMethod {
+  margin-top: clamp(42px, 5vw, 72px);
+  padding-top: clamp(34px, 4vw, 56px);
+  border-top: 1px solid var(--color-border);
+}
+
+.restorationMethod h3 {
+  margin: 0 0 clamp(30px, 4vw, 48px);
+  font-size: clamp(32px, 3.3vw, 50px);
+  line-height: 1;
+}
+
+.restorationMethod h4 {
+  margin: 2em 0 0.6em;
+  font-family: var(--font-body);
+  font-size: clamp(19px, 1.45vw, 23px);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.restorationMethod h3 + h4 {
+  margin-top: 0;
+}
+
+.meetCarlyStory .restorationGoal {
+  margin-top: clamp(34px, 4vw, 52px);
+  font-weight: 700;
+}
+
+.meetCarlyMedia {
+  width: 100%;
+}
+
+.meetCarlyImage {
+  width: 100%;
+  aspect-ratio: 5 / 7;
+  overflow: hidden;
+}
+
+.meetCarlyImage img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+}
+
+.restorationApply {
+  display: flex;
+  width: 75%;
+  min-height: 76px;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto 0;
+  padding: 28px 34px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.servicesShowcase {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 0 8vw clamp(90px, 10vw, 150px);
+  overflow: clip;
+  background: var(--color-surface-dark);
+}
+
+.servicesBackdrop {
+  position: sticky;
+  z-index: 0;
+  top: 0;
+  height: 100svh;
+  margin: 0 -8vw -100svh;
+  overflow: hidden;
+}
+
+.servicesShowcaseImage {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center top;
+  filter: saturate(0.9);
+}
+
+.servicesOverlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(8 7 6 / 68%) 0%, rgb(8 7 6 / 38%) 48%, rgb(8 7 6 / 12%) 100%);
+}
+
+.servicesPanel {
+  position: relative;
+  z-index: 2;
+  max-width: 1180px;
+  margin: clamp(90px, 10vw, 150px) auto 0;
+  padding: clamp(56px, 7vw, 104px) clamp(30px, 7vw, 92px);
+  background: rgb(255 255 255 / 85%);
+  box-shadow: 0 24px 80px rgb(0 0 0 / 18%);
+}
+
+.servicesIntro {
+  max-width: 760px;
+  padding-bottom: clamp(46px, 6vw, 76px);
+}
+
+.servicesIntro h2 {
+  margin: 24px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(47px, 5.4vw, 79px);
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 0.98;
+}
+
+.servicesList {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.serviceItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.75fr) 42px;
+  gap: clamp(28px, 5vw, 70px);
+  align-items: center;
+  padding: clamp(30px, 4vw, 46px) 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.servicePrompt {
+  margin: 0 0 12px;
+  color: var(--color-accent);
+  font-family: var(--font-interface);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.serviceItem h3 {
+  margin: 0;
+  font-size: clamp(27px, 3vw, 43px);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+}
+
+.serviceItem h3 a {
+  color: inherit;
+  text-decoration-color: currentcolor;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+  transition: color 220ms ease;
+}
+
+.serviceItem h3 a:hover,
+.serviceItem h3 a:focus-visible {
+  color: var(--color-accent);
+  text-decoration-color: currentcolor;
+}
+
+.serviceDescription {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.serviceNumber {
+  color: var(--color-text-dim);
+  font-family: var(--font-interface);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-align: right;
 }
 
 @media (max-width: 760px) {
@@ -127,36 +344,81 @@
   .heroOverlay {
     background: rgb(8 7 6 / 52%);
   }
+
+  .servicesShowcase {
+    min-height: auto;
+    padding: 0 24px 70px;
+  }
+
+  .servicesBackdrop {
+    margin-inline: -24px;
+    margin-bottom: -100svh;
+  }
+
+  .servicesPanel {
+    margin-top: 70px;
+    padding: 52px 28px;
+  }
+
+  .serviceItem {
+    grid-template-columns: 1fr auto;
+    gap: 20px;
+  }
+
+  .serviceDescription {
+    grid-column: 1 / -1;
+    font-size: 18px;
+  }
+
+  .serviceNumber {
+    align-self: start;
+    padding-top: 4px;
+  }
+
+  .meetCarlyCopy {
+    padding-top: 0;
+  }
+
+  .meetCarly {
+    gap: 32px;
+  }
+
+  .meetCarlyImage {
+    align-self: start;
+  }
 }
 
 .intro {
   position: relative;
   z-index: 1;
-  display: grid;
-  grid-template-columns: minmax(260px, 0.9fr) minmax(320px, 1.1fr);
-  gap: clamp(42px, 7vw, 110px);
   padding: clamp(70px, 9vw, 130px) 7vw;
   background: var(--color-surface-muted);
   box-shadow: 0 -18px 48px rgb(0 0 0 / 9%);
 }
 
-.introImage {
-  padding-top: 36px;
-  border-top: 1px solid var(--color-border);
-}
-
-.introImage img {
-  max-width: 445px;
+.introCard {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.65fr) minmax(0, 1.35fr);
+  gap: clamp(14px, 2vw, 28px);
+  align-items: center;
+  max-width: 1280px;
   margin: 0 auto;
+  border: 1px solid var(--color-border);
+  background: white;
 }
 
-.introCopy p {
-  font-family: var(--font-interface);
-  font-size: 16px;
-  line-height: 1.52;
+.introPortrait img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
 }
 
-.introCopy a,
+.introPortrait {
+  justify-self: end;
+  padding: clamp(18px, 3vw, 34px);
+}
+
 .textLink {
   color: var(--color-accent);
   text-decoration: underline;
@@ -164,19 +426,10 @@
   text-underline-offset: 3px;
 }
 
-.introCopy .accentLead {
-  margin: 0 0 28px;
-  color: var(--color-accent);
-  font-weight: 700;
-}
-
 .introQuote {
-  grid-column: 1 / -1;
   max-width: 950px;
-  margin: 30px auto 0;
+  margin: 0;
   padding: clamp(36px, 5vw, 70px);
-  border: 1px solid var(--color-border);
-  background: white;
 }
 
 .introQuote p {
@@ -191,6 +444,11 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+}
+
+.introQuote footer,
+.finalTestimonial footer {
+  font-size: 18px;
 }
 
 .option {
@@ -271,12 +529,6 @@
   content: "•";
 }
 
-.optionColumns {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 44px;
-}
-
 .subhead {
   margin: -28px 0 36px;
   color: var(--color-text-subtle);
@@ -301,7 +553,6 @@
   background: var(--color-accent);
 }
 
-.squareImage,
 .portraitImage {
   height: 100%;
   object-fit: cover;
@@ -381,6 +632,17 @@
   border-top: 1px solid var(--color-border);
 }
 
+.recommendation h2 {
+  font-size: clamp(36.8px, 4.8vw, 73.6px);
+  line-height: 0.98;
+}
+
+.recommendation p {
+  font-family: var(--font-body);
+  font-size: clamp(18px, 1.35vw, 21px);
+  line-height: 1.62;
+}
+
 .finalTestimonial {
   display: grid;
   grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.75fr);
@@ -394,8 +656,8 @@
 }
 
 .finalTestimonial blockquote p {
-  font-size: clamp(30px, 3.2vw, 50px);
-  line-height: 1.08;
+  font-size: clamp(20px, 2vw, 27px);
+  line-height: 1.35;
 }
 
 .finalTestimonial img {
@@ -404,7 +666,7 @@
 }
 
 @media (max-width: 900px) {
-  .intro,
+  .introCard,
   .option,
   .optionReverse,
   .darkSplit,
@@ -416,18 +678,14 @@
     grid-template-columns: 1fr;
   }
 
-  .introImage img {
-    max-width: 560px;
-  }
-
-  .optionColumns {
-    grid-template-columns: 1fr;
-  }
-
-  .squareImage,
   .portraitImage {
     max-height: 700px;
     object-position: center 25%;
+  }
+
+  .introPortrait {
+    width: min(100%, 360px);
+    margin: 0 auto;
   }
 
   .club .optionLabel,
@@ -476,5 +734,17 @@
   .button {
     width: 100%;
     text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .meetCarly {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .meetCarlyMedia {
+    max-width: 440px;
+    margin: 0 auto;
   }
 }
