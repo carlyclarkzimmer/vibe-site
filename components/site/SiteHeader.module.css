@@ -49,13 +49,13 @@
   justify-content: center;
   gap: clamp(10px, 1.4vw, 22px);
   font-family: var(--font-interface);
-  font-size: 18px;
+  font-size: 15.3px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .navigation > a:not(.monogram) {
-  font-size: 18px;
+  font-size: 15.3px;
 }
 
 .desktopLinks a:hover,
@@ -102,7 +102,7 @@
   .mobileMenu {
     display: block;
     font-family: var(--font-interface);
-    font-size: 18px;
+    font-size: 15.3px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
   }
