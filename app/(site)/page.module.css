@@ -305,8 +305,8 @@
 .testimonial {
   position: relative;
   z-index: 1;
-  background: var(--color-accent);
-  color: white;
+  background: var(--color-surface-muted);
+  color: var(--color-ink);
   text-align: center;
 }
 
