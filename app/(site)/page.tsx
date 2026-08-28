@@ -63,6 +63,27 @@ export default function HomePage() {
           {homeContent.approach.cta}
         </Button>
       </Section>
+      <Section className={styles.meetCarly}>
+        <h2>{homeContent.meetCarly.heading}</h2>
+        <div className={styles.meetCarlyCopy}>
+          <div className={styles.meetCarlyStory}>
+            {homeContent.meetCarly.paragraphs.map((paragraph) => (
+              <p key={paragraph.text}>
+                {paragraph.emphasis ? <strong>{paragraph.text}</strong> : paragraph.text}
+              </p>
+            ))}
+          </div>
+        </div>
+        <div className={styles.meetCarlyImage}>
+          <Image
+            src="/carly-meet-headshot.jpg"
+            alt="Carly Clark Zimmer smiling in a teal jacket"
+            fill
+            sizes="(max-width: 760px) 100vw, 42vw"
+            unoptimized
+          />
+        </div>
+      </Section>
       <Section className={styles.servicesShowcase}>
         <Image
           className={styles.servicesShowcaseImage}
