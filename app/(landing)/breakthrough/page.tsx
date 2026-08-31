@@ -61,6 +61,6 @@ export default function BreakthroughPage() {
       <img className={styles.aboutPortrait} src="/carly-services-restoration.jpg" alt="Carly Clark Zimmer in a magenta jacket" width={3840} height={5760} />
     </div></section>
 
-    <footer className={styles.footer}>© carlyclarkzimmer.com Balance by the Bay, LLC 2025</footer>
+    <footer className={styles.footer}>© carlyclarkzimmer.com Balance by the Bay, LLC 2026</footer>
   </div>;
 }
