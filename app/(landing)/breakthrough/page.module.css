@@ -9,7 +9,7 @@
 .eyebrow { font-size: 14px; font-weight: 400; letter-spacing: .16em; }
 .hero h1, .promise h2, .difference h2, .socialProof h2, .about h2 { margin: 0; font-size: clamp(43px, 6vw, 85px); line-height: .98; }
 .hero h1 { max-width: 780px; margin-inline: auto; font-size: clamp(38.7px, 5.4vw, 76.5px); text-align: center; }
-.headlineSecondLine { display: block; margin-top: .28em; }
+.headlineSecondLine { display: block; margin-top: .4em; }
 .hero h1 em { color: var(--color-accent); font-weight: 400; }
 .hero .eyebrow, .heroSubhead, .intro { text-align: center; }
 .videoWrap { aspect-ratio: 16 / 9; max-width: 820px; margin: 44px auto 26px; background: var(--color-ink); }
