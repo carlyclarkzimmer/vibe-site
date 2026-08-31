@@ -42,7 +42,7 @@
 .differenceIntro { max-width: 790px; margin-top: 52px; }
 .differenceIntro p { font-size: 20px; line-height: 1.65; }
 .clarityLead { margin: 40px 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 42px) !important; line-height: 1.2 !important; }
-.clarityList { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 46px) !important; line-height: 1.35 !important; }
+.clarityList { font-family: var(--font-display); font-size: clamp(26.6px, 3.325vw, 43.7px) !important; line-height: 1.35 !important; }
 .differenceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin: 52px 0 22px; }
 .differenceGrid article { padding: 24px 0; border-top: var(--border-standard); }
 .differenceGrid h3 { margin: 0 0 10px; font-size: 21px; }
