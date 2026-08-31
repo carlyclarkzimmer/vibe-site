@@ -47,7 +47,7 @@
 .clarityLead { margin: 40px 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 42px) !important; line-height: 1.2 !important; }
 .clarityList { font-family: var(--font-display); font-size: clamp(26.6px, 3.325vw, 43.7px) !important; line-height: 1.35 !important; }
 .socialProof { background: var(--color-paper); text-align: center; }
-.quote { width: 100%; margin: 0 auto 76px; padding: 0 0 38px; border-bottom: var(--border-standard); text-align: left; }
+.quote { width: 100%; margin: 0 auto 76px; padding: 0 0 38px; text-align: left; }
 .quote blockquote { font-size: clamp(17px, 2.2vw, 29px); }
 .stars { color: var(--color-accent); font-size: 24px; text-align: center; }
 .additionalTestimonials { display: block; width: min(100%, 898px); height: auto; margin: 36px auto 0; }
