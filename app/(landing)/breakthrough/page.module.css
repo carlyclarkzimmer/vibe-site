@@ -43,10 +43,6 @@
 .differenceIntro p { font-size: 20px; line-height: 1.65; }
 .clarityLead { margin: 40px 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 42px) !important; line-height: 1.2 !important; }
 .clarityList { font-family: var(--font-display); font-size: clamp(26.6px, 3.325vw, 43.7px) !important; line-height: 1.35 !important; }
-.differenceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin: 52px 0 22px; }
-.differenceGrid article { padding: 24px 0; border-top: var(--border-standard); }
-.differenceGrid h3 { margin: 0 0 10px; font-size: 21px; }
-.differenceGrid p { margin: 0; font-size: 17px; line-height: 1.55; }
 .socialProof { background: var(--color-paper); text-align: center; }
 .quote { width: 100%; margin: 0 auto 76px; padding: 0 0 38px; border-bottom: var(--border-standard); text-align: left; }
 .quote blockquote { font-size: clamp(17px, 2.2vw, 29px); }
@@ -65,5 +61,5 @@ blockquote { margin: 20px 0; font-size: clamp(22px, 2.6vw, 34px); line-height: 1
 .pledge { background: var(--color-ink); color: white; }
 .pledge p { max-width: 850px; font-size: 16px; line-height: 1.6; }
 .footer { padding: 26px var(--space-section-inline); background: var(--color-ink); border-top: 1px solid rgb(255 255 255 / 25%); color: white; font-family: var(--font-interface); font-size: 11px; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
-@media (max-width: 760px) { .hero { padding: 0 var(--space-section-inline-mobile); } .heroTop { padding: 48px var(--space-section-inline-mobile) 0; } .hero h1 { font-size: 49px; } .videoWrap { margin-top: 34px; } .scrollBadgeDivider { height: 126px; } .spinningBadge { right: 18px; width: 234px; height: 234px; } .badgeRing span { height: 109px; } .badgeImage { width: 148px; height: 148px; } .marshaTestimonial { width: 100%; margin-top: 125px; } .testimonialGrid { grid-template-columns: 1fr; margin: 24px 0 32px; } .testimonialImage { height: auto; max-height: 520px; } .promise, .difference, .socialProof, .about, .pledge { padding: var(--space-section-block-mobile) var(--space-section-inline-mobile); } .split, .differenceGrid, .aboutGrid { grid-template-columns: 1fr; } .split { gap: 38px; } .aboutGrid { gap: 42px; } .aboutTitle { margin-bottom: 34px; } .aboutPortrait { min-height: 520px; max-height: 700px; } .differenceGrid { margin-top: 36px; } .quote { padding: 28px 0; } .primaryCta, .lightCta { width: 100%; } .lightCta { margin-inline: auto; } }
+@media (max-width: 760px) { .hero { padding: 0 var(--space-section-inline-mobile); } .heroTop { padding: 48px var(--space-section-inline-mobile) 0; } .hero h1 { font-size: 49px; } .videoWrap { margin-top: 34px; } .scrollBadgeDivider { height: 126px; } .spinningBadge { right: 18px; width: 234px; height: 234px; } .badgeRing span { height: 109px; } .badgeImage { width: 148px; height: 148px; } .marshaTestimonial { width: 100%; margin-top: 125px; } .testimonialGrid { grid-template-columns: 1fr; margin: 24px 0 32px; } .testimonialImage { height: auto; max-height: 520px; } .promise, .difference, .socialProof, .about, .pledge { padding: var(--space-section-block-mobile) var(--space-section-inline-mobile); } .split, .aboutGrid { grid-template-columns: 1fr; } .split { gap: 38px; } .aboutGrid { gap: 42px; } .aboutTitle { margin-bottom: 34px; } .aboutPortrait { min-height: 520px; max-height: 700px; } .quote { padding: 28px 0; } .primaryCta, .lightCta { width: 100%; } .lightCta { margin-inline: auto; } }
 @media (prefers-reduced-motion: reduce) { .badgeRing { animation: none; } }
