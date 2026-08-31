@@ -432,11 +432,13 @@ test("Breakthrough page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /Big Breakthroughs in/);
+  assert.match(html, /Stop swirling\. Find the/);
+  assert.match(html, /Get Free Access to 5-Minute Laser Coach/);
+  assert.match(html, /href="\/2026-5-minute-laser-coach-delivery"/);
   assert.match(html, /5-Minute Laser Coach/);
   assert.match(html, /player\.vimeo\.com\/video\/1097028350/);
   assert.match(html, /carlyclarkzimmer\.thrivecart\.com\/5-minute-laser-coach-chat-gpt-checkout/);
-  assert.match(html, /laser-coach-promo\.png/);
+  assert.doesNotMatch(html, /laser-coach-promo\.png/);
   assert.match(html, /Cross-Cultural Competency, Awareness, and Equity Pledge/);
   assert.doesNotMatch(html, /site-header/);
 });
