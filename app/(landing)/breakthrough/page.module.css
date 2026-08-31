@@ -41,7 +41,7 @@
 .difference h2 { max-width: 900px; font-size: clamp(30.4px, 4.56vw, 62.7px); line-height: 1.08; }
 .differenceIntro { max-width: 790px; margin-top: 52px; }
 .differenceIntro p { font-size: 20px; line-height: 1.65; }
-.clarityLead { margin-top: 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 42px) !important; line-height: 1.2 !important; }
+.clarityLead { margin: 40px 0; font-family: var(--font-display); font-size: clamp(28px, 3.2vw, 42px) !important; line-height: 1.2 !important; }
 .clarityList { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 46px) !important; line-height: 1.35 !important; }
 .differenceGrid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 48px; margin: 52px 0 22px; }
 .differenceGrid article { padding: 24px 0; border-top: var(--border-standard); }
