@@ -3,6 +3,9 @@
 .heroInner, .narrow { width: min(100%, 930px); margin: auto; }
 .heroTop { width: 100vw; margin-left: calc(50% - 50vw); padding: 64px 24px 0; background: var(--color-surface-muted); }
 .eyebrow, .sectionLabel { margin: 0 0 24px; color: var(--color-accent); font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+.movingLabel { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; }
+.movingLabel span { display: block; width: max-content; animation: labelSweep 10s linear infinite; }
+@keyframes labelSweep { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
 .eyebrow { font-size: 14px; font-weight: 400; letter-spacing: .16em; }
 .hero h1, .promise h2, .difference h2, .socialProof h2, .about h2 { margin: 0; font-size: clamp(43px, 6vw, 85px); line-height: .98; }
 .hero h1 { max-width: 780px; margin-inline: auto; text-align: center; }
@@ -62,4 +65,4 @@ blockquote { margin: 20px 0; font-size: clamp(22px, 2.6vw, 34px); line-height: 1
 .pledge p { max-width: 850px; font-size: 16px; line-height: 1.6; }
 .footer { padding: 26px var(--space-section-inline); background: var(--color-ink); border-top: 1px solid rgb(255 255 255 / 25%); color: white; font-family: var(--font-interface); font-size: 11px; letter-spacing: .08em; text-align: center; text-transform: uppercase; }
 @media (max-width: 760px) { .hero { padding: 0 var(--space-section-inline-mobile); } .heroTop { padding: 48px var(--space-section-inline-mobile) 0; } .hero h1 { font-size: 49px; } .videoWrap { margin-top: 34px; } .scrollBadgeDivider { height: 126px; } .spinningBadge { right: 18px; width: 234px; height: 234px; } .badgeRing span { height: 109px; } .badgeImage { width: 148px; height: 148px; } .marshaTestimonial { width: 100%; margin-top: 125px; } .testimonialGrid { grid-template-columns: 1fr; margin: 24px 0 32px; } .testimonialImage { height: auto; max-height: 520px; } .promise, .difference, .socialProof, .about, .pledge { padding: var(--space-section-block-mobile) var(--space-section-inline-mobile); } .split, .aboutGrid { grid-template-columns: 1fr; } .split { gap: 38px; } .aboutGrid { gap: 42px; } .aboutTitle { margin-bottom: 34px; } .aboutPortrait { min-height: 520px; max-height: 700px; } .quote { padding: 28px 0; } .primaryCta, .lightCta { width: 100%; } .lightCta { margin-inline: auto; } }
-@media (prefers-reduced-motion: reduce) { .badgeRing { animation: none; } }
+@media (prefers-reduced-motion: reduce) { .badgeRing, .movingLabel span { animation: none; } .movingLabel span { transform: translateX(var(--space-section-inline)); } }
