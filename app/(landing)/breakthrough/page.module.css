@@ -3,7 +3,7 @@
 .heroInner, .narrow { width: min(100%, 930px); margin: auto; }
 .heroTop { width: 100vw; margin-left: calc(50% - 50vw); padding: 64px 24px 0; background: var(--color-surface-muted); }
 .eyebrow, .sectionLabel { margin: 0 0 24px; color: var(--color-accent); font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
-.movingLabel { width: 100vw; margin-left: calc(50% - 50vw); overflow: hidden; font-size: 12.65px; }
+.movingLabel { width: 100vw; margin-top: -12px; margin-bottom: 36px; margin-left: calc(50% - 50vw); overflow: hidden; font-size: 15.18px; }
 .movingLabel span { display: block; width: max-content; animation: labelSweep 10s linear infinite; }
 @keyframes labelSweep { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
 .eyebrow { font-size: 14px; font-weight: 400; letter-spacing: .16em; }
