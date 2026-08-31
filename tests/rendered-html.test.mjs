@@ -432,7 +432,8 @@ test("Breakthrough page", async () => {
   assert.equal(response.status, 200);
   const html = await response.text();
 
-  assert.match(html, /Stop swirling\. Find the/);
+  assert.match(html, /Stop swirling\./);
+  assert.match(html, /Find the <em>20%<\/em> that actually matters\./);
   assert.match(html, /Get Free Access to 5-Minute Laser Coach/);
   assert.match(html, /href="\/2026-5-minute-laser-coach-delivery"/);
   assert.match(html, /5-Minute Laser Coach/);

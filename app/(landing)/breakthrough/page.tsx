@@ -23,7 +23,7 @@ export default function BreakthroughPage() {
   return <div className={styles.page}>
     <section className={styles.hero}><div className={styles.heroInner}>
       <div className={styles.heroTop}>
-      <p className={styles.eyebrow}>⚡️5-Minute Laser Coach Custom GPT</p><h1>Stop swirling. Find the <em>20%</em> that actually matters.</h1>
+      <p className={styles.eyebrow}>⚡️5-Minute Laser Coach Custom GPT</p><h1>Stop swirling.<span className={styles.headlineSecondLine}>Find the <em>20%</em> that actually matters.</span></h1>
       <div className={styles.videoWrap}><iframe src="https://player.vimeo.com/video/1097028350?h=b8a528eed5&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" title="NEW 5 Minute Laser Coach" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen /></div>
       <p className={styles.intro}>When you’re short on time, the last thing you need is another hour spent researching, second-guessing, changing strategies, or trying to solve six problems at once.</p>
       <p className={styles.intro}><strong>5-Minute Laser Coach helps you cut through the noise, identify what’s actually driving the stuckness, and leave with one clear next step in about five minutes.</strong></p>
