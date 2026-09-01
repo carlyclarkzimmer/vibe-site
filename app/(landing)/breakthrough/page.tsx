@@ -24,7 +24,7 @@ export default function BreakthroughPage() {
       <p className={styles.intro}>When you’re short on time, the last thing you need is another hour spent researching, second-guessing, changing strategies, or trying to solve six problems at once.</p>
       <p className={styles.intro}><strong>5-Minute Laser Coach helps you cut through the noise, identify what’s actually driving the stuckness, and leave with one clear next step in about five minutes.</strong></p>
       <p className={styles.intro}>It’s free. It’s fast. And it’s built from the same pattern-recognition questions I use with my coaching clients.</p>
-      <SignupButton className={styles.primaryCta}>Get Your Free 5-Minute Laser Coach</SignupButton>
+      <SignupButton className={`${styles.primaryCta} ${styles.largeCta}`}>Get Your Free 5-Minute Laser Coach</SignupButton>
       <div className={styles.scrollBadgeDivider}>
         <div className={styles.spinningBadge} aria-label="5-Minute Laser Coach">
           <div className={styles.badgeRing} aria-hidden="true">
