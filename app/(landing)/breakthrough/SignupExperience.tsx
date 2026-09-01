@@ -68,7 +68,7 @@ export function SignupExperience({ children }: Readonly<{ children: ReactNode }>
         >
           <div className={styles.formHeading}>
             <h2 id="breakthrough-form-title">Get your free 5-Minute Laser Coach Custom GPT</h2>
-            <p>Share your details below and I&apos;ll send access straight to your inbox.</p>
+            <p>Complete the form for immediate access.</p>
           </div>
           <div className={styles.formField}>
             <label htmlFor="breakthrough-first-name">First Name <strong>(Required)</strong></label>
