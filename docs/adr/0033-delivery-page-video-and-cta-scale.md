@@ -17,9 +17,18 @@ strongest visual element around the walkthrough.
 Remove the black feature-list section so the walkthrough leads directly into
 the Carly introduction.
 
+Keep the installation call to action beneath the walkthrough, and remove the
+duplicate access button from the Carly introduction.
+
+Place a dedicated Pattern Interrupt offer section between the walkthrough and
+the Carly introduction. Use an editorial white section with fine accent rules,
+strong display typography, and the landing-page green-to-pink CTA treatment.
+
 ## Consequences
 
 - The walkthrough video and installation action take priority over the heading.
-- Both installation calls to action remain visually consistent with each other.
+- The walkthrough contains the page's single installation call to action.
 - Mobile buttons continue to use the full available width.
 - The delivery flow is shorter and no longer repeats the tool's benefits.
+- Visitors can continue into the 30-day Pattern Interrupt offer before reading
+  the Carly introduction.
