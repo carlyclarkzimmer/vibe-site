@@ -13,4 +13,5 @@ export const siteNavigation: SiteNavigationItem[] = [
 export const sitePrimaryCta = {
   href: "https://carlyclarkzimmer.as.me",
   label: "Book a call",
+  newTab: true,
 } as const;

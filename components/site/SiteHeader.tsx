@@ -17,7 +17,7 @@ export function SiteHeader() {
             </a>
           ))}
         </div>
-        <Button href={sitePrimaryCta.href}>{sitePrimaryCta.label}</Button>
+        <Button href={sitePrimaryCta.href} newTab={sitePrimaryCta.newTab}>{sitePrimaryCta.label}</Button>
         <details className={styles.mobileMenu}>
           <summary>Menu</summary>
           <div>
@@ -26,7 +26,7 @@ export function SiteHeader() {
                 {item.label}
               </a>
             ))}
-            <a href={sitePrimaryCta.href}>{sitePrimaryCta.label}</a>
+            <a href={sitePrimaryCta.href} rel="noreferrer" target="_blank">{sitePrimaryCta.label}</a>
           </div>
         </details>
       </nav>
