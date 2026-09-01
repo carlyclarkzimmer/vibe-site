@@ -1,8 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- static legacy artwork served directly */
 import type { Metadata } from "next";
-import type { CSSProperties, ReactNode } from "react";
-import { DripRecaptcha } from "../../../components/campaign/DripRecaptcha";
-import { breakthroughEmailCapture } from "../../../content/campaigns/breakthrough";
+import type { CSSProperties } from "react";
+import { SignupButton, SignupExperience } from "./SignupExperience";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -16,12 +15,8 @@ const outcomes = [
   "Overthinking a decision.", "Changing strategies because you’ve lost confidence in the current one.", "Researching instead of acting.", "Trying to solve everything at once.", "Circling a client conversation, boundary, rate increase, offer, or business decision.",
 ];
 
-function SignupLink({ children, className }: Readonly<{ children: ReactNode; className?: string }>) {
-  return <a className={className} href="#get-access">{children}</a>;
-}
-
 export default function BreakthroughPage() {
-  return <div className={styles.page}>
+  return <SignupExperience><div className={styles.page}>
     <section className={styles.hero}><div className={styles.heroInner}>
       <div className={styles.heroTop}>
       <p className={styles.eyebrow}>⚡️5-Minute Laser Coach Custom GPT</p><h1>Stop swirling.<span className={styles.headlineSecondLine}>Find the <em>20%</em> that actually matters.</span></h1>
@@ -29,38 +24,7 @@ export default function BreakthroughPage() {
       <p className={styles.intro}>When you’re short on time, the last thing you need is another hour spent researching, second-guessing, changing strategies, or trying to solve six problems at once.</p>
       <p className={styles.intro}><strong>5-Minute Laser Coach helps you cut through the noise, identify what’s actually driving the stuckness, and leave with one clear next step in about five minutes.</strong></p>
       <p className={styles.intro}>It’s free. It’s fast. And it’s built from the same pattern-recognition questions I use with my coaching clients.</p>
-      <form
-        action={breakthroughEmailCapture.action}
-        className={styles.signupForm}
-        data-drip-embedded-form={breakthroughEmailCapture.formId}
-        id="get-access"
-        method="post"
-      >
-        <div className={styles.formHeading}>
-          <h2>Get your free 5-Minute Laser Coach</h2>
-          <p>Share your details below and I&apos;ll send access straight to your inbox.</p>
-        </div>
-        <div className={styles.formField}>
-          <label htmlFor="breakthrough-first-name">First Name <span>(Optional)</span></label>
-          <input autoComplete="given-name" id="breakthrough-first-name" name="fields[first_name]" placeholder="Your first name" type="text" />
-        </div>
-        <div className={styles.formField}>
-          <label htmlFor="breakthrough-email">Email Address <strong>(Required)</strong></label>
-          <input autoComplete="email" id="breakthrough-email" name="fields[email]" placeholder="you@example.com" required type="email" />
-        </div>
-        <div className={styles.formField}>
-          <label htmlFor="breakthrough-social-media">Social Media <span>(Optional)</span></label>
-          <input autoComplete="url" id="breakthrough-social-media" name="fields[social_media]" placeholder="@yourhandle or profile link" type="text" />
-        </div>
-        <div aria-hidden="true" className={styles.honeypot}>
-          <label htmlFor="breakthrough-website">Website</label>
-          <input autoComplete="off" id="breakthrough-website" name="website" tabIndex={-1} type="text" />
-        </div>
-        <DripRecaptcha siteKey={breakthroughEmailCapture.recaptchaSiteKey} />
-        <input name="tags[]" type="hidden" value={breakthroughEmailCapture.campaignTag} />
-        <button data-drip-attribute="sign-up-button" type="submit">Send Me the 5-Minute Laser Coach</button>
-        <a className={styles.privacyLink} href="/privacy" rel="noreferrer" target="_blank">Privacy Policy</a>
-      </form>
+      <SignupButton className={styles.primaryCta}>Get Your Free 5-Minute Laser Coach</SignupButton>
       <div className={styles.scrollBadgeDivider}>
         <div className={styles.spinningBadge} aria-label="5-Minute Laser Coach">
           <div className={styles.badgeRing} aria-hidden="true">
@@ -81,18 +45,17 @@ export default function BreakthroughPage() {
     </div></section>
 
     <section className={styles.promise}><div className={styles.split}>
-      <div><h2>You probably don’t need more information.</h2><p>You may already know the options.</p><p>You may already know what you <em>should</em> do.</p><p>The problem is that your attention is getting pulled in twelve directions at once.</p><p>That’s one of the first things I look for in my Business Restoration work: <strong>where are you leaking time, energy, and attention on things that aren’t actually moving you forward?</strong></p><p>5-Minute Laser Coach helps you stop that leak quickly.</p><p>It asks you a few focused questions, looks for the pattern underneath what’s happening, and gives you an <strong>80/20 analysis</strong>:</p><p><strong>The 80% you can stop giving so much attention to.</strong><br /><strong>The 20% that deserves your focus right now.</strong></p><p>And then it helps you choose a concrete next move.</p><ul className={styles.outcomes}>{outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}<li>Feeling pulled between what you want to do and what you think you’re <em>supposed</em> to do.</li><li>Or simply thinking: <strong>“I know there’s an answer in here somewhere. I just cannot find it right now.”</strong></li></ul><SignupLink className={`${styles.lightCta} ${styles.largeCta}`}>Help Me Find the 20% →</SignupLink></div>
+      <div><h2>You probably don’t need more information.</h2><p>You may already know the options.</p><p>You may already know what you <em>should</em> do.</p><p>The problem is that your attention is getting pulled in twelve directions at once.</p><p>That’s one of the first things I look for in my Business Restoration work: <strong>where are you leaking time, energy, and attention on things that aren’t actually moving you forward?</strong></p><p>5-Minute Laser Coach helps you stop that leak quickly.</p><p>It asks you a few focused questions, looks for the pattern underneath what’s happening, and gives you an <strong>80/20 analysis</strong>:</p><p><strong>The 80% you can stop giving so much attention to.</strong><br /><strong>The 20% that deserves your focus right now.</strong></p><p>And then it helps you choose a concrete next move.</p><ul className={styles.outcomes}>{outcomes.map((outcome) => <li key={outcome}>{outcome}</li>)}<li>Feeling pulled between what you want to do and what you think you’re <em>supposed</em> to do.</li><li>Or simply thinking: <strong>“I know there’s an answer in here somewhere. I just cannot find it right now.”</strong></li></ul><SignupButton className={`${styles.lightCta} ${styles.largeCta}`}>Help Me Find the 20% →</SignupButton></div>
     </div></section>
 
-    <section className={styles.difference}><div className={styles.narrow}><p className={`${styles.sectionLabel} ${styles.movingLabel}`}><span>What makes it different</span></p><h2>What makes 5-Minute Laser Coach different from just opening ChatGPT or Claude?</h2><div className={styles.differenceIntro}><p>If you open a general AI tool with a messy decision, chances are you can spend way more than five minutes going back and forth, adding context, asking follow-up questions, and somehow ending up with even more to think about.</p><p className={styles.clarityLead}><strong>5-Minute Laser Coach is designed to get in, get clear, and get you back out.</strong></p><p>It asks a small number of focused questions, looks for the pattern underneath the problem, and gives you an 80/20 read on what to stop paying attention to and what actually deserves your focus.</p><p className={styles.clarityList}>No endless AI conversation.<br />No giant list of ideas.<br />No spending an hour “processing” with a chatbot.</p><p><strong>Just clarity, one next step, and back to your actual life.</strong> ⚡️</p></div><SignupLink className={styles.primaryCta}>Unlock Instant Clarity</SignupLink></div></section>
+    <section className={styles.difference}><div className={styles.narrow}><p className={`${styles.sectionLabel} ${styles.movingLabel}`}><span>What makes 5-Minute Laser Coach different from just opening ChatGPT or Claude?</span></p><div className={styles.differenceIntro}><p>If you open a general AI tool with a messy decision, chances are you can spend way more than five minutes going back and forth, adding context, asking follow-up questions, and somehow ending up with even more to think about.</p><p className={styles.clarityLead}><strong>5-Minute Laser Coach is designed to get in, get clear, and get you back out.</strong></p><p>It asks a small number of focused questions, looks for the pattern underneath the problem, and gives you an 80/20 read on what to stop paying attention to and what actually deserves your focus.</p><p className={styles.clarityList}>No endless AI conversation.<br />No giant list of ideas.<br />No spending an hour “processing” with a chatbot.</p><p><strong>Just clarity, one next step, and back to your actual life.</strong> ⚡️</p></div><SignupButton className={styles.primaryCta}>Unlock Instant Clarity</SignupButton></div></section>
 
-    <section className={styles.socialProof}><div className={styles.narrow}><div className={styles.quote}><p className={styles.stars}>⭐️⭐️⭐️⭐️⭐️</p><blockquote>“I&apos;ve been in an eight-year relationship with my partner, and despite all the conversations and work we&apos;ve done, there were always these trust issues we couldn&apos;t get to the bottom of. 5-Minute Laser coach helped me uncover the hidden narrative that CUTS right to the heart of the trust issue, and then the work and next steps are right there. It&apos;s actually changing my relationship with him. It&apos;s a pivot in the relationship, and all this trust and stuff that we could never kind of maintain, now this consistency to it. Super interesting, thank you for this!”</blockquote><p>– Aine</p><img className={styles.additionalTestimonials} src="/laser-coach-testimonials-tracy-anne-jenn.png" alt="Testimonials from Tracy Hilliard, Anne Kamholz, and Jenn Lemaire about the 5-Minute Laser Coach" width={898} height={1024} /></div><h2>Imagine having a coach in your pocket that:</h2><ul className={styles.checkList}><li>Ends the inner war between your desires and doubts</li><li>Cuts through overthinking in minutes</li><li>Guides you to your next aligned step</li><li>Helps you clear energetic and mindset blocks instantly</li><li>Settles your nervous system so you can lead with grounded confidence—even when decisions feel deeply personal</li></ul><p className={styles.centered}>Join hundreds of heart-centered professionals using ⚡️5-Minute Laser Coach to gain fast clarity, confidence.</p><SignupLink className={styles.primaryCta}>Start Your 5-Minute Breakthrough Now</SignupLink></div></section>
+    <section className={styles.socialProof}><div className={styles.narrow}><div className={styles.quote}><p className={styles.stars}>⭐️⭐️⭐️⭐️⭐️</p><blockquote>“I&apos;ve been in an eight-year relationship with my partner, and despite all the conversations and work we&apos;ve done, there were always these trust issues we couldn&apos;t get to the bottom of. 5-Minute Laser coach helped me uncover the hidden narrative that CUTS right to the heart of the trust issue, and then the work and next steps are right there. It&apos;s actually changing my relationship with him. It&apos;s a pivot in the relationship, and all this trust and stuff that we could never kind of maintain, now this consistency to it. Super interesting, thank you for this!”</blockquote><p>– Aine</p><img className={styles.additionalTestimonials} src="/laser-coach-testimonials-tracy-anne-jenn.png" alt="Testimonials from Tracy Hilliard, Anne Kamholz, and Jenn Lemaire about the 5-Minute Laser Coach" width={898} height={1024} /></div><h2>Imagine having a coach in your pocket that:</h2><ul className={styles.checkList}><li>Ends the inner war between your desires and doubts</li><li>Cuts through overthinking in minutes</li><li>Guides you to your next aligned step</li><li>Helps you clear energetic and mindset blocks instantly</li><li>Settles your nervous system so you can lead with grounded confidence—even when decisions feel deeply personal</li></ul><p className={styles.centered}>Join hundreds of heart-centered professionals using ⚡️5-Minute Laser Coach to gain fast clarity, confidence.</p><SignupButton className={styles.primaryCta}>Start Your 5-Minute Breakthrough Now</SignupButton></div></section>
 
     <section className={styles.about}><div className={styles.aboutGrid}>
-      <div className={styles.aboutCopy}><h2 className={styles.aboutTitle}>Created by Carly Clark Zimmer</h2><h3 className={styles.aboutIntro}>I’m an ICF-certified Life and Business Coach who helps successful business owners stop becoming the bottleneck inside businesses they built for freedom.</h3><p>My work combines behavioral change with practical business strategy.</p><p>Because usually, the problem isn’t that you don’t know enough.</p><p><strong>It’s that an old pattern, automatic decision, or competing priority is making it harder to follow through on what you already know.</strong></p><p>That’s exactly what 5-Minute Laser Coach is designed to help you see.</p><SignupLink className={styles.lightCta}>Get ⚡️5-Minute Laser Coach Access</SignupLink></div>
+      <div className={styles.aboutCopy}><h2 className={styles.aboutTitle}>Created by Carly Clark Zimmer</h2><h3 className={styles.aboutIntro}>I’m an ICF-certified Life and Business Coach who helps successful business owners stop becoming the bottleneck inside businesses they built for freedom.</h3><p>My work combines behavioral change with practical business strategy.</p><p>Because usually, the problem isn’t that you don’t know enough.</p><p><strong>It’s that an old pattern, automatic decision, or competing priority is making it harder to follow through on what you already know.</strong></p><p>That’s exactly what 5-Minute Laser Coach is designed to help you see.</p><SignupButton className={styles.lightCta}>Get ⚡️5-Minute Laser Coach Access</SignupButton></div>
       <img className={styles.aboutPortrait} src="/carly-services-restoration.jpg" alt="Carly Clark Zimmer in a magenta jacket" width={3840} height={5760} />
     </div></section>
 
-    <footer className={styles.footer}>© carlyclarkzimmer.com Balance by the Bay, LLC 2026</footer>
-  </div>;
+  </div></SignupExperience>;
 }
