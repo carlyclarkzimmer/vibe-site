@@ -434,11 +434,19 @@ test("Breakthrough page", async () => {
 
   assert.match(html, /Stop swirling\./);
   assert.match(html, /Find the <em>20%<\/em> that actually matters\./);
-  assert.match(html, /Get Free Access to 5-Minute Laser Coach/);
-  assert.match(html, /href="\/2026-5-minute-laser-coach-delivery"/);
+  assert.match(html, /id="get-access"/);
+  assert.match(html, /data-drip-embedded-form="205408070"/);
+  assert.match(html, /https:\/\/www\.getdrip\.com\/forms\/205408070\/submissions/);
+  assert.match(html, /name="fields\[first_name\]"/);
+  assert.match(html, /<input[^>]*required[^>]*name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/);
+  assert.match(html, /name="tags\[\]"[^>]*value="5-Minute Laser Coach Custom Chat GPT"/);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.match(html, /href="#get-access"/);
   assert.match(html, /5-Minute Laser Coach/);
   assert.match(html, /player\.vimeo\.com\/video\/1097028350/);
-  assert.match(html, /carlyclarkzimmer\.thrivecart\.com\/5-minute-laser-coach-chat-gpt-checkout/);
+  assert.doesNotMatch(html, /carlyclarkzimmer\.thrivecart\.com|serve-leadbox|api\.leadpages\.io/);
   assert.doesNotMatch(html, /laser-coach-promo\.png/);
   assert.match(html, /Cross-Cultural Competency, Awareness, and Equity Pledge/);
   assert.doesNotMatch(html, /site-header/);
