@@ -191,6 +191,22 @@ Before handing off a code change:
 
 ## Git and collaboration
 
+- Staying synchronized across people, agents, and devices is a paramount
+  repository invariant. Never assume a local branch or an earlier fetch is
+  current.
+- Before creating a new worktree or development branch for any ask or task,
+  fetch the canonical remote and base the new worktree or branch on the latest
+  `origin/main` (the repository's default branch, sometimes called "master").
+  Never branch from a stale local copy of `main`.
+- Before starting or resuming work, fetch the canonical remote and compare the
+  local branch with its remote counterpart and `origin/main`.
+- Immediately before pushing or merging, fetch again. If the remote changed,
+  incorporate those changes, resolve conflicts, and rerun affected checks
+  before continuing.
+- Use normal fast-forward-safe pushes. Never overwrite a collaborator's remote
+  work to make a push succeed.
+- After pushing, verify that the canonical remote contains the intended commit.
+  A production deployment must use that exact verified remote revision.
 - Canonical GitHub repository:
   `https://github.com/carlyclarkzimmer/vibe-site`
 - Default branch: `main`
@@ -212,6 +228,39 @@ content/contributors
 design/mobile-polish
 fix/registration-form
 ```
+
+### "Go live" release shorthand
+
+When any team member working with an agent in this repository says **"go
+live,"** treat that phrase as a request to complete the full release workflow.
+The team member does not need to separately ask the agent to merge, push, or
+deploy.
+
+1. Fetch the latest state of the canonical remote, the working branch, and its
+   default branch (`origin/main`; use the remote default branch if it is
+   renamed). Compare local and remote history before proceeding.
+2. Run the required checks and resolve or report any failures.
+3. Commit the in-scope changes so the release is captured as an exact Git
+   revision. Do not include unrelated working-tree changes.
+4. Incorporate the latest remote default branch and resolve merge conflicts
+   conservatively, preserving both the release intent and collaborators' work.
+   Rerun any checks affected by conflict resolution. If the correct resolution
+   is materially ambiguous, stop and ask the team member instead of guessing.
+5. Immediately before merging or pushing, fetch again. If collaborators have
+   added remote work, incorporate it, resolve conflicts, and rerun affected
+   checks before continuing.
+6. Merge the release through the repository's normal collaboration workflow.
+7. Push the resulting revision to the canonical GitHub repository without
+   overwriting remote work, then verify the intended commit exists remotely.
+8. Deploy that exact verified remote revision through the existing OpenAI Sites
+   project.
+9. Report the commit SHA, fetch/integration result, push/merge verification,
+   deployment result, and any step that could not be completed.
+
+Never deploy uncommitted or unpushed work. "Go live" does not authorize an
+agent to force-push, bypass required checks, include unrelated changes, expose
+secrets, create a second Sites project, or guess at an ambiguous merge-conflict
+resolution.
 
 ## Deployment
 
