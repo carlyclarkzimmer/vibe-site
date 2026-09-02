@@ -137,8 +137,8 @@ export default function AboutPage() {
       <div className={styles.bioGrid}>
         <div className={styles.bioPhoto}>
           <Image
-            src="/carly-about-bio.jpg"
-            alt="Carly Clark Zimmer smiling in a magenta velvet jacket"
+            src="/carly-about-bio-green.jpg"
+            alt="Carly Clark Zimmer smiling in a green velvet jacket"
             fill
             sizes="(max-width: 760px) 100vw, 38vw"
             unoptimized

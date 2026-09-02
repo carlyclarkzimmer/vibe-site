@@ -124,10 +124,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /That was my oh shit moment\./i);
   assert.match(html, /ICF Professional Certified Coach \(PCC\)/i);
   assert.equal((html.match(/role="img"/gi) ?? []).length, 0);
-  assert.match(html, /src="\/carly-about-bio\.jpg"/i);
+  assert.match(html, /src="\/carly-about-bio-green\.jpg"/i);
   assert.match(
     html,
-    /alt="Carly Clark Zimmer smiling in a magenta velvet jacket"/i,
+    /alt="Carly Clark Zimmer smiling in a green velvet jacket"/i,
   );
   assert.match(html, /src="\/carly-about-where-i-come-in-seated\.jpg"/i);
   assert.match(
