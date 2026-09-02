@@ -87,6 +87,57 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /aria-label="Site navigation"/i);
 });
 
+test("serves the complete Business Restoration About page", async () => {
+  const response = await render("/about");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /About Carly Clark Zimmer \| Business Restoration Coach/i);
+  assert.match(html, /Carly Clark Zimmer Behavior Change and Business Coach/i);
+  assert.match(html, /src="\/carly-about-hero\.jpg"/i);
+  assert.match(
+    html,
+    /alt="Carly Clark Zimmer standing in a green velvet jacket among plants"/i,
+  );
+  assert.match(html, /If your business is growing but your life outside of it keeps getting smaller/i);
+  assert.match(html, /The Business Restoration Method/i);
+  assert.match(html, /We build your Bottleneck Offload System\./i);
+  assert.match(html, /src="\/carly-about-promise\.jpg"/i);
+  assert.match(
+    html,
+    /alt="Carly Clark Zimmer seated in a shimmering black dress"/i,
+  );
+  assert.match(html, /src="\/carly-about-airport-client-call\.jpg"/i);
+  assert.match(html, /alt="Carly taking a client call from an airport"/i);
+  assert.match(html, /This is me, squeezing in a client call at an airport/i);
+  assert.match(html, /src="\/carly-about-life-outside-work\.jpg"/i);
+  assert.match(html, /alt="Carly enjoying breakfast outdoors in Spain"/i);
+  assert.match(html, /what your business is still relying on <em>you<\/em> to carry/i);
+  assert.match(html, /<strong>Bottleneck Offload System<\/strong> is the fastest and most effective way/i);
+  assert.match(html, /Stop the Leaks/i);
+  assert.match(html, /Open the Walls/i);
+  assert.match(html, /Rebuild the Business Backbone/i);
+  assert.match(html, /Phase (?:<!-- -->)?1/i);
+  assert.match(html, /Phase (?:<!-- -->)?2/i);
+  assert.match(html, /Phase (?:<!-- -->)?3/i);
+  assert.doesNotMatch(html, /Phase (?:<!-- -->)?0[1-3]/i);
+  assert.match(html, /That was my oh shit moment\./i);
+  assert.match(html, /ICF Professional Certified Coach \(PCC\)/i);
+  assert.equal((html.match(/role="img"/gi) ?? []).length, 0);
+  assert.match(html, /src="\/carly-about-bio\.jpg"/i);
+  assert.match(
+    html,
+    /alt="Carly Clark Zimmer smiling in a magenta velvet jacket"/i,
+  );
+  assert.match(html, /src="\/carly-about-where-i-come-in-seated\.jpg"/i);
+  assert.match(
+    html,
+    /alt="Carly Clark Zimmer seated in a green velvet jacket"/i,
+  );
+  assert.match(html, /href="\/services"[^>]*>Show Me My Options<\/a>/i);
+  assert.match(html, /aria-label="Site navigation"/i);
+});
+
 test("serves a branded 404 with clear routes back into the site", async () => {
   const response = await render("/this-page-does-not-exist");
   const html = await response.text();
@@ -655,19 +706,11 @@ test("serves polished local site-navigation pages", async () => {
   assert.match(await servicesResponse.text(), /Business Restoration Method/i);
   assert.equal(aboutResponse.status, 200);
   const aboutHtml = await aboutResponse.text();
-  assert.match(aboutHtml, /It was New Year&#x27;s Eve, and I was hiding/i);
-  assert.match(aboutHtml, /So I rebuilt how I worked/i);
-  assert.doesNotMatch(aboutHtml, /Photo placeholder/i);
-  assert.match(
-    aboutHtml,
-    /src="\/carly-finished-painting-landscape\.png"/i,
-  );
-  assert.match(
-    aboutHtml,
-    /Carly Clark Zimmer smiling in a magenta velvet jacket/i,
-  );
-  assert.doesNotMatch(aboutHtml, />0[1-5]<\/span>/i);
-  assert.match(aboutHtml, /book a recommendation call/i);
+  assert.match(aboutHtml, /That was my oh shit moment\./i);
+  assert.match(aboutHtml, /The Business Restoration Method/i);
+  assert.doesNotMatch(aboutHtml, /Your photo here/i);
+  assert.equal((aboutHtml.match(/role="img"/gi) ?? []).length, 0);
+  assert.match(aboutHtml, /Show Me My Options/i);
   assert.equal(resultsResponse.status, 200);
   assert.match(await resultsResponse.text(), /Rochelle Y/i);
   assert.equal(resourcesResponse.status, 200);
