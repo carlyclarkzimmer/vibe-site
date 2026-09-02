@@ -94,10 +94,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.equal(response.status, 200);
   assert.match(html, /About Carly Clark Zimmer \| Business Restoration Coach/i);
   assert.match(html, /Carly Clark Zimmer Behavior Change and Business Coach/i);
-  assert.match(html, /src="\/carly-about-hero\.jpg"/i);
+  assert.match(html, /src="\/carly-about-hero\.png"/i);
   assert.match(
     html,
-    /alt="Carly Clark Zimmer standing in a green velvet jacket among plants"/i,
+    /alt="Carly Clark Zimmer seated on stone steps in a magenta velvet jacket"/i,
   );
   assert.match(html, /If your business is growing but your life outside of it keeps getting smaller/i);
   assert.match(html, /The Business Restoration Method/i);

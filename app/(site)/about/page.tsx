@@ -24,7 +24,7 @@ export default function AboutPage() {
   return <>
     <div className={styles.heroSequence}>
       <header className={styles.hero} id="about-hero">
-        <Image className={styles.heroImage} src="/carly-about-hero.jpg" alt="Carly Clark Zimmer standing in a green velvet jacket among plants" fill priority sizes="100vw" unoptimized />
+        <Image className={styles.heroImage} src="/carly-about-hero.png" alt="Carly Clark Zimmer seated on stone steps in a magenta velvet jacket" fill priority sizes="100vw" unoptimized />
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroContent}>
           <p className={styles.eyebrow}>Carly Clark Zimmer Behavior Change and Business Coach</p>
