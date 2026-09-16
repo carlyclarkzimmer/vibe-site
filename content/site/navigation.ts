@@ -7,7 +7,6 @@ export const siteNavigation: SiteNavigationItem[] = [
   { href: "/", label: "Home" },
   { href: "/services", label: "Work With Carly" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ] as const;
 
 export const sitePrimaryCta = {
