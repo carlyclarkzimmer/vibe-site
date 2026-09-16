@@ -30,6 +30,14 @@
   line-height: 1.35;
 }
 
+:global(body:has(.laserCoachDeliveryPage)) .pledge h2 {
+  font-size: clamp(16px, calc(2.2vw - 4px), 26px);
+}
+
+:global(body:has(.laserCoachDeliveryPage)) .pledge p {
+  font-size: clamp(16px, calc(2vw - 4px), 23px);
+}
+
 @media (max-width: 600px) {
   .pledge {
     padding: 48px var(--space-section-inline-mobile);

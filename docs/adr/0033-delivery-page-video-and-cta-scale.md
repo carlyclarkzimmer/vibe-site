@@ -27,6 +27,23 @@ the delivery page remains available.
 Double the walkthrough support and Instagram lines from 18px to 36px so help
 and feedback paths are easier to notice beneath the primary installation CTA.
 
+Reduce those support lines by 10% to 32.4px, and style the Instagram handle as
+a prominent pink link that opens in a new tab.
+
+Use the Carly introduction CTA as a “Learn More” path to the main website
+rather than repeating the Laser Coach installation action.
+
+Reduce the Carly introduction title by 5% on this delivery page.
+
+Keep the delivery-page copyright year current at 2026.
+
+Reduce the shared equity pledge heading and body copy by 4px when it follows
+this delivery route, without changing its scale on other pages.
+
+Increase the delivery-page copyright line from 11px to 13px.
+
+Open the Carly introduction's external “Learn More” destination in a new tab.
+
 Space the installation CTA's arrows away from its label and open the external
 ChatGPT destination in a new tab so the delivery page remains available.
 
@@ -36,5 +53,5 @@ ChatGPT destination in a new tab so the delivery page remains available.
 - Both installation calls to action remain visually consistent with each other.
 - Mobile buttons continue to use the full available width.
 - The delivery flow is shorter and no longer repeats the tool's benefits.
-- Visitors can continue into the 30-day Pattern Interrupt offer without losing
+- Visitors can continue into the 21-day Pattern Interrupt offer without losing
   the delivery page.

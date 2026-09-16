@@ -20,7 +20,7 @@ material copy changes remain separate decisions.
 | `/breakthrough/` | `/breakthrough` | Landing | Drip signup modal configured; approved for publication | Verify the production Drip submission, campaign tag, workflow, redirect, and email delivery end to end before describing signup as working |
 | `/privacy-policy/` | `/privacy` | Legal | Draft migrated | Carly/legal review for this site and providers |
 | `/terms-and-conditions/` | `/terms-and-conditions` | Legal | Placeholder only | Approved terms content required before public launch |
-| `/2026-5-minute-laser-coach-delivery/` | `/2026-5-minute-laser-coach-delivery` | Landing | Baseline composed | Verify ChatGPT destination and Vimeo playback |
+| `/2026-5-minute-laser-coach-delivery/` | `/2026-5-minute-laser-coach-delivery` | Landing | Approved for publication | None—ChatGPT destination and Vimeo playback verified September 16, 2026 |
 | `/trust/` | `/trust` | Landing | Baseline composed | Verify Leadpages submission and audio delivery behavior |
 | `/house/` | `/house` | Landing | Baseline composed; preview ready | Verify Leadpages submission and Walk the House delivery behavior end to end before publication |
 | `/pattern-breaker/` | `/pattern-breaker` | Landing | Drip configured; preview ready | Verify Drip redirect, subscriber state, campaign tag, workflow, and training delivery end to end |
