@@ -42,7 +42,7 @@ implementation shaped around Carly's content and conversion flow.
 
 - The main site homepage is composed in `app/(site)/page.tsx`.
 - Campaign landing pages live under `app/(landing)/`; Beyond the Bottleneck is
-  at `/beyond-the-bottleneck`.
+  at `/beyond-the-bottleneck-2026`.
 - Shared site chrome is owned by `app/(site)/layout.tsx` and `components/site/`.
 - Campaign chrome is owned by `app/(landing)/[campaign]/layout.tsx` and
   `components/campaign/`.
@@ -51,7 +51,7 @@ implementation shaped around Carly's content and conversion flow.
 - Structured campaign content is in
   `content/campaigns/beyond-the-bottleneck.ts`.
 - Long-form Beyond the Bottleneck copy is in route-owned sections under
-  `app/(landing)/beyond-the-bottleneck/_components/`.
+  `app/(landing)/beyond-the-bottleneck-2026/_components/`.
 - Site metadata and the root document shell are in `app/layout.tsx`.
 - Brand photography is stored in `public/`.
 - Contributor cards intentionally contain placeholders.
@@ -132,7 +132,7 @@ speculatively.
 - `app/(site)/layout.tsx` — shared site shell ownership
 - `app/(landing)/` — campaign landing-page routes and layouts
 - `components/site/` — shared site shell and navigation
-- `app/(landing)/beyond-the-bottleneck/_components/` — route-owned Beyond the
+- `app/(landing)/beyond-the-bottleneck-2026/_components/` — route-owned Beyond the
   Bottleneck narrative sections
 - `app/globals.css` — reset and truly global behavior
 - `app/layout.tsx` — root document shell and metadata

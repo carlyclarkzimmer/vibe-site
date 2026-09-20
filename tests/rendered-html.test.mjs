@@ -163,7 +163,7 @@ test("provides a branded recoverable site error boundary", async () => {
 });
 
 test("serves the campaign without shared site navigation", async () => {
-  const response = await render("/beyond-the-bottleneck");
+  const response = await render("/beyond-the-bottleneck-2026");
   const html = await response.text();
 
   assert.doesNotMatch(html, /aria-label="Campaign navigation"/i);
@@ -264,6 +264,16 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /href="#register"/i);
   assert.match(html, /alt="Carly Clark Zimmer smiling outdoors"/i);
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
+});
+
+test("redirects the former campaign route to the 2026 URL", async () => {
+  const response = await render("/beyond-the-bottleneck");
+
+  assert.equal(response.status, 308);
+  assert.equal(
+    new URL(response.headers.get("location")).pathname,
+    "/beyond-the-bottleneck-2026",
+  );
 });
 
 test("serves the Coaching Club baseline as a focused landing page", async () => {
@@ -513,14 +523,14 @@ test("Breakthrough page", async () => {
 
 test("serves branded signup status and privacy pages", async () => {
   const [thankYouResponse, privacyResponse] = await Promise.all([
-    render("/beyond-the-bottleneck/thank-you?status=registered"),
+    render("/beyond-the-bottleneck-2026/thank-you?status=registered"),
     render("/privacy"),
   ]);
 
   assert.equal(thankYouResponse.status, 200);
   const thankYouHtml = await thankYouResponse.text();
   assert.match(thankYouHtml, /You’re in/i);
-  assert.match(thankYouHtml, /href="\/beyond-the-bottleneck"/i);
+  assert.match(thankYouHtml, /href="\/beyond-the-bottleneck-2026"/i);
   assert.match(thankYouHtml, /Return to Beyond the Bottleneck/i);
   assert.equal(privacyResponse.status, 200);
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
@@ -721,7 +731,7 @@ test("serves polished local site-navigation pages", async () => {
 });
 
 test("renders the approved equity pledge once on every page type", async () => {
-  for (const path of ["/", "/about", "/beyond-the-bottleneck", "/coaching-club", "/breakthrough", "/trust"]) {
+  for (const path of ["/", "/about", "/beyond-the-bottleneck-2026", "/coaching-club", "/breakthrough", "/trust"]) {
     const response = await render(path);
     assert.equal(response.status, 200);
     const html = await response.text();

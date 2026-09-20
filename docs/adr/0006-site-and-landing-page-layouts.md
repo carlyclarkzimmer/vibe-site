@@ -12,7 +12,7 @@ contracts:
 - `(site)` provides the permanent main-site experience at `/` through
   `SiteShell`, including shared navigation and footer.
 - `(landing)` provides campaign and conversion routes without shared site
-  navigation. Beyond the Bottleneck lives at `/beyond-the-bottleneck` and uses
+  navigation. Beyond the Bottleneck lives at `/beyond-the-bottleneck-2026` and uses
   only campaign-specific navigation and CTAs when the campaign calls for them.
   Its current composition omits the campaign header and begins directly with
   the hero.

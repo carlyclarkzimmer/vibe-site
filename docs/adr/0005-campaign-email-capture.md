@@ -18,7 +18,7 @@ the visual form, accessible field labels, privacy link, and branded thank-you
 pages.
 
 Beyond the Bottleneck owns its thank-you state at
-`/beyond-the-bottleneck/thank-you`. The generic `/thank-you` route is available
+`/beyond-the-bottleneck-2026/thank-you`. The generic `/thank-you` route is available
 for opt-ins that need a confirmation state without campaign-specific delivery
 content or next steps.
 

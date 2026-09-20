@@ -23,7 +23,7 @@ export default async function ThankYouPage({ searchParams }: ThankYouPageProps) 
         <p>
           Your listening-tour details will arrive by email.
         </p>
-        <Link href="/beyond-the-bottleneck">
+        <Link href="/beyond-the-bottleneck-2026">
           Return to Beyond the Bottleneck
         </Link>
       </div>
