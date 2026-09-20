@@ -244,8 +244,12 @@ test("serves the campaign without shared site navigation", async () => {
   );
   assert.match(html, /type="email"/i);
   assert.match(html, /fields\[first_name\]/i);
-  assert.match(html, /data-drip-embedded-form="318414890"/i);
-  assert.match(html, /id="drip-ef-318414890"/i);
+  assert.match(html, /data-drip-embedded-form="419624977"/i);
+  assert.match(html, /id="drip-ef-419624977"/i);
+  assert.match(
+    html,
+    /https:\/\/www\.getdrip\.com\/forms\/419624977\/submissions/i,
+  );
   assert.match(
     html,
     /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
@@ -256,7 +260,9 @@ test("serves the campaign without shared site navigation", async () => {
     /name="g-recaptcha-response-data\[form_submission\]"/i,
   );
   assert.match(html, /data-drip-attribute="sign-up-button"/i);
-  assert.match(html, /beyond-the-bottleneck-listening-tour/i);
+  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
+  assert.match(html, /fields\[social_media\]/i);
+  assert.doesNotMatch(html, /fields\[optin_source\]/i);
   assert.doesNotMatch(html, /I’d also like occasional emails/i);
   assert.doesNotMatch(html, /By registering, you’ll receive listening-tour emails\./i);
   assert.doesNotMatch(html, /id="general-email"/i);
@@ -264,6 +270,20 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /href="#register"/i);
   assert.match(html, /alt="Carly Clark Zimmer smiling outdoors"/i);
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
+});
+
+test("adds the campaign UTM source to the Drip form", async () => {
+  const response = await render(
+    "/beyond-the-bottleneck-2026?utm=instagram%20partner",
+  );
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(
+    html,
+    /name="fields\[optin_source\]"[^>]*value="instagram partner"/i,
+  );
+  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
 });
 
 test("redirects the former campaign route to the 2026 URL", async () => {
