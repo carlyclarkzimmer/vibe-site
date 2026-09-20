@@ -54,6 +54,10 @@
   gap: 10px;
 }
 
+.socialField {
+  grid-column: 1 / -1;
+}
+
 .register input {
   min-width: 0;
   flex: 1;
@@ -130,6 +134,10 @@
 @media (max-width: 600px) {
   .fields {
     grid-template-columns: 1fr;
+  }
+
+  .socialField {
+    grid-column: auto;
   }
 
   .register button {

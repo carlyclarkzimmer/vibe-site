@@ -6,9 +6,13 @@ import styles from "./RegistrationSection.module.css";
 
 type RegistrationSectionProps = {
   content: typeof registrationContent;
+  optinSource?: string;
 };
 
-export function RegistrationSection({ content }: RegistrationSectionProps) {
+export function RegistrationSection({
+  content,
+  optinSource,
+}: RegistrationSectionProps) {
   const form = content.emailCapture;
   const generalMarketingTag =
     "generalMarketingTag" in form ? form.generalMarketingTag : undefined;
@@ -41,6 +45,14 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
               type="email"
             />
           </div>
+          <div className={`${styles.field} ${styles.socialField}`}>
+            <label htmlFor="social-media">Social media</label>
+            <input
+              id="social-media"
+              name="fields[social_media]"
+              type="text"
+            />
+          </div>
         </div>
         <div className={styles.honeypot} aria-hidden="true">
           <label htmlFor="website">Website</label>
@@ -53,6 +65,13 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
           />
         </div>
         <DripRecaptcha siteKey={form.recaptchaSiteKey} />
+        {optinSource ? (
+          <input
+            name="fields[optin_source]"
+            type="hidden"
+            value={optinSource}
+          />
+        ) : null}
         <input name="tags[]" type="hidden" value={form.campaignTag} />
         {generalMarketingTag ? (
           <label className={styles.consent} htmlFor="general-email">
