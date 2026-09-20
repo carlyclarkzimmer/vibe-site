@@ -556,6 +556,25 @@ test("serves branded signup status and privacy pages", async () => {
   assert.match(await privacyResponse.text(), /Email signup information is processed through Drip/i);
 });
 
+test("serves the Beyond the Bottleneck delivery-page draft", async () => {
+  const response = await render("/beyond-the-bottleneck-2026-delivery");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>Beyond the Bottleneck \| Listening Tour Delivery<\/title>/i);
+  assert.match(html, /Your listening tour/i);
+  assert.match(html, /\[Approved episode title\]/i);
+  assert.match(html, /\[Approved audio player or episode link\]/i);
+  assert.match(html, /content="noindex, nofollow"/i);
+  assert.equal(
+    (html.match(/aria-label="Contributor portrait placeholder"/gi) ?? []).length,
+    12,
+  );
+  assert.match(html, /The pattern she interrupted:/i);
+  assert.match(html, /What opened up:/i);
+  assert.doesNotMatch(html, /aria-label="Site navigation"/i);
+});
+
 test("serves a generic thank-you page without campaign delivery copy", async () => {
   const response = await render("/thank-you");
   const html = await response.text();
