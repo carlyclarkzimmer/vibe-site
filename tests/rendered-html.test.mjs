@@ -546,6 +546,12 @@ test("serves the Beyond the Bottleneck delivery-page draft", async () => {
   assert.match(html, /\[Approved episode title\]/i);
   assert.match(html, /\[Approved audio player or episode link\]/i);
   assert.match(html, /content="noindex, nofollow"/i);
+  assert.equal(
+    (html.match(/aria-label="Contributor portrait placeholder"/gi) ?? []).length,
+    12,
+  );
+  assert.match(html, /The pattern she interrupted:/i);
+  assert.match(html, /What opened up:/i);
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
 });
 

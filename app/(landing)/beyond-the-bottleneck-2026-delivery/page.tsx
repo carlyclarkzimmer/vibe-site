@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { campaignMeta } from "@/content/campaigns/beyond-the-bottleneck";
+import { ContributorGrid } from "@/components/campaign/ContributorGrid";
+import {
+  campaignMeta,
+  contributors,
+} from "@/content/campaigns/beyond-the-bottleneck";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -19,6 +23,8 @@ export default function BeyondTheBottleneckDeliveryPage() {
         </h1>
         <p className={styles.lede}>{campaignMeta.description}</p>
       </section>
+
+      <ContributorGrid contributors={contributors} />
 
       <section className={styles.delivery} aria-labelledby="episodes-title">
         <div className={styles.sectionHeading}>
