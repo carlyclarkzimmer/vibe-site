@@ -22,6 +22,11 @@ Beyond the Bottleneck owns its thank-you state at
 for opt-ins that need a confirmation state without campaign-specific delivery
 content or next steps.
 
+Beyond the Bottleneck also accepts an optional `utm` query parameter. The page
+normalizes that value and submits it to Drip as `fields[optin_source]` only when
+it is present. Query-string values never create or replace Drip tags; the
+campaign's configured tag remains unconditional.
+
 ## Consequences
 
 - Future campaigns can reuse the registration component by supplying their own
@@ -35,3 +40,6 @@ content or next steps.
   page loads, because tokens expire after two minutes and can only be used
   once. Its production behavior must be verified during the end-to-end inbox
   test.
+- A later Beyond the Bottleneck submission with a new `utm` value replaces the
+  existing `optin_source` custom field in Drip. Submissions without the
+  parameter omit the field rather than clearing it.

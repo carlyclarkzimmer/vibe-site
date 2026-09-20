@@ -68,9 +68,9 @@ export const registrationContent = {
     "Join me for Beyond the Bottleneck and hear how thriving online business owners stopped turning their freedom back into a job, what they changed, and what opened up when they did.",
   emailCapture: {
     provider: "drip",
-    formId: "318414890",
-    action: "https://www.getdrip.com/forms/318414890/submissions",
-    campaignTag: "beyond-the-bottleneck-listening-tour",
+    formId: "419624977",
+    action: "https://www.getdrip.com/forms/419624977/submissions",
+    campaignTag: "Beyond the Bottleneck Audio Series 2026",
     recaptchaSiteKey: "6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP",
   },
 } as const;
