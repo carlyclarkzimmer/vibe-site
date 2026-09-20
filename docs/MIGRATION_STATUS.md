@@ -8,7 +8,7 @@ material copy changes remain separate decisions.
 | Legacy source | App route | Type | Status | Launch blocker |
 | --- | --- | --- | --- | --- |
 | `carlyclarkzimmer.com/` | `/` | Site | Baseline composed | Carly approves final homepage copy and assets |
-| Existing app campaign root | `/beyond-the-bottleneck` | Landing | Route moved | Update all campaign email, social, ad, and Drip links |
+| Existing app campaign root | `/beyond-the-bottleneck-2026` | Landing | Route moved; legacy path redirects | Update all campaign email, social, ad, and Drip links |
 | `/walk-the-house-exercise/` | `/walk-the-house-exercise` | Landing | Preview ready | Review the exercise, companion guide, and contact destinations before publication |
 | `/services/` | `/services` | Site | Faithful baseline preview ready | Confirm active offers, copy, and destinations |
 | `/about/` | `/about` | Site | Baseline composed | Carly approves biography copy and images |

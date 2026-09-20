@@ -116,7 +116,7 @@ After the page is deployed at its real public domain, Beyond the Bottleneck uses
 this post-submission URL in Drip:
 
 - Post-submission:
-  `https://YOUR-DOMAIN/beyond-the-bottleneck/thank-you?status=registered`
+  `https://YOUR-DOMAIN/beyond-the-bottleneck-2026/thank-you?status=registered`
 
 The post-confirmation URL is unused when double opt-in is disabled. If a future
 campaign uses double opt-in, ask the agent to configure both thank-you states.

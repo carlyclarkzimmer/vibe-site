@@ -44,7 +44,7 @@ global style import.
 
 The `(site)` route group owns the shared main-site header and footer and serves
 the homepage at `/`. The `(landing)` route group owns focused campaign routes,
-including `/beyond-the-bottleneck`. Landing routes retain the brand system but
+including `/beyond-the-bottleneck-2026`. Landing routes retain the brand system but
 do not render the shared main-site navigation.
 
 See [ADR 0006](adr/0006-site-and-landing-page-layouts.md). ADR 0001 is kept as

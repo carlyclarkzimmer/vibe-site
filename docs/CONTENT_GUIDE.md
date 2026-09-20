@@ -43,7 +43,7 @@ The visual brand is shared between both types. Navigation intent is not.
 
 Distinctive narrative prose remains in route-owned section components. Beyond
 the Bottleneck's sections live under
-`app/(landing)/beyond-the-bottleneck/_components/`. This keeps writing close to
+`app/(landing)/beyond-the-bottleneck-2026/_components/`. This keeps writing close to
 its intended layout without forcing every paragraph into a configuration object.
 
 ## Contributors
