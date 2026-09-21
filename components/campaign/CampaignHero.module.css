@@ -134,8 +134,8 @@
 .hostCallout {
   position: absolute;
   z-index: 2;
-  right: 5%;
-  bottom: 27%;
+  right: 8%;
+  bottom: 39%;
   animation: hostFloat 4.5s ease-in-out infinite;
   transform: rotate(-2deg);
 }
@@ -206,8 +206,10 @@
   }
 
   .hostCallout {
-    right: 6%;
-    bottom: 25%;
+    right: auto;
+    bottom: 37%;
+    left: 58%;
+    transform: translateX(-50%) rotate(-2deg);
   }
 }
 
@@ -225,7 +227,7 @@
   }
 
   .photo {
-    object-position: right bottom;
+    object-position: 94% bottom;
   }
 
   .photoWrap {
@@ -233,8 +235,9 @@
   }
 
   .hostCallout {
-    right: 8%;
-    bottom: 24%;
+    right: auto;
+    bottom: 36%;
+    left: 58%;
   }
 
   .eyebrow {
@@ -264,3 +267,6 @@
     display: block;
   }
 }
+  .photo {
+    object-position: 94% bottom;
+  }
