@@ -552,6 +552,11 @@
   margin-top: 28px;
 }
 
+.moreOfYou a:hover {
+  border-color: #ff37b0;
+  background: #ff37b0;
+}
+
 .inside {
   display: grid;
   padding: 112px 8vw;
