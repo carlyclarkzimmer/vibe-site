@@ -320,8 +320,13 @@
   margin-left: auto;
 }
 
+.audienceSection {
+  padding-top: calc(var(--space-section-block) / 2);
+  padding-bottom: calc(var(--space-section-block) / 2);
+}
+
 .audienceCopy {
-  margin-top: 28px;
+  margin-top: 14px;
   margin-bottom: 42px;
 }
 
@@ -390,6 +395,13 @@
 .qualifierClose p:last-child {
   font-family: var(--font-display);
   font-size: 32px;
+}
+
+@media (max-width: 600px) {
+  .audienceSection {
+    padding-top: calc(var(--space-section-block-mobile) / 2);
+    padding-bottom: calc(var(--space-section-block-mobile) / 2);
+  }
 }
 
 .questionSection {
