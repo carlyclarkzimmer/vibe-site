@@ -13,15 +13,17 @@ type CampaignHeroProps = {
 export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
   return (
     <header className={styles.hero} id="top">
-      <Image
-        alt={content.imageAlt}
-        className={styles.photo}
-        fill
-        priority
-        sizes="100vw"
-        src={content.image}
-        unoptimized
-      />
+      <div className={styles.photoWrap}>
+        <Image
+          alt={content.imageAlt}
+          className={styles.photo}
+          fill
+          priority
+          sizes="(max-width: 900px) 100vw, 48vw"
+          src={content.image}
+          unoptimized
+        />
+      </div>
       <div className={styles.shade} />
       <div className={styles.copy}>
         <Eyebrow>{content.eyebrow}</Eyebrow>
@@ -31,7 +33,7 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
           {content.titleEnd}
         </EditorialHeading>
         <p className={styles.description}>{content.description}</p>
-        <Button href="#register" variant="outlineLight">
+        <Button href="#register">
           {content.cta}
         </Button>
       </div>

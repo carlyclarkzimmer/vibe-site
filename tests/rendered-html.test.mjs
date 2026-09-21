@@ -174,7 +174,9 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.match(html, /<title>Beyond the Bottleneck \| Free Audio Series<\/title>/i);
   assert.doesNotMatch(html, /Real stories about the moment things finally changed\./i);
-  assert.match(html, /Bingeable audio interviews—20 minutes or less/i);
+  assert.match(html, /AUDIO SERIES/i);
+  assert.match(html, /ACCESS THE AUDIOS/i);
+  assert.doesNotMatch(html, /listening tour/i);
   assert.match(
     html,
     /You took the leap and left corporate to start your own business and create more freedom in your life\./i,
@@ -187,46 +189,39 @@ test("serves the campaign without shared site navigation", async () => {
     html,
     /You are not confused about what needs to change\. You just cannot seem to make yourself do it\./i,
   );
-  assert.equal((html.match(/type="checkbox"/gi) ?? []).length, 6);
-  assert.match(html, /Check every box that sounds like you:/i);
+  assert.equal((html.match(/type="checkbox"/gi) ?? []).length, 0);
+  assert.match(html, /If you check even one thing off this list/i);
   assert.doesNotMatch(html, /Honest conversations\. <i>Actual change\.<\/i>/i);
   assert.doesNotMatch(html, /<span[^>]*>SHORT AUDIO SERIES<\/span>/);
   assert.match(html, /who were once in your shoes/i);
-  assert.match(
-    html,
-    /<strong>short audio series featuring honest conversations with online business owners who were once in your shoes\.<\/strong>/i,
-  );
-  assert.match(html, /href="#register">Access the series →<\/a>/i);
+  assert.match(html, /short audio series featuring honest conversations/i);
+  assert.match(html, /What they finally changed/i);
   assert.match(
     html,
     /alt="Carly Clark Zimmer smiling in a berry-colored jacket"/i,
   );
-  assert.match(html, /BEGINS OCTOBER 5TH 2026/i);
-  assert.match(
-    html,
-    /AUDIO INTERVIEWS/i,
-  );
+  assert.match(html, /BEGINS OCTOBER 5TH/i);
+  assert.match(html, /20-MINUTE INTERVIEWS/i);
   assert.doesNotMatch(html, /BEYOND THE BOTTLENECKS—20 MINUTES OR LESS/i);
-  assert.doesNotMatch(html, /Because the current pattern may be exhausting/i);
-  assert.doesNotMatch(html, /What if the client is disappointed\?/i);
-  assert.match(html, /What if there is also more time for your personal life\?/i);
-  assert.doesNotMatch(html, /What if there is also more of you\?/i);
-  assert.doesNotMatch(html, /What if the boundary you have spent six months worrying about/i);
-  assert.doesNotMatch(html, /More mornings that do not begin inside Slack/i);
-  assert.doesNotMatch(html, />Yes, I want to listen<\/a>/i);
-  assert.match(html, /Meet the business owners who broke through the bottleneck/i);
+  assert.match(html, /The current pattern may be exhausting, but it(?:&#x27;|')s familiar/i);
+  assert.match(html, /What if the client is disappointed\?/i);
+  assert.match(html, /What if there(?:&#x27;|')s also more of you\?/i);
+  assert.match(html, /What if the boundary you(?:&#x27;|')ve spent six months worrying about/i);
+  assert.match(html, /More mornings that do not begin inside Slack/i);
+  assert.match(html, /I(?:&#x27;|')m sick of feeling like this\. I want to listen!/i);
+  assert.match(html, /What you(?:&#x27;|')ll hear/i);
   assert.doesNotMatch(html, /Designed for recognition/i);
   assert.doesNotMatch(html, /You will hear about/i);
-  assert.match(html, /Begins October 5th 2026/i);
-  assert.match(html, /Register for free/i);
+  assert.match(html, /REGISTER FOR FREE/i);
   assert.doesNotMatch(html, /Short audio interviews, each 20 minutes or less\./i);
-  assert.doesNotMatch(html, /Listen on your own schedule/i);
-  assert.doesNotMatch(html, /Listen on your own time/i);
+  assert.match(html, /Listen on your own schedule/i);
+  assert.match(html, /Listen on your own time/i);
   assert.doesNotMatch(
     html,
     /Because the change you keep putting off may not be nearly as hard as continuing to live inside the pattern\./i,
   );
   assert.match(html, /Contributor name/i);
+  assert.match(html, /Meet the Business Owners Thriving Beyond the Bottleneck/i);
   assert.equal((html.match(/>Contributor name<\/h3>/gi) ?? []).length, 12);
   assert.doesNotMatch(html, />01<\/span>/i);
   assert.equal(
@@ -268,6 +263,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /id="general-email"/i);
   assert.match(html, /<label[^>]*for="email"/i);
   assert.match(html, /href="#register"/i);
+  assert.match(html, /JOIN US\./i);
   assert.match(html, /alt="Carly Clark Zimmer smiling outdoors"/i);
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });

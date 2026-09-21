@@ -1,22 +1,16 @@
-import { Eyebrow } from "../../../../components/ui/Eyebrow";
+import { fearQuestions, reframeQuestions } from "../../../../content/campaigns/beyond-the-bottleneck";
 import styles from "./CampaignSections.module.css";
 
 export function QuestionSection() {
   return (
     <section className={styles.questionSection}>
       <div className={styles.questionTitle}>
-        <Eyebrow className={styles.sectionEyebrow}>
-          The question at the heart of it all
-        </Eyebrow>
-        <h2>
-          What if the change is not as hard as <i>continuing this way?</i>
-        </h2>
-        <h2 className={styles.questionFollowup}>
-          And what if, on the other side of that decision, there is not only a
-          stronger business?
-          <br />
-          <i>What if there is also more time for your personal life?</i>
-        </h2>
+        <p>Because here&apos;s the sneaky thing about a bottleneck: The current pattern may be exhausting, but it&apos;s familiar.</p>
+        <p>And familiarity tricks us into thinking it&apos;s the best option. The change feels big and risky and full of unknowns.</p>
+        <div className={styles.fearCluster}>{fearQuestions.map((question) => <p key={question}>{question}</p>)}</div>
+        <p>You don&apos;t have time for that kind of a setback, so you keep going.</p>
+        <h2>But you know what&apos;s REALLY costing you? Keeping this up…</h2>
+        <div className={styles.reframeCluster}>{reframeQuestions.map((question) => <p key={question}>{question}</p>)}</div>
       </div>
     </section>
   );

@@ -7,31 +7,22 @@ export function AudienceSection() {
   return (
     <Section id="for-you">
       <div className={styles.splitHeading}>
-        <Eyebrow className={styles.sectionEyebrow}>Who this is for</Eyebrow>
+        <Eyebrow className={styles.sectionEyebrow}>
+          How do you know if this is worth your time?
+        </Eyebrow>
       </div>
       <div className={styles.audienceCopy}>
-        <h3>
-          How do you know if this will be worth your time?
-          <span className={styles.checklistPrompt}>
-            Check every box that sounds like you:
-          </span>
-        </h3>
+        <p>If you check even one thing off this list, mark my words: You NEED to be here.</p>
       </div>
-      <div className={styles.checklist}>
-        {checklistItems.map((item, index) => (
-          <label key={item}>
-            <input
-              aria-label={`Checklist item ${index + 1}`}
-              type="checkbox"
-            />
-            <span>{item}</span>
-          </label>
+      <ul className={styles.checklist}>
+        {checklistItems.map((item) => (
+          <li key={item}><span aria-hidden="true">✓</span><p>{item}</p></li>
         ))}
+      </ul>
+      <div className={styles.qualifierClose}>
+        <p>Anything on here sound like you?</p>
+        <p>Then, yes. You&apos;re in the right place, my friend.</p>
       </div>
-      <p className={styles.centerStatement}>
-        If being capable is starting to feel like a never-ending Slack request
-        trap, <i>this series is for you.</i>
-      </p>
     </Section>
   );
 }

@@ -1,7 +1,15 @@
 .contributors {
   padding-top: 0;
+}
+
+.dark {
   background: var(--color-ink);
   color: white;
+}
+
+.light {
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
 .grid {
@@ -9,6 +17,21 @@
   grid-template-columns: repeat(3, 1fr);
   border-top: 1px solid var(--color-border-dark);
   border-left: 1px solid var(--color-border-dark);
+}
+
+.light .grid,
+.light .grid article,
+.light .photo,
+.light .grid article > p:not(:first-of-type) {
+  border-color: var(--color-border);
+}
+
+.light .photo {
+  background: var(--color-surface-muted);
+}
+
+.light .photo span {
+  color: var(--color-text-subtle);
 }
 
 .grid article {
@@ -37,6 +60,13 @@
 .grid h3 {
   margin: 0 0 8px;
   font-size: 32px;
+}
+
+.grid article > p:first-of-type {
+  font-family: var(--font-interface);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .grid article > p:not(:first-of-type) {

@@ -1,5 +1,6 @@
 import type { registrationContent } from "../../content/campaigns/beyond-the-bottleneck";
 import { Eyebrow } from "../ui/Eyebrow";
+import { Button } from "../ui/Button";
 import { Section } from "../ui/Section";
 import { DripRecaptcha } from "./DripRecaptcha";
 import styles from "./RegistrationSection.module.css";
@@ -19,18 +20,28 @@ export function RegistrationSection({
 
   return (
     <Section className={styles.register} id="register">
-      <Eyebrow className={styles.registerEyebrow}>{content.eyebrow}</Eyebrow>
+      {content.eyebrow ? <Eyebrow className={styles.registerEyebrow}>{content.eyebrow}</Eyebrow> : null}
       <h2>
         {content.headingStart} <i>{content.headingItalic}</i>
       </h2>
-      <p className={styles.description}>{content.description}</p>
+      {content.description ? <p className={styles.description}>{content.description}</p> : null}
+      <Button href="#signup-form">REGISTER FOR FREE</Button>
+      <div className={styles.details}>
+        <Eyebrow>The details</Eyebrow>
+        <p>Each 20-minute interview becomes available on October 5th.</p>
+        <p>Listen on your own schedule and walk away with actual case studies that share insight into a variety of bottlenecks and strategies for overcoming them.</p>
+      </div>
+      <div className={styles.finalLines}>
+        <p>Because I&apos;m gonna bet the change you keep putting off isn&apos;t nearly as hard as continuing to choose the pattern.</p>
+        <p>There&apos;s a whole lotta life waiting for you beyond the bottleneck.</p>
+      </div>
       <form
         action={form.action}
         data-drip-embedded-form={form.formId}
         id={`drip-ef-${form.formId}`}
         method="post"
       >
-        <div className={styles.fields}>
+        <div className={styles.fields} id="signup-form">
           <div className={styles.field}>
             <label htmlFor="first-name">First name</label>
             <input id="first-name" name="fields[first_name]" type="text" />
@@ -92,7 +103,7 @@ export function RegistrationSection({
         </p>
         <div className={styles.submitRow}>
           <button data-drip-attribute="sign-up-button" type="submit">
-            Register for free
+            JOIN US.
           </button>
         </div>
       </form>

@@ -4,11 +4,12 @@ import styles from "./ContributorGrid.module.css";
 
 type ContributorGridProps = {
   contributors: Contributor[];
+  tone?: "dark" | "light";
 };
 
-export function ContributorGrid({ contributors }: ContributorGridProps) {
+export function ContributorGrid({ contributors, tone = "dark" }: ContributorGridProps) {
   return (
-    <Section className={styles.contributors}>
+    <Section className={`${styles.contributors} ${styles[tone]}`}>
       <div className={styles.grid}>
         {contributors.map((contributor) => (
           <article key={contributor.id}>

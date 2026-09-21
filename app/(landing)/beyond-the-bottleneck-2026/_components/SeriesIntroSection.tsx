@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Button } from "../../../../components/ui/Button";
 import styles from "./CampaignSections.module.css";
 
 export function SeriesIntroSection() {
@@ -7,23 +6,16 @@ export function SeriesIntroSection() {
     <section className={styles.seriesIntro}>
       <div className={styles.seriesCard}>
         <p>
-          Beyond the Bottleneck is a {" "}
-          <strong>
-            short audio series featuring honest conversations with online
-            business owners who were once in your shoes.
-          </strong>{" "}
-          They recognized the pattern keeping them overextended, changed the
-          way they worked, and created more room for growth, creativity,
-          relationships, rest, and an actual life outside of business. And now
-          they can honestly share that they are thriving!
+          Beyond the Bottleneck is a short audio series featuring honest
+          conversations with online business owners who were once in your shoes.
         </p>
-        <Button
-          className={styles.seriesButton}
-          href="#register"
-          variant="outlineLight"
-        >
-          Access the series →
-        </Button>
+        <p className={styles.sharingLead}>They&apos;re sharing:</p>
+        <div className={styles.sharingList}>
+          <p><strong>The bottleneck that kept them stuck</strong>, so you can recognize what might be keeping you stuck, too.</p>
+          <p><strong>What they finally changed</strong>, so you can see what getting out of your own way could actually look like.</p>
+          <p><strong>What became possible afterward</strong>, so you can stop fearing the change and start getting excited about what&apos;s possible.</p>
+        </div>
+        <p className={styles.spoiler}>Because, #SpoilerAlert: Their businesses didn&apos;t fall apart.<br /><strong>It thrived.</strong></p>
       </div>
       <div className={styles.seriesPhoto}>
         <Image
@@ -34,7 +26,6 @@ export function SeriesIntroSection() {
           unoptimized
         />
       </div>
-      <div className={styles.seriesWord}>listen</div>
     </section>
   );
 }
