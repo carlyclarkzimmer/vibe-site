@@ -4,7 +4,7 @@ import styles from "./CampaignSections.module.css";
 
 export function AudienceSection() {
   return (
-    <Section id="for-you">
+    <Section id="for-you" className={styles.audienceSection}>
       <div className={styles.audienceCopy}>
         <p>If you check even one thing off this list, mark my words: You NEED to be here.</p>
       </div>
