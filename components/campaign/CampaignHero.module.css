@@ -135,7 +135,7 @@
   position: absolute;
   z-index: 2;
   right: 8%;
-  bottom: 39%;
+  bottom: 42%;
   animation: hostFloat 4.5s ease-in-out infinite;
   transform: rotate(-2deg);
 }
@@ -207,7 +207,7 @@
 
   .hostCallout {
     right: auto;
-    bottom: 37%;
+    bottom: 40%;
     left: 58%;
     transform: translateX(-50%) rotate(-2deg);
   }
@@ -236,7 +236,7 @@
 
   .hostCallout {
     right: auto;
-    bottom: 36%;
+    bottom: 39%;
     left: 58%;
   }
 
