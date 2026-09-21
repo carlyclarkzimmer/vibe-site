@@ -571,6 +571,19 @@
   line-height: 1.02;
 }
 
+.insidePhoto {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  margin-top: 48px;
+  overflow: hidden;
+}
+
+.insidePhoto img {
+  object-fit: cover;
+  object-position: center 24%;
+}
+
 .insideCopy p {
   margin: 0 0 20px;
   font-size: 18px;
@@ -587,8 +600,18 @@
 }
 
 .topicList dt {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
   font-family: var(--font-display);
   font-size: 25px;
+}
+
+.topicList dt::before {
+  color: #e2c16b;
+  content: "★";
+  font-family: var(--font-interface);
+  font-size: 0.72em;
 }
 
 .topicList dd {

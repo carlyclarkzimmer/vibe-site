@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Eyebrow } from "../../../../components/ui/Eyebrow";
 import { conversationTopics } from "../../../../content/campaigns/beyond-the-bottleneck";
 import styles from "./CampaignSections.module.css";
@@ -8,6 +9,15 @@ export function ConversationSection() {
       <div className={styles.insideTitle}>
         <Eyebrow>What you&apos;ll hear</Eyebrow>
         <h2>Honest conversations about the decision that interrupted the pattern.</h2>
+        <div className={styles.insidePhoto}>
+          <Image
+            alt="Carly Clark Zimmer wearing a berry-colored jacket"
+            fill
+            sizes="(max-width: 900px) 100vw, 38vw"
+            src="/carly-conversation-086.jpg"
+            unoptimized
+          />
+        </div>
       </div>
       <div className={styles.insideCopy}>
         <p>
