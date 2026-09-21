@@ -525,6 +525,27 @@
   padding: 13px 0;
   border-bottom: 1px solid var(--color-border-dark);
   font-size: 23px;
+  animation: moreListHotPink linear both;
+  animation-range: entry 15% exit 45%;
+  animation-timeline: view();
+}
+
+@keyframes moreListHotPink {
+  0%,
+  35% {
+    color: var(--color-text-muted);
+  }
+
+  100% {
+    color: #ff37b0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moreList p {
+    color: #ff37b0;
+    animation: none;
+  }
 }
 
 .moreOfYou a {
