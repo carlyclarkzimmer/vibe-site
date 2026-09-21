@@ -134,8 +134,8 @@
 .hostCallout {
   position: absolute;
   z-index: 2;
-  right: clamp(28px, 4vw, 64px);
-  bottom: clamp(230px, 29vh, 280px);
+  right: 5%;
+  bottom: 27%;
   animation: hostFloat 4.5s ease-in-out infinite;
   transform: rotate(-2deg);
 }
@@ -206,7 +206,8 @@
   }
 
   .hostCallout {
-    display: none;
+    right: 6%;
+    bottom: 25%;
   }
 }
 
@@ -229,6 +230,11 @@
 
   .photoWrap {
     inset: 72px 0 -72px;
+  }
+
+  .hostCallout {
+    right: 8%;
+    bottom: 24%;
   }
 
   .eyebrow {

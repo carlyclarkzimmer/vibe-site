@@ -23,6 +23,13 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
           src={content.image}
           unoptimized
         />
+        <div className={styles.hostCallout}>
+          <p>
+            with your
+            <span>Host &amp; Coach,</span>
+            <strong>Carly Clark Zimmer</strong>
+          </p>
+        </div>
       </div>
       <div className={styles.shade} />
       <div className={styles.copy}>
@@ -40,13 +47,6 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
           <span aria-hidden="true" className={styles.ctaStar}>✦</span>
           {content.cta}
         </Button>
-      </div>
-      <div className={styles.hostCallout}>
-        <p>
-          with your
-          <span>Host &amp; Coach,</span>
-          <strong>Carly Clark Zimmer</strong>
-        </p>
       </div>
       <div className={styles.date}>
         <span>Begins</span>
