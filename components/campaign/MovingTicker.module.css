@@ -1,7 +1,7 @@
 .ticker {
   overflow: hidden;
-  padding: 18px 0;
-  background: var(--color-accent);
+  padding: 26px 0;
+  background: var(--color-surface-dark);
   color: white;
   white-space: nowrap;
 }
@@ -9,12 +9,14 @@
 .ticker > div {
   width: max-content;
   animation: ticker 26s linear infinite;
-  font-size: 10px;
-  letter-spacing: 0.2em;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  letter-spacing: 0.15em;
 }
 
 .ticker b {
-  margin: 0 28px;
+  margin: 0 34px;
+  color: var(--color-border-dark);
 }
 
 @keyframes ticker {

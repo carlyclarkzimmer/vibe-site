@@ -1,12 +1,13 @@
 import { Eyebrow } from "../../../../components/ui/Eyebrow";
+import { conversationTopics } from "../../../../content/campaigns/beyond-the-bottleneck";
 import styles from "./CampaignSections.module.css";
 
 export function ConversationSection() {
   return (
     <section className={styles.inside} id="inside">
       <div className={styles.insideTitle}>
-        <Eyebrow>Inside Beyond the Bottleneck</Eyebrow>
-        <h2>Meet the business owners who broke through the bottleneck</h2>
+        <Eyebrow>What you&apos;ll hear</Eyebrow>
+        <h2>Honest conversations about the decision that interrupted the pattern.</h2>
       </div>
       <div className={styles.insideCopy}>
         <p>
@@ -15,20 +16,22 @@ export function ConversationSection() {
           their way of working was costing them.
         </p>
         <p>
+          They will share about one specific bottleneck, the decision that
+          interrupted it, and what became possible afterward.
+        </p>
+        <p>
           These are not polished stories about people who have mastered every
-          part of business and never struggle anymore.
+          part of business and never struggled again. (Thank the goddesses for
+          that!) This series also isn&apos;t about people eliminating bottlenecks
+          completely. They&apos;ve simply gotten better at recognizing them and
+          changing what isn&apos;t working before it takes over.
         </p>
-        <p className={styles.largeCopy}>And thank the goddesses for that!</p>
-        <p>
-          This series isn’t about people eliminating bottlenecks completely—
-          that’s just not possible. But sharing how they identify them quicker
-          and move through the interruption faster is the pathway I want you to
-          see ahead.
-        </p>
-        <p>
-          These are honest conversations about one specific pattern, the
-          decision that interrupted it, and what became possible afterward.
-        </p>
+        <p>Inside each conversation, you&apos;ll hear:</p>
+        <dl className={styles.topicList}>
+          {conversationTopics.map(([label, description]) => (
+            <div key={label}><dt>{label}</dt><dd>{description}</dd></div>
+          ))}
+        </dl>
       </div>
     </section>
   );

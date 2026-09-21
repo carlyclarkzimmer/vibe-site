@@ -6,6 +6,7 @@ type ButtonProps = {
   className?: string;
   href: string;
   newTab?: boolean;
+  sentenceCase?: boolean;
   variant?: "accent" | "dark" | "outline" | "outlineLight";
 };
 
@@ -14,11 +15,12 @@ export function Button({
   className = "",
   href,
   newTab = false,
+  sentenceCase = false,
   variant = "accent",
 }: ButtonProps) {
   return (
     <a
-      className={`${styles.button} ${styles[variant]} ${className}`}
+      className={`${styles.button} ${styles[variant]} ${sentenceCase ? styles.sentenceCase : ""} ${className}`}
       href={href}
       target={newTab ? "_blank" : undefined}
       rel={newTab ? "noreferrer" : undefined}
