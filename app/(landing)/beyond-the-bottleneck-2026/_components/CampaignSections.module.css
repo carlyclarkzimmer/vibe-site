@@ -410,16 +410,30 @@
 }
 
 .questionTitle {
-  width: min(100%, 660px);
+  width: min(100%, 1120px);
   margin: 0 auto;
 }
 
-.questionTitle > p {
+.questionIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+  gap: clamp(40px, 6vw, 88px);
+  align-items: stretch;
+}
+
+.questionIntroCopy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.questionIntroCopy > p,
+.questionBody > p {
   margin: 0 0 24px;
   font-size: 19px;
 }
 
-.questionTitle > .questionReveal {
+.questionIntroCopy > .questionReveal {
   font-family: var(--font-display);
   font-size: clamp(32px, 3.2vw, 48px);
   line-height: 1.08;
@@ -428,6 +442,23 @@
   animation: questionCopyReveal linear both;
   animation-range: entry 10% cover 32%;
   animation-timeline: view();
+}
+
+.questionGif {
+  min-height: 480px;
+  overflow: hidden;
+}
+
+.questionGif img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.questionBody {
+  width: min(100%, 660px);
+  margin: 64px auto 0;
 }
 
 @keyframes questionCopyReveal {
@@ -460,7 +491,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .questionTitle > .questionReveal {
+  .questionIntroCopy > .questionReveal {
     opacity: 1;
     transform: none;
     animation: none;
@@ -802,6 +833,15 @@
   .about,
   .belief {
     grid-template-columns: 1fr;
+  }
+
+  .questionIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .questionGif {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .openingGif {
