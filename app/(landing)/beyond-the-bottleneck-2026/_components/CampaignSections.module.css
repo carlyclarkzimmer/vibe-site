@@ -8,28 +8,69 @@
   width: min(100%, 660px);
 }
 
+.heroStatement {
+  width: 100%;
+  padding: clamp(58px, 7vw, 96px) var(--space-section-inline);
+  border-top: var(--border-standard);
+  border-bottom: var(--border-standard);
+  background: var(--color-paper);
+}
+
+.heroStatement p {
+  max-width: 1280px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(27px, 4vw, 63px);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.heroStatement em {
+  color: #ff37b0;
+  font-style: italic;
+}
+
 .opening {
-  max-width: 1140px;
+  display: grid;
+  max-width: 1440px;
+  align-items: stretch;
+  grid-template-columns: minmax(340px, 0.85fr) minmax(0, 1fr);
+  gap: clamp(52px, 7vw, 110px);
   padding-top: 112px;
   padding-bottom: 112px;
   background: var(--color-paper);
 }
 
-.opening > p,
-.problemList {
+.openingText {
+  align-self: center;
   max-width: 660px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
-.opening > p {
+.openingText > p {
   margin-top: 0;
   margin-bottom: 1.15em;
   font-size: clamp(20px, 1.7vw, 25px);
 }
 
-.opening > p:last-child {
+.openingText > p:last-child {
   margin-bottom: 0;
+}
+
+.openingGif {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.openingGif img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
 }
 
 .problemList {
@@ -39,12 +80,69 @@
 }
 
 .problemList p {
+  position: relative;
   margin: 0;
-  padding: 16px 0 16px 28px;
+  padding: 16px 0 16px 42px;
   border-bottom: var(--border-standard);
   font-size: 18px;
   font-style: italic;
   line-height: 1.5;
+}
+
+.problemList p::before {
+  position: absolute;
+  top: 19px;
+  left: 4px;
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--color-ink);
+  content: "";
+}
+
+.problemList p::after {
+  position: absolute;
+  top: 15px;
+  left: 8px;
+  color: #ff37b0;
+  content: "✓";
+  font-family: var(--font-interface);
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0;
+  transform: rotate(-12deg) scale(0.25);
+  transform-origin: center;
+  animation: checkIn linear both;
+  animation-range: entry 15% cover 35%;
+  animation-timeline: view();
+}
+
+@keyframes checkIn {
+  65% {
+    opacity: 1;
+    transform: rotate(4deg) scale(1.18);
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotate(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .problemList p::after,
+  .checklistBox::after {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .formatStripShine {
+    background: none;
+    -webkit-text-fill-color: currentcolor;
+    animation: none;
+  }
 }
 
 .seriesIntro {
@@ -67,6 +165,10 @@
   line-height: 1.35;
 }
 
+.seriesAccent {
+  color: #ff37b0;
+}
+
 .sharingLead {
   margin: 0 0 12px;
   font-family: var(--font-interface);
@@ -81,10 +183,24 @@
 }
 
 .sharingList p {
+  position: relative;
   margin: 0;
-  padding: 20px 0;
+  padding: 20px 0 20px 42px;
   border-bottom: var(--border-standard);
   font-size: 18px;
+}
+
+.sharingList p::before {
+  position: absolute;
+  top: 18px;
+  left: 2px;
+  color: #ff37b0;
+  content: "→";
+  font-family: var(--font-interface);
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1;
 }
 
 .sharingList strong {
@@ -96,6 +212,40 @@
 .spoiler {
   margin: 36px 0 0;
   font-size: 21px;
+}
+
+.spoiler em {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--color-ink);
+  font-size: clamp(30px, 3vw, 46px);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.seriesCta {
+  align-self: flex-start;
+  margin-top: 22px;
+  font-weight: 700;
+}
+
+.seriesCta:hover {
+  border-color: #ff37b0;
+  background: #ff37b0;
+}
+
+.seriesDetails {
+  margin-top: 20px;
+}
+
+.seriesDetails p {
+  margin: 0 0 7px;
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-transform: uppercase;
 }
 
 .spoiler strong {
@@ -115,15 +265,50 @@
 }
 
 .formatStrip {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 0 0 52px;
+  padding: clamp(30px, 4vw, 54px) var(--space-section-inline);
   background: var(--color-surface-dark);
+  color: white;
+  text-align: center;
 }
 
-.formatStrip > div {
-  width: 100%;
+.formatStrip p {
+  margin: 0;
+  font-family: var(--font-interface);
+  font-size: clamp(26px, 2.6vw, 36px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
+.formatStripShine {
+  display: inline-block;
+  color: white;
+  background-image: linear-gradient(
+    90deg,
+    white 0%,
+    white 44%,
+    #e2c16b 48%,
+    #fff2b8 50%,
+    #e2c16b 52%,
+    white 56%,
+    white 100%
+  );
+  background-position: 200% center;
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: formatStripShine 16s linear infinite;
+}
+
+@keyframes formatStripShine {
+  from {
+    background-position: 200% center;
+  }
+
+  to {
+    background-position: -200% center;
+  }
 }
 
 .splitHeading,
@@ -162,10 +347,30 @@
   border-bottom: var(--border-standard);
 }
 
-.checklist li > span {
-  color: var(--color-accent);
+.checklistBox {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  border: 1px solid var(--color-ink);
+}
+
+.checklistBox::after {
+  position: absolute;
+  top: -5px;
+  left: 3px;
+  color: #ff37b0;
+  content: "✓";
   font-family: var(--font-interface);
-  font-weight: 700;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+  opacity: 0;
+  transform: rotate(-12deg) scale(0.25);
+  transform-origin: center;
+  animation: checkIn linear both;
+  animation-range: entry 15% cover 35%;
+  animation-timeline: view();
 }
 
 .checklist p {
@@ -476,11 +681,16 @@
 }
 
 @media (max-width: 900px) {
+  .opening,
   .seriesIntro,
   .inside,
   .about,
   .belief {
     grid-template-columns: 1fr;
+  }
+
+  .openingGif {
+    min-height: 620px;
   }
 
   .seriesPhoto {
@@ -509,6 +719,15 @@
   .cage {
     padding: 64px 24px;
   }
+
+  .opening {
+    gap: 40px;
+  }
+
+  .openingGif {
+    min-height: 500px;
+  }
+
 
   .seriesPhoto {
     min-height: 560px;

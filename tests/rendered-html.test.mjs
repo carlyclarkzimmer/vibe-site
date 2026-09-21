@@ -174,7 +174,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /aria-label="Site navigation"/i);
   assert.match(html, /<title>Beyond the Bottleneck \| Free Audio Series<\/title>/i);
   assert.doesNotMatch(html, /Real stories about the moment things finally changed\./i);
-  assert.match(html, /AUDIO SERIES/i);
+  assert.match(html, /FREE AUDIO SERIES/i);
   assert.match(html, /ACCESS THE AUDIOS/i);
   assert.doesNotMatch(html, /listening tour/i);
   assert.match(
@@ -194,14 +194,13 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /Honest conversations\. <i>Actual change\.<\/i>/i);
   assert.doesNotMatch(html, /<span[^>]*>SHORT AUDIO SERIES<\/span>/);
   assert.match(html, /who were once in your shoes/i);
-  assert.match(html, /short audio series featuring honest conversations/i);
+  assert.match(html, /free audio series[\s\S]*featuring honest conversations/i);
   assert.match(html, /What they finally changed/i);
   assert.match(
     html,
     /alt="Carly Clark Zimmer smiling in a berry-colored jacket"/i,
   );
   assert.match(html, /BEGINS OCTOBER 5TH/i);
-  assert.match(html, /20-MINUTE INTERVIEWS/i);
   assert.doesNotMatch(html, /BEYOND THE BOTTLENECKS—20 MINUTES OR LESS/i);
   assert.match(html, /The current pattern may be exhausting, but it(?:&#x27;|')s familiar/i);
   assert.match(html, /What if the client is disappointed\?/i);
@@ -264,7 +263,10 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /<label[^>]*for="email"/i);
   assert.match(html, /href="#register"/i);
   assert.match(html, /JOIN US\./i);
-  assert.match(html, /alt="Carly Clark Zimmer smiling outdoors"/i);
+  assert.match(
+    html,
+    /alt="The Beyond the Bottleneck audio series contributors"/i,
+  );
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
