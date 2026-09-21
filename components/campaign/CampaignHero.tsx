@@ -26,16 +26,27 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
       </div>
       <div className={styles.shade} />
       <div className={styles.copy}>
-        <Eyebrow>{content.eyebrow}</Eyebrow>
+        <Eyebrow className={styles.eyebrow}>{content.eyebrow}</Eyebrow>
         <EditorialHeading as="h1" className={styles.title} size="hero">
           {content.titleStart} <i>{content.titleItalic}</i>
-          <br />
-          {content.titleEnd}
+          {" "}{content.titleEnd}
         </EditorialHeading>
-        <p className={styles.description}>{content.description}</p>
-        <Button href="#register">
+        <p className={styles.description}>
+          {content.descriptionLines.map((line) => (
+            <span key={line}>{line} </span>
+          ))}
+        </p>
+        <Button className={styles.heroCta} href="#register">
+          <span aria-hidden="true" className={styles.ctaStar}>✦</span>
           {content.cta}
         </Button>
+      </div>
+      <div className={styles.hostCallout}>
+        <p>
+          with your
+          <span>Host &amp; Coach,</span>
+          <strong>Carly Clark Zimmer</strong>
+        </p>
       </div>
       <div className={styles.date}>
         <span>Begins</span>

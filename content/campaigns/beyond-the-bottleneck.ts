@@ -26,15 +26,20 @@ export const campaignNavigation: CampaignNavItem[] = [
 ];
 
 export const heroContent = {
-  eyebrow: "Audio series",
+  eyebrow: "Free audio series",
   titleStart: "Beyond",
   titleItalic: "the",
   titleEnd: "Bottleneck",
   description:
     "How thriving online business owners stopped turning their freedom back into a job, and what opened up when they did",
+  descriptionLines: [
+    "How thriving online business owners stopped",
+    "turning their freedom back into a job,",
+    "and what opened up when they did",
+  ],
   cta: "ACCESS THE AUDIOS",
-  image: "/carly-hero.jpg",
-  imageAlt: "Carly Clark Zimmer smiling outdoors",
+  image: "/btb-group-photo-transparent.png",
+  imageAlt: "The Beyond the Bottleneck audio series contributors",
 } as const;
 
 export const tickerItems = [
@@ -42,6 +47,15 @@ export const tickerItems = [
   "BEGINS OCTOBER 5TH",
   "LISTEN ON YOUR OWN TIME",
   "20-MINUTE INTERVIEWS",
+] as const;
+
+export const heroBannerItems = [
+  "DECISIONS",
+  "EXPERIMENTS",
+  "BREAKING GENERATIONAL PATTERNS",
+  "REWRITING THE RULES",
+  "22 Honest conversations about what it takes to change the way your business depends on you.",
+  "BEGINS OCTOBER 5",
 ] as const;
 
 export const checklistItems = [
