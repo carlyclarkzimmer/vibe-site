@@ -6,6 +6,9 @@ import styles from "./CampaignSections.module.css";
 export function MoreOfYouSection() {
   return (
     <section className={styles.moreOfYou}>
+      <div className={styles.moreList}>
+        {possibilityItems.map((item) => <p key={item}>{item}</p>)}
+      </div>
       <div className={styles.moreOfYouIntro}>
         <div className={styles.moreOfYouGif} aria-hidden="true">
           <Image
@@ -22,14 +25,13 @@ export function MoreOfYouSection() {
             stronger business?
           </h2>
           <h2>
-            <i>What if there&apos;s also more of you?</i>
+            <i>
+              What if there&apos;s also more room for you and life outside of work?
+            </i>
           </h2>
         </div>
       </div>
       <div className={styles.readingMeasure}>
-        <div className={styles.moreList}>
-          {possibilityItems.map((item) => <p key={item}>{item}</p>)}
-        </div>
         <p>
           That&apos;s what we&apos;re exploring inside Beyond the Bottleneck. What
           happened to these businesses, and the people behind them, when they
