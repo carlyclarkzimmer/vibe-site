@@ -204,7 +204,10 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /BEYOND THE BOTTLENECKS—20 MINUTES OR LESS/i);
   assert.match(html, /The current pattern may be exhausting, but it(?:&#x27;|')s familiar/i);
   assert.match(html, /What if the client is disappointed\?/i);
-  assert.match(html, /What if there(?:&#x27;|')s also more of you\?/i);
+  assert.match(
+    html,
+    /What if there(?:&#x27;|')s also more room for you and life outside of work\?/i,
+  );
   assert.match(html, /What if the boundary you(?:&#x27;|')ve spent six months worrying about/i);
   assert.match(html, /More mornings that do not begin inside Slack/i);
   assert.match(html, /I(?:&#x27;|')m sick of feeling like this\. I want to listen!/i);
