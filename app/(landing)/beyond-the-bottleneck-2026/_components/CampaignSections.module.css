@@ -84,7 +84,7 @@
   margin: 0;
   padding: 16px 0 16px 42px;
   border-bottom: var(--border-standard);
-  font-size: 18px;
+  font-size: 21px;
   font-style: italic;
   line-height: 1.5;
 }
@@ -187,7 +187,7 @@
   margin: 0;
   padding: 20px 0 20px 42px;
   border-bottom: var(--border-standard);
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .sharingList p::before {
@@ -274,7 +274,7 @@
 .formatStrip p {
   margin: 0;
   font-family: var(--font-interface);
-  font-size: clamp(26px, 2.6vw, 36px);
+  font-size: clamp(29px, 2.9vw, 40px);
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.25;
@@ -298,7 +298,7 @@
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: formatStripShine 16s linear infinite;
+  animation: formatStripShine 10s linear infinite;
 }
 
 @keyframes formatStripShine {
@@ -380,7 +380,7 @@
 
 .checklist p {
   margin: 0;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .qualifierClose {
@@ -424,6 +424,7 @@
 .questionIntroCopy {
   display: flex;
   flex-direction: column;
+  gap: clamp(28px, 3vw, 44px);
   justify-content: center;
 }
 
@@ -434,13 +435,14 @@
 }
 
 .questionIntroCopy > .questionReveal {
+  margin: 0;
   font-family: var(--font-display);
   font-size: clamp(32px, 3.2vw, 48px);
-  line-height: 1.08;
+  line-height: 1.18;
   opacity: 0;
   transform: translateY(28px);
   animation: questionCopyReveal linear both;
-  animation-range: entry 10% cover 32%;
+  animation-range: entry 10% exit 60%;
   animation-timeline: view();
 }
 
@@ -462,7 +464,14 @@
 }
 
 @keyframes questionCopyReveal {
-  to {
+  25%,
+  65% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  100% {
+    color: var(--color-accent);
     opacity: 1;
     transform: translateY(0);
   }
@@ -480,8 +489,32 @@
   margin: 0 0 14px;
 }
 
-.fearCluster {
-  color: var(--color-text-subtle);
+.fearCluster p,
+.questionBody > .fearConclusion {
+  color: var(--color-accent);
+  line-height: 1.35;
+  animation: fearHotPink linear both;
+  animation-range: entry 15% exit 45%;
+  animation-timeline: view();
+}
+
+.fearCluster p {
+  font-size: 22px;
+}
+
+.questionBody > .fearConclusion {
+  font-size: 24px;
+}
+
+@keyframes fearHotPink {
+  0%,
+  35% {
+    color: var(--color-accent);
+  }
+
+  100% {
+    color: #ff37b0;
+  }
 }
 
 .questionTitle h2 {
@@ -497,15 +530,25 @@
     animation: none;
   }
 
+  .fearCluster p,
+  .questionBody > .fearConclusion {
+    color: #ff37b0;
+    animation: none;
+  }
 }
 
 .reframeCluster p {
+  margin-bottom: 24px;
   font-family: var(--font-display);
   font-size: clamp(22px, 2vw, 29px);
-  line-height: 1.25;
+  line-height: 1.35;
   animation: reframeHotPink linear both;
   animation-range: entry 15% exit 45%;
   animation-timeline: view();
+}
+
+.reframeCluster p:last-child {
+  margin-bottom: 0;
 }
 
 @keyframes reframeHotPink {
@@ -534,6 +577,35 @@
 
 .moreOfYou .readingMeasure {
   margin: 0 auto;
+}
+
+.moreOfYouIntro {
+  display: grid;
+  width: min(100%, 1120px);
+  align-items: stretch;
+  margin: 0 auto 52px;
+  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(44px, 7vw, 96px);
+}
+
+.moreOfYouGif {
+  position: relative;
+  min-height: 100%;
+  overflow: hidden;
+}
+
+.moreOfYouGif img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+}
+
+.moreOfYouHeadings {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .moreOfYou h2 {
@@ -623,7 +695,7 @@
 
 .insideCopy p {
   margin: 0 0 20px;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .topicList {
@@ -746,7 +818,7 @@
 .aboutCopy > p,
 .storyColumns p {
   max-width: 660px;
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .story {
@@ -837,6 +909,15 @@
 
   .questionIntro {
     grid-template-columns: 1fr;
+  }
+
+  .moreOfYouIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .moreOfYouGif {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
   }
 
   .questionGif {
