@@ -43,7 +43,7 @@
 .details p,
 .finalLines p {
   color: var(--color-text-muted);
-  font-size: 18px;
+  font-size: 21px;
 }
 
 .finalLines {
