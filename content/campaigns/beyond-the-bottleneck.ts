@@ -44,8 +44,8 @@ export const heroContent = {
     "and what opened up when they did",
   ],
   cta: "ACCESS THE AUDIOS",
-  image: "/btb-group-photo-transparent.png",
-  imageAlt: "The Beyond the Bottleneck audio series contributors",
+  image: "/btb-hero-carly-center.png",
+  imageAlt: "Carly Clark Zimmer in an emerald green blazer centered among the Beyond the Bottleneck contributors",
 } as const;
 
 export const tickerItems = [

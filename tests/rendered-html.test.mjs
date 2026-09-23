@@ -261,7 +261,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /JOIN US\./i);
   assert.match(
     html,
-    /alt="The Beyond the Bottleneck audio series contributors"/i,
+    /alt="Carly Clark Zimmer in an emerald green blazer centered among the Beyond the Bottleneck contributors"/i,
   );
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
