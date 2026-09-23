@@ -6,6 +6,10 @@ import styles from "./CampaignSections.module.css";
 export function MoreOfYouSection() {
   return (
     <section className={styles.moreOfYou}>
+      <h2 className={styles.moreOfYouQuestion}>
+        And what if, on the other side of that decision, there is not only a
+        stronger business?
+      </h2>
       <div className={styles.moreList}>
         {possibilityItems.map((item) => <p key={item}>{item}</p>)}
       </div>
@@ -20,10 +24,6 @@ export function MoreOfYouSection() {
           />
         </div>
         <div className={styles.moreOfYouHeadings}>
-          <h2>
-            And what if, on the other side of that decision, there is not only a
-            stronger business?
-          </h2>
           <h2>
             <i>
               What if there&apos;s also more room for you and life outside of work?
