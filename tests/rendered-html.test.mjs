@@ -210,6 +210,10 @@ test("serves the campaign without shared site navigation", async () => {
   );
   assert.match(html, /What if the boundary you(?:&#x27;|')ve spent six months worrying about/i);
   assert.match(html, /More mornings that do not begin inside Slack/i);
+  assert.match(
+    html,
+    /And what if, on the other side of that decision,[\s\S]*?stronger business\?[\s\S]*?More energy\./i,
+  );
   assert.match(html, /I(?:&#x27;|')m sick of feeling like this\. I want to listen!/i);
   assert.match(html, /What you(?:&#x27;|')ll hear/i);
   assert.doesNotMatch(html, /Designed for recognition/i);

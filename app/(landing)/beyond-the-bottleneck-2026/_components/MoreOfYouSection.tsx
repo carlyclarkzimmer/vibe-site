@@ -6,6 +6,10 @@ import styles from "./CampaignSections.module.css";
 export function MoreOfYouSection() {
   return (
     <section className={styles.moreOfYou}>
+      <h2 className={styles.moreOfYouQuestion}>
+        And what if, on the other side of that decision, there is not only a
+        stronger business?
+      </h2>
       <div className={styles.moreList}>
         {possibilityItems.map((item) => <p key={item}>{item}</p>)}
       </div>
@@ -14,16 +18,12 @@ export function MoreOfYouSection() {
           <Image
             alt=""
             fill
-            sizes="(max-width: 900px) 84vw, 38vw"
+            sizes="(max-width: 900px) 84vw, 440px"
             src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Ym5sd2RodmNkcWdxdXpqN2x5c2t4MHduNXBlOTRmNXd6aXF3c3NncSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11s7Ke7jcNxCHS/giphy.gif"
             unoptimized
           />
         </div>
         <div className={styles.moreOfYouHeadings}>
-          <h2>
-            And what if, on the other side of that decision, there is not only a
-            stronger business?
-          </h2>
           <h2>
             <i>
               What if there&apos;s also more room for you and life outside of work?

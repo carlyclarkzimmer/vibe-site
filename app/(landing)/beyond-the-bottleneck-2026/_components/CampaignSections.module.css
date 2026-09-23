@@ -579,18 +579,24 @@
   margin: 0 auto;
 }
 
+.moreOfYou .moreOfYouQuestion {
+  width: 100%;
+  margin-bottom: clamp(44px, 6vw, 80px);
+}
+
 .moreOfYouIntro {
-  display: grid;
+  display: flex;
   width: min(100%, 1120px);
-  align-items: stretch;
+  flex-direction: column;
+  align-items: flex-start;
   margin: 0 auto 52px;
-  grid-template-columns: minmax(280px, 0.85fr) minmax(0, 1.15fr);
-  gap: clamp(44px, 7vw, 96px);
+  gap: 28px;
 }
 
 .moreOfYouGif {
   position: relative;
-  min-height: 100%;
+  width: min(100%, 440px);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -603,9 +609,7 @@
 }
 
 .moreOfYouHeadings {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  width: min(100%, 850px);
 }
 
 .moreOfYou h2 {
@@ -973,15 +977,6 @@
 
   .questionIntro {
     grid-template-columns: 1fr;
-  }
-
-  .moreOfYouIntro {
-    grid-template-columns: 1fr;
-  }
-
-  .moreOfYouGif {
-    min-height: 0;
-    aspect-ratio: 4 / 3;
   }
 
   .questionGif {
