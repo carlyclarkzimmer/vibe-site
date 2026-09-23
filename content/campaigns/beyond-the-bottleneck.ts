@@ -164,6 +164,13 @@ export const contributorChapters: ContributorChapter[] = [
         episodeTitle: "She Lost Her Voice and Found a New Direction: Emily Reagan on the Business Changes She’d Been Avoiding",
         soundbite: "I was suppressing this desire or need to evolve.",
       },
+      {
+        id: "ashley-krooks",
+        name: "Ashley Krooks",
+        role: "Nervous System & Somatic Coach, Founder of The Nourished Woman",
+        episodeTitle: "The Freedom Was There. She Just Couldn’t Feel It: Ashley Krooks on Nervous System Regulation",
+        soundbite: "What got you here will not get you there.",
+      },
     ],
   },
   {
@@ -304,13 +311,6 @@ export const contributorChapters: ContributorChapter[] = [
     ],
   },
 ];
-
-// Onboarded, awaiting interview. Add to a chapter once the episode details are approved.
-export const pendingContributor = {
-  id: "ashley-krooks",
-  name: "Ashley Krooks",
-  role: "Founder of The Nourished Woman, Host of That’s So Nourishing",
-} as const;
 
 // The unpublished delivery-page draft still uses its original visible placeholders.
 export const deliveryContributors = Array.from({ length: 12 }, (_, index) => ({

@@ -238,7 +238,22 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /These conversations are not organized around how impressive someone looks online/i);
   assert.doesNotMatch(html, /Each 20-minute interview/i);
   assert.match(html, /Overachieving made me feel safe/i);
-  assert.doesNotMatch(html, /Ashley Krooks/i);
+  assert.match(html, /Ashley Krooks/i);
+  assert.match(html, /Nervous System &amp; Somatic Coach, Founder of The Nourished Woman/i);
+  assert.match(html, /The Freedom Was There\. She Just Couldn.t Feel It: Ashley Krooks on Nervous System Regulation/i);
+  assert.match(html, /What got you here will not get you there\./i);
+  assert.match(html, /Ashley Krooks portrait placeholder/i);
+  const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
+  const firstChapterNames = [...firstChapter.matchAll(/<h4[^>]*>([^<]+)<\/h4>/g)]
+    .map((match) => match[1]);
+  assert.deepEqual(firstChapterNames, [
+    "Kristin Brabant",
+    "Michelle Knight",
+    "Jen Liddy",
+    "Sarah Young",
+    "Emily Reagan",
+    "Ashley Krooks",
+  ]);
   assert.doesNotMatch(html, /Contributor name/i);
   assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
   assert.doesNotMatch(html, /id="signup-form"/i);
