@@ -79,10 +79,10 @@ Carly must explicitly approve:
   deployment.
 - Destructive changes to photography or existing content.
 
-The Beyond the Bottleneck registration form is wired to Drip but is not ready
-to be described as live until its production URLs are configured and the
-end-to-end inbox test has passed. Do not claim registration works before that
-test.
+The Beyond the Bottleneck inline registration form has been removed. Its
+registration buttons currently lead to the page's details section, not a
+working signup flow. Do not claim registration works until a new destination
+is configured and tested end to end.
 
 ## Adding a page with an email opt-in
 

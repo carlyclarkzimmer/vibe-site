@@ -55,9 +55,10 @@ implementation shaped around Carly's content and conversion flow.
 - Site metadata and the root document shell are in `app/layout.tsx`.
 - Brand photography is stored in `public/`.
 - Contributor cards intentionally contain placeholders.
-- The Beyond the Bottleneck form submits directly to Drip. It must not be
-  described as live until its production redirect and end-to-end inbox test
-  have been completed.
+- The Beyond the Bottleneck inline opt-in form has been removed. Its campaign
+  CTAs currently lead to the `#register` details section, not to a working
+  signup flow. Do not describe registration as live until a new destination
+  is confirmed and tested end to end.
 - The launch date currently displayed is October 5th.
 - There is no application database, durable storage, or user account system.
 

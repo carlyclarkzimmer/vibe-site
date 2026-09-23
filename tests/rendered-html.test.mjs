@@ -218,7 +218,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /What you(?:&#x27;|')ll hear/i);
   assert.doesNotMatch(html, /Designed for recognition/i);
   assert.doesNotMatch(html, /You will hear about/i);
-  assert.match(html, /REGISTER FOR FREE/i);
+  assert.doesNotMatch(html, /REGISTER FOR FREE/i);
   assert.doesNotMatch(html, /Short audio interviews, each 20 minutes or less\./i);
   assert.match(html, /Listen on your own schedule/i);
   assert.match(html, /Listen on your own time/i);
@@ -240,33 +240,13 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /Overachieving made me feel safe/i);
   assert.doesNotMatch(html, /Ashley Krooks/i);
   assert.doesNotMatch(html, /Contributor name/i);
-  assert.match(html, /type="email"/i);
-  assert.match(html, /fields\[first_name\]/i);
-  assert.match(html, /data-drip-embedded-form="419624977"/i);
-  assert.match(html, /id="drip-ef-419624977"/i);
-  assert.match(
-    html,
-    /https:\/\/www\.getdrip\.com\/forms\/419624977\/submissions/i,
-  );
-  assert.match(
-    html,
-    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
-  );
-  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
-  assert.match(
-    html,
-    /name="g-recaptcha-response-data\[form_submission\]"/i,
-  );
-  assert.match(html, /data-drip-attribute="sign-up-button"/i);
-  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
-  assert.match(html, /fields\[social_media\]/i);
-  assert.doesNotMatch(html, /fields\[optin_source\]/i);
-  assert.doesNotMatch(html, /I’d also like occasional emails/i);
-  assert.doesNotMatch(html, /By registering, you’ll receive listening-tour emails\./i);
-  assert.doesNotMatch(html, /id="general-email"/i);
-  assert.match(html, /<label[^>]*for="email"/i);
+  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
+  assert.doesNotMatch(html, /id="signup-form"/i);
+  assert.doesNotMatch(html, /href="#signup-form"/i);
+  assert.doesNotMatch(html, /data-drip-attribute="sign-up-button"/i);
+  assert.doesNotMatch(html, /type="email"/i);
   assert.match(html, /href="#register"/i);
-  assert.match(html, /JOIN US\./i);
+  assert.match(html, /There(?:&#x27;|')s a whole lotta life waiting for you beyond the bottleneck/i);
   assert.match(
     html,
     /alt="Carly Clark Zimmer in an emerald green blazer centered among the Beyond the Bottleneck contributors"/i,
@@ -274,18 +254,15 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
-test("adds the campaign UTM source to the Drip form", async () => {
+test("does not render the removed campaign opt-in form for UTM visits", async () => {
   const response = await render(
     "/beyond-the-bottleneck-2026?utm=instagram%20partner",
   );
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.match(
-    html,
-    /name="fields\[optin_source\]"[^>]*value="instagram partner"/i,
-  );
-  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
+  assert.doesNotMatch(html, /fields\[optin_source\]/i);
+  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
 });
 
 test("redirects the former campaign route to the 2026 URL", async () => {

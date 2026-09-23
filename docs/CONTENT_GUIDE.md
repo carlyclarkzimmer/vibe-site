@@ -72,8 +72,10 @@ images under clear, descriptive filenames and include useful alt text.
 
 ## Registration
 
-Beyond the Bottleneck submits directly to Drip, but registration must not be
-described as live until its production redirect and end-to-end inbox test pass.
+Beyond the Bottleneck has no inline opt-in form. Its CTAs currently lead to
+the registration-details section, not a working signup flow. Registration
+must not be described as live until a new destination and an end-to-end inbox
+test are confirmed.
 Before connecting a future campaign form, confirm:
 
 1. Provider and audience/list/form identifier
