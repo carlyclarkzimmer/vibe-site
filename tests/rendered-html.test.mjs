@@ -212,7 +212,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /More mornings that do not begin inside Slack/i);
   assert.match(
     html,
-    /And what if, on the other side of that decision,[\s\S]*?stronger business\?[\s\S]*?More energy\./i,
+    /And what if, on the other side of that decision,[\s\S]*?stronger business\?[\s\S]*?What if there(?:&#x27;|')s also more room for you and life outside of work\?[\s\S]*?More energy\./i,
   );
   assert.match(html, /I(?:&#x27;|')m sick of feeling like this\. I want to listen!/i);
   assert.match(html, /What you(?:&#x27;|')ll hear/i);
@@ -233,6 +233,10 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /chapter-04/i);
   assert.match(html, /Kristin Brabant/i);
   assert.match(html, /Kari Poppleton/i);
+  assert.match(html, /Christine Williams/i);
+  assert.doesNotMatch(html, /Christine “Chris” Williams/i);
+  assert.doesNotMatch(html, /These conversations are not organized around how impressive someone looks online/i);
+  assert.doesNotMatch(html, /Each 20-minute interview/i);
   assert.match(html, /Overachieving made me feel safe/i);
   assert.doesNotMatch(html, /Ashley Krooks/i);
   assert.doesNotMatch(html, /Contributor name/i);

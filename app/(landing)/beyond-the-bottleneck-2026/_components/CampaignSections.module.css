@@ -585,17 +585,17 @@
 }
 
 .moreOfYouIntro {
-  display: flex;
+  display: grid;
   width: min(100%, 1120px);
-  flex-direction: column;
-  align-items: flex-start;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: center;
   margin: 0 auto 52px;
-  gap: 28px;
+  gap: clamp(28px, 5vw, 72px);
 }
 
 .moreOfYouGif {
   position: relative;
-  width: min(100%, 440px);
+  width: 100%;
   aspect-ratio: 4 / 3;
   overflow: hidden;
 }
@@ -609,7 +609,7 @@
 }
 
 .moreOfYouHeadings {
-  width: min(100%, 850px);
+  width: 100%;
 }
 
 .moreOfYou h2 {
@@ -620,6 +620,11 @@
 
 .moreOfYou p {
   color: var(--color-text-muted);
+}
+
+.moreOfYou .readingMeasure > p {
+  font-size: 23px;
+  line-height: 1.4;
 }
 
 .moreList {
@@ -764,7 +769,7 @@
 
 .evidence {
   padding: 112px 8vw;
-  background: var(--color-surface-muted);
+  background: #f4eee8;
 }
 
 .evidence .readingMeasure {
@@ -775,7 +780,7 @@
 .evidence p {
   color: var(--color-accent);
   animation: evidenceHotPink linear both;
-  animation-range: entry 15% exit 45%;
+  animation-range: entry 0% cover 40%;
   animation-timeline: view();
 }
 
@@ -793,7 +798,7 @@
   margin: 0;
   padding: 14px 0;
   border-bottom: var(--border-standard);
-  font-size: 19px;
+  font-size: 22px;
 }
 
 @keyframes evidenceHotPink {
@@ -808,7 +813,9 @@
 }
 
 .evidence a:hover {
-  color: #ff37b0;
+  border-color: #ff37b0;
+  background: #ff37b0;
+  color: var(--color-ink);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -838,23 +845,15 @@
   font-size: clamp(44px, 6vw, 82px);
 }
 
-.contributorClosing {
-  max-width: 660px;
-  margin: 0 auto;
-  padding: 24px 24px 112px;
-  font-size: 21px;
-}
-
 .about {
   display: grid;
-  grid-template-columns: 45% 55%;
+  grid-template-columns: 40% 60%;
   background: var(--color-surface-muted);
 }
 
 .aboutPhotoWrap {
-  position: sticky;
-  top: 0;
-  height: 100vh;
+  position: relative;
+  min-height: 100vh;
 }
 
 .aboutPhoto {
@@ -873,30 +872,41 @@
 }
 
 .aboutCopy {
-  padding: 112px 8vw;
+  padding: 72px clamp(36px, 5vw, 80px);
 }
 
 .aboutCopy h2 {
   max-width: 660px;
-  margin: 30px 0 55px;
-  font-size: clamp(30px, 3vw, 45px);
+  margin: 22px 0 32px;
+  font-size: clamp(29px, 2.7vw, 40px);
   line-height: 1.1;
 }
 
 .aboutCopy > p,
-.storyColumns p {
+.storyFullWidth p {
   max-width: 660px;
-  font-size: 21px;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+.aboutCopy > p {
+  margin: 0 0 16px;
 }
 
 .story {
   background: var(--color-surface-muted);
 }
 
-.storyColumns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9vw;
+.storyFullWidth {
+  width: min(100%, 1120px);
+  margin: 0 auto;
+}
+
+.storyFullWidth p {
+  max-width: none;
+  margin: 0 0 22px;
+  font-size: 23px;
+  line-height: 1.4;
 }
 
 .story h2 {
@@ -979,6 +989,10 @@
     grid-template-columns: 1fr;
   }
 
+  .moreOfYouIntro {
+    grid-template-columns: 1fr;
+  }
+
   .questionGif {
     min-height: 0;
     aspect-ratio: 4 / 3;
@@ -1038,16 +1052,8 @@
     min-height: 560px;
   }
 
-  .storyColumns {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
   .aboutPhotoWrap {
     height: 600px;
   }
 
-  .contributorClosing {
-    padding-bottom: 64px;
-  }
 }

@@ -66,8 +66,7 @@ export function ContributorGrid({ chapters, deliveryContributors }: ContributorG
         {chapters?.map((chapter) => (
           <section className={styles.chapter} key={chapter.number} aria-labelledby={`chapter-${chapter.number}`}>
             <div className={styles.chapterHeading}>
-              <span className={styles.chapterNumber}>{chapter.number}</span>
-              <h3 id={`chapter-${chapter.number}`}>{chapter.title}</h3>
+              <h3 id={`chapter-${chapter.number}`}><span>{chapter.title}</span></h3>
             </div>
             <div className={styles.grid}>
               {chapter.contributors.map((contributor) => (

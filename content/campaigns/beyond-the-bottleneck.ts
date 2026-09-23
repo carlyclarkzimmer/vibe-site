@@ -193,7 +193,7 @@ export const contributorChapters: ContributorChapter[] = [
       },
       {
         id: "christine-williams",
-        name: "Christine “Chris” Williams",
+        name: "Christine Williams",
         role: "Business Mentor, Founder of The Boutique CEO™",
         episodeTitle: "There’s More Than One Way to Scale: Christine Williams on Building Better, Not Bigger",
         soundbite: "There’s more than one way to scale.",

@@ -28,7 +28,7 @@ export function RegistrationSection({
       <Button href="#signup-form">REGISTER FOR FREE</Button>
       <div className={styles.details}>
         <Eyebrow>The details</Eyebrow>
-        <p>Each 20-minute interview becomes available on October 5th.</p>
+        <p>Each interview becomes available on October 5th.</p>
         <p>Listen on your own schedule and walk away with actual case studies that share insight into a variety of bottlenecks and strategies for overcoming them.</p>
       </div>
       <div className={styles.finalLines}>
