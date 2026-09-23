@@ -18,7 +18,7 @@ export function MoreOfYouSection() {
           <Image
             alt=""
             fill
-            sizes="(max-width: 900px) 84vw, 38vw"
+            sizes="(max-width: 900px) 84vw, 440px"
             src="https://media.giphy.com/media/v1.Y2lkPWVjZjA1ZTQ3Ym5sd2RodmNkcWdxdXpqN2x5c2t4MHduNXBlOTRmNXd6aXF3c3NncSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/11s7Ke7jcNxCHS/giphy.gif"
             unoptimized
           />
