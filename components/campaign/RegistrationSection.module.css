@@ -26,6 +26,12 @@
   margin-bottom: 72px;
 }
 
+.register > a:hover {
+  border-color: #ff37b0;
+  background: #ff37b0;
+  color: var(--color-ink);
+}
+
 .details,
 .finalLines {
   max-width: 760px;

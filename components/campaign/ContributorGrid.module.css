@@ -49,8 +49,7 @@
   max-width: 370px;
 }
 
-.eyebrow,
-.chapterNumber {
+.eyebrow {
   color: var(--color-accent);
   font-family: var(--font-interface);
   font-size: 12px;
@@ -88,28 +87,49 @@
 }
 
 .chapterHeading {
-  display: grid;
-  grid-template-columns: 80px minmax(0, 1fr);
-  gap: clamp(20px, 3vw, 40px);
-  align-items: start;
   margin-bottom: clamp(40px, 5vw, 70px);
-}
-
-.chapterNumber {
-  padding-top: 8px;
+  padding: clamp(30px, 4vw, 54px) var(--space-section-inline);
+  background: var(--color-surface-dark);
+  color: white;
+  text-align: center;
 }
 
 .chapterHeading h3 {
-  max-width: 900px;
   margin: 0;
-  font-size: clamp(34px, 4.2vw, 58px);
-  font-weight: 400;
-  line-height: 1.05;
+  font-family: var(--font-interface);
+  font-size: clamp(29px, 2.9vw, 40px);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+}
+
+.chapterHeading h3 span {
+  display: inline-block;
+  background-image: linear-gradient(90deg, white 0%, white 44%, #e2c16b 48%, #fff2b8 50%, #e2c16b 52%, white 56%, white 100%);
+  background-position: 200% center;
+  background-size: 400% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: chapterHeadingShine 10s linear infinite;
+}
+
+@keyframes chapterHeadingShine {
+  from { background-position: 200% center; }
+  to { background-position: -200% center; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapterHeading h3 span {
+    background: none;
+    -webkit-text-fill-color: currentcolor;
+    animation: none;
+  }
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: clamp(56px, 7vw, 96px) clamp(32px, 5vw, 72px);
 }
 
@@ -150,6 +170,12 @@
   line-height: 1.35;
 }
 
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 700px) {
   .host,
   .grid {
@@ -158,11 +184,6 @@
 
   .hostPhoto {
     width: min(100%, 280px);
-  }
-
-  .chapterHeading {
-    grid-template-columns: 1fr;
-    gap: 10px;
   }
 
   .photo {

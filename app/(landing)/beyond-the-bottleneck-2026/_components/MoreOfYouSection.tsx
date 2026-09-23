@@ -10,9 +10,6 @@ export function MoreOfYouSection() {
         And what if, on the other side of that decision, there is not only a
         stronger business?
       </h2>
-      <div className={styles.moreList}>
-        {possibilityItems.map((item) => <p key={item}>{item}</p>)}
-      </div>
       <div className={styles.moreOfYouIntro}>
         <div className={styles.moreOfYouGif} aria-hidden="true">
           <Image
@@ -30,6 +27,9 @@ export function MoreOfYouSection() {
             </i>
           </h2>
         </div>
+      </div>
+      <div className={styles.moreList}>
+        {possibilityItems.map((item) => <p key={item}>{item}</p>)}
       </div>
       <div className={styles.readingMeasure}>
         <p>

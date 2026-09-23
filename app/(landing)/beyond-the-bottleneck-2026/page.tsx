@@ -12,7 +12,7 @@ import {
 } from "../../../content/campaigns/beyond-the-bottleneck";
 import { AudienceSection } from "./_components/AudienceSection";
 import { BeliefSection } from "./_components/BeliefSection";
-import { ContributorClosing, ContributorIntro } from "./_components/ContributorIntro";
+import { ContributorIntro } from "./_components/ContributorIntro";
 import { ConversationSection } from "./_components/ConversationSection";
 import { EvidenceSection } from "./_components/EvidenceSection";
 import { FormatStrip } from "./_components/FormatStrip";
@@ -66,7 +66,6 @@ export default async function BeyondTheBottleneckPage({
       <EvidenceSection />
       <ContributorIntro />
       <ContributorGrid chapters={contributorChapters} />
-      <ContributorClosing />
       <FounderStorySection />
       <BeliefSection />
       <RegistrationSection
