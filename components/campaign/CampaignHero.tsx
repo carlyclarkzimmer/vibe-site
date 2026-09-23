@@ -14,21 +14,23 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
   return (
     <header className={styles.hero} id="top">
       <div className={styles.photoWrap}>
-        <Image
-          alt={content.imageAlt}
-          className={styles.photo}
-          fill
-          priority
-          sizes="(max-width: 900px) 100vw, 48vw"
-          src={content.image}
-          unoptimized
-        />
-        <div className={styles.hostCallout}>
-          <p>
-            with your
-            <span>Host &amp; Coach,</span>
-            <strong>Carly Clark Zimmer</strong>
-          </p>
+        <div className={styles.photoFrame}>
+          <Image
+            alt={content.imageAlt}
+            className={styles.photo}
+            fill
+            priority
+            sizes="100vw"
+            src={content.image}
+            unoptimized
+          />
+          <div className={styles.hostCallout}>
+            <p>
+              with your
+              <span>Host &amp; Coach,</span>
+              <strong>Carly Clark Zimmer</strong>
+            </p>
+          </div>
         </div>
       </div>
       <div className={styles.shade} />

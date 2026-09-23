@@ -7,9 +7,15 @@ export type Contributor = {
   id: string;
   name: string;
   role: string;
-  pattern: string;
-  outcome: string;
+  episodeTitle: string;
+  soundbite: string;
   image?: string;
+};
+
+export type ContributorChapter = {
+  number: string;
+  title: string;
+  contributors: Contributor[];
 };
 
 export const campaignMeta = {
@@ -38,8 +44,8 @@ export const heroContent = {
     "and what opened up when they did",
   ],
   cta: "ACCESS THE AUDIOS",
-  image: "/btb-group-photo-transparent.png",
-  imageAlt: "The Beyond the Bottleneck audio series contributors",
+  image: "/btb-hero-carly-center.png",
+  imageAlt: "Carly Clark Zimmer in an emerald green blazer centered among the Beyond the Bottleneck contributors",
 } as const;
 
 export const tickerItems = [
@@ -107,7 +113,207 @@ export const evidenceItems = [
   "Your life is allowed to take up space now, not after the inbox is empty.",
 ] as const;
 
-export const contributors: Contributor[] = Array.from({ length: 12 }, (_, index) => ({
+export const featuredHost: {
+  name: string;
+  role: string;
+  episodeTitle: string;
+  image?: string;
+} = {
+  name: "Carly Clark Zimmer",
+  role: "Behavioral Change Coach, ICF PCC",
+  episodeTitle: "The Pattern Behind the Plateau",
+};
+
+export const contributorChapters: ContributorChapter[] = [
+  {
+    number: "01",
+    title: "When what made you successful becomes the bottleneck",
+    contributors: [
+      {
+        id: "kristin-brabant",
+        name: "Kristin Brabant",
+        role: "Business Strategist, helping service providers become Rich & Rested",
+        episodeTitle: "From Push Harder to Rich and Rested: Kristin Brabant on Breaking Her Oldest Business Pattern",
+        soundbite: "I had to learn that rest wasn’t something I earned after the work was done.",
+      },
+      {
+        id: "michelle-knight",
+        name: "Michelle Knight",
+        role: "Personal Branding & Storytelling Expert, Founder of Brandmerry",
+        episodeTitle: "When Overachieving Becomes Your Safety Net with Michelle Knight",
+        soundbite: "Overachieving made me feel safe.",
+      },
+      {
+        id: "jen-liddy",
+        name: "Jen Liddy",
+        role: "Messaging Strategist",
+        episodeTitle: "Care Deeply. Carry Less: Jen Liddy on Releasing Over-Responsibility",
+        soundbite: "I would put my clients in my backpack and walk them up the mountain.",
+      },
+      {
+        id: "sarah-young",
+        name: "Sarah Young",
+        role: "Scaling & Wealth Strategist",
+        episodeTitle: "$100K Months and Still Stressed About Payroll: How Sarah Young Changed Course",
+        soundbite: "We were doing $100K-plus months, and I was still stressing about payroll.",
+      },
+      {
+        id: "emily-reagan",
+        name: "Emily Reagan",
+        role: "Fractional CMO & Marketing Strategist, Founder of The Digital Marketer’s Workgroup",
+        episodeTitle: "She Lost Her Voice and Found a New Direction: Emily Reagan on the Business Changes She’d Been Avoiding",
+        soundbite: "I was suppressing this desire or need to evolve.",
+      },
+    ],
+  },
+  {
+    number: "02",
+    title: "Rewriting the rules of how you work",
+    contributors: [
+      {
+        id: "katie-ferro",
+        name: "Katie Ferro",
+        role: "CPA & Bookkeeping Business Mentor",
+        episodeTitle: "They’re Not Your Rules: Katie Ferro on Rewriting the Rules of Work",
+        soundbite: "Just because this is the way I’ve always done it doesn’t mean this is the way I have to keep doing it.",
+      },
+      {
+        id: "reland-logan",
+        name: "Réland Logan",
+        role: "Brand Strategist, Creator of BrandExtraordinary™",
+        episodeTitle: "The Business Rules You’re Allowed to Break with Réland Logan",
+        soundbite: "I get to decide what this looks like.",
+      },
+      {
+        id: "holly-haynes",
+        name: "Holly Haynes",
+        role: "Business Strategist, Founder of Anti-Social School™",
+        episodeTitle: "Stop Waiting for Life to Calm Down: Holly Haynes on Building a Life-First Business",
+        soundbite: "I started putting the life things on the calendar first.",
+      },
+      {
+        id: "christine-williams",
+        name: "Christine “Chris” Williams",
+        role: "Business Mentor, Founder of The Boutique CEO™",
+        episodeTitle: "There’s More Than One Way to Scale: Christine Williams on Building Better, Not Bigger",
+        soundbite: "There’s more than one way to scale.",
+      },
+      {
+        id: "heather-sager",
+        name: "Heather Sager",
+        role: "Speaking & Visibility Strategist, Host of Hint of Hustle",
+        episodeTitle: "The 13-Hour Workweek: How Heather Sager Stopped Feeling Behind",
+        soundbite: "I had to stop measuring my success by how much I was doing.",
+      },
+      {
+        id: "holly-ostrout",
+        name: "Holly Ostrout",
+        role: "Book Coach & Publisher, Creator of the Book Mapping Process",
+        episodeTitle: "You’re Not Back at the Beginning: Holly Ostrout on Making a Different Choice This Time",
+        soundbite: "I wasn’t starting over. I was starting with everything I knew now.",
+      },
+    ],
+  },
+  {
+    number: "03",
+    title: "Letting go of control, responsibility & “it has to be me”",
+    contributors: [
+      {
+        id: "keenya-kelly",
+        name: "Keenya Kelly",
+        role: "Video Marketing & Monetization Strategist, CEO of If You Create It",
+        episodeTitle: "“Always Me” to a Team That Runs Without Her: Keenya Kelly on the Inner Work of Leadership",
+        soundbite: "I could not grow beyond myself.",
+      },
+      {
+        id: "nata-salvatori",
+        name: "Nata Salvatori",
+        role: "Business Coach & Fractional COO, Founder of Accidental CEO",
+        episodeTitle: "The Business Can’t Grow If Everything Runs Through You: Nata Salvatori on Becoming the CEO",
+        soundbite: "I had to stop being the person doing everything and become the CEO.",
+      },
+      {
+        id: "megan-yelaney",
+        name: "Megan Yelaney",
+        role: "Business Strategist, Creator of the Distinctive Edge Framework",
+        episodeTitle: "When “I Can Just Do It Myself” Becomes the Bottleneck, with Megan Yelaney",
+        soundbite: "If I can do it and save money, then I should just do it.",
+      },
+      {
+        id: "zhara-marie-henry",
+        name: "Zhara-Marie Henry",
+        role: "Operations Consultant, Founder of Abide",
+        episodeTitle: "You Hired Help. Now Let Them Help: Zhara-Marie Henry on Letting Go of Control",
+        soundbite: "Just because I hired someone didn’t mean I had actually let go.",
+      },
+      {
+        id: "renee-bowen",
+        name: "Renee Bowen",
+        role: "Business Strategist & Coach, Host of Tried & True with a Dash of Woo",
+        episodeTitle: "You Don’t Have to Be Everyone’s Nervous System: Renee Bowen on Letting Go of Holding It All Together",
+        soundbite: "I was everyone’s nervous system.",
+      },
+      {
+        id: "kimberly-tara",
+        name: "Kimberly Tara",
+        role: "CPA & Certified Tax Planner, Founder of The Tara CPA Firm",
+        episodeTitle: "When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom",
+        soundbite: "Work followed me everywhere.",
+      },
+    ],
+  },
+  {
+    number: "04",
+    title: "Simplifying, choosing & making room for what matters",
+    contributors: [
+      {
+        id: "rosemary-dede",
+        name: "Rosemary Dede",
+        role: "Business Coach, Creator of the Balanced Business Formula™",
+        episodeTitle: "Adding Was the Bottleneck: Rosemary Dede on Simplifying for the Life She Wanted",
+        soundbite: "My instinct was always to add something, and adding was the bottleneck.",
+      },
+      {
+        id: "ash-mcdonald",
+        name: "Ash McDonald",
+        role: "The Entrepreneur’s Therapist, Host of Shamelessly Ambitious®",
+        episodeTitle: "What She Got Back When She Left Instagram: Ash McDonald on Choosing Her Attention",
+        soundbite: "I had to decide where I actually wanted my attention to go.",
+      },
+      {
+        id: "linda-sidhu",
+        name: "Linda Sidhu",
+        role: "Founder of MixerMind & Personality Quiz Expert",
+        episodeTitle: "Build Your Bucket-List Business with Linda Sidhu",
+        soundbite: "I started asking, what do I want on my business bucket list?",
+      },
+      {
+        id: "beth-nydick",
+        name: "Beth Nydick",
+        role: "Media Strategist, Creator of Mic to Millions™",
+        episodeTitle: "The Visibility Bottleneck: Beth Nydick on What Happens After You Get Seen",
+        soundbite: "Getting the opportunity isn’t the end of the road. That’s actually the beginning.",
+      },
+      {
+        id: "kari-poppleton",
+        name: "Kari Poppleton",
+        role: "Business Operations & Marketing Measurement Consultant",
+        episodeTitle: "The Data That Lets You Do Less: Kari Poppleton on Simplifying Your Business",
+        soundbite: "Once I knew what was actually working, I could stop doing so much.",
+      },
+    ],
+  },
+];
+
+// Onboarded, awaiting interview. Add to a chapter once the episode details are approved.
+export const pendingContributor = {
+  id: "ashley-krooks",
+  name: "Ashley Krooks",
+  role: "Founder of The Nourished Woman, Host of That’s So Nourishing",
+} as const;
+
+// The unpublished delivery-page draft still uses its original visible placeholders.
+export const deliveryContributors = Array.from({ length: 12 }, (_, index) => ({
   id: String(index + 1).padStart(2, "0"),
   name: "Contributor name",
   role: "Role or business",

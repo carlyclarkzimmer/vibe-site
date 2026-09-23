@@ -10,6 +10,16 @@
 .photoWrap {
   position: absolute;
   inset: 56px 0 -56px;
+  overflow: hidden;
+}
+
+.photoFrame {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  height: max(100%, 56.25vw);
+  aspect-ratio: 16 / 9;
+  transform: translateX(-50%);
 }
 
 .photo {
@@ -134,10 +144,10 @@
 .hostCallout {
   position: absolute;
   z-index: 2;
-  right: 11%;
-  bottom: 34%;
+  top: 62%;
+  left: 51%;
   animation: hostFloat 4.5s ease-in-out infinite;
-  transform: rotate(-2deg);
+  transform: translate(-50%, -50%) rotate(-2deg);
 }
 
 .hostCallout p {
@@ -205,12 +215,6 @@
     font-size: clamp(3rem, 10vw, 5.6rem);
   }
 
-  .hostCallout {
-    right: auto;
-    bottom: 32%;
-    left: 75%;
-    transform: translateX(-50%) rotate(-2deg);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -227,17 +231,11 @@
   }
 
   .photo {
-    object-position: 94% bottom;
+    object-position: center bottom;
   }
 
   .photoWrap {
     inset: 72px 0 -72px;
-  }
-
-  .hostCallout {
-    right: auto;
-    bottom: 34%;
-    left: 64%;
   }
 
   .eyebrow {
@@ -267,6 +265,3 @@
     display: block;
   }
 }
-  .photo {
-    object-position: 94% bottom;
-  }
