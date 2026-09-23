@@ -52,12 +52,15 @@ Contributor records must include:
 
 - Name
 - Role or business
-- Pattern interrupted
-- Outcome
+- Episode title
+- Approved soundbite
 - Optional approved image
 
 Placeholder values must remain visibly placeholders. Do not infer contributor
 facts from social profiles or other sources without Carly's approval.
+The host episode is separate from the four thematic chapters. Contributors
+without an approved episode title, soundbite, and chapter stay in the pending
+record and do not render publicly.
 
 ## Images
 

@@ -5,7 +5,7 @@ import { MovingTicker } from "../../../components/campaign/MovingTicker";
 import { RegistrationSection } from "../../../components/campaign/RegistrationSection";
 import {
   campaignMeta,
-  contributors,
+  contributorChapters,
   heroBannerItems,
   heroContent,
   registrationContent,
@@ -65,7 +65,7 @@ export default async function BeyondTheBottleneckPage({
       <ConversationSection />
       <EvidenceSection />
       <ContributorIntro />
-      <ContributorGrid contributors={contributors} tone="light" />
+      <ContributorGrid chapters={contributorChapters} />
       <ContributorClosing />
       <FounderStorySection />
       <BeliefSection />

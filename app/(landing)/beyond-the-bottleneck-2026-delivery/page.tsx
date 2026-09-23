@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ContributorGrid } from "@/components/campaign/ContributorGrid";
 import {
   campaignMeta,
-  contributors,
+  deliveryContributors,
 } from "@/content/campaigns/beyond-the-bottleneck";
 import styles from "./page.module.css";
 
@@ -24,7 +24,7 @@ export default function BeyondTheBottleneckDeliveryPage() {
         <p className={styles.lede}>{campaignMeta.description}</p>
       </section>
 
-      <ContributorGrid contributors={contributors} />
+      <ContributorGrid deliveryContributors={deliveryContributors} />
 
       <section className={styles.delivery} aria-labelledby="episodes-title">
         <div className={styles.sectionHeading}>

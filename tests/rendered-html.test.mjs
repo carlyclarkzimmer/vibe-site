@@ -222,23 +222,16 @@ test("serves the campaign without shared site navigation", async () => {
     html,
     /Because the change you keep putting off may not be nearly as hard as continuing to live inside the pattern\./i,
   );
-  assert.match(html, /Contributor name/i);
   assert.match(html, /Meet the Business Owners Thriving Beyond the Bottleneck/i);
-  assert.equal((html.match(/>Contributor name<\/h3>/gi) ?? []).length, 12);
-  assert.doesNotMatch(html, />01<\/span>/i);
-  assert.equal(
-    (html.match(/aria-label="Contributor portrait placeholder"/gi) ?? [])
-      .length,
-    12,
-  );
-  assert.match(
-    html,
-    /The pattern she interrupted: (?:<!-- -->)?\[specific pattern\]/i,
-  );
-  assert.match(
-    html,
-    /What opened up: (?:<!-- -->)?\[specific business and life outcome\]/i,
-  );
+  assert.match(html, /Featured host episode/i);
+  assert.match(html, /The Pattern Behind the Plateau/i);
+  assert.match(html, /chapter-01/i);
+  assert.match(html, /chapter-04/i);
+  assert.match(html, /Kristin Brabant/i);
+  assert.match(html, /Kari Poppleton/i);
+  assert.match(html, /Overachieving made me feel safe/i);
+  assert.doesNotMatch(html, /Ashley Krooks/i);
+  assert.doesNotMatch(html, /Contributor name/i);
   assert.match(html, /type="email"/i);
   assert.match(html, /fields\[first_name\]/i);
   assert.match(html, /data-drip-embedded-form="419624977"/i);
