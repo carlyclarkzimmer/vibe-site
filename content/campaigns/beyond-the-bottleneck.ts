@@ -120,8 +120,9 @@ export const featuredHost: {
   image?: string;
 } = {
   name: "Carly Clark Zimmer",
-  role: "Behavioral Change Coach, ICF PCC",
+  role: "Leadership and Behavioral Change Coach, ICF PCC",
   episodeTitle: "The Pattern Behind the Plateau",
+  image: "/contributors/carly-clark-zimmer-host.jpg",
 };
 
 export const contributorChapters: ContributorChapter[] = [

@@ -6,14 +6,6 @@ export function BeliefSection() {
   return (
     <Section className={styles.belief}>
       <div>
-        <p>
-          Today, I help booked-out service providers and founders stop treating
-          every client request like an emergency, identify the behavior patterns
-          keeping them overextended, and restore the structure of their business
-          so success no longer depends on self-abandonment.
-        </p>
-      </div>
-      <div>
         <Eyebrow className={styles.sectionEyebrow}>
           My work is built on a simple belief
         </Eyebrow>

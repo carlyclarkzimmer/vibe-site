@@ -1,6 +1,6 @@
 .register {
-  background: var(--color-surface-dark);
-  color: white;
+  background: #f4eee8;
+  color: var(--color-ink);
   text-align: center;
 }
 
@@ -19,7 +19,7 @@
 .description {
   max-width: 760px;
   margin: 0 auto 55px;
-  color: var(--color-text-muted);
+  color: var(--color-ink);
 }
 
 .details,
@@ -32,14 +32,18 @@
 
 .details {
   padding: 38px 0;
-  border-top: 1px solid var(--color-border-dark);
-  border-bottom: 1px solid var(--color-border-dark);
+  border-top: var(--border-standard);
+  border-bottom: var(--border-standard);
 }
 
 .details p,
 .finalLines p {
-  color: var(--color-text-muted);
-  font-size: 21px;
+  color: var(--color-ink);
+  font-size: calc(21px + 5.333px);
+}
+
+.details > p:first-child {
+  font-size: 15.333px;
 }
 
 .finalLines {
@@ -48,14 +52,14 @@
 }
 
 .finalLines p:last-child {
-  color: white;
+  color: var(--color-ink);
   font-family: var(--font-display);
-  font-size: 30px;
+  font-size: calc(30px + 5.333px);
 }
 
 .copyright {
   margin-top: 52px;
-  color: var(--color-text-muted);
+  color: var(--color-text-subtle);
   font-family: var(--font-interface);
   font-size: 10px;
   letter-spacing: 0.16em;

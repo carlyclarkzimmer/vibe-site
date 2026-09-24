@@ -21,7 +21,7 @@ export function QuestionSection() {
           <div className={styles.fearCluster}>{fearQuestions.map((question) => <p key={question}>{question}</p>)}</div>
           <p className={styles.fearConclusion}>You don&apos;t have time for that kind of a setback, so you keep going.</p>
           <h2>But you know what&apos;s REALLY costing you? Keeping this up…</h2>
-          <div className={styles.reframeCluster}>{reframeQuestions.map((question) => <p key={question}>{question}</p>)}</div>
+          <ul className={styles.reframeCluster}>{reframeQuestions.map((question) => <li key={question}>{question}</li>)}</ul>
         </div>
       </div>
     </section>

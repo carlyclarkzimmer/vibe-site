@@ -1,8 +1,9 @@
 .contributors {
   padding-top: 0;
   padding-bottom: clamp(80px, 9vw, 144px);
-  background: var(--color-paper);
+  background: #f4eee8;
   color: var(--color-ink);
+  overflow-x: clip;
 }
 
 .inner {
@@ -26,7 +27,7 @@
   place-items: center;
   aspect-ratio: 4 / 5;
   border: var(--border-standard);
-  background: var(--color-surface-muted);
+  background: #f4eee8;
 }
 
 .hostPhoto img,
@@ -52,10 +53,14 @@
 .eyebrow {
   color: var(--color-accent);
   font-family: var(--font-interface);
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
+}
+
+.hostCopy > .role {
+  font-size: 18px;
 }
 
 .hostCopy h3 {
@@ -87,11 +92,25 @@
 }
 
 .chapterHeading {
+  position: relative;
+  isolation: isolate;
   margin-bottom: clamp(40px, 5vw, 70px);
   padding: clamp(30px, 4vw, 54px) var(--space-section-inline);
   background: var(--color-surface-dark);
   color: white;
   text-align: center;
+}
+
+.chapterHeading::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  background: var(--color-surface-dark);
+  content: "";
+  transform: translateX(-50%);
 }
 
 .chapterHeading h3 {
@@ -129,8 +148,14 @@
 
 .grid {
   display: grid;
+  --contributor-column-gap: clamp(32px, 5vw, 72px);
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: clamp(56px, 7vw, 96px) clamp(32px, 5vw, 72px);
+  gap: clamp(56px, 7vw, 96px) var(--contributor-column-gap);
+}
+
+.chapter:last-child .grid .card:nth-last-child(2),
+.chapter:last-child .grid .card:last-child {
+  transform: translateX(calc(50% + var(--contributor-column-gap) / 2));
 }
 
 .card {
@@ -173,6 +198,11 @@
 @media (max-width: 900px) {
   .grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .chapter:last-child .grid .card:nth-last-child(2),
+  .chapter:last-child .grid .card:last-child {
+    transform: none;
   }
 }
 
