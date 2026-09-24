@@ -828,7 +828,7 @@
 
 .evidence {
   padding: 112px 8vw;
-  background: #f4eee8;
+  background: var(--color-surface-muted);
 }
 
 .evidence .readingMeasure {
@@ -911,7 +911,7 @@
 .about {
   display: grid;
   grid-template-columns: 40% 60%;
-  background: #f4eee8;
+  background: var(--color-surface-muted);
 }
 
 .aboutPhotoWrap {
@@ -959,7 +959,7 @@
 }
 
 .story {
-  background: #f4eee8;
+  background: var(--color-surface-muted);
 }
 
 .storyFullWidth {
