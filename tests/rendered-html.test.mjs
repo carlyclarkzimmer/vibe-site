@@ -249,6 +249,7 @@ test("serves the campaign without shared site navigation", async () => {
     ["Sarah Young", "sarah-young"],
     ["Emily Reagan", "emily-reagan"],
     ["Ashley Krooks", "ashley-krooks"],
+    ["Katie Ferro", "katie-ferro"],
     ["Réland Logan", "reland-logan"],
     ["Holly Haynes", "holly-haynes"],
     ["Christine Williams", "christine-williams"],
@@ -275,7 +276,6 @@ test("serves the campaign without shared site navigation", async () => {
     const asset = await readFile(new URL(`../public/contributors/${slug}.jpg`, import.meta.url));
     assert.ok(asset.length > 0, `${name}'s headshot asset should exist`);
   }
-  assert.match(html, /Katie Ferro portrait placeholder/);
   const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
   const firstChapterNames = [...firstChapter.matchAll(/<h4[^>]*>([^<]+)<\/h4>/g)]
     .map((match) => match[1]);
