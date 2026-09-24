@@ -1,63 +1,64 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ContributorGrid } from "@/components/campaign/ContributorGrid";
-import {
-  campaignMeta,
-  deliveryContributors,
-} from "@/content/campaigns/beyond-the-bottleneck";
+import Image from "next/image";
+import { deliveryEpisodes } from "@/content/campaigns/beyond-the-bottleneck-delivery";
+import { EpisodeLibrary } from "./_components/EpisodeLibrary";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Beyond the Bottleneck | Listening Tour Delivery",
-  description: campaignMeta.description,
+  title: "Beyond the Bottleneck | Listening Library",
+  description: "The private Beyond the Bottleneck audio-series listening library.",
   robots: { index: false, follow: false },
 };
 
 export default function BeyondTheBottleneckDeliveryPage() {
   return (
-    <main className={styles.page}>
-      <section className={styles.intro} aria-labelledby="delivery-title">
-        <p className={styles.eyebrow}>Beyond the Bottleneck</p>
-        <h1 id="delivery-title">
-          Your listening tour <em>starts here.</em>
-        </h1>
-        <p className={styles.lede}>{campaignMeta.description}</p>
-      </section>
-
-      <ContributorGrid deliveryContributors={deliveryContributors} />
-
-      <section className={styles.delivery} aria-labelledby="episodes-title">
-        <div className={styles.sectionHeading}>
-          <p className={styles.eyebrow}>The audio series</p>
-          <h2 id="episodes-title">Listening-tour episodes</h2>
+    <div className={styles.page}>
+      <header className={styles.hero} id="top">
+        <div className={styles.heroCopy}>
+          <h1>Beyond <em>the</em> Bottleneck</h1>
+          <h2>Listening Library</h2>
+          <p>All 25 conversations, show notes, and resources in one place.</p>
+          <p className={styles.heroOrientation}>Start at the beginning, or choose the episode that speaks most to your experience.</p>
         </div>
+        <div className={styles.heroImage}>
+          <Image alt="Carly Clark Zimmer centered among the Beyond the Bottleneck contributors" fill priority sizes="100vw" src="/btb-hero-carly-center.png" unoptimized />
+        </div>
+      </header>
 
-        <article className={styles.episode}>
-          <div className={styles.episodeNumber}>01</div>
-          <div className={styles.episodeBody}>
-            <p className={styles.placeholder}>[Approved episode title]</p>
-            <div className={styles.playerPlaceholder}>
-              [Approved audio player or episode link]
-            </div>
-            <p className={styles.notesPlaceholder}>[Approved episode notes]</p>
-          </div>
-        </article>
+      <nav className={styles.episodeNav} id="episode-list" aria-labelledby="episode-list-title">
+        <div className={styles.navHeading}>
+          <h2 id="episode-list-title">Choose an Episode</h2>
+        </div>
+        <ol>
+          {deliveryEpisodes.map((episode) => (
+            <li key={episode.slug}><a href={`#episode-${episode.slug}`}><span>{episode.number}</span>{episode.title}</a></li>
+          ))}
+        </ol>
+      </nav>
 
-        <aside className={styles.editorialNote} aria-label="Content still needed">
-          <p className={styles.eyebrow}>Before this page goes live</p>
-          <p>
-            Add the approved welcome copy, episode titles, audio destinations,
-            release schedule, and any episode notes or calls to action.
-          </p>
-        </aside>
+      <EpisodeLibrary episodes={deliveryEpisodes} />
+
+      <section className={styles.patternSection} id="pattern-interrupt" aria-labelledby="pattern-title">
+        <div className={styles.patternLead}>
+          <p className={styles.eyebrow}>Pattern Interrupt</p>
+          <h2 id="pattern-title">Ready to interrupt the pattern instead of just recognizing it?</h2>
+          <p>[SHORT INTRODUCTION / DESCRIPTION]</p>
+        </div>
+        <div className={styles.patternDetails}>
+          <article><h3>What Pattern Interrupt is</h3><p>[DESCRIPTION]</p></article>
+          <article><h3>Who it&apos;s for</h3><p>[DESCRIPTION]</p></article>
+          <article><h3>How it works</h3><p>[DESCRIPTION]</p></article>
+          <article><h3>What you&apos;ll walk away with</h3><p>[DESCRIPTION]</p></article>
+          <article><h3>Investment</h3><p>[PRICE / DETAILS]</p></article>
+          <span className={styles.patternButton}>[PRIMARY CTA BUTTON]</span>
+        </div>
       </section>
 
-      <section className={styles.returnSection}>
-        <p>Want to revisit the series introduction?</p>
-        <Link href="/beyond-the-bottleneck-2026">
-          Return to Beyond the Bottleneck
-        </Link>
-      </section>
-    </main>
+      <footer className={styles.footer}>
+        <p className={styles.footerTitle}>Beyond the Bottleneck</p>
+        <p>Created and hosted by Carly Clark Zimmer</p>
+        <p>© carlyclarkzimmer.com</p>
+      </footer>
+    </div>
   );
 }
