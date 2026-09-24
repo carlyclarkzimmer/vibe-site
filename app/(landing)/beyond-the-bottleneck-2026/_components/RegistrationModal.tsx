@@ -7,7 +7,11 @@ import styles from "./RegistrationModal.module.css";
 
 const emailCapture = registrationContent.emailCapture;
 
-export function RegistrationModal() {
+type RegistrationModalProps = {
+  optinSource?: string;
+};
+
+export function RegistrationModal({ optinSource }: RegistrationModalProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const openerRef = useRef<HTMLAnchorElement | null>(null);
@@ -96,7 +100,9 @@ export function RegistrationModal() {
             <label htmlFor="btb-social-media">Social Media</label>
             <input id="btb-social-media" name="fields[social_media]" type="text" />
           </div>
-          <input name="fields[optin_source]" type="hidden" value="Beyond the Bottleneck Landing Page" />
+          {optinSource ? (
+            <input name="fields[optin_source]" type="hidden" value={optinSource} />
+          ) : null}
           <div aria-hidden="true" className={styles.honeypot}>
             <label htmlFor="btb-website">Website</label>
             <input autoComplete="off" id="btb-website" name="website" tabIndex={-1} type="text" />

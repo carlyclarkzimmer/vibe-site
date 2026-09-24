@@ -303,7 +303,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /name="fields\[first_name\]"/i);
   assert.match(html, /name="fields\[email\]"/i);
   assert.match(html, /name="fields\[social_media\]"/i);
-  assert.match(html, /name="fields\[optin_source\]"[^>]*value="Beyond the Bottleneck Landing Page"/i);
+  assert.doesNotMatch(html, /name="fields\[optin_source\]"/i);
   assert.match(html, /<input[^>]*tabindex="-1"[^>]*name="website"/i);
   assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
   assert.match(html, /name="tags\[\]"[^>]*value="Beyond the Bottleneck Audio Series 2026"/i);
@@ -333,7 +333,7 @@ test("renders one modal Drip form for UTM visits", async () => {
 
   assert.equal(response.status, 200);
   assert.equal((html.match(/data-drip-embedded-form="419624977"/gi) ?? []).length, 1);
-  assert.match(html, /name="fields\[optin_source\]"[^>]*value="Beyond the Bottleneck Landing Page"/i);
+  assert.match(html, /name="fields\[optin_source\]"[^>]*value="instagram partner"/i);
 });
 
 test("redirects the former campaign route to the 2026 URL", async () => {

@@ -29,7 +29,23 @@ export const metadata: Metadata = {
   description: campaignMeta.description,
 };
 
-export default function BeyondTheBottleneckPage() {
+type BeyondTheBottleneckPageProps = {
+  searchParams: Promise<{ utm?: string | string[] }>;
+};
+
+function normalizeOptinSource(value: string | string[] | undefined) {
+  const source = Array.isArray(value) ? value[0] : value;
+  const normalized = source?.trim().replace(/\s+/g, " ");
+
+  return normalized ? normalized.slice(0, 100) : undefined;
+}
+
+export default async function BeyondTheBottleneckPage({
+  searchParams,
+}: BeyondTheBottleneckPageProps) {
+  const { utm } = await searchParams;
+  const optinSource = normalizeOptinSource(utm);
+
   return (
     <>
       <CampaignHero content={heroContent} launchDate={campaignMeta.launchDate} />
@@ -54,7 +70,7 @@ export default function BeyondTheBottleneckPage() {
       <FounderStorySection />
       <BeliefSection />
       <RegistrationSection content={registrationContent} />
-      <RegistrationModal />
+      <RegistrationModal optinSource={optinSource} />
     </>
   );
 }
