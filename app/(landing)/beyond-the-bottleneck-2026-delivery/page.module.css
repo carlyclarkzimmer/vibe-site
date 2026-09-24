@@ -1,7 +1,7 @@
 .page { --delivery-hero-background: #f4eee8; --delivery-hot-pink: #ff37b0; background: var(--color-paper); color: var(--color-ink); scroll-behavior: smooth; }
 .eyebrow, .microHeading { margin: 0; color: var(--color-accent); font-family: var(--font-interface); font-size: .82rem; font-weight: 700; letter-spacing: .16em; line-height: 1.3; text-transform: uppercase; }
-.hero { display: flex; min-height: min(940px, 100svh); flex-direction: column; background: var(--delivery-hero-background); overflow: hidden; }
-.heroCopy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; padding: clamp(54px, 7vw, 92px) var(--space-section-inline) 24px; text-align: center; }
+.hero { display: flex; flex-direction: column; background: var(--delivery-hero-background); overflow: hidden; }
+.heroCopy { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; padding: clamp(54px, 7vw, 92px) var(--space-section-inline); text-align: center; }
 .hero h1 { width: min(100%, 1400px); margin: 0; font-family: var(--font-display); font-size: clamp(4.2rem, 8.2vw, 9rem); font-weight: 400; letter-spacing: -.055em; line-height: .82; white-space: nowrap; }
 .hero h1 em { color: var(--color-accent); font-weight: 400; }
 .hero h2 { margin: clamp(30px, 4vw, 48px) 0 22px; color: var(--color-accent); font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 5.5rem); font-style: italic; font-weight: 400; letter-spacing: -.035em; line-height: .95; }
@@ -9,8 +9,6 @@
 .heroCopy .heroOrientation { margin-top: 10px; font-style: italic; }
 .appleButton { margin-top: 28px; }
 .hero .appleButton:hover, .hero .appleButton:focus-visible { border-color: var(--delivery-hot-pink); background: var(--delivery-hot-pink); color: white; }
-.heroImage { position: relative; width: min(100%, 1380px); min-height: clamp(330px, 39vw, 620px); margin: auto auto 0; }
-.heroImage img { object-fit: cover; object-position: center bottom; }
 .episodeNav, .library, .patternSection { padding: clamp(82px, 10vw, 140px) var(--space-section-inline); }
 .episodeNav > *, .library > *, .patternSection > * { width: min(100%, var(--width-content)); margin-inline: auto; }
 .episodeNav { scroll-margin-top: 24px; background: var(--color-surface-muted); color: var(--color-ink); }
@@ -60,18 +58,16 @@
 .footer p { margin: 8px 0 0; font-family: var(--font-interface); font-size: .76rem; letter-spacing: .08em; text-transform: uppercase; }
 .footer .footerTitle { margin: 0 0 20px; font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3.7rem); letter-spacing: -.02em; text-transform: none; }
 @media (max-width: 900px) {
-  .hero { min-height: auto; }
   .episodeUpper { grid-template-columns: minmax(230px, .7fr) minmax(0, 1.3fr); gap: 42px; }
   .episodeUpperIntro, .patternSection { grid-template-columns: 1fr; }
   .patternCallout { display: block; }
   .patternCallout a { display: inline-block; margin-top: 14px; }
 }
 @media (max-width: 760px) {
-  .heroCopy { padding: 52px var(--space-section-inline-mobile) 20px; }
+  .heroCopy { padding: 52px var(--space-section-inline-mobile); }
   .hero h1 { font-size: clamp(3.6rem, 20vw, 5.5rem); line-height: .82; }
   .hero h1 { white-space: normal; }
   .hero h2 { font-size: clamp(2.8rem, 15vw, 4rem); }
-  .heroImage { min-height: 280px; }
   .episodeNav, .library, .patternSection { padding: 72px var(--space-section-inline-mobile); }
   .sectionIntro, .episodeUpper, .episodeInformation { grid-template-columns: 1fr; gap: 20px; }
   .episodeNav ol { column-count: 1; }

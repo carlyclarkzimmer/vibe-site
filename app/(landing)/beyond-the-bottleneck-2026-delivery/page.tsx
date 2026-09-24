@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { deliveryEpisodes } from "@/content/campaigns/beyond-the-bottleneck-delivery";
 import { ListeningExperience } from "./_components/ListeningExperience";
@@ -22,9 +21,6 @@ export default function BeyondTheBottleneckDeliveryPage() {
           <p className={styles.heroOrientation}>Start at the beginning, or choose the episode that speaks most to your experience.</p>
           {/* TODO: Replace this placeholder anchor with the approved Apple Podcasts URL. */}
           <Button className={styles.appleButton} href="#apple-podcasts-url-todo">Listen on Apple Podcasts</Button>
-        </div>
-        <div className={styles.heroImage}>
-          <Image alt="Carly Clark Zimmer centered among the Beyond the Bottleneck contributors" fill priority sizes="100vw" src="/btb-hero-carly-center.png" unoptimized />
         </div>
       </header>
 

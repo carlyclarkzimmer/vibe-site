@@ -618,6 +618,7 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.doesNotMatch(html, /Choose an Episode/i);
   assert.match(html, /Listen on Apple Podcasts/i);
   assert.match(html, /href="#apple-podcasts-url-todo"/i);
+  assert.doesNotMatch(html, /btb-hero-carly-center|centered among the Beyond the Bottleneck contributors/i);
   assert.match(html, /Complete Audio Series/i);
   assert.doesNotMatch(html, /Listen your way/i);
   assert.doesNotMatch(html, /In listening order/i);
