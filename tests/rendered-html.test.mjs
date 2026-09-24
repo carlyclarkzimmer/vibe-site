@@ -271,7 +271,9 @@ test("serves the campaign without shared site navigation", async () => {
   ];
   const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
   const hostImage = imageTags.find((tag) => tag.includes('alt="Carly Clark Zimmer"'));
-  assert.match(hostImage ?? "", /carly-clark-zimmer-host\.jpg/);
+  assert.match(hostImage ?? "", /carly-clark-zimmer-host-2\.jpg/);
+  const hostAsset = await readFile(new URL("../public/contributors/carly-clark-zimmer-host-2.jpg", import.meta.url));
+  assert.ok(hostAsset.length > 0, "featured host headshot asset should exist");
   for (const [name, slug] of contributorImages) {
     const matchingTags = imageTags.filter((tag) => tag.includes(`alt="${name}"`));
     assert.equal(matchingTags.length, 1, `${name} should have one headshot`);
