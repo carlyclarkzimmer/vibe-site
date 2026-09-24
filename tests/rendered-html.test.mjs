@@ -242,7 +242,40 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /Nervous System &amp; Somatic Coach, Founder of The Nourished Woman/i);
   assert.match(html, /The Freedom Was There\. She Just Couldn.t Feel It: Ashley Krooks on Nervous System Regulation/i);
   assert.match(html, /What got you here will not get you there\./i);
-  assert.match(html, /Ashley Krooks portrait placeholder/i);
+  const contributorImages = [
+    ["Kristin Brabant", "kristin-brabant"],
+    ["Michelle Knight", "michelle-knight"],
+    ["Jen Liddy", "jen-liddy"],
+    ["Sarah Young", "sarah-young"],
+    ["Emily Reagan", "emily-reagan"],
+    ["Ashley Krooks", "ashley-krooks"],
+    ["Réland Logan", "reland-logan"],
+    ["Holly Haynes", "holly-haynes"],
+    ["Christine Williams", "christine-williams"],
+    ["Heather Sager", "heather-sager"],
+    ["Holly Ostrout", "holly-ostrout"],
+    ["Keenya Kelly", "keenya-kelly"],
+    ["Nata Salvatori", "nata-salvatori"],
+    ["Megan Yelaney", "megan-yelaney"],
+    ["Renee Bowen", "renee-bowen"],
+    ["Kimberly Tara", "kimberly-tara"],
+    ["Rosemary Dede", "rosemary-dede"],
+    ["Ash McDonald", "ash-mcdonald"],
+    ["Linda Sidhu", "linda-sidhu"],
+    ["Beth Nydick", "beth-nydick"],
+    ["Kari Poppleton", "kari-poppleton"],
+  ];
+  const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
+  for (const [name, slug] of contributorImages) {
+    const matchingTags = imageTags.filter((tag) => tag.includes(`alt="${name}"`));
+    assert.equal(matchingTags.length, 1, `${name} should have one headshot`);
+    assert.match(matchingTags[0], new RegExp(`${slug}\\.jpg`));
+    assert.doesNotMatch(html, new RegExp(`${name} portrait placeholder`));
+    const asset = await readFile(new URL(`../public/contributors/${slug}.jpg`, import.meta.url));
+    assert.ok(asset.length > 0, `${name}'s headshot asset should exist`);
+  }
+  assert.match(html, /Katie Ferro portrait placeholder/);
+  assert.match(html, /Zhara-Marie Henry portrait placeholder/);
   const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
   const firstChapterNames = [...firstChapter.matchAll(/<h4[^>]*>([^<]+)<\/h4>/g)]
     .map((match) => match[1]);
