@@ -20,7 +20,7 @@ function Portrait({ name, image, host = false }: { name: string; image?: string;
 
   return image ? (
     <div className={className}>
-      <Image alt={name} fill sizes={host ? "(max-width: 700px) 280px, 370px" : "240px"} src={image} />
+      <Image alt={name} fill sizes={host ? "(max-width: 700px) 280px, 370px" : "240px"} src={image} unoptimized />
     </div>
   ) : (
     <div className={className} aria-label={`${name} portrait placeholder`} role="img">

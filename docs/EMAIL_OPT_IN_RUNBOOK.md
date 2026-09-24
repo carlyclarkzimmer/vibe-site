@@ -203,8 +203,9 @@ single shared hidden reCAPTCHA input across multiple forms.
 2. Preserve the established visual form. Do not paste vendor-provided generic
    style blocks into the campaign.
 3. Declare each campaign’s Drip endpoint, form ID, campaign tag, and optional
-   general-marketing tag in typed campaign content. Reuse
-   `RegistrationSection`; do not create a one-off form UI.
+   general-marketing tag in typed campaign content. Reuse the established form
+   pattern where applicable; Beyond the Bottleneck's `RegistrationSection`
+   currently contains details only and is not a form UI.
 4. Keep the Drip form submission as a normal POST. Do not introduce an API
    token, server proxy, database, or client-side state unless Carly explicitly
    approves a requirement that needs one.

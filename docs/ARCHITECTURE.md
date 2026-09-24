@@ -112,9 +112,10 @@ The hero and founder-story images have documented roles in `AGENTS.md`.
 
 ## Registration boundary
 
-`RegistrationSection` owns the site-side presentation and submits to the Drip
-Embedded Form declared in campaign content. The application does not store a
-Drip API token or proxy signups through an API route.
+`RegistrationSection` now presents Beyond the Bottleneck campaign details
+without an inline form. Its campaign CTAs still anchor to that section, but
+there is no working signup destination. The application does not store a Drip
+API token or proxy signups through an API route.
 
 Before adding a campaign form, confirm provider, form identifier, fields,
 tags, consent, double opt-in, spam protection, analytics, success behavior,
@@ -150,7 +151,8 @@ See [ADR 0004](adr/0004-deployment-ownership.md).
 - Contributor content is placeholder content.
 - No analytics or conversion tracking is configured.
 - No final approved social-sharing image is configured.
-- Drip production redirects and end-to-end inbox testing are still pending.
+- Beyond the Bottleneck has no signup form or confirmed CTA destination.
+  Other Drip forms still require their own production redirect and inbox tests.
 
 ## Adding a site page
 

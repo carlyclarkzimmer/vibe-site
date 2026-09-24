@@ -218,7 +218,7 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /What you(?:&#x27;|')ll hear/i);
   assert.doesNotMatch(html, /Designed for recognition/i);
   assert.doesNotMatch(html, /You will hear about/i);
-  assert.match(html, /REGISTER FOR FREE/i);
+  assert.doesNotMatch(html, /REGISTER FOR FREE/i);
   assert.doesNotMatch(html, /Short audio interviews, each 20 minutes or less\./i);
   assert.match(html, /Listen on your own schedule/i);
   assert.match(html, /Listen on your own time/i);
@@ -238,35 +238,63 @@ test("serves the campaign without shared site navigation", async () => {
   assert.doesNotMatch(html, /These conversations are not organized around how impressive someone looks online/i);
   assert.doesNotMatch(html, /Each 20-minute interview/i);
   assert.match(html, /Overachieving made me feel safe/i);
-  assert.doesNotMatch(html, /Ashley Krooks/i);
+  assert.match(html, /Ashley Krooks/i);
+  assert.match(html, /Nervous System &amp; Somatic Coach, Founder of The Nourished Woman/i);
+  assert.match(html, /The Freedom Was There\. She Just Couldn.t Feel It: Ashley Krooks on Nervous System Regulation/i);
+  assert.match(html, /What got you here will not get you there\./i);
+  const contributorImages = [
+    ["Kristin Brabant", "kristin-brabant"],
+    ["Michelle Knight", "michelle-knight"],
+    ["Jen Liddy", "jen-liddy"],
+    ["Sarah Young", "sarah-young"],
+    ["Emily Reagan", "emily-reagan"],
+    ["Ashley Krooks", "ashley-krooks"],
+    ["Réland Logan", "reland-logan"],
+    ["Holly Haynes", "holly-haynes"],
+    ["Christine Williams", "christine-williams"],
+    ["Heather Sager", "heather-sager"],
+    ["Holly Ostrout", "holly-ostrout"],
+    ["Keenya Kelly", "keenya-kelly"],
+    ["Nata Salvatori", "nata-salvatori"],
+    ["Megan Yelaney", "megan-yelaney"],
+    ["Zhara-Marie Henry", "zhara-marie-henry"],
+    ["Renee Bowen", "renee-bowen"],
+    ["Kimberly Tara", "kimberly-tara"],
+    ["Rosemary Dede", "rosemary-dede"],
+    ["Ash McDonald", "ash-mcdonald"],
+    ["Linda Sidhu", "linda-sidhu"],
+    ["Beth Nydick", "beth-nydick"],
+    ["Kari Poppleton", "kari-poppleton"],
+  ];
+  const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
+  for (const [name, slug] of contributorImages) {
+    const matchingTags = imageTags.filter((tag) => tag.includes(`alt="${name}"`));
+    assert.equal(matchingTags.length, 1, `${name} should have one headshot`);
+    assert.match(matchingTags[0], new RegExp(`${slug}\\.jpg`));
+    assert.doesNotMatch(html, new RegExp(`${name} portrait placeholder`));
+    const asset = await readFile(new URL(`../public/contributors/${slug}.jpg`, import.meta.url));
+    assert.ok(asset.length > 0, `${name}'s headshot asset should exist`);
+  }
+  assert.match(html, /Katie Ferro portrait placeholder/);
+  const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
+  const firstChapterNames = [...firstChapter.matchAll(/<h4[^>]*>([^<]+)<\/h4>/g)]
+    .map((match) => match[1]);
+  assert.deepEqual(firstChapterNames, [
+    "Kristin Brabant",
+    "Michelle Knight",
+    "Jen Liddy",
+    "Sarah Young",
+    "Emily Reagan",
+    "Ashley Krooks",
+  ]);
   assert.doesNotMatch(html, /Contributor name/i);
-  assert.match(html, /type="email"/i);
-  assert.match(html, /fields\[first_name\]/i);
-  assert.match(html, /data-drip-embedded-form="419624977"/i);
-  assert.match(html, /id="drip-ef-419624977"/i);
-  assert.match(
-    html,
-    /https:\/\/www\.getdrip\.com\/forms\/419624977\/submissions/i,
-  );
-  assert.match(
-    html,
-    /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i,
-  );
-  assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);
-  assert.match(
-    html,
-    /name="g-recaptcha-response-data\[form_submission\]"/i,
-  );
-  assert.match(html, /data-drip-attribute="sign-up-button"/i);
-  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
-  assert.match(html, /fields\[social_media\]/i);
-  assert.doesNotMatch(html, /fields\[optin_source\]/i);
-  assert.doesNotMatch(html, /I’d also like occasional emails/i);
-  assert.doesNotMatch(html, /By registering, you’ll receive listening-tour emails\./i);
-  assert.doesNotMatch(html, /id="general-email"/i);
-  assert.match(html, /<label[^>]*for="email"/i);
+  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
+  assert.doesNotMatch(html, /id="signup-form"/i);
+  assert.doesNotMatch(html, /href="#signup-form"/i);
+  assert.doesNotMatch(html, /data-drip-attribute="sign-up-button"/i);
+  assert.doesNotMatch(html, /type="email"/i);
   assert.match(html, /href="#register"/i);
-  assert.match(html, /JOIN US\./i);
+  assert.match(html, /There(?:&#x27;|')s a whole lotta life waiting for you beyond the bottleneck/i);
   assert.match(
     html,
     /alt="Carly Clark Zimmer in an emerald green blazer centered among the Beyond the Bottleneck contributors"/i,
@@ -274,18 +302,15 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
-test("adds the campaign UTM source to the Drip form", async () => {
+test("does not render the removed campaign opt-in form for UTM visits", async () => {
   const response = await render(
     "/beyond-the-bottleneck-2026?utm=instagram%20partner",
   );
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.match(
-    html,
-    /name="fields\[optin_source\]"[^>]*value="instagram partner"/i,
-  );
-  assert.match(html, /Beyond the Bottleneck Audio Series 2026/i);
+  assert.doesNotMatch(html, /fields\[optin_source\]/i);
+  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
 });
 
 test("redirects the former campaign route to the 2026 URL", async () => {

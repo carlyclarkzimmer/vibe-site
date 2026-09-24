@@ -55,5 +55,5 @@ GitHub is the canonical source repository. OpenAI Sites is the production
 deployment system. Pushing to GitHub does not automatically deploy the site.
 The existing Sites project binding must be reused for every deployment.
 
-The registration form is currently presentational and does not submit to an
-email platform or API.
+The Beyond the Bottleneck inline registration form has been removed. Its CTAs
+currently lead to the campaign details section, not a signup flow.

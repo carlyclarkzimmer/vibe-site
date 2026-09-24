@@ -22,16 +22,6 @@
   color: var(--color-text-muted);
 }
 
-.register > a {
-  margin-bottom: 72px;
-}
-
-.register > a:hover {
-  border-color: #ff37b0;
-  background: #ff37b0;
-  color: var(--color-ink);
-}
-
 .details,
 .finalLines {
   max-width: 760px;
@@ -63,144 +53,11 @@
   font-size: 30px;
 }
 
-.register form {
-  max-width: 760px;
-  margin: auto;
-  text-align: left;
-}
-
-.fields {
-  scroll-margin-top: 32px;
-}
-
 .copyright {
-  margin-top: 72px;
+  margin-top: 52px;
   color: var(--color-text-muted);
   font-family: var(--font-interface);
   font-size: 10px;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.register label {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-.fields {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 10px;
-}
-
-.field {
-  display: grid;
-  gap: 10px;
-}
-
-.socialField {
-  grid-column: auto;
-}
-
-.register input {
-  min-width: 0;
-  flex: 1;
-  padding: 20px;
-  border: 1px solid var(--color-field-border);
-  outline: none;
-  border-radius: 0;
-  background: white;
-  color: var(--color-ink);
-  font-size: 16px;
-}
-
-.register input::placeholder {
-  color: var(--color-text-dim);
-}
-
-.register input[type="checkbox"] {
-  width: 16px;
-  height: 16px;
-  margin: 3px 0 0;
-  accent-color: var(--color-accent);
-}
-
-.register input:focus {
-  border-color: var(--color-accent);
-  outline: var(--focus-ring);
-  outline-offset: 2px;
-}
-
-.submitRow {
-  display: flex;
-  margin-top: 24px;
-}
-
-.register button {
-  width: 100%;
-  padding: 20px 30px;
-  border: 0;
-  background: var(--color-accent);
-  color: white;
-  cursor: pointer;
-  border-radius: 2px;
-  font-family: var(--font-interface);
-  font-size: 14px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.register button:hover {
-  background: var(--color-ink);
-}
-
-.consent {
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-  margin-top: 22px;
-  color: var(--color-text-muted);
-  font-family: var(--font-body);
-  font-size: 15px !important;
-  letter-spacing: normal !important;
-  line-height: 1.4;
-  text-transform: none !important;
-}
-
-.privacy {
-  margin: 18px 0 0;
-  color: var(--color-text-muted);
-  font-size: 14px;
-}
-
-.privacy a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.honeypot {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-  clip-path: inset(50%);
-}
-
-@media (max-width: 600px) {
-  .fields {
-    grid-template-columns: 1fr;
-  }
-
-  .socialField {
-    grid-column: auto;
-  }
-
-  .register button {
-    padding: 20px;
-  }
-
 }

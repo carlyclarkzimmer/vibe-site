@@ -132,6 +132,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "kristin-brabant",
         name: "Kristin Brabant",
+        image: "/contributors/kristin-brabant.jpg",
         role: "Business Strategist, helping service providers become Rich & Rested",
         episodeTitle: "From Push Harder to Rich and Rested: Kristin Brabant on Breaking Her Oldest Business Pattern",
         soundbite: "I had to learn that rest wasn’t something I earned after the work was done.",
@@ -139,6 +140,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "michelle-knight",
         name: "Michelle Knight",
+        image: "/contributors/michelle-knight.jpg",
         role: "Personal Branding & Storytelling Expert, Founder of Brandmerry",
         episodeTitle: "When Overachieving Becomes Your Safety Net with Michelle Knight",
         soundbite: "Overachieving made me feel safe.",
@@ -146,6 +148,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "jen-liddy",
         name: "Jen Liddy",
+        image: "/contributors/jen-liddy.jpg",
         role: "Messaging Strategist",
         episodeTitle: "Care Deeply. Carry Less: Jen Liddy on Releasing Over-Responsibility",
         soundbite: "I would put my clients in my backpack and walk them up the mountain.",
@@ -153,6 +156,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "sarah-young",
         name: "Sarah Young",
+        image: "/contributors/sarah-young.jpg",
         role: "Scaling & Wealth Strategist",
         episodeTitle: "$100K Months and Still Stressed About Payroll: How Sarah Young Changed Course",
         soundbite: "We were doing $100K-plus months, and I was still stressing about payroll.",
@@ -160,9 +164,18 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "emily-reagan",
         name: "Emily Reagan",
+        image: "/contributors/emily-reagan.jpg",
         role: "Fractional CMO & Marketing Strategist, Founder of The Digital Marketer’s Workgroup",
         episodeTitle: "She Lost Her Voice and Found a New Direction: Emily Reagan on the Business Changes She’d Been Avoiding",
         soundbite: "I was suppressing this desire or need to evolve.",
+      },
+      {
+        id: "ashley-krooks",
+        name: "Ashley Krooks",
+        image: "/contributors/ashley-krooks.jpg",
+        role: "Nervous System & Somatic Coach, Founder of The Nourished Woman",
+        episodeTitle: "The Freedom Was There. She Just Couldn’t Feel It: Ashley Krooks on Nervous System Regulation",
+        soundbite: "What got you here will not get you there.",
       },
     ],
   },
@@ -180,6 +193,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "reland-logan",
         name: "Réland Logan",
+        image: "/contributors/reland-logan.jpg",
         role: "Brand Strategist, Creator of BrandExtraordinary™",
         episodeTitle: "The Business Rules You’re Allowed to Break with Réland Logan",
         soundbite: "I get to decide what this looks like.",
@@ -187,6 +201,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "holly-haynes",
         name: "Holly Haynes",
+        image: "/contributors/holly-haynes.jpg",
         role: "Business Strategist, Founder of Anti-Social School™",
         episodeTitle: "Stop Waiting for Life to Calm Down: Holly Haynes on Building a Life-First Business",
         soundbite: "I started putting the life things on the calendar first.",
@@ -194,6 +209,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "christine-williams",
         name: "Christine Williams",
+        image: "/contributors/christine-williams.jpg",
         role: "Business Mentor, Founder of The Boutique CEO™",
         episodeTitle: "There’s More Than One Way to Scale: Christine Williams on Building Better, Not Bigger",
         soundbite: "There’s more than one way to scale.",
@@ -201,6 +217,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "heather-sager",
         name: "Heather Sager",
+        image: "/contributors/heather-sager.jpg",
         role: "Speaking & Visibility Strategist, Host of Hint of Hustle",
         episodeTitle: "The 13-Hour Workweek: How Heather Sager Stopped Feeling Behind",
         soundbite: "I had to stop measuring my success by how much I was doing.",
@@ -208,6 +225,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "holly-ostrout",
         name: "Holly Ostrout",
+        image: "/contributors/holly-ostrout.jpg",
         role: "Book Coach & Publisher, Creator of the Book Mapping Process",
         episodeTitle: "You’re Not Back at the Beginning: Holly Ostrout on Making a Different Choice This Time",
         soundbite: "I wasn’t starting over. I was starting with everything I knew now.",
@@ -221,6 +239,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "keenya-kelly",
         name: "Keenya Kelly",
+        image: "/contributors/keenya-kelly.jpg",
         role: "Video Marketing & Monetization Strategist, CEO of If You Create It",
         episodeTitle: "“Always Me” to a Team That Runs Without Her: Keenya Kelly on the Inner Work of Leadership",
         soundbite: "I could not grow beyond myself.",
@@ -228,6 +247,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "nata-salvatori",
         name: "Nata Salvatori",
+        image: "/contributors/nata-salvatori.jpg",
         role: "Business Coach & Fractional COO, Founder of Accidental CEO",
         episodeTitle: "The Business Can’t Grow If Everything Runs Through You: Nata Salvatori on Becoming the CEO",
         soundbite: "I had to stop being the person doing everything and become the CEO.",
@@ -235,6 +255,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "megan-yelaney",
         name: "Megan Yelaney",
+        image: "/contributors/megan-yelaney.jpg",
         role: "Business Strategist, Creator of the Distinctive Edge Framework",
         episodeTitle: "When “I Can Just Do It Myself” Becomes the Bottleneck, with Megan Yelaney",
         soundbite: "If I can do it and save money, then I should just do it.",
@@ -242,6 +263,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "zhara-marie-henry",
         name: "Zhara-Marie Henry",
+        image: "/contributors/zhara-marie-henry.jpg",
         role: "Operations Consultant, Founder of Abide",
         episodeTitle: "You Hired Help. Now Let Them Help: Zhara-Marie Henry on Letting Go of Control",
         soundbite: "Just because I hired someone didn’t mean I had actually let go.",
@@ -249,6 +271,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "renee-bowen",
         name: "Renee Bowen",
+        image: "/contributors/renee-bowen.jpg",
         role: "Business Strategist & Coach, Host of Tried & True with a Dash of Woo",
         episodeTitle: "You Don’t Have to Be Everyone’s Nervous System: Renee Bowen on Letting Go of Holding It All Together",
         soundbite: "I was everyone’s nervous system.",
@@ -256,6 +279,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "kimberly-tara",
         name: "Kimberly Tara",
+        image: "/contributors/kimberly-tara.jpg",
         role: "CPA & Certified Tax Planner, Founder of The Tara CPA Firm",
         episodeTitle: "When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom",
         soundbite: "Work followed me everywhere.",
@@ -269,6 +293,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "rosemary-dede",
         name: "Rosemary Dede",
+        image: "/contributors/rosemary-dede.jpg",
         role: "Business Coach, Creator of the Balanced Business Formula™",
         episodeTitle: "Adding Was the Bottleneck: Rosemary Dede on Simplifying for the Life She Wanted",
         soundbite: "My instinct was always to add something, and adding was the bottleneck.",
@@ -276,6 +301,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "ash-mcdonald",
         name: "Ash McDonald",
+        image: "/contributors/ash-mcdonald.jpg",
         role: "The Entrepreneur’s Therapist, Host of Shamelessly Ambitious®",
         episodeTitle: "What She Got Back When She Left Instagram: Ash McDonald on Choosing Her Attention",
         soundbite: "I had to decide where I actually wanted my attention to go.",
@@ -283,6 +309,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "linda-sidhu",
         name: "Linda Sidhu",
+        image: "/contributors/linda-sidhu.jpg",
         role: "Founder of MixerMind & Personality Quiz Expert",
         episodeTitle: "Build Your Bucket-List Business with Linda Sidhu",
         soundbite: "I started asking, what do I want on my business bucket list?",
@@ -290,6 +317,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "beth-nydick",
         name: "Beth Nydick",
+        image: "/contributors/beth-nydick.jpg",
         role: "Media Strategist, Creator of Mic to Millions™",
         episodeTitle: "The Visibility Bottleneck: Beth Nydick on What Happens After You Get Seen",
         soundbite: "Getting the opportunity isn’t the end of the road. That’s actually the beginning.",
@@ -297,6 +325,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "kari-poppleton",
         name: "Kari Poppleton",
+        image: "/contributors/kari-poppleton.jpg",
         role: "Business Operations & Marketing Measurement Consultant",
         episodeTitle: "The Data That Lets You Do Less: Kari Poppleton on Simplifying Your Business",
         soundbite: "Once I knew what was actually working, I could stop doing so much.",
@@ -304,13 +333,6 @@ export const contributorChapters: ContributorChapter[] = [
     ],
   },
 ];
-
-// Onboarded, awaiting interview. Add to a chapter once the episode details are approved.
-export const pendingContributor = {
-  id: "ashley-krooks",
-  name: "Ashley Krooks",
-  role: "Founder of The Nourished Woman, Host of That’s So Nourishing",
-} as const;
 
 // The unpublished delivery-page draft still uses its original visible placeholders.
 export const deliveryContributors = Array.from({ length: 12 }, (_, index) => ({
