@@ -257,6 +257,7 @@ test("serves the campaign without shared site navigation", async () => {
     ["Keenya Kelly", "keenya-kelly"],
     ["Nata Salvatori", "nata-salvatori"],
     ["Megan Yelaney", "megan-yelaney"],
+    ["Zhara-Marie Henry", "zhara-marie-henry"],
     ["Renee Bowen", "renee-bowen"],
     ["Kimberly Tara", "kimberly-tara"],
     ["Rosemary Dede", "rosemary-dede"],
@@ -275,7 +276,6 @@ test("serves the campaign without shared site navigation", async () => {
     assert.ok(asset.length > 0, `${name}'s headshot asset should exist`);
   }
   assert.match(html, /Katie Ferro portrait placeholder/);
-  assert.match(html, /Zhara-Marie Henry portrait placeholder/);
   const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
   const firstChapterNames = [...firstChapter.matchAll(/<h4[^>]*>([^<]+)<\/h4>/g)]
     .map((match) => match[1]);

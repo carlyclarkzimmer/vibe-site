@@ -263,6 +263,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "zhara-marie-henry",
         name: "Zhara-Marie Henry",
+        image: "/contributors/zhara-marie-henry.jpg",
         role: "Operations Consultant, Founder of Abide",
         episodeTitle: "You Hired Help. Now Let Them Help: Zhara-Marie Henry on Letting Go of Control",
         soundbite: "Just because I hired someone didn’t mean I had actually let go.",
