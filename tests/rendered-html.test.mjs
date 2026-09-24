@@ -228,6 +228,7 @@ test("serves the campaign without shared site navigation", async () => {
   );
   assert.match(html, /Meet the Business Owners Thriving Beyond the Bottleneck/i);
   assert.match(html, /Featured host episode/i);
+  assert.doesNotMatch(html, /Carly Clark Zimmer portrait placeholder/);
   assert.match(html, /Leadership and Behavioral Change Coach, ICF PCC/);
   assert.match(html, /The Pattern Behind the Plateau/i);
   assert.match(html, /chapter-01/i);
@@ -269,6 +270,8 @@ test("serves the campaign without shared site navigation", async () => {
     ["Kari Poppleton", "kari-poppleton"],
   ];
   const imageTags = [...html.matchAll(/<img\b[^>]*>/g)].map((match) => match[0]);
+  const hostImage = imageTags.find((tag) => tag.includes('alt="Carly Clark Zimmer"'));
+  assert.match(hostImage ?? "", /carly-clark-zimmer-host\.jpg/);
   for (const [name, slug] of contributorImages) {
     const matchingTags = imageTags.filter((tag) => tag.includes(`alt="${name}"`));
     assert.equal(matchingTags.length, 1, `${name} should have one headshot`);
