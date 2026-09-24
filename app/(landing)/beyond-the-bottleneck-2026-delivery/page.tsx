@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Button } from "@/components/ui/Button";
 import { deliveryEpisodes } from "@/content/campaigns/beyond-the-bottleneck-delivery";
-import { EpisodeLibrary } from "./_components/EpisodeLibrary";
+import { ListeningExperience } from "./_components/ListeningExperience";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
@@ -19,24 +20,15 @@ export default function BeyondTheBottleneckDeliveryPage() {
           <h2>Listening Library</h2>
           <p>All 25 conversations, show notes, and resources in one place.</p>
           <p className={styles.heroOrientation}>Start at the beginning, or choose the episode that speaks most to your experience.</p>
+          {/* TODO: Replace this placeholder anchor with the approved Apple Podcasts URL. */}
+          <Button className={styles.appleButton} href="#apple-podcasts-url-todo">Listen on Apple Podcasts</Button>
         </div>
         <div className={styles.heroImage}>
           <Image alt="Carly Clark Zimmer centered among the Beyond the Bottleneck contributors" fill priority sizes="100vw" src="/btb-hero-carly-center.png" unoptimized />
         </div>
       </header>
 
-      <nav className={styles.episodeNav} id="episode-list" aria-labelledby="episode-list-title">
-        <div className={styles.navHeading}>
-          <h2 id="episode-list-title">Choose an Episode</h2>
-        </div>
-        <ol>
-          {deliveryEpisodes.map((episode) => (
-            <li key={episode.slug}><a href={`#episode-${episode.slug}`}><span>{episode.number}</span>{episode.title}</a></li>
-          ))}
-        </ol>
-      </nav>
-
-      <EpisodeLibrary episodes={deliveryEpisodes} />
+      <ListeningExperience episodes={deliveryEpisodes} />
 
       <section className={styles.patternSection} id="pattern-interrupt" aria-labelledby="pattern-title">
         <div className={styles.patternLead}>

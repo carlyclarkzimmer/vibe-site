@@ -614,7 +614,10 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /<title>Beyond the Bottleneck \| Listening Library<\/title>/i);
   assert.match(html, /Listening Library/i);
   assert.match(html, /Start at the beginning, or choose the episode that speaks most to your experience\./i);
-  assert.match(html, /Choose an Episode/i);
+  assert.match(html, /Table of Contents/i);
+  assert.doesNotMatch(html, /Choose an Episode/i);
+  assert.match(html, /Listen on Apple Podcasts/i);
+  assert.match(html, /href="#apple-podcasts-url-todo"/i);
   assert.match(html, /Complete Audio Series/i);
   assert.doesNotMatch(html, /Listen your way/i);
   assert.doesNotMatch(html, /In listening order/i);
@@ -624,10 +627,12 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   );
   assert.equal(episodeSlugs.size, 25);
   assert.ok((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length >= 25);
-  assert.ok((html.match(/Back to episode list/gi) ?? []).length >= 25);
-  assert.ok((html.match(/Explore Pattern Interrupt/gi) ?? []).length >= 25);
+  assert.equal((html.match(/Back to episode list/gi) ?? []).length, 24);
+  assert.equal((html.match(/Explore Pattern Interrupt/gi) ?? []).length, 24);
   assert.match(html, /href="#episode-intro"/i);
   assert.match(html, /href="#episode-carly-clark-zimmer"/i);
+  const introHtml = html.split('id="episode-intro"')[1]?.split('id="episode-kimberly-tara"')[0] ?? "";
+  assert.doesNotMatch(introHtml, /Show Notes|Explore Pattern Interrupt|Back to episode list/i);
   assert.match(html, /When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom/i);
   assert.match(html, /The Pattern Behind the Plateau, with Carly Clark Zimmer/i);
   assert.match(html, /About[\s\S]{0,80}Carly Clark Zimmer/i);
