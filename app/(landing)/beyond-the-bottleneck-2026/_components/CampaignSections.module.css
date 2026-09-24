@@ -149,7 +149,7 @@
   display: grid;
   align-items: stretch;
   grid-template-columns: 1.05fr 0.95fr;
-  background: var(--color-surface-muted);
+  background: #f4eee8;
 }
 
 .seriesCard {
@@ -205,8 +205,39 @@
 
 .sharingList strong {
   font-family: var(--font-display);
-  font-size: 22px;
-  font-weight: 400;
+  font-size: inherit;
+  font-weight: 700;
+}
+
+.sharingList p::before {
+  opacity: 1;
+}
+
+@supports (animation-timeline: view()) {
+  .sharingList p::before {
+    transform: translateX(-34px);
+    opacity: 0;
+    animation: sharingArrowIn linear both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 22%;
+  }
+}
+
+@keyframes sharingArrowIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  @supports (animation-timeline: view()) {
+    .sharingList p::before {
+      transform: none;
+      opacity: 1;
+      animation: none;
+    }
+  }
 }
 
 .spoiler {
@@ -241,11 +272,15 @@
 .seriesDetails p {
   margin: 0 0 7px;
   font-family: var(--font-interface);
-  font-size: 11px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.14em;
   line-height: 1.4;
   text-transform: uppercase;
+}
+
+.seriesDetails p:nth-child(2) {
+  color: var(--color-accent);
 }
 
 .spoiler strong {
@@ -484,8 +519,7 @@
   border-left: 1px solid var(--color-border);
 }
 
-.fearCluster p,
-.reframeCluster p {
+.fearCluster p {
   margin: 0 0 14px;
 }
 
@@ -499,11 +533,13 @@
 }
 
 .fearCluster p {
-  font-size: 22px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 29px);
 }
 
 .questionBody > .fearConclusion {
-  font-size: 24px;
+  font-family: var(--font-display);
+  font-size: clamp(22px, 2vw, 29px);
 }
 
 @keyframes fearHotPink {
@@ -537,8 +573,10 @@
   }
 }
 
-.reframeCluster p {
+.reframeCluster li {
+  position: relative;
   margin-bottom: 24px;
+  padding-left: 25px;
   font-family: var(--font-display);
   font-size: clamp(22px, 2vw, 29px);
   line-height: 1.35;
@@ -547,7 +585,18 @@
   animation-timeline: view();
 }
 
-.reframeCluster p:last-child {
+.reframeCluster li::before {
+  position: absolute;
+  top: 0.08em;
+  left: 0;
+  color: var(--color-accent);
+  content: "•";
+  font-family: var(--font-interface);
+  font-size: 0.8em;
+  line-height: 1.35;
+}
+
+.reframeCluster li:last-child {
   margin-bottom: 0;
 }
 
@@ -563,10 +612,14 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .reframeCluster p {
+  .reframeCluster li {
     color: #ff37b0;
     animation: none;
   }
+}
+
+.reframeCluster {
+  list-style: none;
 }
 
 .moreOfYou {
@@ -577,6 +630,7 @@
 
 .moreOfYou .readingMeasure {
   margin: 0 auto;
+  text-align: center;
 }
 
 .moreOfYou .moreOfYouQuestion {
@@ -623,7 +677,7 @@
 }
 
 .moreOfYou .readingMeasure > p {
-  font-size: 23px;
+  font-size: 27px;
   line-height: 1.4;
 }
 
@@ -662,6 +716,7 @@
 }
 
 .moreOfYou a {
+  display: inline-block;
   margin-top: 28px;
 }
 
@@ -686,6 +741,10 @@
   margin: 30px 0;
   font-size: clamp(34px, 4vw, 56px);
   line-height: 1.02;
+}
+
+.insideHeader > p {
+  font-size: 15.333px;
 }
 
 .insideBody {
@@ -713,7 +772,7 @@
   color: var(--color-accent);
   font-size: 21px;
   animation: insideHotPink linear both;
-  animation-range: entry 15% exit 45%;
+  animation-range: entry 0% cover 32%;
   animation-timeline: view();
 }
 
@@ -735,7 +794,7 @@
   font-size: 25px;
   color: var(--color-accent);
   animation: insideHotPink linear both;
-  animation-range: entry 15% exit 45%;
+  animation-range: entry 0% cover 32%;
   animation-timeline: view();
 }
 
@@ -752,7 +811,7 @@
   font-family: var(--font-body);
   font-size: 17px;
   animation: insideHotPink linear both;
-  animation-range: entry 15% exit 45%;
+  animation-range: entry 0% cover 32%;
   animation-timeline: view();
 }
 
@@ -813,9 +872,9 @@
 }
 
 .evidence a:hover {
-  border-color: #ff37b0;
-  background: #ff37b0;
-  color: var(--color-ink);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -830,7 +889,7 @@
 
 .contributorIntro {
   padding: 112px 8vw 72px;
-  background: var(--color-paper);
+  background: #f4eee8;
 }
 
 .contributorIntro > * {
@@ -845,10 +904,14 @@
   font-size: clamp(44px, 6vw, 82px);
 }
 
+.contributorIntro > p {
+  font-size: 14px;
+}
+
 .about {
   display: grid;
   grid-template-columns: 40% 60%;
-  background: var(--color-surface-muted);
+  background: #f4eee8;
 }
 
 .aboutPhotoWrap {
@@ -866,7 +929,7 @@
   left: 25px;
   color: white;
   font-family: var(--font-interface);
-  font-size: 12px;
+  font-size: 16px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
@@ -891,10 +954,12 @@
 
 .aboutCopy > p {
   margin: 0 0 16px;
+  font-size: calc(19px + 2.667px);
+  line-height: 1.45;
 }
 
 .story {
-  background: var(--color-surface-muted);
+  background: #f4eee8;
 }
 
 .storyFullWidth {
@@ -951,10 +1016,21 @@
   font-size: 28px;
 }
 
+.cage > .cageMission {
+  margin-top: 24px;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-size: 19px;
+  line-height: 1.5;
+}
+
 .belief {
-  display: grid;
-  grid-template-columns: 0.65fr 1.35fr;
-  gap: 10vw;
+  text-align: center;
+}
+
+.belief > div {
+  width: min(100%, 760px);
+  margin: 0 auto;
 }
 
 .belief h2,

@@ -228,6 +228,7 @@ test("serves the campaign without shared site navigation", async () => {
   );
   assert.match(html, /Meet the Business Owners Thriving Beyond the Bottleneck/i);
   assert.match(html, /Featured host episode/i);
+  assert.match(html, /Leadership and Behavioral Change Coach, ICF PCC/);
   assert.match(html, /The Pattern Behind the Plateau/i);
   assert.match(html, /chapter-01/i);
   assert.match(html, /chapter-04/i);
@@ -288,6 +289,10 @@ test("serves the campaign without shared site navigation", async () => {
     "Ashley Krooks",
   ]);
   assert.doesNotMatch(html, /Contributor name/i);
+  const creatorPurpose = html.indexOf("That&#x27;s why I created Beyond the Bottleneck.");
+  const creatorMission = html.indexOf("Today, I help booked-out service providers and founders");
+  const beliefIntro = html.indexOf("My work is built on a simple belief");
+  assert.ok(creatorPurpose >= 0 && creatorMission > creatorPurpose && beliefIntro > creatorMission);
   assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
   assert.doesNotMatch(html, /id="signup-form"/i);
   assert.doesNotMatch(html, /href="#signup-form"/i);

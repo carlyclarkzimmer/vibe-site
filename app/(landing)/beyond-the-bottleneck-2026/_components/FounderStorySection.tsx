@@ -42,6 +42,7 @@ export function FounderStorySection() {
         </div>
         <p>But I can tell you these things until I&apos;m blue in the face… and you can nod your head in agreement because you know I&apos;m right… but you won&apos;t do anything about it until you understand your bottleneck, and how to move through it.</p>
         <p>That&apos;s why I created Beyond the Bottleneck.</p>
+        <p className={styles.cageMission}>Today, I help booked-out service providers and founders stop treating every client request like an emergency, identify the behavior patterns keeping them overextended, and restore the structure of their business so success no longer depends on self-abandonment.</p>
       </section>
     </>
   );
