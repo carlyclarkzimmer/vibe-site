@@ -20,6 +20,7 @@ import { FounderStorySection } from "./_components/FounderStorySection";
 import { MoreOfYouSection } from "./_components/MoreOfYouSection";
 import { OpeningSection } from "./_components/OpeningSection";
 import { QuestionSection } from "./_components/QuestionSection";
+import { RegistrationModal } from "./_components/RegistrationModal";
 import { SeriesIntroSection } from "./_components/SeriesIntroSection";
 import sectionStyles from "./_components/CampaignSections.module.css";
 
@@ -53,6 +54,7 @@ export default function BeyondTheBottleneckPage() {
       <FounderStorySection />
       <BeliefSection />
       <RegistrationSection content={registrationContent} />
+      <RegistrationModal />
     </>
   );
 }

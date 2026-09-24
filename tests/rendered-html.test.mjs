@@ -298,11 +298,24 @@ test("serves the campaign without shared site navigation", async () => {
   const creatorMission = html.indexOf("Today, I help booked-out service providers and founders");
   const beliefIntro = html.indexOf("My work is built on a simple belief");
   assert.ok(creatorPurpose >= 0 && creatorMission > creatorPurpose && beliefIntro > creatorMission);
-  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
+  assert.equal((html.match(/data-drip-embedded-form="419624977"/gi) ?? []).length, 1);
+  assert.match(html, /action="https:\/\/www\.getdrip\.com\/forms\/419624977\/submissions"[^>]*method="post"/i);
+  assert.match(html, /name="fields\[first_name\]"/i);
+  assert.match(html, /name="fields\[email\]"/i);
+  assert.match(html, /name="fields\[social_media\]"/i);
+  assert.match(html, /name="fields\[optin_source\]"[^>]*value="Beyond the Bottleneck Landing Page"/i);
+  assert.match(html, /<input[^>]*tabindex="-1"[^>]*name="website"/i);
+  assert.match(html, /name="g-recaptcha-response-data\[form_submission\]"/i);
+  assert.match(html, /name="tags\[\]"[^>]*value="Beyond the Bottleneck Audio Series 2026"/i);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/i);
+  assert.match(html, /Get Beyond the Bottleneck/i);
+  assert.match(html, /Send Me the Series/i);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/i);
+  assert.doesNotMatch(html, /Let.s Keep In Touch|latest news and exclusive offers/i);
   assert.doesNotMatch(html, /id="signup-form"/i);
   assert.doesNotMatch(html, /href="#signup-form"/i);
-  assert.doesNotMatch(html, /data-drip-attribute="sign-up-button"/i);
-  assert.doesNotMatch(html, /type="email"/i);
+  assert.match(html, /data-drip-attribute="sign-up-button"/i);
+  assert.match(html, /type="email"/i);
   assert.match(html, /href="#register"/i);
   assert.match(html, /There(?:&#x27;|')s a whole lotta life waiting for you beyond the bottleneck/i);
   assert.match(
@@ -312,15 +325,15 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(html, /alt="Carly Clark Zimmer seated on stone steps"/i);
 });
 
-test("does not render the removed campaign opt-in form for UTM visits", async () => {
+test("renders one modal Drip form for UTM visits", async () => {
   const response = await render(
     "/beyond-the-bottleneck-2026?utm=instagram%20partner",
   );
   const html = await response.text();
 
   assert.equal(response.status, 200);
-  assert.doesNotMatch(html, /fields\[optin_source\]/i);
-  assert.doesNotMatch(html, /data-drip-embedded-form="419624977"/i);
+  assert.equal((html.match(/data-drip-embedded-form="419624977"/gi) ?? []).length, 1);
+  assert.match(html, /name="fields\[optin_source\]"[^>]*value="Beyond the Bottleneck Landing Page"/i);
 });
 
 test("redirects the former campaign route to the 2026 URL", async () => {
