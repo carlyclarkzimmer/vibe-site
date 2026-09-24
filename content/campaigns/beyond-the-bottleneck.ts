@@ -186,6 +186,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "katie-ferro",
         name: "Katie Ferro",
+        image: "/contributors/katie-ferro.jpg",
         role: "CPA & Bookkeeping Business Mentor",
         episodeTitle: "They’re Not Your Rules: Katie Ferro on Rewriting the Rules of Work",
         soundbite: "Just because this is the way I’ve always done it doesn’t mean this is the way I have to keep doing it.",
