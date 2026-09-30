@@ -19,7 +19,7 @@ export default function BeyondTheBottleneckDeliveryPage() {
           <h2>Listening Library</h2>
           <p>Take Beyond the Bottleneck with you.</p>
           <p className={styles.heroOrientation}>Listen to the full series in your favorite podcast app.</p>
-          <Button className={styles.appleButton} href="https://podcasts.helloaudio.fm/subscribe/4e65bd8b-48e0-46c3-a41f-844a5435a02d/ErJfjS4Um0">Listen in your favorite podcast app</Button>
+          <Button className={styles.appleButton} href="https://podcasts.helloaudio.fm/subscribe/4e65bd8b-48e0-46c3-a41f-844a5435a02d/ErJfjS4Um0" newTab>Listen in your favorite podcast app</Button>
         </div>
       </header>
 
