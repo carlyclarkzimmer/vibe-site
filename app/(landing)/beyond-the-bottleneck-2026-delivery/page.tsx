@@ -17,10 +17,9 @@ export default function BeyondTheBottleneckDeliveryPage() {
         <div className={styles.heroCopy}>
           <h1>Beyond <em>the</em> Bottleneck</h1>
           <h2>Listening Library</h2>
-          <p>All 25 conversations, show notes, and resources in one place.</p>
-          <p className={styles.heroOrientation}>Start at the beginning, or choose the episode that speaks most to your experience.</p>
-          {/* TODO: Replace this placeholder anchor with the approved Apple Podcasts URL. */}
-          <Button className={styles.appleButton} href="#apple-podcasts-url-todo">Listen on Apple Podcasts</Button>
+          <p>Take Beyond the Bottleneck with you.</p>
+          <p className={styles.heroOrientation}>Listen to the full series in your favorite podcast app.</p>
+          <Button className={styles.appleButton} href="https://podcasts.helloaudio.fm/subscribe/4e65bd8b-48e0-46c3-a41f-844a5435a02d/ErJfjS4Um0">Listen in your favorite podcast app</Button>
         </div>
       </header>
 

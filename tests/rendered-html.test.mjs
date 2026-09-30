@@ -613,11 +613,13 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.equal(response.status, 200);
   assert.match(html, /<title>Beyond the Bottleneck \| Listening Library<\/title>/i);
   assert.match(html, /Listening Library/i);
-  assert.match(html, /Start at the beginning, or choose the episode that speaks most to your experience\./i);
+  assert.match(html, /Take Beyond the Bottleneck with you\./i);
+  assert.match(html, /Listen to the full series in your favorite podcast app\./i);
   assert.match(html, /Table of Contents/i);
   assert.doesNotMatch(html, /Choose an Episode/i);
-  assert.match(html, /Listen on Apple Podcasts/i);
-  assert.match(html, /href="#apple-podcasts-url-todo"/i);
+  assert.match(html, /Listen in your favorite podcast app/i);
+  assert.match(html, /href="https:\/\/podcasts\.helloaudio\.fm\/subscribe\/4e65bd8b-48e0-46c3-a41f-844a5435a02d\/ErJfjS4Um0"/i);
+  assert.doesNotMatch(html, /Listen on Apple Podcasts|apple-podcasts-url-todo/i);
   assert.doesNotMatch(html, /btb-hero-carly-center|centered among the Beyond the Bottleneck contributors/i);
   assert.match(html, /Complete Audio Series/i);
   assert.doesNotMatch(html, /Listen your way/i);
