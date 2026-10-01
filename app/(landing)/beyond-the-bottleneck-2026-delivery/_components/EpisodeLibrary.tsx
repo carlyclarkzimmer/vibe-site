@@ -5,21 +5,34 @@ import {
 } from "@/content/campaigns/beyond-the-bottleneck-delivery";
 import styles from "../page.module.css";
 
+function resourceCtaLabel(episode: DeliveryEpisode) {
+  const firstName = episode.contributorName?.split(" ")[0];
+  return firstName ? `Grab ${firstName}'s Resource →` : "Grab the Resource →";
+}
+
+function AudioMedia({ episode }: { episode: DeliveryEpisode }) {
+  if (episode.audioSource) {
+    return <audio controls preload="metadata" src={episode.audioSource}>Your browser does not support the audio element.</audio>;
+  }
+
+  if (episode.audioEmbed) {
+    return <div className={styles.audioEmbed} dangerouslySetInnerHTML={{ __html: episode.audioEmbed }} />;
+  }
+
+  return (
+    <div className={`${styles.audioPlaceholder} ${episode.slug === "intro" ? styles.introEmbedPlaceholder : ""}`}>
+      {episode.slug === "intro" ? "[HELLO AUDIO INTRO EPISODE EMBED]" : "[AUDIO PLAYER PLACEHOLDER]"}
+    </div>
+  );
+}
+
 function AudioPlayer({ episode }: { episode: DeliveryEpisode }) {
   return (
     <section className={styles.audioArea} aria-labelledby={`listen-${episode.slug}`}>
       <h4 className={styles.microHeading} id={`listen-${episode.slug}`}>
         {episode.slug === "intro" ? "Listen to the Introduction" : "Listen to the Episode"}
       </h4>
-      {episode.audioSource ? (
-        <audio controls preload="metadata" src={episode.audioSource}>Your browser does not support the audio element.</audio>
-      ) : episode.audioEmbed ? (
-        <div className={styles.audioEmbed} dangerouslySetInnerHTML={{ __html: episode.audioEmbed }} />
-      ) : (
-        <div className={`${styles.audioPlaceholder} ${episode.slug === "intro" ? styles.introEmbedPlaceholder : ""}`}>
-          {episode.slug === "intro" ? "[HELLO AUDIO INTRO EPISODE EMBED]" : "[AUDIO PLAYER PLACEHOLDER]"}
-        </div>
-      )}
+      <AudioMedia episode={episode} />
 
       {episode.slug !== "intro" ? (
         <div className={styles.fullSeriesCta}>
@@ -65,7 +78,7 @@ function ContributorResource({ episode }: { episode: DeliveryEpisode }) {
           <p className={styles.resourceName}>{resource.name}</p>
           {resource.description ? <p className={styles.resourceDescription}>{resource.description}</p> : null}
           <a className={styles.resourceButton} href={resource.url} rel="noreferrer" target="_blank">
-            {resource.ctaLabel ?? "Grab the Resource →"}
+            {resourceCtaLabel(episode)}
           </a>
         </div>
       ))}
@@ -91,8 +104,72 @@ function EpisodePortrait({ episode }: { episode: DeliveryEpisode }) {
   );
 }
 
+function CondensedEpisode({ episode }: { episode: DeliveryEpisode }) {
+  return (
+    <article
+      className={`${styles.episode} ${styles.condensedEpisode}`}
+      data-episode-slug={episode.slug}
+      id={`episode-${episode.slug}`}
+    >
+      <header className={styles.episodeLead}>
+        <EpisodePortrait episode={episode} />
+        <div className={styles.episodeHeader}>
+          {episode.contributorName ? <p className={styles.contributorName}>{episode.contributorName}</p> : null}
+          <h3>{episode.title}</h3>
+        </div>
+      </header>
+
+      <div className={styles.condensedListeningRow}>
+        <section className={styles.condensedListenOption} aria-labelledby={`listen-${episode.slug}`}>
+          <h4 className={styles.microHeading} id={`listen-${episode.slug}`}>Listen to This Episode</h4>
+          <AudioMedia episode={episode} />
+        </section>
+        <section className={styles.condensedListenOption} aria-labelledby={`take-series-${episode.slug}`}>
+          <h4 className={styles.microHeading} id={`take-series-${episode.slug}`}>Take the Series With You</h4>
+          <a className={styles.condensedPodcastButton} href={podcastAppUrl} rel="noreferrer" target="_blank">
+            🎧 LISTEN IN YOUR FAVORITE PODCAST APP →
+          </a>
+        </section>
+      </div>
+
+      <div className={styles.condensedDetailsRow}>
+        {episode.aboutEpisode ? (
+          <section className={styles.aboutEpisode} aria-labelledby={`about-episode-${episode.slug}`}>
+            <h4 id={`about-episode-${episode.slug}`}>About This Episode</h4>
+            <p>{episode.aboutEpisode}</p>
+          </section>
+        ) : null}
+        <ContributorProfile episode={episode} />
+      </div>
+
+      {episode.resourceHeading && episode.resources?.length ? (
+        <section className={`${styles.resourceBlock} ${styles.condensedResource}`} aria-labelledby={`resource-${episode.slug}`}>
+          <div className={styles.condensedResourceCopy}>
+            <h4 id={`resource-${episode.slug}`}>{episode.resourceHeading}</h4>
+            {episode.resources.map((resource) => (
+              <div className={styles.resourceItem} key={resource.url}>
+                <p className={styles.resourceName}>{resource.name}</p>
+                {resource.description ? <p className={styles.resourceDescription}>{resource.description}</p> : null}
+                <a className={styles.resourceButton} href={resource.url} rel="noreferrer" target="_blank">
+                  {resourceCtaLabel(episode)}
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <a className={styles.backLink} href="#episode-directory">↑ Back to all episodes</a>
+    </article>
+  );
+}
+
 function Episode({ episode }: { episode: DeliveryEpisode }) {
   const isIntro = episode.slug === "intro";
+
+  if (!isIntro) {
+    return <CondensedEpisode episode={episode} />;
+  }
 
   return (
     <article

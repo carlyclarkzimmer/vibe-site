@@ -219,7 +219,7 @@ export const contributorChapters: ContributorChapter[] = [
       {
         id: "heather-sager",
         name: "Heather Sager",
-        image: "/contributors/heather-sager.jpg",
+        image: "/contributors/heather-sager.png",
         role: "Speaking & Visibility Strategist, Host of Hint of Hustle",
         episodeTitle: "The 13-Hour Workweek: How Heather Sager Stopped Feeling Behind",
         soundbite: "I had to stop measuring my success by how much I was doing.",

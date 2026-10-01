@@ -431,6 +431,7 @@ a.directoryCard:focus-visible {
 }
 
 .fullSeriesCta a,
+.condensedPodcastButton,
 .resourceButton,
 .resourceButtonPlaceholder {
   display: inline-block;
@@ -450,6 +451,8 @@ a.directoryCard:focus-visible {
 
 .fullSeriesCta a:hover,
 .fullSeriesCta a:focus-visible,
+.condensedPodcastButton:hover,
+.condensedPodcastButton:focus-visible,
 .resourceButton:hover,
 .resourceButton:focus-visible {
   border-color: var(--color-accent);
@@ -458,8 +461,102 @@ a.directoryCard:focus-visible {
 }
 
 .fullSeriesCta a:visited,
+.condensedPodcastButton:visited,
 .resourceButton:visited {
   color: white;
+}
+
+.condensedEpisode {
+  padding-block: clamp(54px, 6vw, 76px);
+}
+
+.condensedEpisode .episodeLead {
+  max-width: 900px;
+}
+
+.condensedListeningRow,
+.condensedDetailsRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(36px, 6vw, 76px);
+  margin-top: clamp(30px, 4vw, 42px);
+  padding-top: clamp(24px, 3vw, 32px);
+  border-top: var(--border-standard);
+}
+
+.condensedListenOption {
+  min-width: 0;
+}
+
+.condensedListenOption .audioEmbed {
+  width: 100%;
+}
+
+.condensedPodcastButton {
+  display: inline-flex;
+  min-height: 52px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.condensedDetailsRow .aboutEpisode,
+.condensedDetailsRow .contributorProfile {
+  max-width: none;
+  padding-top: 0;
+  border-top: 0;
+}
+
+.condensedDetailsRow .aboutEpisode > p:last-child,
+.condensedDetailsRow .contributorProfile > p {
+  font-size: 1.04rem;
+  line-height: 1.58;
+}
+
+.resourceBlock.condensedResource {
+  max-width: none;
+  margin-top: clamp(30px, 4vw, 42px);
+  padding-top: clamp(24px, 3vw, 32px);
+}
+
+.condensedResource .resourceItem {
+  max-width: 760px;
+}
+
+.condensedResource .resourceName {
+  margin-top: 18px;
+}
+
+.condensedResource .resourceDescription {
+  margin-top: 12px;
+  font-size: 1.04rem;
+  line-height: 1.58;
+}
+
+.condensedResource .resourceButton {
+  margin-top: 22px;
+  border-color: #f7ec0a;
+  background: #f7ec0a;
+  color: black;
+}
+
+.condensedResource .resourceButton:hover,
+.condensedResource .resourceButton:focus-visible {
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
+}
+
+.condensedResource .resourceButton:visited {
+  color: black;
+}
+
+.condensedResource .resourceButton:visited:hover,
+.condensedResource .resourceButton:visited:focus-visible {
+  color: white;
+}
+
+.condensedEpisode .backLink {
+  margin-top: clamp(32px, 4vw, 46px);
 }
 
 .episodeDetails {
@@ -629,6 +726,12 @@ a.directoryCard:focus-visible {
   .directoryGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+
+  .condensedListeningRow,
+  .condensedDetailsRow {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
 }
 
 @media (max-width: 760px) {
@@ -719,6 +822,25 @@ a.directoryCard:focus-visible {
     width: 100%;
   }
 
+  .condensedEpisode {
+    padding-block: 60px;
+  }
+
+  .condensedListeningRow,
+  .condensedDetailsRow,
+  .condensedResource {
+    margin-top: 28px;
+    padding-top: 24px;
+  }
+
+  .condensedPodcastButton,
+  .condensedResource .resourceButton {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    white-space: normal;
+  }
+
   .aboutEpisode h4,
   .contributorProfile h4,
   .resourceBlock h4 {
@@ -737,6 +859,7 @@ a.directoryCard:focus-visible {
 
   .directoryCard,
   .fullSeriesCta a,
+  .condensedPodcastButton,
   .resourceButton {
     transition: none;
   }

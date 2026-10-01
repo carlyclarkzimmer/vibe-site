@@ -255,7 +255,7 @@ test("serves the campaign without shared site navigation", async () => {
     ["Réland Logan", "reland-logan"],
     ["Holly Haynes", "holly-haynes"],
     ["Christine Williams", "christine-williams"],
-    ["Heather Sager", "heather-sager"],
+    ["Heather Sager", "heather-sager", "png"],
     ["Holly Ostrout", "holly-ostrout"],
     ["Keenya Kelly", "keenya-kelly"],
     ["Nata Salvatori", "nata-salvatori"],
@@ -274,12 +274,12 @@ test("serves the campaign without shared site navigation", async () => {
   assert.match(hostImage ?? "", /carly-clark-zimmer-host-2\.jpg/);
   const hostAsset = await readFile(new URL("../public/contributors/carly-clark-zimmer-host-2.jpg", import.meta.url));
   assert.ok(hostAsset.length > 0, "featured host headshot asset should exist");
-  for (const [name, slug] of contributorImages) {
+  for (const [name, slug, extension = "jpg"] of contributorImages) {
     const matchingTags = imageTags.filter((tag) => tag.includes(`alt="${name}"`));
     assert.equal(matchingTags.length, 1, `${name} should have one headshot`);
-    assert.match(matchingTags[0], new RegExp(`${slug}\\.jpg`));
+    assert.match(matchingTags[0], new RegExp(`${slug}\\.${extension}`));
     assert.doesNotMatch(html, new RegExp(`${name} portrait placeholder`));
-    const asset = await readFile(new URL(`../public/contributors/${slug}.jpg`, import.meta.url));
+    const asset = await readFile(new URL(`../public/contributors/${slug}.${extension}`, import.meta.url));
     assert.ok(asset.length > 0, `${name}'s headshot asset should exist`);
   }
   const firstChapter = html.split('id="chapter-01"')[1]?.split('id="chapter-02"')[0] ?? "";
@@ -708,8 +708,10 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom/i);
   const kimberlyHtml = html.split('id="episode-kimberly-tara"')[1]?.split('id="episode-rosemary-dede"')[0] ?? "";
   assert.match(kimberlyHtml, /podcasts\.helloaudio\.fm\/player\?episodeId=3b1f3ab8-5653-4bbb-9320-67f556fb00b5&code=ErJfjS4Um0/i);
-  assert.match(kimberlyHtml, /→ Take Beyond the Bottleneck with you/i);
-  assert.match(kimberlyHtml, /Listen to the Full Series in Your Podcast App →/i);
+  assert.match(kimberlyHtml, /Listen to This Episode/i);
+  assert.match(kimberlyHtml, /Take the Series With You/i);
+  assert.match(kimberlyHtml, /🎧 LISTEN IN YOUR FAVORITE PODCAST APP →/i);
+  assert.doesNotMatch(kimberlyHtml, /Take Beyond the Bottleneck with you|Listen to the Full Series in Your Podcast App/i);
   assert.match(kimberlyHtml, /About This Episode/i);
   assert.match(kimberlyHtml, /fixing the structure of a business and fixing the pattern underneath it/i);
   assert.match(kimberlyHtml, /Meet Kimberly Tara/i);
@@ -722,6 +724,19 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(kimberlyHtml, /Back to all episodes/i);
   assert.doesNotMatch(kimberlyHtml, /Ready to interrupt your own pattern|Explore Pattern Interrupt/i);
   assert.doesNotMatch(kimberlyHtml, /\[AUDIO PLAYER PLACEHOLDER\]|\[CONTRIBUTOR BIO PLACEHOLDER\]|\[RESOURCE PLACEHOLDER\]/i);
+  const rosemaryHtml = html.split('id="episode-rosemary-dede"')[1]?.split('id="episode-meg-yelaney"')[0] ?? "";
+  assert.match(rosemaryHtml, /Listen to This Episode/i);
+  assert.match(rosemaryHtml, /Take the Series With You/i);
+  assert.match(rosemaryHtml, /🎧 LISTEN IN YOUR FAVORITE PODCAST APP →/i);
+  assert.doesNotMatch(rosemaryHtml, /Take Beyond the Bottleneck with you|Listen to the Full Series in Your Podcast App/i);
+  assert.doesNotMatch(html, /Take Beyond the Bottleneck with you|Listen to the Full Series in Your Podcast App →/i);
+  const namedResourceCtas = [
+    "Kimberly", "Rosemary", "Meg", "Keenya", "Réland", "Linda", "Emily", "Jen", "Renee", "Zhara-Marie",
+    "Michelle", "Ashley", "Kari", "Sarah", "Katie", "Christine", "Kristin", "Holly", "Heather", "Beth", "Nata", "Ash",
+  ];
+  for (const firstName of namedResourceCtas) {
+    assert.match(html, new RegExp(`>Grab ${firstName}(?:&#x27;|')s Resource →<\\/a>`, "i"));
+  }
   assert.doesNotMatch(html, /data-episode-slug="contributor-placeholder-/i);
   assert.match(html, /Meg Yelaney/i);
   assert.doesNotMatch(html, /Meg Yelany/i);
@@ -729,7 +744,38 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /Zhara-Marie Henry/i);
   assert.match(html, /src="\/contributors\/carly-clark-zimmer-host-2\.jpg"/i);
   assert.match(html, /Host Episode: The Pattern Behind the Plateau, with Carly Clark Zimmer/i);
+  assert.match(html, /src="\/contributors\/heather-sager\.png"/i);
   assert.match(html, /Meet Carly Clark Zimmer/i);
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/keenyakelly\/"[^>]*>Instagram<\/a>/i);
+  const contributorProfileLinks = [
+    "https://www.instagram.com/rosemary.dede/",
+    "https://www.instagram.com/meganyelaney/",
+    "https://meganyelaney.com/podcast",
+    "https://podcasts.apple.com/us/podcast/the-luxe-leap/id1801702536",
+    "https://emilyreaganpr.com/podcast/",
+    "https://www.instagram.com/heyjenliddy/",
+    "https://www.instagram.com/reneebowen/",
+    "https://reneebowen.com/podcast/",
+    "https://www.instagram.com/zhara.marie/",
+    "https://www.youtube.com/@zhara.marie97",
+    "https://www.instagram.com/karipoppleton/",
+    "https://www.instagram.com/itssarahyoung/",
+    "https://www.instagram.com/orderlyaccountingbykatie/",
+    "https://www.instagram.com/christinewilliamscoaching/",
+    "https://www.instagram.com/kristinbrabantcoaching/",
+    "https://www.instagram.com/thehollymariehaynes/",
+    "https://www.hollymariehaynes.com/podcast",
+    "https://www.instagram.com/theheathersager/",
+    "https://www.instagram.com/bethnydick/",
+    "https://www.instagram.com/accidentalceo.co/",
+    "https://accidentalceo.co/podcast",
+    "https://ashmcdonaldmentoring.com/podcast",
+    "https://www.instagram.com/hollyostrout/",
+    "https://carlyclarkzimmer.com/",
+    "https://www.instagram.com/carlyclarkzimmer/",
+    "https://lindasidhu.com/mixermind-waitlist",
+  ];
+  for (const href of contributorProfileLinks) assert.match(html, new RegExp(`href="${href.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}"`));
   assert.match(html, /When Personal Growth Turns into Personal Pressure/i);
   assert.match(html, /Monthly Tax &amp; Bookkeeping Reminders/i);
   assert.match(html, /What(?:&#x27;|')s Working in Business Books in 2026/i);
