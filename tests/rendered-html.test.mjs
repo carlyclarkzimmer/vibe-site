@@ -615,7 +615,6 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /The Complete Audio Series/i);
   assert.match(html, /You(?:&#x27;|')re in!/i);
   assert.match(html, /Welcome to Beyond the Bottleneck/i);
-  assert.match(html, /background-image:url\(&#x27;\/beyond-the-bottleneck-delivery-magenta-hero\.png&#x27;\)/i);
   assert.doesNotMatch(html, /src="\/beyond-the-bottleneck-delivery-hero\.png"/i);
   assert.match(html, /Choose how you want to listen\./i);
   assert.match(html, /🎧 Listen in Your Favorite Podcast App/i);

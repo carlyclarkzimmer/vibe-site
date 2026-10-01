@@ -28,6 +28,7 @@
   align-items: center;
   padding: clamp(32px, 4vw, 46px) 0;
   background: #a41f64;
+  background-image: url("/beyond-the-bottleneck-delivery-magenta-hero.png");
   background-position: center;
   background-size: cover;
   color: white;
@@ -572,21 +573,26 @@ a.directoryCard:focus-visible {
   text-transform: none;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .hero {
     display: block;
     min-height: 0;
-    padding: 340px var(--space-section-inline) 28px;
+    padding: clamp(48px, 7vw, 70px) var(--space-section-inline);
     background-color: #a41f64;
-    background-position: 66% top;
-    background-repeat: no-repeat;
-    background-size: auto 340px;
+    background-image: none;
   }
 
   .heroLayout {
-    width: min(100%, 560px);
+    width: min(100%, 680px);
     margin-inline: auto;
   }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 5.5vw, 3.6rem);
+  }
+}
+
+@media (max-width: 900px) {
 
   .heroOrientation {
     max-width: 440px;
@@ -600,23 +606,19 @@ a.directoryCard:focus-visible {
 
 @media (max-width: 760px) {
   .hero {
-    display: block;
-    min-height: 0;
-    padding: 300px var(--space-section-inline-mobile) 24px;
+    padding: 40px var(--space-section-inline-mobile) 42px;
     background-color: #a41f64;
-    background-position: 66% top;
-    background-repeat: no-repeat;
-    background-size: auto 300px;
+    background-image: none;
   }
 
   .heroLayout {
     width: 100%;
-    margin-left: 0;
-    padding: 26px 0 28px;
+    margin: 0;
+    padding: 0;
   }
 
   .hero h1 {
-    font-size: clamp(2.75rem, 12vw, 3.5rem);
+    font-size: clamp(2.65rem, 11vw, 3.25rem);
     line-height: .96;
   }
 
@@ -630,9 +632,11 @@ a.directoryCard:focus-visible {
   }
 
   .podcastButton {
-    width: auto;
+    width: 100%;
     justify-self: start;
     margin-top: 18px;
+    padding-inline: 20px;
+    text-align: center;
   }
 
   .episodeDirectory {

@@ -17,11 +17,7 @@ export const metadata: Metadata = {
 export default function BeyondTheBottleneckDeliveryPage() {
   return (
     <div className={styles.page}>
-      <header
-        className={styles.hero}
-        id="top"
-        style={{ backgroundImage: "url('/beyond-the-bottleneck-delivery-magenta-hero.png')" }}
-      >
+      <header className={styles.hero} id="top">
         <div className={styles.heroLayout}>
           <p className={styles.heroConfirmation}>You&apos;re in!</p>
           <h1>Welcome to Beyond the Bottleneck</h1>
