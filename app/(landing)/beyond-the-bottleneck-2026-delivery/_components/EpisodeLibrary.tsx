@@ -14,7 +14,9 @@ function AudioPlayer({ episode }: { episode: DeliveryEpisode }) {
       ) : episode.audioEmbed ? (
         <div className={styles.audioEmbed} dangerouslySetInnerHTML={{ __html: episode.audioEmbed }} />
       ) : (
-        <div className={styles.audioPlaceholder}>[AUDIO PLAYER PLACEHOLDER]</div>
+        <div className={`${styles.audioPlaceholder} ${episode.slug === "intro" ? styles.introEmbedPlaceholder : ""}`}>
+          {episode.slug === "intro" ? "[HELLO AUDIO INTRO EPISODE EMBED]" : "[AUDIO PLAYER PLACEHOLDER]"}
+        </div>
       )}
 
       {episode.slug !== "intro" ? (

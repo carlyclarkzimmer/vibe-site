@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import {
   deliveryEpisodes,
@@ -18,26 +17,21 @@ export const metadata: Metadata = {
 export default function BeyondTheBottleneckDeliveryPage() {
   return (
     <div className={styles.page}>
-      <header className={styles.hero} id="top">
+      <header
+        className={styles.hero}
+        id="top"
+        style={{ backgroundImage: "url('/beyond-the-bottleneck-delivery-magenta-hero.png')" }}
+      >
         <div className={styles.heroLayout}>
+          <p className={styles.heroConfirmation}>You&apos;re in!</p>
+          <h1>Welcome to Beyond the Bottleneck</h1>
           <p className={styles.heroEyebrow}>The Complete Audio Series</p>
-          <h1>Beyond <em>the</em><br />Bottleneck</h1>
-          <span aria-hidden="true" className={styles.heroTitleRule}>
-            <span>✦</span>
-          </span>
-          <div className={styles.heroPortrait}>
-            <Image
-              alt="Carly Clark Zimmer"
-              className={styles.heroImage}
-              fill
-              priority
-              sizes="(max-width: 900px) 100vw, 42vw"
-              src="/beyond-the-bottleneck-delivery-hero.png"
-              unoptimized
-            />
+          <p className={styles.heroOrientation}>Choose how you want to listen.</p>
+          <Button className={styles.podcastButton} href={podcastAppUrl} newTab>🎧 Listen in Your Favorite Podcast App</Button>
+          <div className={styles.heroSecondaryOption}>
+            <a href="#episode-directory">↓ Listen right here</a>
+            <p>Scroll down to choose an episode.</p>
           </div>
-          <p className={styles.heroOrientation}>Listen to all 24 conversations in your favorite podcast app, so the entire series is waiting for you whenever you&apos;re ready to listen.</p>
-          <Button className={styles.podcastButton} href={podcastAppUrl} newTab>Listen in Your Podcast App →</Button>
         </div>
       </header>
 

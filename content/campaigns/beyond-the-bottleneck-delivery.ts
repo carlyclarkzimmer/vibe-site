@@ -64,7 +64,7 @@ const placeholderEpisodes: DeliveryEpisode[] = Array.from({ length: 23 }, (_, in
 export const deliveryEpisodes: DeliveryEpisode[] = [
   {
     slug: "intro",
-    title: "Welcome to Beyond the Bottleneck: How to Use This Series",
+    title: "How to Use This Series",
   },
   {
     slug: "kimberly-tara",

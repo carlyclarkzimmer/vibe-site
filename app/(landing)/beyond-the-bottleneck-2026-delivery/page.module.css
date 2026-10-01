@@ -23,35 +23,46 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding: clamp(38px, 4.5vw, 56px) var(--space-section-inline);
-  background: #f4eee8;
-  color: var(--color-ink);
+  display: flex;
+  min-height: 520px;
+  align-items: center;
+  padding: clamp(32px, 4vw, 46px) 0;
+  background: #a41f64;
+  background-position: center;
+  background-size: cover;
+  color: white;
   overflow: hidden;
 }
 
 .heroLayout {
-  display: grid;
-  width: min(100%, 1240px);
-  grid-template-areas:
-    "eyebrow portrait"
-    "title portrait"
-    "rule portrait"
-    "orientation portrait"
-    "cta portrait";
-  grid-template-columns: minmax(0, 58fr) minmax(320px, 42fr);
-  column-gap: clamp(42px, 6vw, 86px);
-  margin-inline: auto;
+  display: flex;
+  width: min(46%, 560px);
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: clamp(72px, 10vw, 150px);
+  padding: 0;
+}
+
+.heroConfirmation {
+  margin: 0;
+  color: white;
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 3.2vw, 3.2rem);
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -.035em;
+  line-height: .95;
 }
 
 .heroEyebrow {
-  grid-area: eyebrow;
   display: grid;
   width: auto;
   grid-template-columns: auto auto auto;
   gap: 14px;
   align-items: center;
   justify-self: start;
-  color: var(--color-ink);
+  margin-top: 18px;
+  color: white;
 }
 
 .heroEyebrow::before,
@@ -63,71 +74,26 @@
 }
 
 .hero h1 {
-  grid-area: title;
   width: 100%;
-  margin: clamp(20px, 2.4vw, 30px) 0 0;
+  margin: 12px 0 0;
   font-family: var(--font-display);
-  font-size: clamp(4.8rem, 7.6vw, 7.5rem);
+  font-size: clamp(2.55rem, 3.7vw, 3.7rem);
   font-weight: 400;
-  letter-spacing: -.05em;
-  line-height: .84;
+  letter-spacing: -.045em;
+  line-height: .96;
   text-align: left;
 }
 
-.hero h1 em {
-  font-weight: 400;
-}
-
-.heroTitleRule {
-  position: relative;
-  display: block;
-  width: min(180px, 38%);
-  height: 1px;
-  grid-area: rule;
-  margin-top: 24px;
-  background: #b8954f;
-}
-
-.heroTitleRule span {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  padding: 0 8px;
-  background: #f4eee8;
-  color: #b8954f;
-  font-size: .72rem;
-  line-height: 1;
-  transform: translate(-50%, -50%);
-}
-
-.heroPortrait {
-  position: relative;
-  grid-area: portrait;
-  width: 100%;
-  height: clamp(390px, 36vw, 465px);
-  align-self: end;
-  overflow: hidden;
-}
-
-.heroImage {
-  object-fit: cover;
-  object-position: right center;
-  transform: translateX(-12px) scale(1.1);
-  transform-origin: right bottom;
-}
-
 .heroOrientation {
-  max-width: 400px;
-  grid-area: orientation;
-  margin: 26px 0 0;
-  font-size: clamp(1.08rem, 1.5vw, 1.3rem);
-  line-height: 1.55;
+  max-width: 430px;
+  margin: 18px 0 0;
+  font-size: clamp(1.08rem, 1.4vw, 1.2rem);
+  line-height: 1.4;
 }
 
 .podcastButton {
-  grid-area: cta;
   justify-self: start;
-  margin-top: 26px;
+  margin-top: 20px;
   padding-inline: 24px;
   border-color: var(--delivery-hot-pink);
   background: var(--delivery-hot-pink);
@@ -135,10 +101,38 @@
   font-weight: 700;
 }
 
+.heroSecondaryOption {
+  margin-top: 16px;
+}
+
+.heroSecondaryOption a {
+  color: white;
+  font-family: var(--font-interface);
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-color: var(--delivery-hot-pink);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
+.heroSecondaryOption a:hover,
+.heroSecondaryOption a:focus-visible {
+  color: white;
+  text-decoration-color: #e8c56d;
+}
+
+.heroSecondaryOption p {
+  margin: 8px 0 0;
+  color: rgb(255 255 255 / 82%);
+  font-size: .92rem;
+  line-height: 1.35;
+}
+
 .hero .podcastButton:hover,
 .hero .podcastButton:focus-visible {
-  border-color: var(--color-accent);
-  background: var(--color-accent);
+  border-color: #72143f;
+  background: #72143f;
   color: white;
 }
 
@@ -378,6 +372,10 @@ a.directoryCard:focus-visible {
   text-align: center;
 }
 
+.introEmbedPlaceholder {
+  min-height: 100px;
+}
+
 .audioArea audio {
   width: 100%;
   margin-top: 16px;
@@ -575,39 +573,24 @@ a.directoryCard:focus-visible {
 }
 
 @media (max-width: 900px) {
+  .hero {
+    display: block;
+    min-height: 0;
+    padding: 340px var(--space-section-inline) 28px;
+    background-color: #a41f64;
+    background-position: 66% top;
+    background-repeat: no-repeat;
+    background-size: auto 340px;
+  }
+
   .heroLayout {
-    grid-template-areas:
-      "eyebrow"
-      "title"
-      "rule"
-      "portrait"
-      "orientation"
-      "cta";
-    grid-template-columns: 1fr;
-  }
-
-  .heroEyebrow {
-    justify-self: center;
-  }
-
-  .heroPortrait {
-    height: clamp(300px, 48vw, 360px);
-    margin-top: 20px;
-  }
-
-  .heroImage {
-    object-position: right center;
-    transform: scale(1.25);
-    transform-origin: right bottom;
-  }
-
-  .heroTitleRule {
-    margin-top: 22px;
+    width: min(100%, 560px);
+    margin-inline: auto;
   }
 
   .heroOrientation {
-    max-width: 520px;
-    margin-top: 24px;
+    max-width: 440px;
+    margin-top: 20px;
   }
 
   .directoryGrid {
@@ -617,32 +600,39 @@ a.directoryCard:focus-visible {
 
 @media (max-width: 760px) {
   .hero {
-    padding: 40px var(--space-section-inline-mobile) 44px;
+    display: block;
+    min-height: 0;
+    padding: 300px var(--space-section-inline-mobile) 24px;
+    background-color: #a41f64;
+    background-position: 66% top;
+    background-repeat: no-repeat;
+    background-size: auto 300px;
+  }
+
+  .heroLayout {
+    width: 100%;
+    margin-left: 0;
+    padding: 26px 0 28px;
   }
 
   .hero h1 {
-    font-size: clamp(3.7rem, 17vw, 4.8rem);
-    line-height: .86;
+    font-size: clamp(2.75rem, 12vw, 3.5rem);
+    line-height: .96;
   }
 
   .heroEyebrow {
     gap: 10px;
   }
 
-  .heroPortrait {
-    height: clamp(260px, 70vw, 300px);
-    margin-top: 18px;
-  }
-
   .heroOrientation {
-    margin-top: 22px;
-    font-size: 1.06rem;
+    margin-top: 16px;
+    font-size: 1.02rem;
   }
 
   .podcastButton {
     width: auto;
     justify-self: start;
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   .episodeDirectory {

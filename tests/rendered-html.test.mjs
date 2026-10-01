@@ -613,10 +613,14 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.equal(response.status, 200);
   assert.match(html, /<title>Beyond the Bottleneck \| Listening Library<\/title>/i);
   assert.match(html, /The Complete Audio Series/i);
-  assert.match(html, /Beyond[\s\S]{0,80}<em>the<\/em>[\s\S]{0,80}Bottleneck/i);
-  assert.match(html, /src="\/beyond-the-bottleneck-delivery-hero\.png"[^>]*alt="Carly Clark Zimmer"/i);
-  assert.match(html, /Listen to all 24 conversations in your favorite podcast app/i);
-  assert.match(html, /Listen in Your Podcast App →/i);
+  assert.match(html, /You(?:&#x27;|')re in!/i);
+  assert.match(html, /Welcome to Beyond the Bottleneck/i);
+  assert.match(html, /background-image:url\(&#x27;\/beyond-the-bottleneck-delivery-magenta-hero\.png&#x27;\)/i);
+  assert.doesNotMatch(html, /src="\/beyond-the-bottleneck-delivery-hero\.png"/i);
+  assert.match(html, /Choose how you want to listen\./i);
+  assert.match(html, /🎧 Listen in Your Favorite Podcast App/i);
+  assert.match(html, /href="#episode-directory"[^>]*>↓ Listen right here<\/a>/i);
+  assert.match(html, /Scroll down to choose an episode\./i);
   assert.doesNotMatch(html, /Free Audio Series|Or explore the individual conversations below\./i);
   assert.match(html, /href="https:\/\/podcasts\.helloaudio\.fm\/subscribe\/4e65bd8b-48e0-46c3-a41f-844a5435a02d\/ErJfjS4Um0"[^>]*target="_blank"[^>]*rel="noreferrer"/i);
   assert.doesNotMatch(html, /Listen on Apple Podcasts|apple-podcasts-url-todo/i);
@@ -625,7 +629,6 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /Meet the Contributors/i);
   assert.match(html, /Choose a conversation to start listening\./i);
   assert.doesNotMatch(html, /href="#episode-intro"|Start Here/i);
-  assert.match(html, /Welcome to Beyond the Bottleneck/i);
   assert.match(html, /How to Use This Series/i);
   assert.match(html, /href="#episode-kimberly-tara"/i);
   assert.match(html, /When Work Follows You Everywhere/i);
@@ -635,11 +638,11 @@ test("serves the Beyond the Bottleneck listening library", async () => {
     [...html.matchAll(/aria-labelledby="listen-([^"]+)"/gi)].map((match) => match[1]),
   );
   assert.equal(episodeSlugs.size, 25);
-  assert.equal((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length, 48);
+  assert.equal((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length, 46);
   assert.equal((html.match(/Back to all episodes/gi) ?? []).length, 48);
-  assert.match(html, /Welcome to Beyond the Bottleneck: How to Use This Series/i);
+  assert.doesNotMatch(html, /Welcome to Beyond the Bottleneck: How to Use This Series/i);
   const introHtml = html.split('id="episode-intro"')[1]?.split('id="episode-directory"')[0] ?? "";
-  assert.match(introHtml, /\[AUDIO PLAYER PLACEHOLDER\]/i);
+  assert.match(introHtml, /\[HELLO AUDIO INTRO EPISODE EMBED\]/i);
   assert.ok(html.indexOf('id="episode-intro"') < html.indexOf('id="episode-directory"'));
   assert.ok(html.indexOf('id="episode-directory"') < html.indexOf('id="episode-kimberly-tara"'));
   assert.match(html, /When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom/i);
