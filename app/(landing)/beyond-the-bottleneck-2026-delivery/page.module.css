@@ -23,7 +23,7 @@
 .hero {
   position: relative;
   isolation: isolate;
-  padding: clamp(48px, 6vw, 76px) var(--space-section-inline);
+  padding: clamp(38px, 4.5vw, 56px) var(--space-section-inline);
   background: #f4eee8;
   color: var(--color-ink);
   overflow: hidden;
@@ -104,7 +104,7 @@
   position: relative;
   grid-area: portrait;
   width: 100%;
-  height: clamp(420px, 41vw, 520px);
+  height: clamp(390px, 36vw, 465px);
   align-self: end;
   overflow: hidden;
 }
@@ -112,10 +112,12 @@
 .heroImage {
   object-fit: cover;
   object-position: right center;
+  transform: translateX(-12px) scale(1.1);
+  transform-origin: right bottom;
 }
 
 .heroOrientation {
-  max-width: 570px;
+  max-width: 400px;
   grid-area: orientation;
   margin: 26px 0 0;
   font-size: clamp(1.08rem, 1.5vw, 1.3rem);
@@ -126,6 +128,7 @@
   grid-area: cta;
   justify-self: start;
   margin-top: 26px;
+  padding-inline: 24px;
   border-color: var(--delivery-hot-pink);
   background: var(--delivery-hot-pink);
   color: white;
@@ -588,8 +591,8 @@ a.directoryCard:focus-visible {
   }
 
   .heroPortrait {
-    height: clamp(320px, 52vw, 400px);
-    margin-top: 26px;
+    height: clamp(300px, 48vw, 360px);
+    margin-top: 20px;
   }
 
   .heroImage {
@@ -603,8 +606,8 @@ a.directoryCard:focus-visible {
   }
 
   .heroOrientation {
-    max-width: 620px;
-    margin-top: 28px;
+    max-width: 520px;
+    margin-top: 24px;
   }
 
   .directoryGrid {
@@ -614,7 +617,7 @@ a.directoryCard:focus-visible {
 
 @media (max-width: 760px) {
   .hero {
-    padding: 48px var(--space-section-inline-mobile) 54px;
+    padding: 40px var(--space-section-inline-mobile) 44px;
   }
 
   .hero h1 {
@@ -627,20 +630,19 @@ a.directoryCard:focus-visible {
   }
 
   .heroPortrait {
-    height: clamp(280px, 78vw, 340px);
-    margin-top: 22px;
+    height: clamp(260px, 70vw, 300px);
+    margin-top: 18px;
   }
 
   .heroOrientation {
-    margin-top: 26px;
+    margin-top: 22px;
     font-size: 1.06rem;
   }
 
   .podcastButton {
-    width: 100%;
-    justify-content: center;
-    margin-top: 24px;
-    text-align: center;
+    width: auto;
+    justify-self: start;
+    margin-top: 20px;
   }
 
   .episodeDirectory {
