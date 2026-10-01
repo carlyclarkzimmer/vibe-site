@@ -21,72 +21,126 @@
 }
 
 .hero {
-  display: grid;
-  min-height: min(760px, 82vh);
-  place-items: center;
-  padding: clamp(84px, 10vw, 142px) var(--space-section-inline);
-  background: var(--color-accent);
-  color: white;
+  position: relative;
+  isolation: isolate;
+  padding: clamp(48px, 6vw, 76px) var(--space-section-inline);
+  background: #f4eee8;
+  color: var(--color-ink);
+  overflow: hidden;
 }
 
-.heroCopy {
-  display: flex;
-  width: min(100%, 930px);
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+.heroLayout {
+  display: grid;
+  width: min(100%, 1240px);
+  grid-template-areas:
+    "eyebrow portrait"
+    "title portrait"
+    "rule portrait"
+    "orientation portrait"
+    "cta portrait";
+  grid-template-columns: minmax(0, 58fr) minmax(320px, 42fr);
+  column-gap: clamp(42px, 6vw, 86px);
+  margin-inline: auto;
 }
 
 .heroEyebrow {
-  color: white;
+  grid-area: eyebrow;
+  display: grid;
+  width: auto;
+  grid-template-columns: auto auto auto;
+  gap: 14px;
+  align-items: center;
+  justify-self: start;
+  color: var(--color-ink);
+}
+
+.heroEyebrow::before,
+.heroEyebrow::after {
+  color: #b8954f;
+  content: "✦";
+  font-size: .8em;
+  line-height: 1;
 }
 
 .hero h1 {
-  max-width: 900px;
-  margin: clamp(24px, 4vw, 42px) 0 0;
+  grid-area: title;
+  width: 100%;
+  margin: clamp(20px, 2.4vw, 30px) 0 0;
   font-family: var(--font-display);
-  font-size: clamp(4rem, 8vw, 8.2rem);
+  font-size: clamp(4.8rem, 7.6vw, 7.5rem);
   font-weight: 400;
-  letter-spacing: -.055em;
-  line-height: .92;
+  letter-spacing: -.05em;
+  line-height: .84;
+  text-align: left;
 }
 
-.heroLead {
-  margin: clamp(30px, 4vw, 46px) 0 0;
-  font-family: var(--font-display);
-  font-size: clamp(1.7rem, 2.7vw, 2.5rem);
-  font-style: italic;
-  line-height: 1.18;
+.hero h1 em {
+  font-weight: 400;
+}
+
+.heroTitleRule {
+  position: relative;
+  display: block;
+  width: min(180px, 38%);
+  height: 1px;
+  grid-area: rule;
+  margin-top: 24px;
+  background: #b8954f;
+}
+
+.heroTitleRule span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 0 8px;
+  background: #f4eee8;
+  color: #b8954f;
+  font-size: .72rem;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+}
+
+.heroPortrait {
+  position: relative;
+  grid-area: portrait;
+  width: 100%;
+  height: clamp(420px, 41vw, 520px);
+  align-self: end;
+  overflow: hidden;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: right center;
 }
 
 .heroOrientation {
-  max-width: 720px;
-  margin: 16px 0 0;
-  font-size: clamp(1.18rem, 1.8vw, 1.4rem);
+  max-width: 570px;
+  grid-area: orientation;
+  margin: 26px 0 0;
+  font-size: clamp(1.08rem, 1.5vw, 1.3rem);
   line-height: 1.55;
 }
 
 .podcastButton {
-  margin-top: 34px;
+  grid-area: cta;
+  justify-self: start;
+  margin-top: 26px;
   border-color: var(--delivery-hot-pink);
   background: var(--delivery-hot-pink);
-  color: var(--color-ink);
+  color: white;
   font-weight: 700;
 }
 
 .hero .podcastButton:hover,
 .hero .podcastButton:focus-visible {
-  border-color: white;
-  background: white;
-  color: var(--color-ink);
+  border-color: var(--color-accent);
+  background: var(--color-accent);
+  color: white;
 }
 
-.heroSecondary {
-  margin: 18px 0 0;
-  color: rgb(255 255 255 / 82%);
-  font-family: var(--font-interface);
-  font-size: .84rem;
-  line-height: 1.5;
+.hero .podcastButton:visited {
+  color: white;
 }
 
 .episodeDirectory {
@@ -151,8 +205,7 @@ a.directoryCard:focus-visible {
 }
 
 .directoryPortrait,
-.directoryPortraitPlaceholder,
-.startCardArt {
+.directoryPortraitPlaceholder {
   position: relative;
   display: grid;
   aspect-ratio: 4 / 5;
@@ -185,7 +238,7 @@ a.directoryCard:focus-visible {
 
 .directoryCardCopy {
   display: flex;
-  min-height: 220px;
+  min-height: 190px;
   flex: 1;
   flex-direction: column;
   padding: clamp(20px, 2.4vw, 30px);
@@ -220,33 +273,6 @@ a.directoryCard:focus-visible {
   text-transform: uppercase;
 }
 
-.startCard {
-  border-color: var(--color-accent);
-  background: var(--color-accent);
-  color: white;
-}
-
-.startCardArt {
-  align-content: center;
-  background: var(--color-ink);
-  color: white;
-  font-family: var(--font-display);
-  font-size: clamp(2.6rem, 4.6vw, 4.8rem);
-  font-style: italic;
-  line-height: .8;
-}
-
-.startCardArt span:last-child {
-  color: var(--delivery-hot-pink);
-  transform: translateX(12%);
-}
-
-.startCard .cardEyebrow,
-.startCard .directoryAction,
-.startCard .directoryCardCopy > p:not(.cardEyebrow) {
-  color: white;
-}
-
 .placeholderCard {
   border-style: dashed;
 }
@@ -258,7 +284,7 @@ a.directoryCard:focus-visible {
 
 .episode {
   scroll-margin-top: 24px;
-  padding: clamp(82px, 9vw, 128px) 0;
+  padding: clamp(64px, 7vw, 92px) 0;
   border-top: 1px solid var(--color-ink);
 }
 
@@ -267,7 +293,41 @@ a.directoryCard:focus-visible {
 }
 
 .episodeHeader {
-  max-width: 970px;
+  min-width: 0;
+  max-width: 720px;
+}
+
+.episodeLead {
+  display: grid;
+  max-width: 940px;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: clamp(28px, 4vw, 50px);
+  align-items: center;
+}
+
+.episodePortrait {
+  position: relative;
+  display: grid;
+  width: 190px;
+  aspect-ratio: 4 / 5;
+  place-items: center;
+  overflow: hidden;
+  background: var(--color-surface-muted);
+}
+
+.episodePortrait img {
+  object-fit: cover;
+}
+
+.episodePortrait span {
+  padding: 12px;
+  color: var(--color-text-subtle);
+  font-family: var(--font-interface);
+  font-size: .64rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
 }
 
 .contributorName {
@@ -280,7 +340,7 @@ a.directoryCard:focus-visible {
   margin: 0;
   color: var(--color-ink);
   font-family: var(--font-display);
-  font-size: clamp(3rem, 5.8vw, 6.4rem);
+  font-size: clamp(2.25rem, 3.6vw, 3.8rem);
   font-weight: 400;
   letter-spacing: -.045em;
   line-height: .98;
@@ -288,12 +348,12 @@ a.directoryCard:focus-visible {
 
 .introEpisode .episodeHeader h3 {
   max-width: 900px;
-  font-size: clamp(2.8rem, 5vw, 5.4rem);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
 }
 
 .audioArea {
-  max-width: 700px;
-  margin-top: clamp(38px, 5vw, 58px);
+  max-width: 760px;
+  margin-top: clamp(28px, 4vw, 42px);
 }
 
 .microHeading {
@@ -302,7 +362,7 @@ a.directoryCard:focus-visible {
 
 .audioPlaceholder {
   display: grid;
-  min-height: 112px;
+  min-height: 72px;
   margin-top: 16px;
   place-items: center;
   border: 1px dashed var(--color-field-border);
@@ -354,7 +414,7 @@ a.directoryCard:focus-visible {
   padding: 15px 20px;
   border: 1px solid var(--delivery-hot-pink);
   background: var(--delivery-hot-pink);
-  color: var(--color-ink);
+  color: white;
   font-family: var(--font-interface);
   font-size: .75rem;
   font-weight: 700;
@@ -374,65 +434,43 @@ a.directoryCard:focus-visible {
   color: white;
 }
 
-.episodeDetails {
-  display: grid;
-  gap: clamp(48px, 6vw, 76px);
-  margin-top: clamp(62px, 7vw, 92px);
+.fullSeriesCta a:visited,
+.resourceButton:visited {
+  color: white;
 }
 
-.aboutEpisode {
+.episodeDetails {
+  display: grid;
+  gap: clamp(34px, 4vw, 48px);
+  margin-top: clamp(44px, 5vw, 62px);
+}
+
+.aboutEpisode,
+.contributorProfile,
+.resourceBlock {
   max-width: var(--delivery-reading);
-  padding-top: 30px;
+  padding-top: 28px;
   border-top: var(--border-standard);
 }
 
 .aboutEpisode > p:last-child,
-.profileCopy > p,
+.contributorProfile > p,
 .resourceDescription {
-  margin: 20px 0 0;
-  font-size: 1.18rem;
+  margin: 16px 0 0;
+  font-size: 1.1rem;
   line-height: 1.65;
 }
 
 .contributorProfile {
-  display: grid;
-  max-width: 880px;
-  grid-template-columns: 120px minmax(0, 1fr);
-  gap: clamp(28px, 4vw, 52px);
-  align-items: start;
-  padding-top: clamp(34px, 5vw, 54px);
-  border-top: var(--border-standard);
+  display: block;
 }
 
-.profilePortrait {
-  position: relative;
-  display: grid;
-  width: 120px;
-  aspect-ratio: 4 / 5;
-  place-items: center;
-  overflow: hidden;
-  background: var(--color-surface-muted);
-}
-
-.profilePortrait img {
-  object-fit: cover;
-}
-
-.profilePortrait span {
-  padding: 10px;
-  color: var(--color-text-subtle);
-  font-family: var(--font-interface);
-  font-size: .58rem;
-  letter-spacing: .1em;
-  text-align: center;
-  text-transform: uppercase;
-}
-
-.profileCopy h4,
+.aboutEpisode h4,
+.contributorProfile h4,
 .resourceBlock h4 {
   margin: 0;
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 4vw, 4.2rem);
+  font-size: clamp(2rem, 3vw, 3rem);
   font-weight: 400;
   letter-spacing: -.035em;
   line-height: 1.02;
@@ -457,14 +495,7 @@ a.directoryCard:focus-visible {
 }
 
 .resourceBlock {
-  max-width: 960px;
-  padding: clamp(34px, 5vw, 58px);
-  border-top: 4px solid var(--color-accent);
-  background: var(--color-surface-muted);
-}
-
-.resourceBlock h4 {
-  margin-top: 18px;
+  background: transparent;
 }
 
 .resourceName {
@@ -517,54 +548,6 @@ a.directoryCard:focus-visible {
   color: var(--color-text-subtle);
 }
 
-.stickyPodcastCta {
-  position: fixed;
-  z-index: calc(var(--layer-navigation) + 1);
-  right: 20px;
-  bottom: 20px;
-  display: inline-flex;
-  min-height: 48px;
-  align-items: center;
-  padding: 12px 18px;
-  border: 1px solid rgb(255 255 255 / 38%);
-  background: var(--color-accent);
-  box-shadow: 0 8px 30px rgb(0 0 0 / 18%);
-  color: white;
-  font-family: var(--font-interface);
-  font-size: .72rem;
-  font-weight: 700;
-  letter-spacing: .07em;
-  text-decoration: none;
-  text-transform: uppercase;
-  transition: background var(--transition-standard), color var(--transition-standard);
-}
-
-.stickyPodcastCta:hover,
-.stickyPodcastCta:focus-visible {
-  background: var(--delivery-hot-pink);
-  color: var(--color-ink);
-}
-
-@media (min-width: 761px) {
-  .episodeDirectory,
-  .library {
-    padding-right: 84px;
-  }
-
-  .stickyPodcastCta {
-    top: 50%;
-    right: 14px;
-    bottom: auto;
-    width: 50px;
-    height: 236px;
-    justify-content: center;
-    padding: 12px 10px;
-    text-align: center;
-    transform: translateY(-50%);
-    writing-mode: vertical-rl;
-  }
-}
-
 .footer {
   padding: 64px var(--space-section-inline) 110px;
   background: var(--color-ink);
@@ -588,24 +571,76 @@ a.directoryCard:focus-visible {
   text-transform: none;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 900px) {
+  .heroLayout {
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "rule"
+      "portrait"
+      "orientation"
+      "cta";
+    grid-template-columns: 1fr;
+  }
+
+  .heroEyebrow {
+    justify-self: center;
+  }
+
+  .heroPortrait {
+    height: clamp(320px, 52vw, 400px);
+    margin-top: 26px;
+  }
+
+  .heroImage {
+    object-position: right center;
+    transform: scale(1.25);
+    transform-origin: right bottom;
+  }
+
+  .heroTitleRule {
+    margin-top: 22px;
+  }
+
+  .heroOrientation {
+    max-width: 620px;
+    margin-top: 28px;
+  }
+
   .directoryGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
 @media (max-width: 760px) {
-  .page {
-    padding-bottom: calc(74px + env(safe-area-inset-bottom));
-  }
-
   .hero {
-    min-height: 0;
-    padding: 76px var(--space-section-inline-mobile);
+    padding: 48px var(--space-section-inline-mobile) 54px;
   }
 
   .hero h1 {
-    font-size: clamp(3.6rem, 18vw, 5.4rem);
+    font-size: clamp(3.7rem, 17vw, 4.8rem);
+    line-height: .86;
+  }
+
+  .heroEyebrow {
+    gap: 10px;
+  }
+
+  .heroPortrait {
+    height: clamp(280px, 78vw, 340px);
+    margin-top: 22px;
+  }
+
+  .heroOrientation {
+    margin-top: 26px;
+    font-size: 1.06rem;
+  }
+
+  .podcastButton {
+    width: 100%;
+    justify-content: center;
+    margin-top: 24px;
+    text-align: center;
   }
 
   .episodeDirectory {
@@ -630,10 +665,6 @@ a.directoryCard:focus-visible {
     font-size: .98rem;
   }
 
-  .startCardArt {
-    font-size: clamp(2.3rem, 13vw, 3.6rem);
-  }
-
   .library {
     padding: 0 var(--space-section-inline-mobile);
   }
@@ -642,7 +673,20 @@ a.directoryCard:focus-visible {
     padding: 72px 0;
   }
 
-  .episodeHeader h3,
+  .episodeLead {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .episodePortrait {
+    width: min(100%, 190px);
+  }
+
+  .episodeHeader h3 {
+    font-size: clamp(2rem, 9vw, 2.8rem);
+    line-height: 1.02;
+  }
+
   .introEpisode .episodeHeader h3 {
     font-size: clamp(2.7rem, 13vw, 4rem);
     line-height: 1.02;
@@ -652,41 +696,14 @@ a.directoryCard:focus-visible {
     width: 100%;
   }
 
-  .contributorProfile {
-    grid-template-columns: 96px minmax(0, 1fr);
-    gap: 22px;
-  }
-
-  .profilePortrait {
-    width: 96px;
-  }
-
-  .profileCopy h4,
+  .aboutEpisode h4,
+  .contributorProfile h4,
   .resourceBlock h4 {
-    font-size: clamp(2rem, 10vw, 3.2rem);
-  }
-
-  .resourceBlock {
-    padding: 30px 22px;
-  }
-
-  .stickyPodcastCta {
-    right: 16px;
-    bottom: max(12px, env(safe-area-inset-bottom));
-    left: 16px;
-    justify-content: center;
-    min-height: 52px;
-    text-align: center;
+    font-size: clamp(2rem, 10vw, 2.8rem);
   }
 
   .footer {
     padding-bottom: 70px;
-  }
-}
-
-@media (max-width: 430px) {
-  .contributorProfile {
-    grid-template-columns: 1fr;
   }
 }
 
@@ -697,8 +714,7 @@ a.directoryCard:focus-visible {
 
   .directoryCard,
   .fullSeriesCta a,
-  .resourceButton,
-  .stickyPodcastCta {
+  .resourceButton {
     transition: none;
   }
 

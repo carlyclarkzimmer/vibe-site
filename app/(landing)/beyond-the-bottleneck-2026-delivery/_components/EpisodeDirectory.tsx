@@ -25,23 +25,21 @@ function Portrait({ card }: { card: DeliveryDirectoryCard }) {
 }
 
 function ContributorCard({ card }: { card: DeliveryDirectoryCard }) {
-  const contents = (
-    <>
-      <Portrait card={card} />
-      <div className={styles.directoryCardCopy}>
-        <h3>{card.name}</h3>
-        <p>{card.episodeHook}</p>
-        <span className={styles.directoryAction}>Listen →</span>
-      </div>
-    </>
-  );
-
-  return card.href ? (
-    <a className={styles.directoryCard} href={card.href}>{contents}</a>
-  ) : (
-    <article className={`${styles.directoryCard} ${styles.placeholderCard}`} data-placeholder="true">
-      {contents}
-    </article>
+  return (
+    <a
+      className={`${styles.directoryCard} ${card.placeholder ? styles.placeholderCard : ""}`}
+      data-placeholder={card.placeholder || undefined}
+      href={card.href}
+    >
+      <>
+        <Portrait card={card} />
+        <div className={styles.directoryCardCopy}>
+          <h3>{card.name}</h3>
+          <p>{card.episodeHook}</p>
+          <span className={styles.directoryAction}>Listen →</span>
+        </div>
+      </>
+    </a>
   );
 }
 
@@ -56,18 +54,6 @@ export function EpisodeDirectory({ cards }: { cards: DeliveryDirectoryCard[] }) 
         </header>
 
         <div className={styles.directoryGrid}>
-          <a className={`${styles.directoryCard} ${styles.startCard}`} href="#episode-intro">
-            <div className={styles.startCardArt} aria-hidden="true">
-              <span>Start</span>
-              <span>Here</span>
-            </div>
-            <div className={styles.directoryCardCopy}>
-              <p className={styles.cardEyebrow}>Start Here</p>
-              <h3>Welcome to Beyond the Bottleneck</h3>
-              <p>How to Use This Series</p>
-              <span className={styles.directoryAction}>Listen →</span>
-            </div>
-          </a>
           {cards.map((card) => <ContributorCard card={card} key={card.id} />)}
         </div>
       </div>

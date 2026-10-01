@@ -34,33 +34,18 @@ function ContributorProfile({ episode }: { episode: DeliveryEpisode }) {
 
   return (
     <section className={styles.contributorProfile} aria-labelledby={`profile-${episode.slug}`}>
-      <div className={styles.profilePortrait}>
-        {episode.contributorImage ? (
-          <Image
-            alt={episode.contributorName ?? "Beyond the Bottleneck contributor"}
-            fill
-            sizes="120px"
-            src={episode.contributorImage}
-            unoptimized
-          />
-        ) : (
-          <span aria-label="Contributor image placeholder" role="img">Contributor image</span>
-        )}
-      </div>
-      <div className={styles.profileCopy}>
-        <h4 id={`profile-${episode.slug}`}>{episode.bioHeading}</h4>
-        {episode.bioParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-        {episode.contributorLinks?.length ? (
-          <p className={styles.contributorLinks}>
-            {episode.contributorLinks.map((link, index) => (
-              <span key={link.url}>
-                {index ? <span aria-hidden="true"> · </span> : null}
-                <a href={link.url} rel="noreferrer" target="_blank">{link.label}</a>
-              </span>
-            ))}
-          </p>
-        ) : null}
-      </div>
+      <h4 id={`profile-${episode.slug}`}>{episode.bioHeading}</h4>
+      {episode.bioParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+      {episode.contributorLinks?.length ? (
+        <p className={styles.contributorLinks}>
+          {episode.contributorLinks.map((link, index) => (
+            <span key={link.url}>
+              {index ? <span aria-hidden="true"> · </span> : null}
+              <a href={link.url} rel="noreferrer" target="_blank">{link.label}</a>
+            </span>
+          ))}
+        </p>
+      ) : null}
     </section>
   );
 }
@@ -70,7 +55,6 @@ function ContributorResource({ episode }: { episode: DeliveryEpisode }) {
 
   return (
     <section className={styles.resourceBlock} aria-labelledby={`resource-${episode.slug}`}>
-      <p className={styles.microHeading}>{episode.resourceEyebrow ?? "From Contributor"}</p>
       <h4 id={`resource-${episode.slug}`}>{episode.resourceHeading}</h4>
       {episode.resourceName ? <p className={styles.resourceName}>{episode.resourceName}</p> : null}
       {episode.resourceDescription ? <p className={styles.resourceDescription}>{episode.resourceDescription}</p> : null}
@@ -85,6 +69,24 @@ function ContributorResource({ episode }: { episode: DeliveryEpisode }) {
   );
 }
 
+function EpisodePortrait({ episode }: { episode: DeliveryEpisode }) {
+  return (
+    <div className={styles.episodePortrait}>
+      {episode.contributorImage ? (
+        <Image
+          alt={episode.contributorName ?? "Beyond the Bottleneck contributor"}
+          fill
+          sizes="(max-width: 760px) 100vw, 220px"
+          src={episode.contributorImage}
+          unoptimized
+        />
+      ) : (
+        <span aria-label="Contributor image placeholder" role="img">Contributor image</span>
+      )}
+    </div>
+  );
+}
+
 function Episode({ episode }: { episode: DeliveryEpisode }) {
   const isIntro = episode.slug === "intro";
 
@@ -94,10 +96,19 @@ function Episode({ episode }: { episode: DeliveryEpisode }) {
       data-episode-slug={episode.slug}
       id={`episode-${episode.slug}`}
     >
-      <header className={styles.episodeHeader}>
-        {episode.contributorName ? <p className={styles.contributorName}>{episode.contributorName}</p> : null}
-        <h3>{episode.title}</h3>
-      </header>
+      {isIntro ? (
+        <header className={styles.episodeHeader}>
+          <h3>{episode.title}</h3>
+        </header>
+      ) : (
+        <header className={styles.episodeLead}>
+          <EpisodePortrait episode={episode} />
+          <div className={styles.episodeHeader}>
+            {episode.contributorName ? <p className={styles.contributorName}>{episode.contributorName}</p> : null}
+            <h3>{episode.title}</h3>
+          </div>
+        </header>
+      )}
 
       <AudioPlayer episode={episode} />
 
@@ -105,7 +116,7 @@ function Episode({ episode }: { episode: DeliveryEpisode }) {
         <div className={styles.episodeDetails}>
           {episode.aboutEpisode ? (
             <section className={styles.aboutEpisode} aria-labelledby={`about-episode-${episode.slug}`}>
-              <p className={styles.microHeading} id={`about-episode-${episode.slug}`}>About This Episode</p>
+              <h4 id={`about-episode-${episode.slug}`}>About This Episode</h4>
               <p>{episode.aboutEpisode}</p>
             </section>
           ) : null}
@@ -114,7 +125,7 @@ function Episode({ episode }: { episode: DeliveryEpisode }) {
         </div>
       ) : null}
 
-      <a className={styles.backLink} href="#episode-directory">↑ Back to all episodes</a>
+      {!isIntro ? <a className={styles.backLink} href="#episode-directory">↑ Back to all episodes</a> : null}
     </article>
   );
 }

@@ -12,10 +12,14 @@ export function ListeningExperience({
   cards: DeliveryDirectoryCard[];
   episodes: DeliveryEpisode[];
 }) {
+  const welcomeEpisode = episodes.find((episode) => episode.slug === "intro");
+  const contributorEpisodes = episodes.filter((episode) => episode.slug !== "intro");
+
   return (
     <>
+      {welcomeEpisode ? <EpisodeLibrary episodes={[welcomeEpisode]} /> : null}
       <EpisodeDirectory cards={cards} />
-      <EpisodeLibrary episodes={episodes} />
+      <EpisodeLibrary episodes={contributorEpisodes} />
     </>
   );
 }

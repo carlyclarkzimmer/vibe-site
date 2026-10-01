@@ -12,7 +12,6 @@ export type DeliveryEpisode = {
   bioHeading?: string;
   bioParagraphs?: string[];
   contributorLinks?: { label: string; url: string }[];
-  resourceEyebrow?: string;
   resourceHeading?: string;
   resourceName?: string;
   resourceDescription?: string;
@@ -25,7 +24,7 @@ export type DeliveryDirectoryCard = {
   id: string;
   name: string;
   episodeHook: string;
-  href?: string;
+  href: string;
   image?: string;
   imageAlt?: string;
   placeholder?: boolean;
@@ -44,9 +43,23 @@ export const directoryCards: DeliveryDirectoryCard[] = [
     id: `contributor-placeholder-${index + 1}`,
     name: "Contributor Name",
     episodeHook: "Episode Title",
+    href: `#episode-contributor-placeholder-${index + 1}`,
     placeholder: true,
   })),
 ];
+
+const placeholderEpisodes: DeliveryEpisode[] = Array.from({ length: 23 }, (_, index) => ({
+  slug: `contributor-placeholder-${index + 1}`,
+  contributorName: "Contributor Name",
+  title: "Episode Title",
+  aboutEpisode: "[EPISODE DESCRIPTION PLACEHOLDER]",
+  bioHeading: "Meet Contributor Name",
+  bioParagraphs: ["[CONTRIBUTOR BIO PLACEHOLDER]"],
+  resourceHeading: "Grab Contributor Name's Resource",
+  resourceName: "[RESOURCE PLACEHOLDER]",
+  resourceDescription: "[RESOURCE DESCRIPTION PLACEHOLDER]",
+  placeholder: true,
+}));
 
 export const deliveryEpisodes: DeliveryEpisode[] = [
   {
@@ -71,7 +84,6 @@ export const deliveryEpisodes: DeliveryEpisode[] = [
       { label: "Website", url: "https://www.taracpafirm.com/" },
       { label: "Instagram", url: "https://instagram.com/kimberlytaracpa" },
     ],
-    resourceEyebrow: "From Kimberly",
     resourceHeading: "Grab Kimberly Tara's Resource",
     resourceName: "Free Tax Savings Calculator",
     resourceDescription:
@@ -79,30 +91,5 @@ export const deliveryEpisodes: DeliveryEpisode[] = [
     resourceUrl: "https://app.taxmove.io/",
     resourceCtaLabel: "Grab Kimberly's Resource →",
   },
-  {
-    slug: "placeholder-one",
-    contributorName: "Contributor Name",
-    title: "Episode Title",
-    aboutEpisode: "[EPISODE DESCRIPTION PLACEHOLDER]",
-    bioHeading: "Meet Contributor Name",
-    bioParagraphs: ["[CONTRIBUTOR BIO PLACEHOLDER]"],
-    resourceEyebrow: "From Contributor",
-    resourceHeading: "Grab Contributor Name's Resource",
-    resourceName: "[RESOURCE PLACEHOLDER]",
-    resourceDescription: "[RESOURCE DESCRIPTION PLACEHOLDER]",
-    placeholder: true,
-  },
-  {
-    slug: "placeholder-two",
-    contributorName: "Contributor Name",
-    title: "Episode Title",
-    aboutEpisode: "[EPISODE DESCRIPTION PLACEHOLDER]",
-    bioHeading: "Meet Contributor Name",
-    bioParagraphs: ["[CONTRIBUTOR BIO PLACEHOLDER]"],
-    resourceEyebrow: "From Contributor",
-    resourceHeading: "Grab Contributor Name's Resource",
-    resourceName: "[RESOURCE PLACEHOLDER]",
-    resourceDescription: "[RESOURCE DESCRIPTION PLACEHOLDER]",
-    placeholder: true,
-  },
+  ...placeholderEpisodes,
 ];
