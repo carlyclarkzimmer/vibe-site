@@ -52,7 +52,7 @@
   font-size: clamp(2.7rem, 5.904vw, 5.472rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 0.92;
+  line-height: var(--line-height-display-tight);
   text-align: center;
   text-transform: uppercase;
   text-wrap: balance;

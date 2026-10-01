@@ -28,8 +28,8 @@ img {
 
 p {
   font-family: var(--font-body);
-  font-size: 17px;
-  line-height: 1.65;
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
 }
 
 h1,
@@ -38,7 +38,17 @@ h3 {
   font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.045em;
-  line-height: 0.98;
+  line-height: var(--line-height-display);
+}
+
+:where(p, li, blockquote, figcaption) a {
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.16em;
+}
+
+:where(p, li, blockquote, figcaption) a:hover {
+  text-decoration-thickness: 2px;
 }
 
 i {

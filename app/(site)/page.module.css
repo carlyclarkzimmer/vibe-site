@@ -42,7 +42,7 @@
   font-size: clamp(3.75rem, 6.2vw, 5.6rem);
   font-weight: 400;
   letter-spacing: -0.02em;
-  line-height: 0.92;
+  line-height: var(--line-height-display-tight);
   text-transform: uppercase;
   text-wrap: balance;
 }
@@ -52,8 +52,8 @@
   margin: 32px 0 0;
   color: rgb(255 255 255 / 90%);
   font-family: var(--font-body);
-  font-size: clamp(18px, 1.4vw, 20px);
-  line-height: 1.58;
+  font-size: clamp(21px, calc(1.4vw + 3px), 23px);
+  line-height: 1.62;
   text-shadow: 0 1px 18px rgb(0 0 0 / 35%);
 }
 
@@ -355,11 +355,11 @@
   .hero h1 {
     max-width: 100%;
     font-size: clamp(2.75rem, 12vw, 4.1rem);
-    line-height: 0.92;
+    line-height: var(--line-height-display-tight);
   }
 
   .heroCopy {
-    font-size: 18px;
+    font-size: 21px;
   }
 
   .heroCta {

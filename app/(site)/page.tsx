@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { homeContent } from "../../content/site/home";
+import { WorkTogetherShowcase } from "../../components/site/WorkTogetherShowcase";
 import { Button } from "../../components/ui/Button";
 import { Eyebrow } from "../../components/ui/Eyebrow";
 import { Section } from "../../components/ui/Section";
@@ -90,53 +91,7 @@ export default function HomePage() {
           ))}
         </div>
       </Section>
-      <Section className={styles.servicesShowcase}>
-        <div className={styles.servicesBackdrop}>
-          <Image
-            className={styles.servicesShowcaseImage}
-            src="/carly-services-showcase.jpg"
-            alt="Carly Clark Zimmer in a flowing metallic dress"
-            fill
-            sizes="100vw"
-            unoptimized
-          />
-          <div className={styles.servicesOverlay} aria-hidden="true" />
-        </div>
-        <div className={styles.servicesPanel}>
-          <div className={styles.servicesIntro}>
-            <Eyebrow>{homeContent.servicesShowcase.eyebrow}</Eyebrow>
-            <h2>{homeContent.servicesShowcase.heading}</h2>
-          </div>
-          <div className={styles.servicesList}>
-            {homeContent.servicesShowcase.services.map((service, index) => (
-              <article className={styles.serviceItem} key={service.title}>
-                <div>
-                  <p className={styles.servicePrompt}>
-                    <strong>{service.prompt}</strong>
-                  </p>
-                  <h3>
-                    {"href" in service ? (
-                      <a
-                        href={service.href}
-                        target={"newTab" in service && service.newTab ? "_blank" : undefined}
-                        rel={"newTab" in service && service.newTab ? "noreferrer" : undefined}
-                      >
-                        {service.title}
-                      </a>
-                    ) : (
-                      service.title
-                    )}
-                  </h3>
-                </div>
-                <p className={styles.serviceDescription}>{service.description}</p>
-                <span className={styles.serviceNumber} aria-hidden="true">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-              </article>
-            ))}
-          </div>
-        </div>
-      </Section>
+      <WorkTogetherShowcase />
       <Section className={styles.testimonial}>
         <blockquote>“{homeContent.testimonial.quote}”</blockquote>
         <p>{homeContent.testimonial.attribution}</p>

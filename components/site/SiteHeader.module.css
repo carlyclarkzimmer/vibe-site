@@ -7,7 +7,8 @@
 :global(body:has(#home-hero)) .header,
 :global(body:has(#services-hero)) .header,
 :global(body:has(#about-hero)) .header,
-:global(body:has(#contact-hero)) .header {
+:global(body:has(#contact-hero)) .header,
+:global(body:has(#resources-hero)) .header {
   position: absolute;
   inset: 0 0 auto;
   background: transparent;
@@ -27,7 +28,8 @@
 :global(body:has(#home-hero)) .navigation,
 :global(body:has(#services-hero)) .navigation,
 :global(body:has(#about-hero)) .navigation,
-:global(body:has(#contact-hero)) .navigation {
+:global(body:has(#contact-hero)) .navigation,
+:global(body:has(#resources-hero)) .navigation {
   border-color: rgb(255 255 255 / 35%);
 }
 
@@ -66,7 +68,8 @@
 :global(body:has(#home-hero)) .desktopLinks a:hover,
 :global(body:has(#services-hero)) .desktopLinks a:hover,
 :global(body:has(#about-hero)) .desktopLinks a:hover,
-:global(body:has(#contact-hero)) .desktopLinks a:hover {
+:global(body:has(#contact-hero)) .desktopLinks a:hover,
+:global(body:has(#resources-hero)) .desktopLinks a:hover {
   color: white;
   opacity: 0.7;
 }
@@ -74,7 +77,8 @@
 :global(body:has(#home-hero)) .navigation > a:not(.monogram),
 :global(body:has(#services-hero)) .navigation > a:not(.monogram),
 :global(body:has(#about-hero)) .navigation > a:not(.monogram),
-:global(body:has(#contact-hero)) .navigation > a:not(.monogram) {
+:global(body:has(#contact-hero)) .navigation > a:not(.monogram),
+:global(body:has(#resources-hero)) .navigation > a:not(.monogram) {
   border-color: white;
   background: transparent;
   color: white;
@@ -83,7 +87,8 @@
 :global(body:has(#home-hero)) .navigation > a:not(.monogram):hover,
 :global(body:has(#services-hero)) .navigation > a:not(.monogram):hover,
 :global(body:has(#about-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#contact-hero)) .navigation > a:not(.monogram):hover {
+:global(body:has(#contact-hero)) .navigation > a:not(.monogram):hover,
+:global(body:has(#resources-hero)) .navigation > a:not(.monogram):hover {
   border-color: white;
   background: white;
   color: var(--color-ink);
