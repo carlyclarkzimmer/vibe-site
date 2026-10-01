@@ -19,12 +19,14 @@ const resourceServices = [
     prompt: "Ready to listen?",
     title: "Listen to the Beyond the Bottleneck Audio Series",
     href: "/beyond-the-bottleneck-2026",
+    newTab: true,
     description:
       "How thriving online business owners stopped turning their freedom back into a job, and what opened up when they did",
   },
   {
     title: "Listen to the Trust Issues Private Podcast",
     href: "/trust",
+    newTab: true,
     description: (
       <>
         This five-part private podcast is your invitation to rebuild the most important asset in
@@ -35,6 +37,7 @@ const resourceServices = [
   {
     title: "Join the newsletter",
     href: "/newsletter",
+    newTab: true,
     description:
       "Stories and insights about the small choices that change how you work, lead, and live, especially those moments when your old patterns meet the person you’re becoming and you get to choose what happens next.",
   },
@@ -56,7 +59,7 @@ export default function ResourcesPage() {
       headingLevel="h1"
       id="resources-hero"
       imageAlt="Carly Clark Zimmer standing outside in a magenta jacket"
-      imageSrc="/carly-resources-showcase.jpg"
+      imageSrc="/carly-resources-showcase.png"
       services={resourceServices}
     />
   );
