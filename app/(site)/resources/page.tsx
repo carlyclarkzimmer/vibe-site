@@ -24,17 +24,6 @@ const resourceServices = [
       "How thriving online business owners stopped turning their freedom back into a job, and what opened up when they did",
   },
   {
-    title: "Listen to the Trust Issues Private Podcast",
-    href: "/trust",
-    newTab: true,
-    description: (
-      <>
-        This five-part private podcast is your invitation to rebuild the most important asset in
-        your business: <em>trust.</em>
-      </>
-    ),
-  },
-  {
     title: "Join the newsletter",
     href: "/newsletter",
     newTab: true,
