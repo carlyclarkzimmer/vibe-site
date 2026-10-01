@@ -627,25 +627,86 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /Explore the Series/i);
   assert.match(html, /Meet the Contributors/i);
   assert.match(html, /Choose a conversation to start listening\./i);
-  assert.doesNotMatch(html, /href="#episode-intro"|Start Here/i);
+  assert.doesNotMatch(html, /href="#episode-intro"/i);
   assert.match(html, /How to Use This Series/i);
+  assert.match(html, /Start here\. A quick introduction to how to use the series, what to listen for, and how to get the most from the conversations as you move through them\./i);
+  assert.match(html, /Listen to the Introduction/i);
   assert.match(html, /href="#episode-kimberly-tara"/i);
   assert.match(html, /When Work Follows You Everywhere/i);
-  assert.equal((html.match(/aria-label="Contributor image placeholder"/gi) ?? []).length, 46);
-  assert.equal((html.match(/data-placeholder="true"/gi) ?? []).length, 23);
+  assert.doesNotMatch(html, /aria-label="Contributor image placeholder"/i);
+  assert.doesNotMatch(html, /data-placeholder="true"/i);
   const episodeSlugs = new Set(
     [...html.matchAll(/aria-labelledby="listen-([^"]+)"/gi)].map((match) => match[1]),
   );
   assert.equal(episodeSlugs.size, 25);
-  assert.equal((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length, 46);
+  assert.doesNotMatch(html, /\[AUDIO PLAYER PLACEHOLDER\]/i);
+  const helloAudioEpisodeIds = [
+    "bac0af12-8048-4020-9ec1-6c28fb2d919f",
+    "3b1f3ab8-5653-4bbb-9320-67f556fb00b5",
+    "c1603c41-7681-4964-9538-bceffa8c47bd",
+    "f5c03d5f-d7cf-4f32-8c8f-ae2590c0b66b",
+    "a81c2c0e-964b-463f-abc4-2aa5e90c519f",
+    "f3e63769-2159-4560-8209-fafa96475fea",
+    "3e8a53db-704a-4d1b-9252-b4e08596209d",
+    "a42bec00-913d-4237-92b4-157ab548ec1b",
+    "e7f3c646-a84b-404c-a47b-44beaee3a0d9",
+    "d260f755-d029-4fe0-9c03-4db3b1d97513",
+    "3c9d5cfb-41cb-42af-879d-773dc97d2da6",
+    "fdd0f365-93ce-4089-86c3-370d5c86be72",
+    "1ebd8607-4ee7-4ed1-a1b0-480f4e4fdca6",
+    "3884b576-0d6b-48b3-a72b-94fcb36dbac7",
+    "e6c16d25-1abe-4820-a07f-2da341893ef5",
+    "76d83f7c-7312-49e8-9534-6e5d5e123ad5",
+    "0b97a1a5-7a66-458a-b8af-08a3da5abf11",
+    "fa65ca58-09f9-4e65-ba23-1bf4244560a7",
+    "bb230f7c-d268-45b7-92f7-c46f05c0fa83",
+    "71dc6880-b7cd-4bdd-81db-1b664430c7a4",
+    "a67c53a5-51cc-451f-9c31-14345e24d252",
+    "43393aaf-056f-475e-a928-b869d5077781",
+    "d1263fde-04ec-4166-b023-c381d48474bd",
+    "c8981a56-cde7-44c2-9d38-aaf13db5f3d3",
+    "560f3068-dfb9-41a7-9bdc-1162b2811494",
+  ];
+  for (const episodeId of helloAudioEpisodeIds) assert.match(html, new RegExp(episodeId));
   assert.equal((html.match(/Back to all episodes/gi) ?? []).length, 48);
   assert.doesNotMatch(html, /Welcome to Beyond the Bottleneck: How to Use This Series/i);
+  const orderedEpisodeSlugs = [
+    "intro",
+    "kimberly-tara",
+    "rosemary-dede",
+    "meg-yelaney",
+    "keenya-kelly",
+    "reland-logan",
+    "linda-sidhu",
+    "emily-reagan",
+    "jen-liddy",
+    "renee-bowen",
+    "zhara-marie-henry",
+    "michelle-knight",
+    "ashley-krooks",
+    "kari-poppleton",
+    "sarah-young",
+    "katie-ferro",
+    "christine-williams",
+    "kristin-brabant",
+    "holly-haynes",
+    "heather-sager",
+    "beth-nydick",
+    "nata-salvatori",
+    "ash-mcdonald",
+    "holly-ostrout",
+    "carly-clark-zimmer",
+  ];
+  const orderedEpisodeIndexes = orderedEpisodeSlugs.map((slug) => html.indexOf(`id="episode-${slug}"`));
+  assert.ok(orderedEpisodeIndexes.every((index) => index >= 0));
+  assert.ok(orderedEpisodeIndexes.every((index, position) => position === 0 || index > orderedEpisodeIndexes[position - 1]));
   const introHtml = html.split('id="episode-intro"')[1]?.split('id="episode-directory"')[0] ?? "";
-  assert.match(introHtml, /\[HELLO AUDIO INTRO EPISODE EMBED\]/i);
+  assert.match(introHtml, /podcasts\.helloaudio\.fm\/player\?episodeId=bac0af12-8048-4020-9ec1-6c28fb2d919f&code=ErJfjS4Um0/i);
+  assert.doesNotMatch(introHtml, /\[HELLO AUDIO INTRO EPISODE EMBED\]/i);
   assert.ok(html.indexOf('id="episode-intro"') < html.indexOf('id="episode-directory"'));
   assert.ok(html.indexOf('id="episode-directory"') < html.indexOf('id="episode-kimberly-tara"'));
   assert.match(html, /When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom/i);
-  const kimberlyHtml = html.split('id="episode-kimberly-tara"')[1]?.split('id="episode-contributor-placeholder-1"')[0] ?? "";
+  const kimberlyHtml = html.split('id="episode-kimberly-tara"')[1]?.split('id="episode-rosemary-dede"')[0] ?? "";
   assert.match(kimberlyHtml, /podcasts\.helloaudio\.fm\/player\?episodeId=3b1f3ab8-5653-4bbb-9320-67f556fb00b5&code=ErJfjS4Um0/i);
   assert.match(kimberlyHtml, /→ Take Beyond the Bottleneck with you/i);
   assert.match(kimberlyHtml, /Listen to the Full Series in Your Podcast App →/i);
@@ -661,10 +722,18 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(kimberlyHtml, /Back to all episodes/i);
   assert.doesNotMatch(kimberlyHtml, /Ready to interrupt your own pattern|Explore Pattern Interrupt/i);
   assert.doesNotMatch(kimberlyHtml, /\[AUDIO PLAYER PLACEHOLDER\]|\[CONTRIBUTOR BIO PLACEHOLDER\]|\[RESOURCE PLACEHOLDER\]/i);
-  assert.equal((html.match(/data-episode-slug="contributor-placeholder-/gi) ?? []).length, 23);
-  assert.match(html, /\[EPISODE DESCRIPTION PLACEHOLDER\]/i);
-  assert.match(html, /\[CONTRIBUTOR BIO PLACEHOLDER\]/i);
-  assert.match(html, /\[RESOURCE PLACEHOLDER\]/i);
+  assert.doesNotMatch(html, /data-episode-slug="contributor-placeholder-/i);
+  assert.match(html, /Meg Yelaney/i);
+  assert.doesNotMatch(html, /Meg Yelany/i);
+  assert.match(html, /Réland Logan/i);
+  assert.match(html, /Zhara-Marie Henry/i);
+  assert.match(html, /src="\/contributors\/carly-clark-zimmer-host-2\.jpg"/i);
+  assert.match(html, /Host Episode: The Pattern Behind the Plateau, with Carly Clark Zimmer/i);
+  assert.match(html, /Meet Carly Clark Zimmer/i);
+  assert.match(html, /When Personal Growth Turns into Personal Pressure/i);
+  assert.match(html, /Monthly Tax &amp; Bookkeeping Reminders/i);
+  assert.match(html, /What(?:&#x27;|')s Working in Business Books in 2026/i);
+  assert.doesNotMatch(html, /\[EPISODE DESCRIPTION PLACEHOLDER\]|\[CONTRIBUTOR BIO PLACEHOLDER\]|\[RESOURCE PLACEHOLDER\]/i);
   assert.doesNotMatch(html, /Ready to interrupt|Pattern Interrupt|id="pattern-interrupt"/i);
   assert.doesNotMatch(html, /Listen to the complete series →/i);
   assert.match(html, /content="noindex, nofollow"/i);

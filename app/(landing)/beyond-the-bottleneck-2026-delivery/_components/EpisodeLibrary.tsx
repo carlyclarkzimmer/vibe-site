@@ -8,7 +8,9 @@ import styles from "../page.module.css";
 function AudioPlayer({ episode }: { episode: DeliveryEpisode }) {
   return (
     <section className={styles.audioArea} aria-labelledby={`listen-${episode.slug}`}>
-      <p className={styles.microHeading} id={`listen-${episode.slug}`}>Listen to the Episode</p>
+      <h4 className={styles.microHeading} id={`listen-${episode.slug}`}>
+        {episode.slug === "intro" ? "Listen to the Introduction" : "Listen to the Episode"}
+      </h4>
       {episode.audioSource ? (
         <audio controls preload="metadata" src={episode.audioSource}>Your browser does not support the audio element.</audio>
       ) : episode.audioEmbed ? (
@@ -53,20 +55,20 @@ function ContributorProfile({ episode }: { episode: DeliveryEpisode }) {
 }
 
 function ContributorResource({ episode }: { episode: DeliveryEpisode }) {
-  if (!episode.resourceHeading) return null;
+  if (!episode.resourceHeading || !episode.resources?.length) return null;
 
   return (
     <section className={styles.resourceBlock} aria-labelledby={`resource-${episode.slug}`}>
       <h4 id={`resource-${episode.slug}`}>{episode.resourceHeading}</h4>
-      {episode.resourceName ? <p className={styles.resourceName}>{episode.resourceName}</p> : null}
-      {episode.resourceDescription ? <p className={styles.resourceDescription}>{episode.resourceDescription}</p> : null}
-      {episode.resourceUrl ? (
-        <a className={styles.resourceButton} href={episode.resourceUrl} rel="noreferrer" target="_blank">
-          {episode.resourceCtaLabel ?? "Grab the Resource →"}
-        </a>
-      ) : (
-        <span className={styles.resourceButtonPlaceholder}>[RESOURCE CTA PLACEHOLDER]</span>
-      )}
+      {episode.resources.map((resource) => (
+        <div className={styles.resourceItem} key={resource.url}>
+          <p className={styles.resourceName}>{resource.name}</p>
+          {resource.description ? <p className={styles.resourceDescription}>{resource.description}</p> : null}
+          <a className={styles.resourceButton} href={resource.url} rel="noreferrer" target="_blank">
+            {resource.ctaLabel ?? "Grab the Resource →"}
+          </a>
+        </div>
+      ))}
     </section>
   );
 }
@@ -101,6 +103,7 @@ function Episode({ episode }: { episode: DeliveryEpisode }) {
       {isIntro ? (
         <header className={styles.episodeHeader}>
           <h3>{episode.title}</h3>
+          <p className={styles.introCopy}>Start here. A quick introduction to how to use the series, what to listen for, and how to get the most from the conversations as you move through them.</p>
         </header>
       ) : (
         <header className={styles.episodeLead}>
