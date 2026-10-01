@@ -612,7 +612,8 @@ test("serves the Beyond the Bottleneck listening library", async () => {
 
   assert.equal(response.status, 200);
   assert.match(html, /<title>Beyond the Bottleneck \| Listening Library<\/title>/i);
-  assert.match(html, /Listening Library/i);
+  assert.match(html, /The Complete Audio Series/i);
+  assert.match(html, /src="\/beyond-the-bottleneck-delivery-hero\.png"[^>]*alt="Carly Clark Zimmer"/i);
   assert.match(html, /Take Beyond the Bottleneck with you\./i);
   assert.match(html, /Listen to the full series in your favorite podcast app\./i);
   assert.match(html, /Table of Contents/i);
@@ -621,7 +622,7 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /href="https:\/\/podcasts\.helloaudio\.fm\/subscribe\/4e65bd8b-48e0-46c3-a41f-844a5435a02d\/ErJfjS4Um0"[^>]*target="_blank"[^>]*rel="noreferrer"/i);
   assert.doesNotMatch(html, /Listen on Apple Podcasts|apple-podcasts-url-todo/i);
   assert.doesNotMatch(html, /btb-hero-carly-center|centered among the Beyond the Bottleneck contributors/i);
-  assert.match(html, /Complete Audio Series/i);
+  assert.doesNotMatch(html, /id="library-title"/i);
   assert.doesNotMatch(html, /Listen your way/i);
   assert.doesNotMatch(html, /In listening order/i);
   assert.doesNotMatch(html, /Episode 01/i);
@@ -629,14 +630,32 @@ test("serves the Beyond the Bottleneck listening library", async () => {
     [...html.matchAll(/aria-labelledby="listen-([^"]+)"/gi)].map((match) => match[1]),
   );
   assert.equal(episodeSlugs.size, 25);
-  assert.ok((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length >= 25);
+  assert.equal((html.match(/\[AUDIO PLAYER PLACEHOLDER\]/gi) ?? []).length, 24);
   assert.equal((html.match(/Back to episode list/gi) ?? []).length, 24);
-  assert.equal((html.match(/Explore Pattern Interrupt/gi) ?? []).length, 24);
+  assert.equal((html.match(/Explore Pattern Interrupt/gi) ?? []).length, 23);
   assert.match(html, /href="#episode-intro"/i);
+  assert.match(html, /Welcome to Beyond the Bottleneck: How to Use This Series/i);
   assert.match(html, /href="#episode-carly-clark-zimmer"/i);
   const introHtml = html.split('id="episode-intro"')[1]?.split('id="episode-kimberly-tara"')[0] ?? "";
   assert.doesNotMatch(introHtml, /Show Notes|Explore Pattern Interrupt|Back to episode list/i);
   assert.match(html, /When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom/i);
+  const kimberlyHtml = html.split('id="episode-kimberly-tara"')[1]?.split('id="episode-rosemary-dede"')[0] ?? "";
+  assert.match(kimberlyHtml, /podcasts\.helloaudio\.fm\/player\?episodeId=3b1f3ab8-5653-4bbb-9320-67f556fb00b5&code=ErJfjS4Um0/i);
+  assert.match(kimberlyHtml, /→ Take Beyond the Bottleneck with you\./i);
+  assert.match(kimberlyHtml, /Listen to the full series in your favorite podcast app →/i);
+  assert.match(kimberlyHtml, /About This Episode/i);
+  assert.match(kimberlyHtml, /fixing the structure of a business and fixing the pattern underneath it/i);
+  assert.match(kimberlyHtml, /Meet Kimberly Tara/i);
+  assert.match(kimberlyHtml, /Visit Kimberly(?:&#x27;|')s Website/i);
+  assert.match(kimberlyHtml, /Follow Kimberly on Instagram/i);
+  assert.match(kimberlyHtml, /Free Tax Savings Calculator/i);
+  assert.match(kimberlyHtml, /Grab Kimberly Tara’s Resource/i);
+  assert.match(kimberlyHtml, /Get the Free Tax Savings Calculator →/i);
+  assert.doesNotMatch(kimberlyHtml, /Ready to interrupt your own pattern|Explore Pattern Interrupt/i);
+  assert.doesNotMatch(kimberlyHtml, /\[AUDIO PLAYER PLACEHOLDER\]|\[SHORT BIO TO BE ADDED\]|\[SHOW NOTES TO BE ADDED\]|\[RESOURCE NAME\]/i);
+  const rosemaryHtml = html.split('id="episode-rosemary-dede"')[1]?.split('id="episode-megan-yelaney"')[0] ?? "";
+  assert.match(rosemaryHtml, /\[AUDIO PLAYER PLACEHOLDER\]/i);
+  assert.match(rosemaryHtml, /\[SHORT BIO TO BE ADDED\]/i);
   assert.match(html, /The Pattern Behind the Plateau, with Carly Clark Zimmer/i);
   assert.match(html, /About[\s\S]{0,80}Carly Clark Zimmer/i);
   assert.match(html, /\[SHORT BIO TO BE ADDED\]/i);

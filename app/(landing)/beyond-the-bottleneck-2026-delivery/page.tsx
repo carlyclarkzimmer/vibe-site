@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { deliveryEpisodes } from "@/content/campaigns/beyond-the-bottleneck-delivery";
 import { ListeningExperience } from "./_components/ListeningExperience";
@@ -14,9 +15,19 @@ export default function BeyondTheBottleneckDeliveryPage() {
   return (
     <div className={styles.page}>
       <header className={styles.hero} id="top">
+        <Image
+          alt="Carly Clark Zimmer"
+          className={styles.heroImage}
+          height={720}
+          priority
+          sizes="100vw"
+          src="/beyond-the-bottleneck-delivery-hero.png"
+          unoptimized
+          width={1280}
+        />
         <div className={styles.heroCopy}>
           <h1>Beyond <em>the</em> Bottleneck</h1>
-          <h2>Listening Library</h2>
+          <h2>The Complete Audio Series</h2>
           <p>Take Beyond the Bottleneck with you.</p>
           <p className={styles.heroOrientation}>Listen to the full series in your favorite podcast app.</p>
           <Button className={styles.appleButton} href="https://podcasts.helloaudio.fm/subscribe/4e65bd8b-48e0-46c3-a41f-844a5435a02d/ErJfjS4Um0" newTab>Listen in your favorite podcast app</Button>

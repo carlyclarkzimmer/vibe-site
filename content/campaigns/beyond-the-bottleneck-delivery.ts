@@ -6,12 +6,22 @@ export type DeliveryEpisode = {
   title: string;
   audioSource?: string;
   audioEmbed?: string;
+  fullSeriesPrompt?: string;
+  fullSeriesLabel?: string;
+  fullSeriesUrl?: string;
+  aboutEpisode?: string;
   shortBio?: string;
+  bioHeading?: string;
+  bioParagraphs?: string[];
+  contributorLinks?: { label: string; url: string }[];
   showNotes: string[];
   resourceName?: string;
+  resourceHeading?: string;
   resourceDescription?: string;
   resourceUrl?: string;
+  resourceCtaLabel?: string;
   patternInterruptHref: string;
+  hidePatternCallout?: boolean;
 };
 
 const patternInterruptHref = "#pattern-interrupt";
@@ -46,12 +56,41 @@ export const deliveryEpisodes: DeliveryEpisode[] = [
   {
     number: "01",
     slug: "intro",
-    title: "Intro",
+    title: "Welcome to Beyond the Bottleneck: How to Use This Series",
     showNotes: ["[SHOW NOTES TO BE ADDED]"],
     patternInterruptHref,
   },
-  ...contributorEpisodes.map(([slug, contributorName, title], index) => ({
-    number: String(index + 2).padStart(2, "0"),
+  {
+    number: "02",
+    slug: "kimberly-tara",
+    contributorName: "Kimberly Tara",
+    contributorImage: "/contributors/kimberly-tara.jpg",
+    title: "When Work Follows You Everywhere: Kimberly Tara on Rebuilding for Freedom",
+    audioEmbed: '<iframe src="https://podcasts.helloaudio.fm/player?episodeId=3b1f3ab8-5653-4bbb-9320-67f556fb00b5&code=ErJfjS4Um0" width="400" height="100" scrolling="no" frameBorder="0" style="width: 400px; height: 100px; border: 0; overflow: hidden;"></iframe>',
+    fullSeriesPrompt: "→ Take Beyond the Bottleneck with you.",
+    fullSeriesLabel: "Listen to the full series in your favorite podcast app →",
+    fullSeriesUrl: "https://podcasts.helloaudio.fm/subscribe/4e65bd8b-48e0-46c3-a41f-844a5435a02d/ErJfjS4Um0",
+    aboutEpisode: "Beyond the Bottleneck exists to help business owners see the gap between fixing the structure of a business and fixing the pattern underneath it — and Kimberly Tara's story is a clear example of both at once. She rebuilt her CPA firm's operations, but what actually made it stick was the internal work: trusting other people, tolerating mistakes, and loosening her grip on the belief that everything had to come back to her. This conversation shows listeners why structural change alone doesn't hold if the underlying pattern stays the same.",
+    bioHeading: "Meet Kimberly Tara",
+    bioParagraphs: [
+      "Kimberly Tara is a CPA and Certified Tax Planner who helps profitable business owners keep more of what they earn by making tax planning a year-round strategy instead of an April scramble.",
+      "She started The Tara CPA Firm in 2016, hit six figures in her first year, and now leads a team of six while raising four kids in Charlotte, North Carolina.",
+    ],
+    contributorLinks: [
+      { label: "Visit Kimberly's Website", url: "https://www.taracpafirm.com/" },
+      { label: "Follow Kimberly on Instagram", url: "https://instagram.com/kimberlytaracpa" },
+    ],
+    showNotes: [],
+    resourceHeading: "Grab Kimberly Tara’s Resource",
+    resourceName: "Free Tax Savings Calculator",
+    resourceDescription: "Most business owners have no idea whether they're overpaying in taxes. Kimberly's free calculator takes about two minutes and gives you a personalized estimate of what you could be saving and what to do next.",
+    resourceUrl: "https://app.taxmove.io/",
+    resourceCtaLabel: "Get the Free Tax Savings Calculator →",
+    patternInterruptHref,
+    hidePatternCallout: true,
+  },
+  ...contributorEpisodes.slice(1).map(([slug, contributorName, title], index) => ({
+    number: String(index + 3).padStart(2, "0"),
     slug,
     contributorName,
     contributorImage: `/contributors/${slug}.jpg`,

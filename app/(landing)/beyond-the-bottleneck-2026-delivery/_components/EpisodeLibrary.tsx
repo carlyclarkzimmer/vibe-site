@@ -9,10 +9,16 @@ function AudioArea({ episode }: { episode: DeliveryEpisode }) {
       {episode.audioSource ? (
         <audio controls preload="metadata" src={episode.audioSource}>Your browser does not support the audio element.</audio>
       ) : episode.audioEmbed ? (
-        <div dangerouslySetInnerHTML={{ __html: episode.audioEmbed }} />
+        <div className={styles.audioEmbed} dangerouslySetInnerHTML={{ __html: episode.audioEmbed }} />
       ) : (
         <div className={styles.audioPlaceholder}>[AUDIO PLAYER PLACEHOLDER]</div>
       )}
+      {episode.fullSeriesPrompt && episode.fullSeriesLabel && episode.fullSeriesUrl ? (
+        <div className={styles.fullSeriesCta}>
+          <p>{episode.fullSeriesPrompt}</p>
+          <a href={episode.fullSeriesUrl} rel="noreferrer" target="_blank">{episode.fullSeriesLabel}</a>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -39,32 +45,49 @@ function Episode({ episode, isActive }: { episode: DeliveryEpisode; isActive: bo
       {episode.slug !== "intro" ? (
         <>
           <div className={styles.episodeInformation}>
-            {episode.contributorName && episode.shortBio ? (
-              <section className={styles.about} aria-labelledby={`about-${episode.slug}`}>
-                <p className={styles.microHeading} id={`about-${episode.slug}`}>About {episode.contributorName}</p>
-                <p>{episode.shortBio}</p>
+            {episode.aboutEpisode ? (
+              <section className={styles.showNotes} aria-labelledby={`about-episode-${episode.slug}`}>
+                <p className={styles.microHeading} id={`about-episode-${episode.slug}`}>About This Episode</p>
+                <p>{episode.aboutEpisode}</p>
               </section>
             ) : null}
 
-            <section className={styles.showNotes} aria-labelledby={`notes-${episode.slug}`}>
-              <p className={styles.microHeading} id={`notes-${episode.slug}`}>Show Notes</p>
-              {episode.showNotes.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-            </section>
+            {episode.contributorName && (episode.shortBio || episode.bioParagraphs?.length || episode.contributorLinks?.length) ? (
+              <section className={styles.about} aria-labelledby={`about-${episode.slug}`}>
+                <p className={styles.microHeading} id={`about-${episode.slug}`}>{episode.bioHeading ?? `About ${episode.contributorName}`}</p>
+                {episode.shortBio ? <p>{episode.shortBio}</p> : null}
+                {episode.bioParagraphs?.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                {episode.contributorLinks?.length ? (
+                  <div className={styles.contributorLinks}>
+                    {episode.contributorLinks.map((link) => <a href={link.url} key={link.url} rel="noreferrer" target="_blank">{link.label}</a>)}
+                  </div>
+                ) : null}
+              </section>
+            ) : null}
+
+            {episode.showNotes.length ? (
+              <section className={styles.showNotes} aria-labelledby={`notes-${episode.slug}`}>
+                <p className={styles.microHeading} id={`notes-${episode.slug}`}>Show Notes</p>
+                {episode.showNotes.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              </section>
+            ) : null}
 
             {hasResource ? (
               <section className={styles.resource} aria-labelledby={`resource-${episode.slug}`}>
-                <p className={styles.microHeading} id={`resource-${episode.slug}`}>Resources</p>
+                <p className={styles.microHeading} id={`resource-${episode.slug}`}>{episode.resourceHeading ?? "Resources"}</p>
                 {episode.resourceName ? <h4>{episode.resourceName}</h4> : null}
                 {episode.resourceDescription ? <p>{episode.resourceDescription}</p> : null}
-                {episode.resourceUrl ? <a className={styles.button} href={episode.resourceUrl}>Get the resource</a> : <span className={styles.buttonPlaceholder}>[GET THE RESOURCE]</span>}
+                {episode.resourceUrl ? <a className={styles.button} href={episode.resourceUrl} rel="noreferrer" target="_blank">{episode.resourceCtaLabel ?? "Get the resource"}</a> : <span className={styles.buttonPlaceholder}>[GET THE RESOURCE]</span>}
               </section>
             ) : null}
           </div>
 
-          <aside className={styles.patternCallout}>
-            <p className={styles.patternQuestion}>Ready to interrupt your own pattern?</p>
-            <a href={episode.patternInterruptHref}>Explore Pattern Interrupt below.</a>
-          </aside>
+          {!episode.hidePatternCallout ? (
+            <aside className={styles.patternCallout}>
+              <p className={styles.patternQuestion}>Ready to interrupt your own pattern?</p>
+              <a href={episode.patternInterruptHref}>Explore Pattern Interrupt below.</a>
+            </aside>
+          ) : null}
           <a className={styles.backLink} href="#episode-list">Back to episode list ↑</a>
         </>
       ) : null}
@@ -74,10 +97,9 @@ function Episode({ episode, isActive }: { episode: DeliveryEpisode; isActive: bo
 
 export function EpisodeLibrary({ activeEpisode, episodes }: { activeEpisode: string | null; episodes: DeliveryEpisode[] }) {
   return (
-    <section className={styles.library} aria-labelledby="library-title">
+    <section className={styles.library} aria-label="Beyond the Bottleneck episodes">
       <div className={styles.sectionIntro}>
         <p className={styles.eyebrow}>Beyond the Bottleneck</p>
-        <h2 id="library-title">Complete Audio Series</h2>
       </div>
       {episodes.map((episode) => <Episode episode={episode} isActive={activeEpisode === episode.slug} key={episode.slug} />)}
     </section>
