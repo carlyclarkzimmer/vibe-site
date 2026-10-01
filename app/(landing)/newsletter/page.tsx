@@ -40,7 +40,7 @@ export default function NewsletterPage() {
     <div className={styles.page}>
       <main>
         <section className={styles.hero}>
-          <img className={styles.heroImage} src="/carly-services-hero.jpg" alt="Carly Clark Zimmer standing in an elegant room surrounded by plants" width={3840} height={5760} />
+          <img className={styles.heroImage} src="/carly-newsletter-hero.jpg" alt="Carly Clark Zimmer standing against a stone wall" width={5760} height={3840} />
           <div className={styles.heroOverlay} aria-hidden="true" />
           <div className={styles.heroContent}>
             <p className={styles.eyebrow}>Welcome to</p>
