@@ -5,8 +5,9 @@ import { newsletterEmailCapture } from "../../../content/campaigns/newsletter";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "Heart-Centered Coach Newsletter Sign-Up",
-  description: "Welcome to Decision Points — identity transition support for entrepreneurs, coaches, and creatives.",
+  title: "Decision Points Newsletter",
+  description:
+    "Stories and practical insights about business leadership, behavior change, identity, and the small decisions that shape how you work and live.",
 };
 
 function SignupForm() {
@@ -37,21 +38,17 @@ function SignupForm() {
 export default function NewsletterPage() {
   return (
     <div className={styles.page}>
-      <header className={styles.titleBand}>
-        <p>Welcome to</p>
-        <h1>Decision Points</h1>
-      </header>
-      <main className={styles.main}>
-        <section className={styles.copy}>
-          <p className={styles.lead}><strong>Identity transition support for entrepreneurs, coaches, and creatives.</strong></p>
-          <p>This newsletter blends short audio reflections and writing to help you untangle, remove, and release patterns that interrupt flow, prevent change, or slow down aligned growth.</p>
-          <p>We&apos;re redesigning your life and work for <em>who you are now,</em> <strong><em>because no one should have to live inside a life that feels like someone else’s house.</em></strong></p>
-          <p className={styles.byline}><strong>By Carly Clark Zimmer</strong></p>
-          <SignupForm />
+      <main>
+        <section className={styles.hero}>
+          <img className={styles.heroImage} src="/carly-services-hero.jpg" alt="Carly Clark Zimmer standing in an elegant room surrounded by plants" width={3840} height={5760} />
+          <div className={styles.heroOverlay} aria-hidden="true" />
+          <div className={styles.heroContent}>
+            <p className={styles.eyebrow}>Welcome to</p>
+            <h1>Decision Points</h1>
+            <p className={styles.description}>Decision Points is where I share stories and practical insights about business leadership, behavior change, identity, and the small decisions that shape how you work and live. It’s for high-achieving business owners who want to keep growing, while building a business that leaves room for a full life outside of it.</p>
+            <SignupForm />
+          </div>
         </section>
-        <figure className={styles.cover}>
-          <img src="/newsletter-carly.png" alt="Carly Clark Zimmer seated in a teal jacket for the Audio Newsletter" width={926} height={1288} />
-        </figure>
       </main>
       <footer className={styles.footer}>
         <a href="https://carlyclarkzimmer.com/">Learn more at carlyclarkzimmer.com</a>
