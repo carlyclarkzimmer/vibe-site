@@ -439,6 +439,48 @@
   }
 }
 
+/* Mirror the existing view-timeline phases when mobile or the browser needs a fallback. */
+@media (prefers-reduced-motion: no-preference) {
+  :global(html[data-btb-scroll-fallback]) .problemList p::after,
+  :global(html[data-btb-scroll-fallback]) .checklistBox::after,
+  :global(html[data-btb-scroll-fallback]) .sharingList p::before,
+  :global(html[data-btb-scroll-fallback]) .questionIntroCopy > .questionReveal,
+  :global(html[data-btb-scroll-fallback]) .fearCluster p,
+  :global(html[data-btb-scroll-fallback]) .questionBody > .fearConclusion,
+  :global(html[data-btb-scroll-fallback]) .reframeCluster li,
+  :global(html[data-btb-scroll-fallback]) .moreList p,
+  :global(html[data-btb-scroll-fallback]) .insideCopy p,
+  :global(html[data-btb-scroll-fallback]) .topicList dt,
+  :global(html[data-btb-scroll-fallback]) .topicList dd,
+  :global(html[data-btb-scroll-fallback]) .evidence p {
+    animation: none;
+  }
+
+  :global(html[data-btb-scroll-fallback]) .problemList p::after,
+  :global(html[data-btb-scroll-fallback]) .checklistBox::after,
+  :global(html[data-btb-scroll-fallback]) .sharingList p::before {
+    opacity: var(--btb-scroll-opacity, 1);
+    transform: var(--btb-scroll-transform, none);
+  }
+
+  :global(html[data-btb-scroll-fallback]) .questionIntroCopy > .questionReveal {
+    color: var(--btb-scroll-color, var(--color-ink));
+    opacity: var(--btb-scroll-opacity, 1);
+    transform: var(--btb-scroll-transform, none);
+  }
+
+  :global(html[data-btb-scroll-fallback]) .fearCluster p,
+  :global(html[data-btb-scroll-fallback]) .questionBody > .fearConclusion,
+  :global(html[data-btb-scroll-fallback]) .reframeCluster li,
+  :global(html[data-btb-scroll-fallback]) .moreList p,
+  :global(html[data-btb-scroll-fallback]) .insideCopy p,
+  :global(html[data-btb-scroll-fallback]) .topicList dt,
+  :global(html[data-btb-scroll-fallback]) .topicList dd,
+  :global(html[data-btb-scroll-fallback]) .evidence p {
+    color: var(--btb-scroll-color, inherit);
+  }
+}
+
 .questionSection {
   padding: 112px 8vw;
   background: var(--color-surface-muted);

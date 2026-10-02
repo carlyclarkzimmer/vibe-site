@@ -22,6 +22,7 @@ import { OpeningSection } from "./_components/OpeningSection";
 import { QuestionSection } from "./_components/QuestionSection";
 import { RegistrationModal } from "./_components/RegistrationModal";
 import { SeriesIntroSection } from "./_components/SeriesIntroSection";
+import { ScrollAnimationFallback } from "./_components/ScrollAnimationFallback";
 import sectionStyles from "./_components/CampaignSections.module.css";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default async function BeyondTheBottleneckPage({
 
   return (
     <>
+      <ScrollAnimationFallback />
       <CampaignHero content={heroContent} launchDate={campaignMeta.launchDate} />
       <section className={sectionStyles.heroStatement}>
         <p>

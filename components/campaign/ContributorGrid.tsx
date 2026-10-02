@@ -56,10 +56,9 @@ export function ContributorGrid({ chapters, deliveryContributors }: ContributorG
         <article className={styles.host}>
           <Portrait name={featuredHost.name} image={featuredHost.image} host />
           <div className={styles.hostCopy}>
-            <p className={styles.eyebrow}>Featured host episode</p>
+            <p className={styles.eyebrow}>Featured Host: Carly Clark Zimmer</p>
             <h3>{featuredHost.name}</h3>
             <p className={styles.role}>{featuredHost.role}</p>
-            <p className={styles.hostEpisode}>{featuredHost.episodeTitle}</p>
           </div>
         </article>
 
