@@ -6,12 +6,23 @@
   white-space: nowrap;
 }
 
-.ticker > div {
+.track {
+  display: flex;
   width: max-content;
   animation: ticker 26s linear infinite;
   font-family: var(--font-interface);
   font-size: 16px;
   letter-spacing: 0.15em;
+  will-change: transform;
+}
+
+.group {
+  display: flex;
+  flex: none;
+}
+
+.group span {
+  flex: none;
 }
 
 .ticker b {
@@ -25,12 +36,19 @@
 
 @keyframes ticker {
   to {
-    transform: translateX(-50%);
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+@media (max-width: 600px) {
+  .track {
+    animation-duration: 36s;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ticker > div {
+  .track {
     animation: none;
+    will-change: auto;
   }
 }

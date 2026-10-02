@@ -227,10 +227,15 @@ test("serves the campaign without shared site navigation", async () => {
     /Because the change you keep putting off may not be nearly as hard as continuing to live inside the pattern\./i,
   );
   assert.match(html, /Meet the Business Owners Thriving Beyond the Bottleneck/i);
-  assert.match(html, /Featured host episode/i);
+  assert.match(html, /Featured Host: Carly Clark Zimmer/);
   assert.doesNotMatch(html, /Carly Clark Zimmer portrait placeholder/);
   assert.match(html, /Leadership and Behavioral Change Coach, ICF PCC/);
-  assert.match(html, /The Pattern Behind the Plateau/i);
+  const featuredHostCard = html.split('alt="Carly Clark Zimmer"')[1]?.split('id="chapter-01"')[0] ?? "";
+  assert.doesNotMatch(featuredHostCard, /The Pattern Behind the Plateau/i);
+  assert.match(html, /When what made you successful becomes the bottleneck\.\.\./);
+  assert.match(html, /Rewriting the rules of how you work now\.\.\./);
+  assert.match(html, /Letting go of control, responsibility, and “it has to be me”\.\.\./);
+  assert.match(html, /Simplifying, choosing, and making room for what matters\.\.\./);
   assert.match(html, /chapter-01/i);
   assert.match(html, /chapter-04/i);
   assert.match(html, /Kristin Brabant/i);

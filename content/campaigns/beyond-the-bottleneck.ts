@@ -128,7 +128,7 @@ export const featuredHost: {
 export const contributorChapters: ContributorChapter[] = [
   {
     number: "01",
-    title: "When what made you successful becomes the bottleneck",
+    title: "When what made you successful becomes the bottleneck...",
     contributors: [
       {
         id: "kristin-brabant",
@@ -182,7 +182,7 @@ export const contributorChapters: ContributorChapter[] = [
   },
   {
     number: "02",
-    title: "Rewriting the rules of how you work",
+    title: "Rewriting the rules of how you work now...",
     contributors: [
       {
         id: "katie-ferro",
@@ -236,7 +236,7 @@ export const contributorChapters: ContributorChapter[] = [
   },
   {
     number: "03",
-    title: "Letting go of control, responsibility & “it has to be me”",
+    title: "Letting go of control, responsibility, and “it has to be me”...",
     contributors: [
       {
         id: "keenya-kelly",
@@ -290,7 +290,7 @@ export const contributorChapters: ContributorChapter[] = [
   },
   {
     number: "04",
-    title: "Simplifying, choosing & making room for what matters",
+    title: "Simplifying, choosing, and making room for what matters...",
     contributors: [
       {
         id: "rosemary-dede",

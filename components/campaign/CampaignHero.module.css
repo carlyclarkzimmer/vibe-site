@@ -235,7 +235,13 @@
   }
 
   .photoWrap {
-    inset: 72px 0 -72px;
+    inset: 420px 0 0;
+  }
+
+  .photoFrame {
+    top: -240px;
+    bottom: auto;
+    height: max(620px, 100svh);
   }
 
   .eyebrow {
