@@ -176,6 +176,7 @@ const contributorEpisodes: DeliveryEpisode[] = [
     ],
     contributorLinks: [
       { label: "Website", url: "https://emilyreaganpr.com" },
+      { label: "Instagram", url: "https://www.instagram.com/emilyreaganpr/" },
       { label: "The Marketing Freelancer Podcast", url: "https://emilyreaganpr.com/podcast/" },
     ],
     resourceHeading: "Grab Emily Reagan's Resource",
@@ -259,7 +260,7 @@ const contributorEpisodes: DeliveryEpisode[] = [
     ],
     contributorLinks: [
       { label: "Website", url: "https://brandmerry.com" },
-      { label: "Instagram", url: "https://instagram.com/michelleknightco" },
+      { label: "Instagram", url: "https://www.instagram.com/_brandmerry/" },
     ],
     resourceHeading: "Explore Michelle Knight's Resources",
     resources: [
@@ -403,7 +404,7 @@ const contributorEpisodes: DeliveryEpisode[] = [
     ],
     contributorLinks: [
       { label: "Website", url: "http://www.hollymariehaynes.com" },
-      { label: "Instagram", url: "https://www.instagram.com/thehollymariehaynes/" },
+      { label: "Instagram", url: "https://www.instagram.com/crushtherushpodcast/" },
       { label: "Crush the Rush Podcast", url: "https://www.hollymariehaynes.com/podcast" },
     ],
     resourceHeading: "Grab Holly Haynes' Resource",

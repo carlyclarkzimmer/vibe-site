@@ -757,6 +757,7 @@ test("serves the Beyond the Bottleneck listening library", async () => {
     "https://www.instagram.com/meganyelaney/",
     "https://meganyelaney.com/podcast",
     "https://podcasts.apple.com/us/podcast/the-luxe-leap/id1801702536",
+    "https://www.instagram.com/emilyreaganpr/",
     "https://emilyreaganpr.com/podcast/",
     "https://www.instagram.com/heyjenliddy/",
     "https://www.instagram.com/reneebowen/",
@@ -768,7 +769,7 @@ test("serves the Beyond the Bottleneck listening library", async () => {
     "https://www.instagram.com/orderlyaccountingbykatie/",
     "https://www.instagram.com/christinewilliamscoaching/",
     "https://www.instagram.com/kristinbrabantcoaching/",
-    "https://www.instagram.com/thehollymariehaynes/",
+    "https://www.instagram.com/crushtherushpodcast/",
     "https://www.hollymariehaynes.com/podcast",
     "https://www.instagram.com/theheathersager/",
     "https://www.instagram.com/bethnydick/",
@@ -781,11 +782,17 @@ test("serves the Beyond the Bottleneck listening library", async () => {
     "https://lindasidhu.com/mixermind-waitlist",
   ];
   for (const href of contributorProfileLinks) assert.match(html, new RegExp(`href="${href.replace(/[.*+?^${}()|[\\]\\]/g, "\\$&")}"`));
+  assert.match(html, /href="https:\/\/www\.instagram\.com\/_brandmerry\/"[^>]*>Instagram<\/a>/i);
+  assert.doesNotMatch(html, /instagram\.com\/michelleknightco|instagram\.com\/thehollymariehaynes/i);
   assert.match(html, /When Personal Growth Turns into Personal Pressure/i);
   assert.match(html, /Monthly Tax &amp; Bookkeeping Reminders/i);
   assert.match(html, /What(?:&#x27;|')s Working in Business Books in 2026/i);
   assert.doesNotMatch(html, /\[EPISODE DESCRIPTION PLACEHOLDER\]|\[CONTRIBUTOR BIO PLACEHOLDER\]|\[RESOURCE PLACEHOLDER\]/i);
   const patternInterruptHtml = html.split('id="pattern-interrupt"')[1]?.split('<footer')[0] ?? "";
+  const patternInterruptMatches = html.match(/aria-labelledby="pattern-interrupt(?:-after-jen)?-title"/g) ?? [];
+  assert.equal(patternInterruptMatches.length, 2);
+  assert.ok(html.indexOf('id="episode-jen-liddy"') < html.indexOf('id="pattern-interrupt-after-jen"'));
+  assert.ok(html.indexOf('id="pattern-interrupt-after-jen"') < html.indexOf('id="episode-renee-bowen"'));
   assert.match(patternInterruptHtml, /Ready to work on your bottleneck\?/i);
   assert.match(patternInterruptHtml, /You(?:&#x27;|')ve heard 24 ways/i);
   assert.match(patternInterruptHtml, /Now interrupt one of yours\./i);
