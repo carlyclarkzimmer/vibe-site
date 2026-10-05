@@ -85,7 +85,7 @@ export function RegistrationModal({ optinSource }: RegistrationModalProps) {
             <h2 id="btb-registration-title">Get Beyond the Bottleneck</h2>
             <p>
               Enter your details below and I&apos;ll send you access to the complete
-              audio series beginning October 5th.
+              audio series.
             </p>
           </div>
           <div className={styles.field}>

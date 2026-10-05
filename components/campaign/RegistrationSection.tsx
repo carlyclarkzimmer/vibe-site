@@ -17,7 +17,6 @@ export function RegistrationSection({ content }: RegistrationSectionProps) {
       {content.description ? <p className={styles.description}>{content.description}</p> : null}
       <div className={styles.details}>
         <Eyebrow>The details</Eyebrow>
-        <p>Each interview becomes available on October 5th.</p>
         <p>Listen on your own schedule and walk away with actual case studies that share insight into a variety of bottlenecks and strategies for overcoming them.</p>
       </div>
       <div className={styles.finalLines}>
