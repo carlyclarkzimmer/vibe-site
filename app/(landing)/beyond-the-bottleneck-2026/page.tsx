@@ -50,7 +50,7 @@ export default async function BeyondTheBottleneckPage({
   return (
     <>
       <ScrollAnimationFallback />
-      <CampaignHero content={heroContent} launchDate={campaignMeta.launchDate} />
+      <CampaignHero content={heroContent} />
       <section className={sectionStyles.heroStatement}>
         <p>
           If you’ve built a successful business that gives you freedom on paper,

@@ -21,7 +21,6 @@ export function SeriesIntroSection() {
         <Button className={styles.seriesCta} href="#register">ACCESS THE AUDIOS</Button>
         <div className={styles.seriesDetails}>
           <p>Free, bindgeable audio series</p>
-          <p>Begins October 5th</p>
           <p>Listen on your own time</p>
         </div>
       </div>

@@ -22,7 +22,6 @@ export const campaignMeta = {
   title: "Beyond the Bottleneck | Free Audio Series",
   description:
     "Honest conversations with thriving online business owners who stopped turning their freedom back into a job.",
-  launchDate: "October 5th 2026",
 } as const;
 
 export const campaignNavigation: CampaignNavItem[] = [
@@ -50,7 +49,6 @@ export const heroContent = {
 
 export const tickerItems = [
   "FREE, BINGEABLE AUDIO SERIES",
-  "BEGINS OCTOBER 5TH",
   "LISTEN ON YOUR OWN TIME",
   "20-MINUTE INTERVIEWS",
 ] as const;
@@ -60,8 +58,7 @@ export const heroBannerItems = [
   "EXPERIMENTS",
   "BREAKING GENERATIONAL PATTERNS",
   "REWRITING THE RULES",
-  "22 Honest conversations about what it takes to change the way your business depends on you.",
-  "BEGINS OCTOBER 5",
+  "23 Honest Conversations about what it takes to change the way your business depends on you.",
 ] as const;
 
 export const checklistItems = [

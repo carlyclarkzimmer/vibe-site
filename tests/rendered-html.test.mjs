@@ -200,7 +200,8 @@ test("serves the campaign without shared site navigation", async () => {
     html,
     /alt="Carly Clark Zimmer smiling in a berry-colored jacket"/i,
   );
-  assert.match(html, /BEGINS OCTOBER 5TH/i);
+  assert.match(html, /23 Honest Conversations about what it takes to change the way your business depends on you\./);
+  assert.doesNotMatch(html, /22 Honest conversations|October 5|Begins October/i);
   assert.doesNotMatch(html, /BEYOND THE BOTTLENECKS—20 MINUTES OR LESS/i);
   assert.match(html, /The current pattern may be exhausting, but it(?:&#x27;|')s familiar/i);
   assert.match(html, /What if the client is disappointed\?/i);

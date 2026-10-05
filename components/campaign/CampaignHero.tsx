@@ -7,10 +7,9 @@ import styles from "./CampaignHero.module.css";
 
 type CampaignHeroProps = {
   content: typeof heroContent;
-  launchDate: string;
 };
 
-export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
+export function CampaignHero({ content }: CampaignHeroProps) {
   return (
     <header className={styles.hero} id="top">
       <div className={styles.photoWrap}>
@@ -49,10 +48,6 @@ export function CampaignHero({ content, launchDate }: CampaignHeroProps) {
           <span aria-hidden="true" className={styles.ctaStar}>✦</span>
           {content.cta}
         </Button>
-      </div>
-      <div className={styles.date}>
-        <span>Begins</span>
-        <strong>{launchDate}</strong>
       </div>
     </header>
   );
