@@ -104,7 +104,7 @@ const contributorEpisodes: DeliveryEpisode[] = [
       { label: "Business Not as Usual Podcast", url: "https://meganyelaney.com/podcast" },
     ],
     resourceHeading: "Grab Meg Yelaney's Resource",
-    resources: [{ name: "Main Character Energy (private podcast)", url: "https://meganyelaney.com/main-character-energy" }],
+    resources: [{ name: "Main Character Energy (private podcast)", url: "https://meganyelaney.com/main-character-energy-bottleneck" }],
   },
   {
     slug: "keenya-kelly",
