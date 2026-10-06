@@ -753,6 +753,8 @@ test("serves the Beyond the Bottleneck listening library", async () => {
   assert.match(html, /src="\/contributors\/heather-sager\.png"/i);
   assert.match(html, /Meet Carly Clark Zimmer/i);
   assert.match(html, /href="https:\/\/www\.instagram\.com\/keenyakelly\/"[^>]*>Instagram<\/a>/i);
+  assert.match(html, /Beyond the Bottleneck is about spotting the thing running your business from the background/i);
+  assert.doesNotMatch(html, /spotting the thing quietly running your business from the background/i);
   assert.match(html, /href="https:\/\/meganyelaney\.com\/main-character-energy-bottleneck"/i);
   assert.doesNotMatch(html, /href="https:\/\/meganyelaney\.com\/main-character-energy"/i);
   const contributorProfileLinks = [
