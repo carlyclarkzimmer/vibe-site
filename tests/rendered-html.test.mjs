@@ -36,7 +36,7 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /href="#laser-coach"[^>]*>Try the Free 5-Minute Laser Coach<\/a>/i);
   assert.match(html, /id="laser-coach"/i);
   assert.match(html, /Not sure where your bottleneck is\?[^<]*<em>Start here\.<\/em>/i);
-  assert.match(html, /laser-coach-pattern-head\.png/i);
+  assert.match(html, /laser-coach-pattern-head-transparent\.png/i);
   assert.match(
     html,
     /alt="Profile silhouette with gears representing pattern recognition"/i,
@@ -65,6 +65,12 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /My work goes under the surface\. We find the behavior keeping you overextended, figure out what(?:’|&#x27;)s driving it, and make different decisions until the new way becomes how your business actually runs\./i);
   assert.match(html, /The result: a business that no longer needs you to carry all of it\./i);
   assert.match(html, /I built my business on being capable, responsive, and willing to work as hard as it took\./i);
+  const lowerHtml = html.toLowerCase();
+  assert.ok(
+    lowerHtml.indexOf('id="laser-coach"') >
+      lowerHtml.indexOf("most business owners try to fix it at the surface."),
+  );
+  assert.ok(lowerHtml.indexOf('id="laser-coach"') < lowerHtml.indexOf("meet carly"));
   assert.match(html, /The Living Business Lounge/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);

@@ -60,10 +60,10 @@ export function HomeLaserCoachOptIn() {
         <div className={styles.laserCoachImage}>
           <Image
             alt="Profile silhouette with gears representing pattern recognition"
-            height={210}
-            src="/laser-coach-pattern-head.png"
+            height={1080}
+            src="/laser-coach-pattern-head-transparent.png?v=2"
             unoptimized
-            width={232}
+            width={1080}
           />
         </div>
         <div className={styles.laserCoachContent}>

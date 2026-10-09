@@ -39,7 +39,6 @@ export default function HomePage() {
           </div>
         </div>
       </Section>
-      <HomeLaserCoachOptIn />
       <Section className={styles.recognition}>
         <h2>{homeContent.recognition.heading}</h2>
         <div>
@@ -69,6 +68,7 @@ export default function HomePage() {
           {homeContent.approach.cta}
         </Button>
       </Section>
+      <HomeLaserCoachOptIn />
       <Section className={styles.meetCarly}>
         <h2>{homeContent.meetCarly.heading}</h2>
         <div className={styles.meetCarlyCopy}>

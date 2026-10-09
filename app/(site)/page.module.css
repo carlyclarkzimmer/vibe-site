@@ -103,7 +103,7 @@
   z-index: 1;
   scroll-margin-top: 24px;
   padding: 0 var(--space-section-inline);
-  background: white;
+  background: #f2e1ea;
   color: var(--color-cool-charcoal);
 }
 
@@ -122,6 +122,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: #f2e1ea;
 }
 
 .laserCoachImage img {
