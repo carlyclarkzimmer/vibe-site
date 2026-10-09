@@ -4,6 +4,7 @@ import {
   Cormorant_Garamond,
   EB_Garamond,
   Montserrat,
+  Playfair_Display,
 } from "next/font/google";
 import { EquityPledge } from "../components/EquityPledge";
 import { SiteFooter } from "../components/site/SiteFooter";
@@ -32,7 +33,14 @@ const cormorantGaramond = Cormorant_Garamond({
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
-  weight: ["500", "700", "800"],
+  weight: ["400", "500", "600", "700", "800"],
+});
+
+const playfairDisplay = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair-display",
+  weight: ["600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -45,7 +53,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body
-        className={`${bodoniModa.variable} ${cormorantGaramond.variable} ${ebGaramond.variable} ${montserrat.variable}`}
+        className={`${bodoniModa.variable} ${cormorantGaramond.variable} ${ebGaramond.variable} ${montserrat.variable} ${playfairDisplay.variable}`}
       >
         {children}
         <EquityPledge />

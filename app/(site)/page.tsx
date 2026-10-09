@@ -4,6 +4,7 @@ import { WorkTogetherShowcase } from "../../components/site/WorkTogetherShowcase
 import { Button } from "../../components/ui/Button";
 import { Eyebrow } from "../../components/ui/Eyebrow";
 import { Section } from "../../components/ui/Section";
+import { HomeLaserCoachOptIn } from "./_components/HomeLaserCoachOptIn";
 import styles from "./page.module.css";
 
 export default function HomePage() {
@@ -24,15 +25,21 @@ export default function HomePage() {
           <Eyebrow>{homeContent.hero.eyebrow}</Eyebrow>
           <h1>{homeContent.hero.title}</h1>
           <p className={styles.heroCopy}>{homeContent.hero.description}</p>
-          <Button
-            className={styles.heroCta}
-            href={homeContent.hero.ctaHref}
-            variant="outlineLight"
-          >
-            {homeContent.hero.cta}
-          </Button>
+          <div className={styles.heroActions}>
+            <Button
+              className={styles.heroCta}
+              href={homeContent.hero.ctaHref}
+              variant="outlineLight"
+            >
+              {homeContent.hero.cta}
+            </Button>
+            <a className={styles.heroSecondaryCta} href="#laser-coach">
+              Try the Free 5-Minute Laser Coach
+            </a>
+          </div>
         </div>
       </Section>
+      <HomeLaserCoachOptIn />
       <Section className={styles.recognition}>
         <h2>{homeContent.recognition.heading}</h2>
         <div>
@@ -49,9 +56,7 @@ export default function HomePage() {
         {homeContent.approach.surfaceAttempts.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p>
-          <strong>{homeContent.approach.emphasis}</strong>
-        </p>
+        <p>{homeContent.approach.emphasis}</p>
         <p>{homeContent.approach.description}</p>
         <p>
           <strong>{homeContent.approach.closing}</strong>

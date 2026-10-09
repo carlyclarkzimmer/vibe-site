@@ -33,6 +33,38 @@ test("server-renders the shared-navigation homepage", async () => {
 
   assert.match(html, /<title>Carly Clark Zimmer \| Life &amp; Leadership Coach<\/title>/i);
   assert.match(html, /Build a business that leaves room for life\./i);
+  assert.match(html, /href="#laser-coach"[^>]*>Try the Free 5-Minute Laser Coach<\/a>/i);
+  assert.match(html, /id="laser-coach"/i);
+  assert.match(html, /Not sure where your bottleneck is\?[^<]*<em>Start here\.<\/em>/i);
+  assert.match(html, /laser-coach-pattern-head\.png/i);
+  assert.match(
+    html,
+    /alt="Profile silhouette with gears representing pattern recognition"/i,
+  );
+  assert.match(html, /data-drip-embedded-form="205408070"/i);
+  assert.match(
+    html,
+    /action="https:\/\/www\.getdrip\.com\/forms\/205408070\/submissions"[^>]*method="post"/i,
+  );
+  assert.match(html, /<input(?=[^>]*name="fields\[first_name\]")(?=[^>]*required)[^>]*>/i);
+  assert.match(html, /<input(?=[^>]*name="fields\[email\]")(?=[^>]*required)(?=[^>]*type="email")[^>]*>/i);
+  assert.match(html, /<input(?=[^>]*name="tags\[\]")(?=[^>]*value="5-Minute Laser Coach Custom Chat GPT")[^>]*>/i);
+  assert.match(html, /href="\/privacy"[^>]*>Privacy Policy<\/a>/i);
+  assert.doesNotMatch(html, /name="fields\[social_media\]"/i);
+  assert.doesNotMatch(html, /name="website"/i);
+  assert.doesNotMatch(html, /✨|⚡️/u);
+  assert.match(
+    html,
+    /Finding your real bottleneck is the most reliable way to build a business that doesn(?:’|&#x27;)t depend on you for everything, so you can log off and actually STAY off\./i,
+  );
+  assert.match(html, /Most business owners try to fix it at the surface\./i);
+  assert.match(html, /They invest in a business coach, searching for the strategy that will save them\./i);
+  assert.match(html, /Or a new productivity system\./i);
+  assert.match(html, /They enforce new boundaries for a while, then slip back into old habits\./i);
+  assert.match(html, /Those things help for a minute\. But if the automatic patterns underneath are still running, the bottleneck just finds a new way back\./i);
+  assert.match(html, /My work goes under the surface\. We find the behavior keeping you overextended, figure out what(?:’|&#x27;)s driving it, and make different decisions until the new way becomes how your business actually runs\./i);
+  assert.match(html, /The result: a business that no longer needs you to carry all of it\./i);
+  assert.match(html, /I built my business on being capable, responsive, and willing to work as hard as it took\./i);
   assert.match(html, /The Living Business Lounge/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
@@ -49,6 +81,21 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.doesNotMatch(html, /codex-preview/i);
   assert.doesNotMatch(html, /Your site is taking shape/i);
   assert.doesNotMatch(html, /react-loading-skeleton/i);
+});
+
+test("implements the homepage Laser Coach inline submission states", async () => {
+  const source = await readFile(
+    new URL("../app/(site)/_components/HomeLaserCoachOptIn.tsx", import.meta.url),
+    "utf8",
+  );
+
+  assert.match(source, /disabled=\{status === "submitting"\}/i);
+  assert.match(source, /Please enter your first name\./i);
+  assert.match(source, /Please enter your email address\./i);
+  assert.match(source, /Please enter a valid email address\./i);
+  assert.match(source, /It&apos;s on its way\. Check your inbox for your Laser Coach link\./i);
+  assert.match(source, /mode: "no-cors"/i);
+  assert.match(source, /setStatus\("success"\)/i);
 });
 
 test("serves the full Services page inside the shared site shell", async () => {

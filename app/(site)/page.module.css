@@ -57,21 +57,220 @@
   text-shadow: 0 1px 18px rgb(0 0 0 / 35%);
 }
 
-.heroCta {
+.heroActions {
+  display: flex;
+  align-items: stretch;
+  gap: 16px;
   margin-top: 40px;
 }
 
-.heroCta {
-  min-height: 58px;
-  padding: 20px 46px;
-  font-size: 11px;
-  letter-spacing: 0.18em;
+.heroActions .heroCta,
+.heroSecondaryCta {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-family: var(--font-interface);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.heroCta:hover {
+.heroSecondaryCta {
+  border: 1px solid var(--color-deep-emerald);
+  background: var(--color-deep-emerald);
+  color: white;
+}
+
+.heroActions .heroCta:hover {
   border-color: white;
   background: white;
   color: var(--color-ink);
+}
+
+.heroSecondaryCta:hover {
+  border-color: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
+  background: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
+}
+
+.laserCoach {
+  position: relative;
+  z-index: 1;
+  scroll-margin-top: 24px;
+  padding: 0 var(--space-section-inline);
+  background: white;
+  color: var(--color-cool-charcoal);
+}
+
+.laserCoachInner {
+  display: grid;
+  width: min(100%, 1100px);
+  margin: 0 auto;
+  padding: 40px 0;
+  border-block: 1px solid #e6dce6;
+  grid-template-columns: 140px minmax(0, 1fr);
+  gap: 48px;
+  align-items: center;
+}
+
+.laserCoachImage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.laserCoachImage img {
+  width: min(100%, 140px);
+  height: auto;
+}
+
+.laserCoachContent {
+  min-width: 0;
+}
+
+.laserCoachEyebrow {
+  margin: 0 0 8px;
+  color: var(--color-deep-emerald);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.laserCoach h2 {
+  margin: 0;
+  color: var(--color-deep-amethyst);
+  font-family: var(--font-playfair);
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.laserCoach h2 em {
+  color: var(--color-aubergine);
+  font-style: italic;
+}
+
+.laserCoachBody {
+  max-width: 760px;
+  margin: 12px 0 0;
+  color: var(--color-black-diamond);
+  font-family: var(--font-interface);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.laserCoachForm {
+  display: grid;
+  margin-top: 20px;
+  grid-template-columns: minmax(120px, 0.7fr) minmax(180px, 1fr) auto;
+  gap: 12px;
+  align-items: end;
+}
+
+.laserCoachField {
+  display: grid;
+  min-width: 0;
+  gap: 8px;
+}
+
+.laserCoachField label {
+  color: var(--color-cool-charcoal);
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.laserCoachField input {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  border: 1px solid var(--color-cool-charcoal);
+  border-radius: 6px;
+  background: white;
+  color: var(--color-black-diamond);
+  font: 400 16px/1.3 var(--font-interface);
+}
+
+.laserCoachField input:focus-visible {
+  border: 2px solid var(--color-deep-emerald);
+  outline: none;
+}
+
+.laserCoachField input[aria-invalid="true"] {
+  border-color: var(--color-deep-emerald);
+}
+
+.laserCoachError {
+  color: var(--color-cool-charcoal);
+  font-family: var(--font-interface);
+  font-size: 13px;
+  line-height: 1.3;
+}
+
+.laserCoachForm button {
+  min-height: 44px;
+  padding: 12px 28px;
+  border: 1px solid var(--color-deep-emerald);
+  border-radius: 6px;
+  background: var(--color-deep-emerald);
+  color: white;
+  cursor: pointer;
+  font-family: var(--font-interface);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.laserCoachForm button:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
+  background: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
+}
+
+.laserCoachForm button:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+.laserCoachFinePrint,
+.laserCoachSubmitError,
+.laserCoachSuccess {
+  color: var(--color-cool-charcoal);
+  font-family: var(--font-interface);
+}
+
+.laserCoachFinePrint {
+  margin: 8px 0 0;
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+.laserCoachSubmitError {
+  margin: 12px 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.laserCoachSuccess {
+  margin: 30px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 1.6;
 }
 
 .recognition {
@@ -331,6 +530,23 @@
   .hero {
     padding-inline: 6vw;
   }
+
+  .laserCoachInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .laserCoachImage {
+    justify-content: flex-start;
+  }
+
+  .laserCoachImage img {
+    width: 140px;
+  }
+
+  .laserCoach h2 {
+    white-space: normal;
+  }
 }
 
 @media (max-width: 760px) {
@@ -362,8 +578,43 @@
     font-size: 21px;
   }
 
-  .heroCta {
+  .heroActions {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
     margin-top: 36px;
+  }
+
+  .heroActions .heroCta,
+  .heroSecondaryCta {
+    width: 100%;
+  }
+
+  .laserCoach {
+    padding: 0 var(--space-section-inline-mobile);
+  }
+
+  .laserCoachInner {
+    padding: 32px 0;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .laserCoachImage img {
+    width: 96px;
+  }
+
+  .laserCoach h2 {
+    font-size: 24px;
+  }
+
+  .laserCoachBody {
+    font-size: 16px;
+  }
+
+  .laserCoachForm {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   .recognition {
@@ -431,13 +682,6 @@
   .meetCarlyImage {
     max-width: 440px;
     margin: 0 auto;
-  }
-}
-
-@media (max-width: 420px) {
-  .heroCta {
-    width: 100%;
-    text-align: center;
   }
 }
 
