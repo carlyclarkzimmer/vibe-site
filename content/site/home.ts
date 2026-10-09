@@ -9,7 +9,7 @@ export const homeContent = {
     eyebrow: "Business Leadership & Behavior Change Coach · ICF PCC",
     title: "Build a business that leaves room for life.",
     description:
-      "Finding your business bottleneck is the fastest and most effective way to build a business that doesn’t depend on you for everything, so you can truly LIVE your life outside of it.",
+      "Finding your real bottleneck is the most reliable way to build a business that doesn’t depend on you for everything, so you can log off and actually STAY off.",
     cta: "Let’s Find the Bottleneck",
     ctaHref: "/services",
   },
@@ -24,27 +24,27 @@ export const homeContent = {
       "But things never seem to \"calm down\". The right time never appears and quarter after quarter, your life outside of work has all but disappeared.",
   },
   approach: {
-    heading: "Most business owners try to solve the problem at the surface.",
+    heading: "Most business owners try to fix it at the surface.",
     surfaceAttempts: [
-      "The invest in business coach searching for the strategy what will save them.",
-      "Or a better a new productivity system.",
-      "They enforce new boundaries for a while but them slip into old habits.",
+      "They invest in a business coach, searching for the strategy that will save them.",
+      "Or a new productivity system.",
+      "They enforce new boundaries for a while, then slip back into old habits.",
     ],
     emphasis:
-      "Those things can help, but if the same automatic patterns are still running underneath, the bottleneck usually finds a new way to come back.",
+      "Those things help for a minute. But if the automatic patterns underneath are still running, the bottleneck just finds a new way back.",
     description:
-      "My work helps you identify the behavior keeping you overextended, understand what’s driving it, and make different decisions until those choices become part of how your business actually operates.",
+      "My work goes under the surface. We find the behavior keeping you overextended, figure out what’s driving it, and make different decisions until the new way becomes how your business actually runs.",
     closing:
-      "So you’re not just getting temporary relief. You’re building a business that no longer requires you to carry everything. ✨",
+      "The result: a business that no longer needs you to carry all of it.",
     cta: "Find Your Next Step",
     ctaHref: "/services",
   },
   meetCarly: {
     heading: "Meet Carly",
     paragraphs: [
-      { text: "I know this pattern because I lived it.", emphasis: true },
+      { text: "I know this pattern because I lived it." },
       {
-        text: "I built my business by being capable, responsive, and willing to work as hard as it took.",
+        text: "I built my business on being capable, responsive, and willing to work as hard as it took.",
       },
       { text: "For a long time, that worked." },
       {
@@ -74,7 +74,7 @@ export const homeContent = {
     services: [
       {
         prompt: "Need quick clarity?",
-        title: "⚡️ 5-Minute Laser Coach",
+        title: "5-Minute Laser Coach",
         href: "/breakthrough",
         newTab: true,
         description: "Cut through the overthinking and find your next move.",

@@ -10,10 +10,17 @@
   --color-text-muted: #d7d7d7;
   --color-text-subtle: #666666;
   --color-text-dim: #888888;
+  --color-deep-amethyst: #3b145f;
+  --color-aubergine: #4b1838;
+  --color-deep-emerald: #0b5d4b;
+  --color-icy-pink: #f4ddea;
+  --color-black-diamond: #050505;
+  --color-cool-charcoal: #20222a;
 
   --font-display: "Bodoni Moda", Georgia, "Times New Roman", serif;
   --font-body: "EB Garamond", Georgia, "Times New Roman", serif;
   --font-interface: Montserrat, Arial, Helvetica, sans-serif;
+  --font-playfair: "Playfair Display", Georgia, serif;
 
   --font-size-body: 20px;
   --font-size-eyebrow: 13px;
