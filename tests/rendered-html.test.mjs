@@ -134,6 +134,12 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /carly-services-restoration\.jpg/i);
   assert.match(html, /testimonial-emily\.png/i);
   assert.match(html, /testimonial-rochelle\.png/i);
+  assert.match(html, /id="laser-coach"/i);
+  assert.match(html, /Not sure where your bottleneck is\?[^<]*<em>Start here\.<\/em>/i);
+  assert.ok(
+    html.toLowerCase().indexOf('id="laser-coach"') >
+      html.toLowerCase().indexOf("testimonial-rochelle.png"),
+  );
   assert.doesNotMatch(html, /Decision Map Intensive/i);
   assert.doesNotMatch(html, /Identity Uplevel/i);
   assert.doesNotMatch(html, /Laser Coaching Club/i);

@@ -4,6 +4,7 @@ import { homeContent } from "../../../content/site/home";
 import { WorkTogetherShowcase } from "../../../components/site/WorkTogetherShowcase";
 import { Button } from "../../../components/ui/Button";
 import { Section } from "../../../components/ui/Section";
+import { HomeLaserCoachOptIn } from "../_components/HomeLaserCoachOptIn";
 import styles from "./page.module.css";
 
 const recommendationHref = "https://carlyclarkzimmer.as.me/connect";
@@ -257,6 +258,8 @@ export default function ServicesPage() {
           unoptimized
         />
       </section>
+
+      <HomeLaserCoachOptIn />
     </>
   );
 }
