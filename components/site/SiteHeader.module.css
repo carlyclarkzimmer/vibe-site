@@ -84,14 +84,11 @@
   color: white;
 }
 
-:global(body:has(#home-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#services-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#about-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#contact-hero)) .navigation > a:not(.monogram):hover,
-:global(body:has(#resources-hero)) .navigation > a:not(.monogram):hover {
-  border-color: white;
-  background: white;
-  color: var(--color-ink);
+.navigation > a:not(.monogram):hover,
+.navigation > a:not(.monogram):focus-visible {
+  border-color: #fe0564;
+  background: #fe0564;
+  color: white;
 }
 
 .mobileMenu {
