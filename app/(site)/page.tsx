@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { homeContent } from "../../content/site/home";
+import { EditorialTestimonial } from "../../components/site/EditorialTestimonial";
 import { WorkTogetherShowcase } from "../../components/site/WorkTogetherShowcase";
 import { Button } from "../../components/ui/Button";
 import { Eyebrow } from "../../components/ui/Eyebrow";
@@ -55,9 +56,11 @@ export default function HomePage() {
         {homeContent.approach.surfaceAttempts.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
-        <p>{homeContent.approach.emphasis}</p>
-        <p>{homeContent.approach.description}</p>
-        <p>
+        <p className={styles.approachEmphasis}>
+          <strong>{homeContent.approach.emphasis}</strong>
+        </p>
+        <p className={styles.approachDescription}>{homeContent.approach.description}</p>
+        <p className={styles.approachClosing}>
           <strong>{homeContent.approach.closing}</strong>
         </p>
         <Button
@@ -74,9 +77,15 @@ export default function HomePage() {
         <div className={styles.meetCarlyCopy}>
           <div className={styles.meetCarlyStory}>
             {homeContent.meetCarly.paragraphs.map((paragraph) => (
-              <p key={paragraph.text}>
-                {paragraph.emphasis ? <strong>{paragraph.text}</strong> : paragraph.text}
-              </p>
+              paragraph.pullQuote ? (
+                <blockquote className={styles.meetCarlyPullQuote} key={paragraph.text}>
+                  <p>{paragraph.text}</p>
+                </blockquote>
+              ) : (
+                <p key={paragraph.text}>
+                  {paragraph.emphasis ? <strong>{paragraph.text}</strong> : paragraph.text}
+                </p>
+              )
             ))}
           </div>
         </div>
@@ -97,10 +106,15 @@ export default function HomePage() {
         </div>
       </Section>
       <WorkTogetherShowcase />
-      <Section className={styles.testimonial}>
-        <blockquote>“{homeContent.testimonial.quote}”</blockquote>
-        <p>{homeContent.testimonial.attribution}</p>
-      </Section>
+      <EditorialTestimonial
+        testimonial={homeContent.testimonial.quote}
+        clientName={homeContent.testimonial.clientName}
+        professionalTitle={homeContent.testimonial.professionalTitle}
+        photo={{
+          src: "/laurie-j-testimonial.png",
+          alt: "Laurie J. smiling outdoors",
+        }}
+      />
     </>
   );
 }

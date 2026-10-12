@@ -307,8 +307,7 @@
 
 .recognition,
 .approach,
-.meetCarly,
-.testimonial {
+.meetCarly {
   --home-content-max: 1500px;
   --home-page-inline: clamp(24px, 2.5vw, 40px);
 
@@ -349,6 +348,23 @@
 
 .approach p:last-of-type {
   margin-bottom: 0;
+}
+
+.approach .approachEmphasis {
+  margin-block: clamp(32px, 3vw, 46px);
+}
+
+.approach .approachDescription {
+  margin-block: clamp(30px, 2.5vw, 40px);
+}
+
+.approach .approachClosing {
+  margin-top: clamp(44px, 4vw, 64px);
+  font-family: var(--font-body);
+  font-size: clamp(44px, 4.5vw, 60px);
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  text-wrap: balance;
 }
 
 .approachCta {
@@ -406,6 +422,27 @@
 
 .meetCarlyStory p:last-child {
   margin-bottom: 0;
+}
+
+.meetCarlyPullQuote {
+  width: 100%;
+  max-width: 880px;
+  margin: clamp(36px, 4vw, 54px) 0;
+  padding: clamp(32px, 3vw, 40px);
+  border-left: 4px solid #991f5d;
+  border-radius: 6px;
+  background: #f2e1ea;
+  color: #2d2226;
+  text-align: left;
+}
+
+.meetCarlyPullQuote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(30px, 2.6vw, 34px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
 }
 
 .meetCarlyClosing {
@@ -552,31 +589,6 @@
   text-align: right;
 }
 
-.testimonial {
-  position: relative;
-  z-index: 1;
-  background: var(--color-surface-muted);
-  color: var(--color-ink);
-  text-align: center;
-}
-
-.testimonial blockquote {
-  max-width: 950px;
-  margin: 0 auto;
-  font-family: var(--font-display);
-  font-size: clamp(19px, 2.5vw, 36px);
-  letter-spacing: -0.04em;
-  line-height: 2.5;
-}
-
-.testimonial p {
-  margin: 36px auto 0;
-  font-family: var(--font-interface);
-  font-size: 10px;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
 @media (max-width: 980px) {
   .hero {
     padding-inline: 6vw;
@@ -608,6 +620,20 @@
   .meetCarlyClosing p {
     font-size: clamp(21px, 2.5vw, 23px);
     line-height: 1.55;
+  }
+
+  .approach .approachClosing {
+    font-size: clamp(40px, 5.8vw, 52px);
+    line-height: 1.14;
+  }
+
+  .meetCarlyPullQuote {
+    padding: 28px 30px;
+  }
+
+  .meetCarlyPullQuote p {
+    font-size: clamp(27px, 3.4vw, 30px);
+    line-height: 1.35;
   }
 }
 
@@ -686,8 +712,7 @@
 
   .recognition,
   .approach,
-  .meetCarly,
-  .testimonial {
+  .meetCarly {
     padding-inline: var(--space-section-inline-mobile);
   }
 
@@ -720,6 +745,22 @@
   .meetCarlyClosing p {
     font-size: clamp(20px, 5.5vw, 23px);
     line-height: 1.55;
+  }
+
+  .approach .approachClosing {
+    margin-top: 38px;
+    font-size: clamp(36px, 10vw, 46px);
+    line-height: 1.14;
+  }
+
+  .meetCarlyPullQuote {
+    margin-block: 32px;
+    padding: 22px 24px;
+  }
+
+  .meetCarlyPullQuote p {
+    font-size: clamp(24px, 7vw, 28px);
+    line-height: 1.38;
   }
 
   .servicesShowcase {

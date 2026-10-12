@@ -26,12 +26,12 @@ export const homeContent = {
   approach: {
     heading: "Most business owners try to fix it at the surface.",
     surfaceAttempts: [
-      "They invest in a business coach, searching for the strategy that will save them.",
-      "Or a new productivity system.",
-      "They enforce new boundaries for a while, then slip back into old habits.",
+      "You invest in a business coach, searching for the perfect strategy or new productivity system.",
+      "You enforce new boundaries for a while, then slip back into old habits.",
+      "Those things do help... for a bit.",
     ],
     emphasis:
-      "Those things help for a minute. But if the automatic patterns underneath are still running, the bottleneck just finds a new way back.",
+      "But if the automatic patterns underneath are still running, the bottleneck just finds a new way back.",
     description:
       "My work goes under the surface. We find the behavior keeping you overextended, figure out what’s driving it, and make different decisions until the new way becomes how your business actually runs.",
     closing:
@@ -57,6 +57,7 @@ export const homeContent = {
       { text: "Effort had become my default answer to every problem.", emphasis: true },
       {
         text: "And at some point, you can’t work harder to solve a way of working that already depends on you working too hard.",
+        pullQuote: true,
       },
     ],
     closingParagraphs: [
@@ -107,6 +108,7 @@ export const homeContent = {
   testimonial: {
     quote:
       "Before working with Carly, I was constantly busy but unclear. Our work brought clarity to my priorities, how I structure my time, and how I move forward in my business without burning myself out.",
-    attribution: "Laurie J., Financial Freedom Coach",
+    clientName: "Laurie J.",
+    professionalTitle: "Financial Freedom Coach",
   },
 } as const;
