@@ -6,6 +6,7 @@ import { WorkTogetherShowcase } from "../../../components/site/WorkTogetherShowc
 import { Button } from "../../../components/ui/Button";
 import { Section } from "../../../components/ui/Section";
 import { HomeLaserCoachOptIn } from "../_components/HomeLaserCoachOptIn";
+import { BusinessRestorationMethod } from "./_components/BusinessRestorationMethod";
 import styles from "./page.module.css";
 
 const recommendationHref = "https://carlyclarkzimmer.as.me/connect";
@@ -17,6 +18,42 @@ const socialTitle = "When What You Built No Longer Fits";
 const socialDescription =
   "For people who know something needs to change but are not sure what comes next. Clarity and grounded direction for life and business transitions.";
 const socialImageUrl = "https://carlyclarkzimmer.com/services-social.png";
+
+const restorationPhases = [
+  {
+    number: "1",
+    title: "Stop the Leaks",
+    image: {
+      src: "/business-restoration/stop-the-leaks.jpg",
+      alt: "An elegant interior with a subtle ceiling crack and small water leak",
+    },
+    description:
+      "We identify where your time, energy, and attention are getting drained. That might be client urgency, over-delivering, doing work your team could own, saying yes too quickly, or constantly pushing your own priorities aside.",
+    outcome: "Less reactivity. More space.",
+  },
+  {
+    number: "2",
+    title: "Open the Walls",
+    image: {
+      src: "/business-restoration/open-the-walls.jpg",
+      alt: "A refined interior with an opened plaster wall revealing wooden framing",
+    },
+    description:
+      "We look at what’s driving those patterns. The people-pleasing, over-responsibility, perfectionism, old rules, and beliefs that make it hard to follow through on the way you say you want to work.",
+    outcome: "Deeper awareness. New possibilities.",
+  },
+  {
+    number: "3",
+    title: "Rebuild the Business Backbone",
+    image: {
+      src: "/business-restoration/rebuild-the-business-backbone.jpg",
+      alt: "A restored light-filled interior with arches and open connected rooms",
+    },
+    description:
+      "Then we turn those new decisions into the actual structure of your business. Pricing, access, scope, communication, capacity, delegation, and weekly rhythm all get rebuilt so the business no longer relies on you overriding yourself to keep it running.",
+    outcome: "Sustainable growth. A business that supports your life.",
+  },
+];
 
 export const metadata: Metadata = {
   title,
@@ -97,73 +134,34 @@ export default function ServicesPage() {
 
         <Section className={styles.meetCarly}>
           <h2>That’s where the Business Restoration Method comes in.</h2>
-          <div className={styles.meetCarlyCopy}>
-            <div className={styles.meetCarlyStory}>
-              <p>
-                We start by finding the bottlenecks that are costing you the most time, energy,
-                and capacity.
-              </p>
-              <p>
-                Then we look at the patterns underneath them, the automatic decisions, old rules,
-                and ways of working that keep recreating the same pressure.
-              </p>
-              <p>
-                From there, we rebuild the parts of the business that need to change, your
-                boundaries, access, pricing, capacity, and rhythms, so the business can keep
-                growing <strong>without depending on you for everything.</strong> ✨
-              </p>
-              <div className={styles.restorationMethod}>
-                <h3>The Business Restoration Method</h3>
-
-                <h4>1. Stop the Leaks</h4>
-                <p>
-                  We identify where your time, energy, and attention are getting drained. That
-                  might be client urgency, over-delivering, doing work your team could own, saying
-                  yes too quickly, or constantly pushing your own priorities aside.
-                </p>
-
-                <h4>2. Open the Walls</h4>
-                <p>
-                  We look at what’s driving those patterns. The people-pleasing,
-                  over-responsibility, perfectionism, old rules, and beliefs that make it hard to
-                  follow through on the way you say you want to work.
-                </p>
-
-                <h4>3. Rebuild the Business Backbone</h4>
-                <p>
-                  Then we turn those new decisions into the actual structure of your business.
-                  Pricing, access, scope, communication, capacity, delegation, and weekly rhythm
-                  all get rebuilt so the business no longer relies on you overriding yourself to
-                  keep it running.
-                </p>
-
-                <p className={styles.restorationGoal}>
-                  The goal: a business that supports your clients and revenue without costing you
-                  your life outside of it. ✨
-                </p>
-              </div>
-            </div>
+          <div className={styles.methodIntroduction}>
+            <p>
+              Think of your business like an architecturally beautiful home. You&apos;ve spent years
+              building it, but over time, some of the systems, structures, and ways of operating
+              that once served you may no longer fit the life you want to live.
+            </p>
+            <p>
+              <strong>The Business Restoration Method</strong> is my holistic approach to
+              identifying where your time, energy, and attention are being drained, uncovering the
+              behavioral patterns keeping you stuck, and making practical changes to how your
+              business runs.
+            </p>
+            <p>
+              <strong>The goal?</strong> Fewer unnecessary demands on your time, clearer
+              boundaries, a business that doesn&apos;t depend on you for every decision, and more
+              freedom to actually enjoy your life outside of work.
+            </p>
+            <p className={styles.methodPullQuote}>
+              <strong>
+                We&apos;re not tearing down what you&apos;ve built. We&apos;re restoring it to work better for
+                the person you&apos;ve become.
+              </strong>
+            </p>
           </div>
-          <div className={styles.meetCarlyMedia}>
-            <div className={styles.meetCarlyImage}>
-              <Image
-                src="/carly-services-restoration.jpg"
-                alt="Carly Clark Zimmer wearing a berry jacket"
-                width={3840}
-                height={5760}
-                sizes="(max-width: 760px) 100vw, 42vw"
-                unoptimized
-              />
-            </div>
-            <Button
-              className={styles.restorationApply}
-              href="https://carlyclarkzimmer.as.me/connect"
-              newTab
-              variant="outline"
-            >
-              Apply Here
-            </Button>
-          </div>
+          <BusinessRestorationMethod
+            phases={restorationPhases}
+            applyHref="https://carlyclarkzimmer.as.me/connect"
+          />
         </Section>
 
         <WorkTogetherShowcase
