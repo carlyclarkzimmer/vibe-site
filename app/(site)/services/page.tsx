@@ -7,6 +7,9 @@ import { Button } from "../../../components/ui/Button";
 import { Section } from "../../../components/ui/Section";
 import { HomeLaserCoachOptIn } from "../_components/HomeLaserCoachOptIn";
 import { BusinessRestorationMethod } from "./_components/BusinessRestorationMethod";
+import { ClientMessageGallery } from "./_components/ClientMessageGallery";
+import { CredentialsSection } from "./_components/CredentialsSection";
+import { FeaturedVideoTestimonial } from "./_components/FeaturedVideoTestimonial";
 import styles from "./page.module.css";
 
 const recommendationHref = "https://carlyclarkzimmer.as.me/connect";
@@ -24,8 +27,8 @@ const restorationPhases = [
     number: "1",
     title: "Stop the Leaks",
     image: {
-      src: "/business-restoration/stop-the-leaks-v2.jpg",
-      alt: "An elegant interior with a cracked ceiling actively dripping into a brass bowl",
+      src: "/business-restoration/stop-the-leaks-final.jpg",
+      alt: "A sunlit villa room with a severely cracked ceiling leaking into brass buckets",
     },
     description:
       "We identify where your time, energy, and attention are getting drained. That might be client urgency, over-delivering, doing work your team could own, saying yes too quickly, or constantly pushing your own priorities aside.",
@@ -164,6 +167,31 @@ export default function ServicesPage() {
           />
         </Section>
 
+        <EditorialTestimonial
+          testimonial={
+            <>
+              <p>
+                I was feeling stuck in my wellness business and couldn’t seem to find the work-life
+                balance I always strived for. Carly helped me to align my business with my values in
+                a way that felt authentic to me.
+              </p>
+              <p>
+                Carly’s heart-centered approach and her calm, non-judgemental demeanor….but also,
+                her commitment to holding me accountable! I am so grateful to her that I can now
+                truly enjoy my day-to-day activities and feel aligned.
+              </p>
+            </>
+          }
+          clientName="Diane I."
+          professionalTitle="Registered Dietitian"
+          photo={{
+            src: "/testimonials/testimonial-diane.jpg",
+            alt: "Diane I., Registered Dietitian",
+          }}
+        />
+
+        <FeaturedVideoTestimonial />
+
         <WorkTogetherShowcase
           services={homeContent.servicesShowcase.services.filter(
             (service) => service.title !== "Business Restoration Method",
@@ -192,8 +220,13 @@ export default function ServicesPage() {
           }
           clientName="Emily J."
           professionalTitle="Fractional CFO"
-          photo={{ src: "/testimonial-emily.png", alt: "Emily J., Fractional CFO" }}
+          photo={{
+            src: "/testimonials/testimonial-emily.jpg",
+            alt: "Emily J., Fractional CFO",
+          }}
         />
+
+        <ClientMessageGallery />
       </div>
 
       <section className={styles.recommendation}>
@@ -210,24 +243,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <EditorialTestimonial
-        testimonial={
-          <>
-            <p>
-              I’ve invested in many programs, including high-ticket ones that left me feeling
-              scammed. Carly’s support was worth every penny – I wanted more clients, and I signed
-              them, and now I have a system to keep getting them.
-            </p>
-            <p>Our work together will benefit my business for years to come.</p>
-          </>
-        }
-        clientName="Rochelle Y."
-        professionalTitle="Founder, Restorative Dialogue Consultant"
-        photo={{
-          src: "/testimonial-rochelle.png",
-          alt: "Rochelle Y., Founder and Restorative Dialogue Consultant",
-        }}
-      />
+      <CredentialsSection />
 
       <HomeLaserCoachOptIn />
     </>
