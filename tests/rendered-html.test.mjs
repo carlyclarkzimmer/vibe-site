@@ -58,13 +58,17 @@ test("server-renders the shared-navigation homepage", async () => {
     /Finding your real bottleneck is the most reliable way to build a business that doesn(?:’|&#x27;)t depend on you for everything, so you can log off and actually STAY off\./i,
   );
   assert.match(html, /Most business owners try to fix it at the surface\./i);
-  assert.match(html, /They invest in a business coach, searching for the strategy that will save them\./i);
-  assert.match(html, /Or a new productivity system\./i);
-  assert.match(html, /They enforce new boundaries for a while, then slip back into old habits\./i);
-  assert.match(html, /Those things help for a minute\. But if the automatic patterns underneath are still running, the bottleneck just finds a new way back\./i);
+  assert.match(html, /You invest in a business coach, searching for the perfect strategy or new productivity system\./i);
+  assert.match(html, /You enforce new boundaries for a while, then slip back into old habits\./i);
+  assert.match(html, /Those things do help\.\.\. for a bit\./i);
+  assert.match(html, /But if the automatic patterns underneath are still running, the bottleneck just finds a new way back\./i);
   assert.match(html, /My work goes under the surface\. We find the behavior keeping you overextended, figure out what(?:’|&#x27;)s driving it, and make different decisions until the new way becomes how your business actually runs\./i);
   assert.match(html, /The result: a business that no longer needs you to carry all of it\./i);
   assert.match(html, /I built my business on being capable, responsive, and willing to work as hard as it took\./i);
+  assert.match(
+    html,
+    /<blockquote[^>]*><p>And at some point, you can(?:’|&#x27;)t work harder to solve a way of working that already depends on you working too hard\.<\/p><\/blockquote>/i,
+  );
   const lowerHtml = html.toLowerCase();
   assert.ok(
     lowerHtml.indexOf('id="laser-coach"') >
@@ -72,6 +76,11 @@ test("server-renders the shared-navigation homepage", async () => {
   );
   assert.ok(lowerHtml.indexOf('id="laser-coach"') < lowerHtml.indexOf("meet carly"));
   assert.match(html, /The Living Business Lounge/i);
+  assert.match(html, /<blockquote>Before working with Carly, I was constantly busy but unclear\./i);
+  assert.match(html, /laurie-j-testimonial\.png/i);
+  assert.match(html, /Laurie J\.<\/strong>/i);
+  assert.match(html, /Financial Freedom Coach<\/span>/i);
+  assert.doesNotMatch(html, /“Before working with Carly/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
   assert.match(html, /href="\/services"/i);
