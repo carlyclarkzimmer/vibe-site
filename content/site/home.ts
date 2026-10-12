@@ -6,7 +6,7 @@ export const siteMeta = {
 
 export const homeContent = {
   hero: {
-    eyebrow: "Business Leadership & Behavior Change Coach · ICF PCC",
+    eyebrow: "Holistic Business Leadership Coach for Entrepreneurs · ICF PCC",
     title: "Build a business that leaves room for life.",
     description:
       "Finding your real bottleneck is the most reliable way to build a business that doesn’t depend on you for everything, so you can log off and actually STAY off.",
