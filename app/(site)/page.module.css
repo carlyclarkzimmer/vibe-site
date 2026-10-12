@@ -152,14 +152,18 @@
   text-transform: uppercase;
 }
 
-.laserCoach h2 {
-  margin: 0;
-  color: var(--color-deep-amethyst);
-  font-family: var(--font-playfair);
+.laserCoach h2,
+.approach .approachClosing {
+  font-family: var(--font-display);
   font-size: 30px;
   font-weight: 700;
   letter-spacing: -0.025em;
   line-height: 1.1;
+}
+
+.laserCoach h2 {
+  margin: 0;
+  color: var(--color-deep-amethyst);
   white-space: nowrap;
 }
 
@@ -318,9 +322,15 @@
 }
 
 .recognition h2,
-.approach h2 {
+.approach h2,
+.meetCarly h2 {
   margin: 0;
-  font-size: clamp(46px, 6vw, 92px);
+  font-family: var(--font-display);
+  font-size: clamp(47px, 5.4vw, 79px);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: var(--line-height-display);
+  text-transform: none;
 }
 
 .recognition p,
@@ -365,10 +375,6 @@
 
 .approach .approachClosing {
   margin-top: clamp(44px, 4vw, 64px);
-  font-family: var(--font-body);
-  font-size: clamp(44px, 4.5vw, 60px);
-  letter-spacing: -0.025em;
-  line-height: 1.12;
   text-wrap: balance;
 }
 
@@ -407,12 +413,6 @@
 .meetCarly h2 {
   grid-column: 1 / -1;
   width: 100%;
-  margin: 0;
-  font-size: clamp(46px, 6vw, 92px);
-  font-weight: 400;
-  letter-spacing: -0.045em;
-  line-height: 0.9;
-  text-transform: uppercase;
 }
 
 .meetCarlyStory {
@@ -628,11 +628,6 @@
     line-height: 1.55;
   }
 
-  .approach .approachClosing {
-    font-size: clamp(40px, 5.8vw, 52px);
-    line-height: 1.14;
-  }
-
   .meetCarlyPullQuote {
     padding: 28px 30px;
   }
@@ -698,10 +693,6 @@
     width: 96px;
   }
 
-  .laserCoach h2 {
-    font-size: 24px;
-  }
-
   .laserCoachBody {
     font-size: 16px;
   }
@@ -756,8 +747,11 @@
 
   .approach .approachClosing {
     margin-top: 38px;
-    font-size: clamp(36px, 10vw, 46px);
-    line-height: 1.14;
+  }
+
+  .laserCoach h2,
+  .approach .approachClosing {
+    font-size: 24px;
   }
 
   .meetCarlyPullQuote {
