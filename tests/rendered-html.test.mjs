@@ -151,7 +151,7 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Less reactivity\. More space\./i);
   assert.match(html, /Deeper awareness\. New possibilities\./i);
   assert.match(html, /Sustainable growth\. A business that supports your life\./i);
-  assert.match(html, /business-restoration\/stop-the-leaks\.jpg/i);
+  assert.match(html, /business-restoration\/stop-the-leaks-v2\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
   assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
   assert.doesNotMatch(html, /What makes this different from (?:my )?other clarity sessions/i);
