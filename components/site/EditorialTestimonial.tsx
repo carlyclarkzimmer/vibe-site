@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import styles from "./EditorialTestimonial.module.css";
 
 type TestimonialPhoto = {
@@ -10,7 +11,7 @@ type EditorialTestimonialProps = {
   clientName: string;
   photo?: TestimonialPhoto;
   professionalTitle: string;
-  testimonial: string;
+  testimonial: ReactNode;
 };
 
 export function EditorialTestimonial({

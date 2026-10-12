@@ -136,13 +136,24 @@ test("serves the full Services page inside the shared site shell", async () => {
     /property="og:image" content="https:\/\/carlyclarkzimmer\.com\/services-social\.png"/i,
   );
   assert.match(html, /name="twitter:card" content="summary_large_image"/i);
+  assert.match(
+    html,
+    /The Business Restoration Method is private coaching for successful business owners who are tired of feeling like everything depends on them/i,
+  );
+  assert.match(
+    html,
+    /The goal is simple: stop recreating the parts of the business that are wearing you out\./i,
+  );
   assert.match(html, /Ways to Work Together/i);
   assert.match(html, /That’s where the Business Restoration Method comes in\./i);
+  assert.doesNotMatch(html, /What makes this different from (?:my )?other clarity sessions/i);
   assert.match(html, /Apply Here/i);
   assert.match(html, /Book A Recommendation Call/i);
   assert.match(html, /carly-services-restoration\.jpg/i);
   assert.match(html, /testimonial-emily\.png/i);
   assert.match(html, /testimonial-rochelle\.png/i);
+  assert.equal((html.match(/<figure/gi) ?? []).length, 2);
+  assert.equal((html.match(/<figcaption/gi) ?? []).length, 2);
   assert.match(html, /id="laser-coach"/i);
   assert.match(html, /Not sure where your bottleneck is\?[^<]*<em>Start here\.<\/em>/i);
   assert.ok(

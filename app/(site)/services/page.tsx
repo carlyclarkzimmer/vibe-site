@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { homeContent } from "../../../content/site/home";
+import { EditorialTestimonial } from "../../../components/site/EditorialTestimonial";
 import { WorkTogetherShowcase } from "../../../components/site/WorkTogetherShowcase";
 import { Button } from "../../../components/ui/Button";
 import { Section } from "../../../components/ui/Section";
@@ -44,14 +45,6 @@ export const metadata: Metadata = {
   },
 };
 
-const claritySessionDifferences = [
-  "I've delivered hundreds of sessions, which has given me the experience to uncover hidden narratives, intentions, and the question underneath the question.",
-  "I have nine years of coaching experience and multiple coaching certifications: Professionally Certified from the International Coaching Federation (PCC) - known as the gold standard in coaching, Certified in Equity Centered Coaching to remove personal bias and understand the intersection of identity and cultural sensitivity, Certified in the Kolbe Index to identify your natural strengths, and certified in the BodyMind Method to bring integration and body wisdom to the work along with the intellectual tools.",
-  "Formally trained in Internal Family Systems, aka Parts Work, which has helped my clients make behavioral changes faster than before I started using this modality.",
-  "Skilled at pattern and blind spot identification",
-  "Structured intake process to avoid rehashing what you've already tried or covered",
-];
-
 export default function ServicesPage() {
   return (
     <>
@@ -70,30 +63,27 @@ export default function ServicesPage() {
         <div className={styles.readingWidth}>
           <h1>Business Restoration</h1>
           <p>
-            The <strong>Business Restoration Method</strong> is private coaching for successful
-            business owners who are ready to stop overfunctioning, reclaim their time and
-            capacity, and rebuild the business around the way they actually want to work and live.
+            The Business Restoration Method is private coaching for successful business owners
+            who are tired of feeling like everything depends on them and want to build a business
+            that gives them more freedom, time, and space to actually enjoy the life they&apos;ve
+            worked so hard to create.
           </p>
         </div>
         </section>
 
         <Section className={styles.approach}>
-          <h2>
-            <span>The goal isn’t to burn it all down.</span>
-            <span>It’s to stop recreating the parts that are wearing you out.</span>
-          </h2>
+          <h2>The goal is simple: stop recreating the parts of the business that are wearing you out.</h2>
           <p>
             <strong>What I see happen all the time is this:</strong> a woman builds a business that
             looks successful on paper, but behind the scenes she’s exhausted, working too much,
             and starting to resent how little life she has outside of it.
           </p>
           <p>
-            And usually, the problem isn’t that she’s doing something wrong.
-          </p>
-          <p>
-            It’s that the same habits and behaviors that helped her build the business in the first
-            place are now the very things making it harder to grow without sacrificing more of
-            herself.
+            <strong>
+              And usually, she&apos;s not doing anything wrong. The same habits that helped her build
+              the business are now the very things making it harder to grow without sacrificing
+              more of herself.
+            </strong>
           </p>
           <Button
             className={styles.approachCta}
@@ -182,20 +172,11 @@ export default function ServicesPage() {
           )}
         />
 
-        <section className={styles.intro}>
-          <div className={styles.introCard}>
-            <div className={styles.introPortrait}>
-              <Image
-                src="/testimonial-emily.png"
-                alt="Emily J., Fractional CFO"
-                width={510}
-                height={506}
-                unoptimized
-              />
-            </div>
-            <blockquote className={styles.introQuote}>
+        <EditorialTestimonial
+          testimonial={
+            <>
               <p>
-                “Working with Carly leads to drastic change that was needed. My true self was buried
+                Working with Carly leads to drastic change that was needed. My true self was buried
                 under 1000 feet of concrete. I had become someone who cared about brands, status, and
                 being a cog in the corporate wheel – things I never cared about before.
               </p>
@@ -207,24 +188,15 @@ export default function ServicesPage() {
               <p>
                 She’s like a wise friend who helps you identify what’s making you feel off, and then
                 brings her skills and tools as a seasoned, truth-telling coach to solve it. My therapist
-                couldn’t do that. Carly could.”
+                couldn’t do that. Carly could.
               </p>
-              <footer>—Emily J. · Fractional CFO</footer>
-            </blockquote>
-          </div>
-        </section>
+            </>
+          }
+          clientName="Emily J."
+          professionalTitle="Fractional CFO"
+          photo={{ src: "/testimonial-emily.png", alt: "Emily J., Fractional CFO" }}
+        />
       </div>
-
-      <section className={styles.darkSplit}>
-        <div>
-          <h2>What makes this different from other clarity sessions</h2>
-        </div>
-        <ul>
-          {claritySessionDifferences.map((item) => (
-            <li key={item}>{item}</li>
-          ))}
-        </ul>
-      </section>
 
       <section className={styles.recommendation}>
         <h2>Which Option is Right for You?</h2>
@@ -240,24 +212,24 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className={styles.finalTestimonial}>
-        <blockquote>
-          <p>
-            “I’ve invested in many programs, including high-ticket ones that left me feeling
-            scammed. Carly’s support was worth every penny – I wanted more clients, and I signed
-            them, and now I have a system to keep getting them.
-          </p>
-          <p>Our work together will benefit my business for years to come.”</p>
-          <footer>— Rochelle Y. · Founder, Restorative Dialogue Consultant</footer>
-        </blockquote>
-        <Image
-          src="/testimonial-rochelle.png"
-          alt="Rochelle Y., Founder and Restorative Dialogue Consultant"
-          width={430}
-          height={435}
-          unoptimized
-        />
-      </section>
+      <EditorialTestimonial
+        testimonial={
+          <>
+            <p>
+              I’ve invested in many programs, including high-ticket ones that left me feeling
+              scammed. Carly’s support was worth every penny – I wanted more clients, and I signed
+              them, and now I have a system to keep getting them.
+            </p>
+            <p>Our work together will benefit my business for years to come.</p>
+          </>
+        }
+        clientName="Rochelle Y."
+        professionalTitle="Founder, Restorative Dialogue Consultant"
+        photo={{
+          src: "/testimonial-rochelle.png",
+          alt: "Rochelle Y., Founder and Restorative Dialogue Consultant",
+        }}
+      />
 
       <HomeLaserCoachOptIn />
     </>
