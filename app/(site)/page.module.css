@@ -100,9 +100,9 @@
 
 .heroSecondaryCta:hover,
 .heroSecondaryCta:focus-visible {
-  border-color: #f7ec0a;
-  background: #f7ec0a;
-  color: var(--color-ink);
+  border-color: #fe0564;
+  background: #fe0564;
+  color: white;
 }
 
 .laserCoach {
@@ -243,11 +243,22 @@
   letter-spacing: 0.06em;
   line-height: 1.2;
   text-transform: uppercase;
+  transition:
+    background var(--transition-standard),
+    border-color var(--transition-standard),
+    color var(--transition-standard);
 }
 
-.laserCoachForm button:hover:not(:disabled) {
-  border-color: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
-  background: color-mix(in srgb, var(--color-deep-emerald) 90%, black);
+.laserCoachForm button:hover:not(:disabled),
+.laserCoachForm button:focus-visible:not(:disabled) {
+  border-color: #fe0564;
+  background: #fe0564;
+  color: white;
+}
+
+.laserCoachForm button:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 3px;
 }
 
 .laserCoachForm button:disabled {
@@ -285,9 +296,8 @@
   position: relative;
   z-index: 1;
   display: grid;
-  min-height: 100vh;
   align-items: center;
-  padding-inline: max(20px, 1.4vw);
+  padding-block: clamp(60px, 6.75vw, 88px);
   grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
   gap: clamp(36px, 4vw, 68px);
   border-top: 1px solid rgb(9 9 9 / 12%);
@@ -299,7 +309,13 @@
 .approach,
 .meetCarly,
 .testimonial {
-  padding-inline: max(20px, 1.4vw);
+  --home-content-max: 1500px;
+  --home-page-inline: clamp(24px, 2.5vw, 40px);
+
+  padding-inline: max(
+    var(--home-page-inline),
+    calc((100vw - var(--home-content-max)) / 2 + var(--home-page-inline))
+  );
 }
 
 .recognition h2,
@@ -310,7 +326,7 @@
 
 .recognition p,
 .approach p {
-  max-width: 650px;
+  max-width: none;
 }
 
 .recognition p:first-child {
@@ -320,11 +336,19 @@
 .approach {
   position: relative;
   z-index: 1;
+  padding-block: clamp(60px, 6.75vw, 88px);
   background: var(--color-surface-muted);
 }
 
 .approach p {
-  font-size: 22px;
+  width: 100%;
+  margin: 0 0 0.95em;
+  font-size: clamp(26px, 2.25vw, 30px);
+  line-height: 1.5;
+}
+
+.approach p:last-of-type {
+  margin-bottom: 0;
 }
 
 .approachCta {
@@ -386,15 +410,16 @@
 
 .meetCarlyClosing {
   grid-column: 1 / -1;
-  max-width: 900px;
+  width: 100%;
+  max-width: none;
   padding-top: clamp(24px, 3vw, 42px);
   border-top: 1px solid var(--color-border);
 }
 
 .meetCarlyClosing p {
-  margin: 0 0 1.25em;
-  font-size: clamp(20px, 1.7vw, 26px);
-  line-height: 1.55;
+  margin: 0 0 0.95em;
+  font-size: clamp(26px, 2.25vw, 30px);
+  line-height: 1.5;
 }
 
 .meetCarlyClosing p:last-child {
@@ -541,7 +566,7 @@
   font-family: var(--font-display);
   font-size: clamp(19px, 2.5vw, 36px);
   letter-spacing: -0.04em;
-  line-height: 1;
+  line-height: 2.5;
 }
 
 .testimonial p {
@@ -575,6 +600,12 @@
   }
 
   .meetCarlyStory p {
+    font-size: clamp(21px, 2.5vw, 23px);
+    line-height: 1.55;
+  }
+
+  .approach p,
+  .meetCarlyClosing p {
     font-size: clamp(21px, 2.5vw, 23px);
     line-height: 1.55;
   }
@@ -661,8 +692,11 @@
   }
 
   .recognition {
-    min-height: 92svh;
-    align-content: center;
+    padding-block: 52px;
+  }
+
+  .approach {
+    padding-block: 52px;
   }
 
   .meetCarlyCopy {
@@ -678,6 +712,12 @@
   }
 
   .meetCarlyStory p {
+    font-size: clamp(20px, 5.5vw, 23px);
+    line-height: 1.55;
+  }
+
+  .approach p,
+  .meetCarlyClosing p {
     font-size: clamp(20px, 5.5vw, 23px);
     line-height: 1.55;
   }
