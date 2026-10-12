@@ -151,22 +151,43 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Less reactivity\. More space\./i);
   assert.match(html, /Deeper awareness\. New possibilities\./i);
   assert.match(html, /Sustainable growth\. A business that supports your life\./i);
-  assert.match(html, /business-restoration\/stop-the-leaks-v2\.jpg/i);
+  assert.match(html, /business-restoration\/stop-the-leaks-final\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
   assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
   assert.doesNotMatch(html, /What makes this different from (?:my )?other clarity sessions/i);
   assert.match(html, /Apply Here/i);
   assert.match(html, /Book A Recommendation Call/i);
-  assert.match(html, /testimonial-emily\.png/i);
-  assert.match(html, /testimonial-rochelle\.png/i);
-  assert.equal((html.match(/<figure/gi) ?? []).length, 2);
-  assert.equal((html.match(/<figcaption/gi) ?? []).length, 2);
+  assert.match(html, /testimonial-diane\.jpg/i);
+  assert.match(html, /testimonial-emily\.jpg/i);
+  assert.match(html, /laurel-testimonial\.mov/i);
+  assert.match(html, /laurel-poster\.jpg/i);
+  assert.match(html, /Real Decisions\. Real Changes\./i);
+  assert.match(html, /aine-client-message\.png/i);
+  assert.match(html, /jessica-client-message\.png/i);
+  assert.match(html, /Grounded in experience\. Informed by multiple disciplines\./i);
+  assert.match(html, /ICF Professional Certified Coach \(PCC\)/i);
+  assert.doesNotMatch(html, /Rochelle Y\./i);
+  assert.equal((html.match(/<figure/gi) ?? []).length, 4);
+  assert.equal((html.match(/<figcaption/gi) ?? []).length, 4);
   assert.match(html, /id="laser-coach"/i);
   assert.match(html, /Not sure where your bottleneck is\?[^<]*<em>Start here\.<\/em>/i);
   assert.ok(
     html.toLowerCase().indexOf('id="laser-coach"') >
-      html.toLowerCase().indexOf("testimonial-rochelle.png"),
+      html.toLowerCase().indexOf("grounded in experience"),
   );
+  const servicesOrder = [
+    "that’s where the business restoration method comes in.",
+    "diane i.",
+    "what it&#x27;s like to work with carly",
+    "ways to work together",
+    "emily j.",
+    "real decisions. real changes.",
+    "which option is right for you?",
+    "grounded in experience. informed by multiple disciplines.",
+    'id="laser-coach"',
+  ].map((needle) => html.toLowerCase().indexOf(needle));
+  assert.ok(servicesOrder.every((index) => index >= 0));
+  assert.ok(servicesOrder.every((index, position) => position === 0 || index > servicesOrder[position - 1]));
   assert.doesNotMatch(html, /Decision Map Intensive/i);
   assert.doesNotMatch(html, /Identity Uplevel/i);
   assert.doesNotMatch(html, /Laser Coaching Club/i);
