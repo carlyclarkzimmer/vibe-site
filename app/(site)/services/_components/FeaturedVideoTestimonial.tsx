@@ -25,7 +25,7 @@ export function FeaturedVideoTestimonial() {
             poster="/testimonials/laurel-poster.jpg"
             preload="metadata"
           >
-            <source src="/testimonials/laurel-testimonial.mp4" type="video/mp4" />
+            <source src="/testimonials/laurel-testimonial.mov" type="video/quicktime" />
             Your browser does not support the video element.
           </video>
         </div>

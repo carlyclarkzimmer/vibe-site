@@ -159,7 +159,7 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Book A Recommendation Call/i);
   assert.match(html, /testimonial-diane\.jpg/i);
   assert.match(html, /testimonial-emily\.jpg/i);
-  assert.match(html, /laurel-testimonial\.mp4/i);
+  assert.match(html, /laurel-testimonial\.mov/i);
   assert.match(html, /laurel-poster\.jpg/i);
   assert.match(html, /Real Decisions\. Real Changes\./i);
   assert.match(html, /aine-client-message\.png/i);
