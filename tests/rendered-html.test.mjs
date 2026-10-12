@@ -146,10 +146,17 @@ test("serves the full Services page inside the shared site shell", async () => {
   );
   assert.match(html, /Ways to Work Together/i);
   assert.match(html, /That’s where the Business Restoration Method comes in\./i);
+  assert.match(html, /Think of your business like an architecturally beautiful home\./i);
+  assert.match(html, /Here(?:&#x27;|')s what that looks like\./i);
+  assert.match(html, /Less reactivity\. More space\./i);
+  assert.match(html, /Deeper awareness\. New possibilities\./i);
+  assert.match(html, /Sustainable growth\. A business that supports your life\./i);
+  assert.match(html, /business-restoration\/stop-the-leaks\.jpg/i);
+  assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
+  assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
   assert.doesNotMatch(html, /What makes this different from (?:my )?other clarity sessions/i);
   assert.match(html, /Apply Here/i);
   assert.match(html, /Book A Recommendation Call/i);
-  assert.match(html, /carly-services-restoration\.jpg/i);
   assert.match(html, /testimonial-emily\.png/i);
   assert.match(html, /testimonial-rochelle\.png/i);
   assert.equal((html.match(/<figure/gi) ?? []).length, 2);
