@@ -132,7 +132,7 @@ export function HomeLaserCoachOptIn() {
                 />
                 <input name="tags[]" type="hidden" value={breakthroughEmailCapture.campaignTag} />
                 <button disabled={status === "submitting"} type="submit">
-                  Send Me the Laser Coach
+                  SEND ME THE LASER COACH
                 </button>
               </form>
               {status === "error" ? (
