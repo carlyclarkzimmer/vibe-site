@@ -246,6 +246,32 @@ test("serves the complete Business Restoration About page", async () => {
   );
   assert.match(html, /href="\/services"[^>]*>Show Me My Options<\/a>/i);
   assert.match(html, /aria-label="Site navigation"/i);
+
+  const aboutOrder = [
+    "carly clark zimmer behavior change and business coach",
+    "here’s the thing…",
+    "the story underneath the work",
+    "where do i come in?",
+    "my promise to you",
+    "before we begin",
+    "a little about the person you’ll actually be working with",
+    "your next chapter",
+    "cross-cultural competency, awareness, and equity pledge",
+  ].map((needle) => html.toLowerCase().indexOf(needle));
+  assert.ok(aboutOrder.every((index) => index >= 0));
+  assert.ok(aboutOrder.every((index, position) => position === 0 || index > aboutOrder[position - 1]));
+
+  const storyEnd = html.indexOf("when I stopped working for someone else.");
+  const airportPhoto = html.indexOf('src="/carly-about-airport-client-call.jpg"');
+  const newYearsEve = html.indexOf("One New Year’s Eve");
+  assert.ok(storyEnd >= 0 && airportPhoto > storyEnd && newYearsEve > airportPhoto);
+
+  assert.doesNotMatch(html, /an elder millennial with an old soul/i);
+  assert.doesNotMatch(html, /I’m happiest on a long walk/i);
+  assert.doesNotMatch(html, /hunting for thrift-store scores/i);
+  assert.doesNotMatch(html, /I’m not interested in making you “more productive”/i);
+  assert.match(html, /I’m an old soul, the only daughter with three brothers/i);
+  assert.match(html, /rearranging furniture because I need the room to feel different, and listening to Taylor Swift/i);
 });
 
 test("serves a branded 404 with clear routes back into the site", async () => {
