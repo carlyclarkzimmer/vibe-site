@@ -229,6 +229,18 @@ export default function AboutPage() {
             <figcaption>“The girls,” our darling Margarita and Ollie Baby.</figcaption>
           </figure>
           <figure>
+            <div className={`${styles.galleryPhoto} ${styles.kidsPhoto}`}>
+              <Image
+                src="/carly-about-nieces-nephews.jpg"
+                alt="Carly smiling with one of her nieces"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 23vw"
+                unoptimized
+              />
+            </div>
+            <figcaption>Ten nieces and nephews. A whole lot of love, laughter, and family time.</figcaption>
+          </figure>
+          <figure>
             <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
             <figcaption>Gardening, books, thrifting, cats, and the ordinary pleasures.</figcaption>
           </figure>
