@@ -24,7 +24,7 @@
 .storyPhotoFrame img, .lifePhoto img, .introPortrait img, .promisePortrait img, .bioPhoto img { object-fit: cover; }
 .storyPhotoFrame img { object-position: center; }
 .storyPhoto figcaption { max-width: 620px; margin-top: 16px; color: var(--color-text-subtle); font-family: var(--font-body); font-size: 17px; font-style: italic; line-height: 1.5; }
-.storyMoment { padding: clamp(82px, 9vw, 132px) max(24px, calc((100vw - 1180px) / 2 + 40px)); background: var(--color-accent); color: white; text-align: center; }
+.storyMoment { padding: clamp(82px, 9vw, 132px) max(24px, calc((100vw - 1180px) / 2 + 40px)); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; text-align: center; }
 .storyMoment h2 { max-width: 1000px; margin: 32px auto; font-family: var(--font-display); font-size: clamp(58px, 7vw, 104px); font-weight: 400; font-style: italic; letter-spacing: -.055em; line-height: .92; text-wrap: balance; }
 .storyMoment p { max-width: 820px; margin: 0 auto; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
 .lifeGrid { grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); }
@@ -39,17 +39,18 @@
 .howResult .kicker { margin-bottom: 20px; color: var(--color-accent); }
 .howResult p:not(.kicker) { max-width: 720px; margin: 0 0 .95em; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
 
-.promises { position: relative; z-index: 1; padding-block: clamp(78px, 8vw, 118px); background: var(--color-ink); color: white; }
+.promises { position: relative; z-index: 1; padding-block: clamp(78px, 8vw, 118px); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; }
 .sectionIntro { max-width: 1100px; margin-bottom: clamp(60px, 7vw, 96px); }
 .sectionIntro > .eyebrow { margin-bottom: 24px; }
+.promises .eyebrow, .closing .eyebrow { color: var(--color-accent); }
 .sectionIntro h2 { margin-top: 0; }
-.sectionIntroCopy p { max-width: 820px; margin: 0 0 .95em; color: var(--color-text-muted); font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
-.sectionIntroCopy strong { color: white; }
-.promiseList { border-bottom: 1px solid var(--color-border-dark); }
-.promise { display: grid; grid-template-columns: minmax(64px, 96px) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); padding: clamp(42px, 5vw, 66px) 0; border-top: 1px solid var(--color-border-dark); }
+.sectionIntroCopy p { max-width: 820px; margin: 0 0 .95em; color: color-mix(in srgb, #2d2226 82%, white); font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
+.sectionIntroCopy strong { color: #2d2226; }
+.promiseList { border-bottom: 1px solid #e6dce6; }
+.promise { display: grid; grid-template-columns: minmax(64px, 96px) minmax(0, 1fr); gap: clamp(28px, 4vw, 64px); padding: clamp(42px, 5vw, 66px) 0; border-top: 1px solid #e6dce6; }
 .promise > span { color: var(--color-accent); font-family: var(--font-display); font-size: clamp(38px, 4vw, 58px); letter-spacing: -.035em; line-height: 1; }
 .promise h3 { max-width: 900px; margin: 0 0 22px; font-family: var(--font-display); font-size: clamp(36px, 4vw, 58px); font-weight: 400; letter-spacing: -.035em; line-height: 1; }
-.promise p { max-width: 800px; margin: 0; color: var(--color-text-muted); font-size: clamp(20px, 1.6vw, 24px); line-height: 1.58; }
+.promise p { max-width: 800px; margin: 0; color: color-mix(in srgb, #2d2226 82%, white); font-size: clamp(20px, 1.6vw, 24px); line-height: 1.58; }
 .promiseClose { display: grid; grid-template-columns: minmax(320px, .85fr) minmax(0, 1.15fr); gap: clamp(40px, 5vw, 80px); align-items: stretch; margin-top: clamp(64px, 7vw, 100px); }
 .promisePortrait { min-height: 600px; background: var(--color-surface-dark); }
 .promisePortrait img { object-position: center 38%; }
@@ -76,10 +77,10 @@
 .bioPhoto img { object-position: center 34%; }
 .bioCopy p { color: var(--color-ink); }
 
-.closing { position: relative; z-index: 1; padding-block: clamp(90px, 10vw, 150px); background: var(--color-accent); color: white; text-align: center; }
+.closing { position: relative; z-index: 1; padding-block: clamp(90px, 10vw, 150px); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; text-align: center; }
 .closing h2 { max-width: 1120px; margin: 28px auto 38px; font-family: var(--font-display); font-size: clamp(52px, 6.5vw, 94px); font-weight: 400; letter-spacing: -.045em; line-height: .94; text-wrap: balance; }
 .closing > p:not(.eyebrow) { max-width: 720px; margin: 0 auto 38px; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
-.cta { display: inline-flex; min-height: 58px; align-items: center; justify-content: center; padding: 20px 46px; border: 1px solid white; border-radius: 6px; background: white; color: var(--color-ink); font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
+.cta { display: inline-flex; min-height: 58px; align-items: center; justify-content: center; padding: 20px 46px; border: 1px solid var(--color-accent); border-radius: 6px; background: var(--color-accent); color: white; font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
 .cta:hover, .cta:focus-visible { border-color: var(--color-ink); background: var(--color-ink); color: white; }
 .cta:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
 
