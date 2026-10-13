@@ -214,7 +214,10 @@ export default function AboutPage() {
                 unoptimized
               />
             </div>
-            <figcaption>16+ years with my husband, and still choosing adventure.</figcaption>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>Devin and I have spent 16+ years creating a life on our own terms. From working remotely in Europe long before it was a thing, to sailing the Caribbean and the wild west coast of Ireland, living abroad, and adventuring through Costa Rica.</span>
+              <strong>We&apos;ve always been willing to do things a little differently if it meant building a life that felt true to us.</strong>
+            </figcaption>
           </figure>
           <figure>
             <div className={styles.galleryPhoto}>
