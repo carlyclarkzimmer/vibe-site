@@ -260,7 +260,7 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /Devin and I have spent 16\+ years creating a life on our own terms\./i);
   assert.match(html, /We(?:&apos;|')ve always been willing to do things a little differently/i);
   assert.doesNotMatch(html, /16\+ years with my husband, and still choosing adventure\./i);
-  assert.match(html, /src="\/carly-about-cats-clean\.png"/i);
+  assert.match(html, /src="\/carly-about-cats-clean\.jpg"/i);
   assert.match(html, /alt="Ollie Baby and Margarita sitting together"/i);
   assert.match(html, /In September 2025, two little kittens from Brooklyn adopted us and promptly stole our hearts!/i);
   assert.match(html, /affectionately known as.*“the girls,”.*have been running the household ever since/i);

@@ -222,7 +222,7 @@ export default function AboutPage() {
           <figure>
             <div className={styles.galleryPhoto}>
               <Image
-                src="/carly-about-cats-clean.png"
+                src="/carly-about-cats-clean.jpg"
                 alt="Ollie Baby and Margarita sitting together"
                 fill
                 sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
