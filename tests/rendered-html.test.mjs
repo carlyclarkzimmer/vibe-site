@@ -256,7 +256,7 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /alt="Carly smiling beside one of her large abstract paintings"/i);
   assert.match(html, /What I’m making room for/i);
   assert.match(html, /src="\/carly-about-husband\.jpg"/i);
-  assert.match(html, /alt="Carly and her husband smiling together on a beach at sunset"/i);
+  assert.match(html, /alt="Carly and her husband smiling together beside a canal in Venice"/i);
   assert.match(html, /src="\/carly-about-cats\.jpg"/i);
   assert.match(html, /alt="Carly relaxing at home with Margarita and Ollie"/i);
   assert.match(html, /“The girls,” our darling Margarita and Ollie Baby\./i);

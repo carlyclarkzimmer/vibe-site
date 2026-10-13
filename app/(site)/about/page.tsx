@@ -205,10 +205,10 @@ export default function AboutPage() {
         <p className={styles.personalLabel}>03 / What I’m making room for</p>
         <div className={styles.personalGalleryGrid}>
           <figure>
-            <div className={styles.galleryPhoto}>
+            <div className={`${styles.galleryPhoto} ${styles.husbandPhoto}`}>
               <Image
                 src="/carly-about-husband.jpg"
-                alt="Carly and her husband smiling together on a beach at sunset"
+                alt="Carly and her husband smiling together beside a canal in Venice"
                 fill
                 sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
                 unoptimized

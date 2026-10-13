@@ -100,6 +100,7 @@
 .personalGallery { padding-block: clamp(70px, 8vw, 112px); border-block: 1px solid color-mix(in srgb, #991f5d 24%, transparent); }
 .personalGalleryGrid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(20px, 2.2vw, 34px); }
 .galleryPhoto, .galleryPlaceholder { position: relative; min-height: 500px; }
+.husbandPhoto img { object-position: 34% center; }
 .kidsPhoto img { object-position: center 34%; }
 .personalGallery figcaption { color: #2d2226; font-family: var(--font-body); font-size: clamp(19px, 1.5vw, 23px); letter-spacing: 0; text-transform: none; }
 .galleryCaptionLong { display: grid; gap: 12px; }
