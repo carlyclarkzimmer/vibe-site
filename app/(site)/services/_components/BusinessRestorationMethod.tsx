@@ -21,8 +21,8 @@ const restorationWeek = [
     day: "Monday",
     title: "Notice the Pattern",
     image: {
-      src: "/business-restoration/week/monday-notice-the-pattern.png",
-      alt: "A woman taking an intentional morning walk through a sunlit woodland",
+      src: "/business-restoration/week/monday-black-woman-nature.png",
+      alt: "A Black woman taking an intentional morning walk through a sunlit woodland",
     },
     copy: (
       <>

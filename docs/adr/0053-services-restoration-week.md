@@ -14,8 +14,9 @@ intention statement.
 ## Decision
 
 Keep the feature route-owned inside `BusinessRestorationMethod`. On desktop, render all five days
-in one row with architectural arch-shaped photographs. On small screens, stack the days as compact
-rows with the photograph on the left and the copy on the right. Use original project-owned imagery
+as compact cards in one row with square, softly rounded photographs so they remain visually distinct
+from the three architectural phase arches. On small screens, stack the days as compact rows with the
+photograph on the left and the copy on the right. Use original project-owned imagery
 stored under `public/business-restoration/week/` and the existing Bodoni Moda, EB Garamond, and
 Montserrat brand typography.
 
