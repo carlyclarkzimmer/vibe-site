@@ -18,6 +18,10 @@ hierarchy, EB Garamond narrative typography, Montserrat labels and buttons, cons
 proportions, and the existing Home and Services section rhythm. The story, promise, method, biography,
 and closing CTA retain distinct compositions appropriate to their narrative roles.
 
+Large berry-filled narrative sections use the same warm ivory (`#f8f5f1`), charcoal (`#2d2226`),
+and berry-accent treatment as the approved editorial testimonials. Berry remains reserved for labels,
+numbering, rules, and calls to action rather than filling entire About-page sections.
+
 No shared component abstraction is introduced because the About sections contain unique long-form copy
 and sequencing. Shared navigation, footer, photography, copy, links, and section order remain unchanged.
 
@@ -25,6 +29,8 @@ and sequencing. Shared navigation, footer, photography, copy, links, and section
 
 - Home, Services, and About now share recognizable typography, margins, spacing, image, and CTA rules.
 - The About page remains editorial and story-led rather than becoming a duplicate of another route.
+- Repeated ivory surfaces create a calmer page rhythm while berry accents preserve hierarchy and
+  conversion emphasis.
 - Future About-page styling should use the main-site grid and type hierarchy before adding route-specific
   exceptions.
 - Copy and photography changes remain separate approval decisions.
