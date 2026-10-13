@@ -222,14 +222,14 @@ export default function AboutPage() {
           <figure>
             <div className={styles.galleryPhoto}>
               <Image
-                src="/carly-about-cats.jpg"
-                alt="Carly relaxing at home with Margarita and Ollie"
+                src="/carly-about-cats-clean.png"
+                alt="Ollie Baby and Margarita sitting together"
                 fill
                 sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
                 unoptimized
               />
             </div>
-            <figcaption>“The girls,” our darling Margarita and Ollie Baby.</figcaption>
+            <figcaption>In September 2025, two little kittens from Brooklyn adopted us and promptly stole our hearts! Ollie Baby and Margarita, affectionately known as <strong>“the girls,”</strong> have been running the household ever since. 🐈💕</figcaption>
           </figure>
           <figure>
             <div className={`${styles.galleryPhoto} ${styles.kidsPhoto}`}>
