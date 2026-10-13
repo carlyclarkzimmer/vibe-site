@@ -266,7 +266,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /affectionately known as.*“the girls,”.*have been running the household ever since/i);
   assert.match(html, /src="\/carly-about-nieces-nephews\.jpg"/i);
   assert.match(html, /alt="Carly smiling with one of her nieces"/i);
-  assert.match(html, /Ten nieces and nephews\. A whole lot of love, laughter, and family time\./i);
+  assert.match(html, /After several unsuccessful rounds of fertility treatments, Devin and I began imagining what family could look like in a different way\./i);
+  assert.match(html, /fully embraced being the cool auntie to our ten nieces and nephews/i);
+  assert.match(html, /carve jack-o(?:&apos;|')-lanterns with REAL knives/i);
+  assert.doesNotMatch(html, /Ten nieces and nephews\. A whole lot of love, laughter, and family time\./i);
   assert.match(html, /src="\/carly-about-connemara\.jpg"/i);
   assert.match(html, /alt="Carly cooking outdoors beside the sea in Connemara, Ireland"/i);
   assert.match(html, /As a Sagittarius with Aries rising, I LOVE a good adventure/i);

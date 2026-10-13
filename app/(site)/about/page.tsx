@@ -241,7 +241,10 @@ export default function AboutPage() {
                 unoptimized
               />
             </div>
-            <figcaption>Ten nieces and nephews. A whole lot of love, laughter, and family time.</figcaption>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>After several unsuccessful rounds of fertility treatments, Devin and I began imagining what family could look like in a different way.</span>
+              <span>And I&apos;ve fully embraced being the cool auntie to our ten nieces and nephews (and all our friends&apos; kids!). The one who lets them play with spray paint and carve jack-o&apos;-lanterns with REAL knives. 😂</span>
+            </figcaption>
           </figure>
           <figure>
             <div className={styles.galleryPhoto}>
