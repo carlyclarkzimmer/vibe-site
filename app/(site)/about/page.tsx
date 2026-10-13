@@ -188,9 +188,14 @@ export default function AboutPage() {
           <p>I spent twelve years away from making art because there was always something more important to finish first. The work. The responsibilities. The never-ending list. Eventually, I realized I was postponing something that made me feel most like myself. <strong>So I started making art again. Not because everything was done, but because I stopped making creativity wait.</strong></p>
         </div>
         <figure className={styles.personalFigure}>
-          <div className={styles.photoPlaceholder} aria-hidden="true">
-            <span>Photo coming soon</span>
-            <small>The return to creativity</small>
+          <div className={styles.personalPhoto}>
+            <Image
+              src="/carly-about-painting.jpg"
+              alt="Carly smiling beside one of her large abstract paintings"
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+              unoptimized
+            />
           </div>
           <figcaption>02 / The return to creativity</figcaption>
         </figure>
