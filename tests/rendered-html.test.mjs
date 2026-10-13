@@ -255,8 +255,8 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /src="\/carly-about-painting\.jpg"/i);
   assert.match(html, /alt="Carly smiling beside one of her large abstract paintings"/i);
   assert.match(html, /What I’m making room for/i);
-  assert.match(html, /src="\/carly-about-husband\.jpg"/i);
-  assert.match(html, /alt="Carly and her husband smiling together beside a canal in Venice"/i);
+  assert.match(html, /src="\/carly-about-husband-sailing\.jpg"/i);
+  assert.match(html, /alt="Carly and Devin sailing together off the west coast of Ireland"/i);
   assert.match(html, /Devin and I have spent 16\+ years creating a life on our own terms\./i);
   assert.match(html, /We(?:&apos;|')ve always been willing to do things a little differently/i);
   assert.doesNotMatch(html, /16\+ years with my husband, and still choosing adventure\./i);

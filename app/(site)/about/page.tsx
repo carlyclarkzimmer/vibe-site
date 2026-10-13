@@ -207,8 +207,8 @@ export default function AboutPage() {
           <figure>
             <div className={`${styles.galleryPhoto} ${styles.husbandPhoto}`}>
               <Image
-                src="/carly-about-husband.jpg"
-                alt="Carly and her husband smiling together beside a canal in Venice"
+                src="/carly-about-husband-sailing.jpg"
+                alt="Carly and Devin sailing together off the west coast of Ireland"
                 fill
                 sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
                 unoptimized
