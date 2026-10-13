@@ -42,3 +42,4 @@
 .bioPhoto{position:relative;min-height:720px;overflow:hidden;background:var(--color-surface-dark)}
 .bioPhoto img{object-fit:cover;object-position:center 34%}
 @media(max-width:760px){.bioPhoto{min-height:580px}}
+.hero h1{font-family:var(--font-display)}

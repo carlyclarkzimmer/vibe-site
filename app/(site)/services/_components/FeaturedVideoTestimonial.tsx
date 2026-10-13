@@ -15,6 +15,10 @@ export function FeaturedVideoTestimonial() {
             Her experience shows the breadth of support available when the business challenge is
             connected to how you think, lead, work, and live.
           </p>
+          <div className={styles.client}>
+            <p className={styles.clientName}>Laurel Goulden</p>
+            <p className={styles.clientTitle}>Life Coach</p>
+          </div>
           <p className={styles.duration}>VIDEO TESTIMONIAL · 7 MINUTES 25 SECONDS</p>
         </div>
         <div className={styles.videoFrame}>
@@ -25,7 +29,7 @@ export function FeaturedVideoTestimonial() {
             poster="/testimonials/laurel-poster.jpg"
             preload="metadata"
           >
-            <source src="/testimonials/laurel-testimonial.mov" type="video/quicktime" />
+            <source src="/testimonials/laurel-testimonial.m4v" type="video/mp4" />
             Your browser does not support the video element.
           </video>
         </div>
