@@ -42,8 +42,8 @@ export function BusinessRestorationMethod({ phases, applyHref }: BusinessRestora
         ))}
       </div>
       <p className={styles.goal}>
-        The goal: a business that supports your clients and revenue without costing you your life
-        outside of it. ✨
+        Our Focused Intention: In just a few months, rebuild your business so it supports your
+        clients and revenue without costing you your life outside of it. ✨
       </p>
       <Button className={styles.apply} href={applyHref} newTab variant="outline">
         Apply Here

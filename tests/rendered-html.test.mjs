@@ -151,7 +151,7 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Less reactivity\. More space\./i);
   assert.match(html, /Deeper awareness\. New possibilities\./i);
   assert.match(html, /Sustainable growth\. A business that supports your life\./i);
-  assert.match(html, /business-restoration\/stop-the-leaks-final\.jpg/i);
+  assert.match(html, /business-restoration\/stop-the-leaks-reading-nook\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
   assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
   assert.doesNotMatch(html, /What makes this different from (?:my )?other clarity sessions/i);
@@ -159,7 +159,9 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Book A Recommendation Call/i);
   assert.match(html, /testimonial-diane\.jpg/i);
   assert.match(html, /testimonial-emily\.jpg/i);
-  assert.match(html, /laurel-testimonial\.mov/i);
+  assert.match(html, /Laurel Goulden/i);
+  assert.match(html, /Life Coach/i);
+  assert.match(html, /laurel-testimonial\.m4v/i);
   assert.match(html, /laurel-poster\.jpg/i);
   assert.match(html, /Real Decisions\. Real Changes\./i);
   assert.match(html, /aine-client-message\.png/i);
