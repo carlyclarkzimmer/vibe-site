@@ -132,10 +132,16 @@ export default function AboutPage() {
       <div className={styles.methodIntro}>
         <p className={styles.eyebrow}>The Business Restoration Method</p><h2>Before we begin</h2>
         <p>Before we start changing anything, we look at the full picture of your life and business.</p>
-        <ul><li>What matters to you right now?</li><li>What do you want more room for?</li><li>What is working?</li><li>What feels too heavy?</li><li>What are you trying to protect or create in this season?</li></ul>
+        <ol className={styles.reflectionList}>
+          <li><span aria-hidden="true">01</span><p>What matters to you right now?</p></li>
+          <li><span aria-hidden="true">02</span><p>What do you want more room for?</p></li>
+          <li><span aria-hidden="true">03</span><p>What is working?</p></li>
+          <li><span aria-hidden="true">04</span><p>What feels too heavy?</p></li>
+          <li><span aria-hidden="true">05</span><p>What are you trying to protect or create in this season?</p></li>
+        </ol>
         <p>That gives us a clear sense of what we’re restoring the business for.</p>
       </div>
-      <div className={styles.phaseList}>{phases.map((phase) => <article className={styles.phase} key={phase.number}><div className={styles.phaseHeading}><p>Phase {phase.number}</p><h3>{phase.title}</h3></div><div className={styles.phaseCopy}>{phase.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></article>)}</div>
+      <div className={styles.phaseList}>{phases.map((phase) => <article className={styles.phase} key={phase.number}><div className={styles.phaseMarker} aria-hidden="true"><span>{phase.number}</span></div><div className={styles.phaseHeading} data-phase={phase.number}><p>Phase {phase.number}</p><h3>{phase.title}</h3></div><div className={styles.phaseCopy}>{phase.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></article>)}</div>
     </section>
 
     <section className={styles.bio}>
