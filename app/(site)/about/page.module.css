@@ -7,7 +7,7 @@
 .hero h1 { max-width: 1180px; margin: 24px 0 0 -.035em; font-family: var(--font-display); font-size: clamp(3.75rem, 6.2vw, 5.6rem); font-weight: 400; letter-spacing: -.02em; line-height: var(--line-height-display-tight); text-wrap: balance; }
 .hero h1 em, .closing h2 em { color: inherit; font-weight: 400; }
 
-.intro, .storyOpening, .lifeGrid, .promises, .method, .bio, .closing { --about-content-max: 1500px; --about-page-inline: clamp(24px, 2.5vw, 40px); padding-inline: max(var(--about-page-inline), calc((100vw - var(--about-content-max)) / 2 + var(--about-page-inline))); }
+.intro, .storyOpening, .lifeGrid, .promises, .method, .bio, .personalNote, .closing { --about-content-max: 1500px; --about-page-inline: clamp(24px, 2.5vw, 40px); padding-inline: max(var(--about-page-inline), calc((100vw - var(--about-content-max)) / 2 + var(--about-page-inline))); }
 .intro { position: relative; z-index: 1; padding-block: clamp(72px, 8vw, 118px); background: var(--color-paper); }
 .heroSequence .intro { border-top: 1px solid rgb(9 9 9/12%); box-shadow: 0 -18px 48px rgb(0 0 0/9%); }
 .introLead { max-width: 1240px; }
@@ -24,7 +24,7 @@
 .storyPhotoFrame img, .lifePhoto img, .introPortrait img, .promisePortrait img, .bioPhoto img { object-fit: cover; }
 .storyPhotoFrame img { object-position: center; }
 .storyPhoto figcaption { max-width: 620px; margin-top: 16px; color: var(--color-text-subtle); font-family: var(--font-body); font-size: 17px; font-style: italic; line-height: 1.5; }
-.storyMoment { padding: clamp(82px, 9vw, 132px) max(24px, calc((100vw - 1180px) / 2 + 40px)); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; text-align: center; }
+.storyMoment { padding: clamp(82px, 9vw, 132px) max(24px, calc((100vw - 1180px) / 2 + 40px)); border-block: 1px solid #e6dce6; background: #f2e1ea; color: #2d2226; text-align: center; }
 .storyMoment h2 { max-width: 1000px; margin: 32px auto; font-family: var(--font-display); font-size: clamp(58px, 7vw, 104px); font-weight: 400; font-style: italic; letter-spacing: -.055em; line-height: .92; text-wrap: balance; }
 .storyMoment p { max-width: 820px; margin: 0 auto; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
 .lifeGrid { grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr); }
@@ -39,7 +39,7 @@
 .howResult .kicker { margin-bottom: 20px; color: var(--color-accent); }
 .howResult p:not(.kicker) { max-width: 720px; margin: 0 0 .95em; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
 
-.promises { position: relative; z-index: 1; padding-block: clamp(78px, 8vw, 118px); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; }
+.promises { position: relative; z-index: 1; padding-block: clamp(78px, 8vw, 118px); border-block: 1px solid #e6dce6; background: #f2e1ea; color: #2d2226; }
 .sectionIntro { max-width: 1100px; margin-bottom: clamp(60px, 7vw, 96px); }
 .sectionIntro > .eyebrow { margin-bottom: 24px; }
 .promises .eyebrow, .closing .eyebrow { color: var(--color-accent); }
@@ -77,7 +77,33 @@
 .bioPhoto img { object-position: center 34%; }
 .bioCopy p { color: var(--color-ink); }
 
-.closing { position: relative; z-index: 1; padding-block: clamp(90px, 10vw, 150px); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; text-align: center; }
+.personalNote { position: relative; z-index: 1; padding-block: clamp(82px, 9vw, 132px); border-block: 1px solid #e6dce6; background: #f8f5f1; color: #2d2226; }
+.personalNoteHeader { display: flex; justify-content: space-between; gap: 32px; align-items: baseline; padding-bottom: 24px; border-bottom: 1px solid color-mix(in srgb, #991f5d 24%, transparent); }
+.personalNoteHeader > p:last-child { margin: 0; color: color-mix(in srgb, #991f5d 72%, #2d2226); font-family: var(--font-body); font-size: 20px; font-style: italic; }
+.personalNote > h2 { max-width: 1120px; margin: clamp(52px, 6vw, 82px) 0 clamp(46px, 5vw, 72px); font-family: var(--font-display); font-size: clamp(50px, 6vw, 84px); font-weight: 400; letter-spacing: -.045em; line-height: .98; text-wrap: balance; }
+.personalStory { display: grid; grid-template-columns: minmax(340px, 1fr) minmax(0, 1fr); gap: clamp(42px, 5vw, 82px); align-items: start; padding-block: clamp(36px, 4vw, 58px) clamp(70px, 8vw, 112px); }
+.personalStory + .personalStory { border-top: 1px solid color-mix(in srgb, #991f5d 24%, transparent); }
+.personalFigure, .personalGallery figure { margin: 0; }
+.photoPlaceholder, .galleryPlaceholder { display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; border: 1px solid color-mix(in srgb, #991f5d 22%, transparent); border-radius: 8px; background: #f2e1ea; color: #991f5d; text-align: center; }
+.photoPlaceholder { min-height: 680px; }
+.photoPlaceholder span, .galleryPlaceholder span { font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .17em; text-transform: uppercase; }
+.photoPlaceholder small { margin-top: 10px; font-family: var(--font-body); font-size: 21px; font-style: italic; }
+.personalFigure figcaption, .personalGallery figcaption { margin-top: 16px; color: color-mix(in srgb, #2d2226 68%, white); font-family: var(--font-interface); font-size: 13px; letter-spacing: .11em; line-height: 1.45; text-transform: uppercase; }
+.personalCopy { padding-top: 18px; }
+.personalCopy h3 { margin: 0 0 30px; font-family: var(--font-display); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400; letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
+.personalCopy h3 em { color: color-mix(in srgb, #991f5d 72%, #2d2226); font-weight: inherit; }
+.personalCopy > p:not(.personalLabel) { margin: 0; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.58; }
+.personalLabel { margin: 0 0 24px; color: color-mix(in srgb, #991f5d 76%, #2d2226); font-family: var(--font-interface); font-size: 13px; font-weight: 600; letter-spacing: .15em; text-transform: uppercase; }
+.personalGallery { padding-block: clamp(70px, 8vw, 112px); border-block: 1px solid color-mix(in srgb, #991f5d 24%, transparent); }
+.personalGalleryGrid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(24px, 3vw, 42px); }
+.galleryPlaceholder { min-height: 500px; }
+.personalGallery figcaption { color: #2d2226; font-family: var(--font-body); font-size: clamp(19px, 1.5vw, 23px); letter-spacing: 0; text-transform: none; }
+.personalClosing { max-width: 1260px; margin: 0 auto; padding-top: clamp(72px, 8vw, 118px); text-align: center; }
+.personalClosing > p:first-child { margin: 0 auto 32px; font-family: var(--font-display); font-size: clamp(34px, 4vw, 58px); letter-spacing: -.035em; line-height: 1.08; text-wrap: balance; }
+.personalClosing > p:nth-child(2) { margin: 0 auto 38px; color: color-mix(in srgb, #991f5d 76%, #2d2226); font-size: clamp(22px, 2vw, 30px); line-height: 1.45; }
+.personalClosing blockquote { max-width: 1120px; margin: 0 auto; font-family: var(--font-display); font-size: clamp(34px, 4.2vw, 60px); font-style: italic; letter-spacing: -.035em; line-height: 1.14; text-wrap: balance; }
+
+.closing { position: relative; z-index: 1; padding-block: clamp(90px, 10vw, 150px); border-block: 1px solid #e6dce6; background: #f2e1ea; color: #2d2226; text-align: center; }
 .closing h2 { max-width: 1120px; margin: 28px auto 38px; font-family: var(--font-display); font-size: clamp(52px, 6.5vw, 94px); font-weight: 400; letter-spacing: -.045em; line-height: .94; text-wrap: balance; }
 .closing > p:not(.eyebrow) { max-width: 720px; margin: 0 auto 38px; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
 .cta { display: inline-flex; min-height: 58px; align-items: center; justify-content: center; padding: 20px 46px; border: 1px solid var(--color-accent); border-radius: 6px; background: var(--color-accent); color: white; font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .18em; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
@@ -85,17 +111,20 @@
 .cta:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
 
 @media (max-width: 900px) {
-  .storyOpening, .lifeGrid, .introGrid, .promiseClose, .bioGrid { grid-template-columns: 1fr; }
+  .storyOpening, .lifeGrid, .introGrid, .promiseClose, .bioGrid, .personalStory { grid-template-columns: 1fr; }
   .storyPhoto, .lifePhoto, .introPortrait, .promisePortrait, .bioPhoto { width: min(100%, 680px); }
   .introPortrait, .lifePhoto, .promisePortrait, .bioPhoto { min-height: 680px; }
   .howResult, .phase { gap: 40px; }
+  .personalStoryReverse .personalCopy { order: 1; }
+  .personalStoryReverse .personalFigure { order: 2; }
+  .personalGalleryGrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
   .hero { min-height: 800px; padding: 120px var(--space-section-inline-mobile) 64px; }
   .heroOverlay { background: linear-gradient(180deg, transparent 0%, rgb(9 9 9/18%) 34%, rgb(9 9 9/88%) 100%); }
   .hero h1 { font-size: clamp(48px, 13.5vw, 64px); }
-  .intro, .storyOpening, .lifeGrid, .promises, .method, .bio, .closing { padding-right: var(--space-section-inline-mobile); padding-left: var(--space-section-inline-mobile); }
+  .intro, .storyOpening, .lifeGrid, .promises, .method, .bio, .personalNote, .closing { padding-right: var(--space-section-inline-mobile); padding-left: var(--space-section-inline-mobile); }
   .introLead h2, .storyOpening h2, .lifeGrid h2, .sectionIntro h2, .methodIntro h2, .bio h2 { font-size: 46px; }
   .introLead > p:not(.kicker), .storyOpening p:not(.eyebrow), .lifeGrid p:not(.kicker), .howResult p:not(.kicker), .sectionIntroCopy p, .methodIntro > p, .methodIntro li, .bioCopy p, .closing > p:not(.eyebrow) { font-size: 21px; }
   .storyOpening, .lifeGrid, .bioGrid { gap: 38px; }
@@ -115,6 +144,17 @@
   .promiseCloseCopy p { font-size: 42px; }
   .phaseHeading h3 { font-size: 42px; }
   .bioPhoto { min-height: 580px; }
+  .personalNoteHeader { display: block; }
+  .personalNoteHeader > p:last-child { margin-top: 12px; }
+  .personalNote > h2 { font-size: 48px; }
+  .personalStory { gap: 32px; }
+  .photoPlaceholder { min-height: 470px; }
+  .personalCopy { padding-top: 0; }
+  .personalCopy h3 { font-size: 38px; }
+  .personalCopy > p:not(.personalLabel) { font-size: 21px; }
+  .personalGalleryGrid { grid-template-columns: 1fr; gap: 40px; }
+  .galleryPlaceholder { min-height: 420px; }
+  .personalClosing > p:first-child, .personalClosing blockquote { font-size: 38px; }
   .closing h2 { font-size: 54px; }
 }
 

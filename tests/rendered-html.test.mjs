@@ -247,6 +247,11 @@ test("serves the complete Business Restoration About page", async () => {
   assert.doesNotMatch(html, /Phase (?:<!-- -->)?0[1-3]/i);
   assert.match(html, /That was my oh shit moment\./i);
   assert.match(html, /ICF Professional Certified Coach \(PCC\)/i);
+  assert.match(html, /The art of making room for a life you love\./i);
+  assert.match(html, /Almost seven years in Ireland changed how I see everything\./i);
+  assert.match(html, /For 12 years, my creativity was waiting for permission\./i);
+  assert.match(html, /What I’m making room for/i);
+  assert.match(html, /Photo coming soon/i);
   assert.equal((html.match(/role="img"/gi) ?? []).length, 0);
   assert.match(html, /src="\/carly-about-bio-green\.jpg"/i);
   assert.match(

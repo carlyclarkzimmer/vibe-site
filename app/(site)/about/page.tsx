@@ -154,6 +154,68 @@ export default function AboutPage() {
       </div>
     </section>
 
+    <section className={styles.personalNote} id="personal-note" aria-labelledby="personal-note-heading">
+      <div className={styles.personalNoteHeader}>
+        <p className={styles.eyebrow}>A more personal note</p>
+        <p>Life, beyond the business</p>
+      </div>
+
+      <h2 id="personal-note-heading">The art of making room for a life you love.</h2>
+
+      <div className={styles.personalStory}>
+        <figure className={styles.personalFigure}>
+          <div className={styles.photoPlaceholder} aria-hidden="true">
+            <span>Photo coming soon</span>
+            <small>Ireland</small>
+          </div>
+          <figcaption>01 / Ireland, my soul’s home</figcaption>
+        </figure>
+        <div className={styles.personalCopy}>
+          <h3><em>Almost seven years in Ireland changed how I see everything.</em></h3>
+          <p>I lived abroad in Ireland for nearly seven years, and it’s still where a piece of my heart lives. I remember realizing that I didn’t even know what some of my closest friends did for work until we’d known each other for almost two years. Imagine that! I loved being somewhere that felt less interested in what you did for a living and more interested in who you were, your stories, your relationships, and how you spent your days. <strong>That experience shaped how I think about success, and eventually, the work I do with business owners today.</strong></p>
+        </div>
+      </div>
+
+      <div className={`${styles.personalStory} ${styles.personalStoryReverse}`}>
+        <div className={styles.personalCopy}>
+          <p className={styles.personalLabel}>02 / The artist</p>
+          <h3>For 12 years, my creativity was waiting for permission.</h3>
+          <p>I spent twelve years away from making art because there was always something more important to finish first. The work. The responsibilities. The never-ending list. Eventually, I realized I was postponing something that made me feel most like myself. <strong>So I started making art again. Not because everything was done, but because I stopped making creativity wait.</strong></p>
+        </div>
+        <figure className={styles.personalFigure}>
+          <div className={styles.photoPlaceholder} aria-hidden="true">
+            <span>Photo coming soon</span>
+            <small>The return to creativity</small>
+          </div>
+          <figcaption>02 / The return to creativity</figcaption>
+        </figure>
+      </div>
+
+      <div className={styles.personalGallery}>
+        <p className={styles.personalLabel}>03 / What I’m making room for</p>
+        <div className={styles.personalGalleryGrid}>
+          <figure>
+            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
+            <figcaption>16+ years with my husband, and still choosing adventure.</figcaption>
+          </figure>
+          <figure>
+            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
+            <figcaption>Ten nieces and nephews. A whole lot of love, laughter, and family time.</figcaption>
+          </figure>
+          <figure>
+            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
+            <figcaption>Gardening, books, thrifting, cats, and the ordinary pleasures.</figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div className={styles.personalClosing}>
+        <p>Recovering perfectionist. Lifelong overachiever. Artist. Traveler. Old soul.</p>
+        <p>I believe in intuition <em>and</em> evidence, meaningful work, and building a life on my own terms.</p>
+        <blockquote>I’m no longer building my life around who I learned I had to be. I’m building from who I actually am now.</blockquote>
+      </div>
+    </section>
+
     <section className={styles.closing}><p className={styles.eyebrow}>Your next chapter</p><h2>Your business gets to be successful. <em>And you get to have a life.</em></h2><p>If you’re ready to stop being the person everything depends on, come see the different ways we can work together.</p><Link className={styles.cta} href="/services">Show Me My Options</Link></section>
   </>;
 }
