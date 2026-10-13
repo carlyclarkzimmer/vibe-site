@@ -112,6 +112,137 @@
   text-wrap: balance;
 }
 
+.week {
+  width: min(1500px, calc(100vw - 48px));
+  margin: clamp(72px, 8vw, 118px) 50% 0;
+  padding: clamp(40px, 4vw, 60px) clamp(18px, 2.2vw, 34px) clamp(24px, 3vw, 42px);
+  border: 1px solid #eadfe4;
+  border-radius: 10px;
+  background: #f8f5f1;
+  transform: translateX(-50%);
+}
+
+.weekHeader {
+  margin-bottom: clamp(34px, 4vw, 52px);
+  text-align: center;
+}
+
+.weekHeader > p,
+.transformation > p {
+  margin: 0 0 14px;
+  color: #991f5d;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.weekHeader h3 {
+  margin: 0;
+  color: #2d2226;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 60px);
+  font-weight: 400;
+  letter-spacing: -.035em;
+  line-height: 1;
+  text-wrap: balance;
+}
+
+.weekHeader > span {
+  display: block;
+  margin-top: 18px;
+  color: #6f6267;
+  font-family: var(--font-body);
+  font-size: clamp(19px, 1.6vw, 24px);
+  line-height: 1.45;
+}
+
+.weekCards {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(12px, 1.15vw, 20px);
+}
+
+.weekCard {
+  min-width: 0;
+  padding: clamp(12px, 1.1vw, 18px);
+  border: 1px solid #eee7e9;
+  border-radius: 8px;
+  background: white;
+}
+
+.weekImage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 50% 50% 0 0 / 28% 28% 0 0;
+  overflow: hidden;
+  background: #f2e1ea;
+}
+
+.weekImage img {
+  object-fit: cover;
+}
+
+.weekCopy {
+  padding-top: 18px;
+}
+
+.weekDay {
+  margin: 0 0 15px;
+  color: #991f5d;
+  font-family: var(--font-interface);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.weekCopy h4 {
+  min-height: 2.1em;
+  margin: 0 0 16px;
+  color: #2d2226;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2vw, 30px);
+  font-weight: 500;
+  letter-spacing: -.02em;
+  line-height: 1.05;
+}
+
+.weekCopy > p:last-child {
+  margin: 0;
+  color: #63575c;
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.38;
+}
+
+.weekCopy strong {
+  color: #2d2226;
+  font-weight: 700;
+}
+
+.transformation {
+  margin-top: 24px;
+  padding: clamp(28px, 3vw, 42px);
+  border-radius: 8px;
+  background: #f2e1ea;
+  text-align: center;
+}
+
+.transformation h4 {
+  max-width: 1280px;
+  margin: 0 auto;
+  color: #2d2226;
+  font-family: var(--font-display);
+  font-size: clamp(29px, 3vw, 44px);
+  font-weight: 500;
+  letter-spacing: -.025em;
+  line-height: 1.18;
+  text-wrap: balance;
+}
+
 .apply {
   display: flex;
   width: min(100%, 360px);
@@ -141,6 +272,9 @@
     width: min(100%, calc((100% - clamp(22px, 2.5vw, 38px)) / 2));
     justify-self: center;
   }
+
+  .weekCards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .weekCard:last-child { grid-column: 1 / -1; width: calc((100% - clamp(12px, 1.15vw, 20px)) / 2); justify-self: center; }
 }
 
 @media (max-width: 700px) {
@@ -152,4 +286,18 @@
   .cardCopy { padding: 28px 24px 36px; }
   .description { font-size: 21px; }
   .goal { margin-top: 52px; font-size: clamp(34px, 10vw, 46px); }
+  .week { width: calc(100vw - 32px); margin-top: 62px; padding: 34px 14px 18px; }
+  .weekHeader { margin-bottom: 30px; }
+  .weekHeader h3 { font-size: clamp(38px, 11vw, 48px); }
+  .weekHeader > span { font-size: 20px; }
+  .weekCards { grid-template-columns: 1fr; gap: 14px; }
+  .weekCard,
+  .weekCard:last-child { display: grid; width: 100%; grid-template-columns: minmax(106px, 34%) minmax(0, 1fr); gap: 18px; align-items: center; padding: 12px; }
+  .weekImage { aspect-ratio: 4 / 5; border-radius: 50% 50% 0 0 / 25% 25% 0 0; }
+  .weekCopy { padding: 0; }
+  .weekDay { margin-bottom: 9px; font-size: 10px; }
+  .weekCopy h4 { min-height: 0; margin-bottom: 9px; font-size: clamp(24px, 7vw, 30px); }
+  .weekCopy > p:last-child { font-size: 17px; line-height: 1.35; }
+  .transformation { margin-top: 18px; padding: 28px 18px; }
+  .transformation h4 { font-size: 29px; }
 }
