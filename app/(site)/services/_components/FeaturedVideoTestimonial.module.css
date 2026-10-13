@@ -58,6 +58,32 @@
   margin: 32px 0 0;
 }
 
+.client {
+  margin-top: 28px;
+}
+
+.clientName,
+.clientTitle {
+  margin: 0;
+  font-family: var(--font-interface);
+  line-height: 1.5;
+}
+
+.clientName {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.clientTitle {
+  margin-top: 4px;
+  color: #991f5d;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .videoFrame {
   width: min(100%, 430px);
   justify-self: center;

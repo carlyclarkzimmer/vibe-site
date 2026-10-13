@@ -27,8 +27,8 @@ const restorationPhases = [
     number: "1",
     title: "Stop the Leaks",
     image: {
-      src: "/business-restoration/stop-the-leaks-final.jpg",
-      alt: "A sunlit villa room with a severely cracked ceiling leaking into brass buckets",
+      src: "/business-restoration/stop-the-leaks-reading-nook.jpg",
+      alt: "A sunlit Tuscan reading nook with a cracked ceiling leaking into a brass bowl",
     },
     description:
       "We identify where your time, energy, and attention are getting drained. That might be client urgency, over-delivering, doing work your team could own, saying yes too quickly, or constantly pushing your own priorities aside.",
