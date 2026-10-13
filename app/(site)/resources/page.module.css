@@ -1,0 +1,64 @@
+.page { background: var(--color-paper); color: var(--color-ink); }
+.eyebrow { margin: 0; color: var(--color-accent); font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .18em; line-height: 1.4; text-transform: uppercase; }
+.hero { display: grid; min-height: 760px; grid-template-columns: minmax(0, 1fr) minmax(420px, .86fr); background: var(--color-surface-dark); color: white; }
+.heroCopy { display: flex; max-width: 860px; flex-direction: column; justify-content: flex-end; padding: 170px clamp(48px, 7vw, 118px) clamp(76px, 8vw, 122px); }
+.heroCopy .eyebrow { color: #f2e1ea; }
+.heroCopy h1 { margin: 24px 0 34px; font-family: var(--font-display); font-size: clamp(64px, 7.6vw, 112px); font-weight: 400; letter-spacing: -.05em; line-height: .92; text-wrap: balance; }
+.heroCopy > p:last-child { max-width: 700px; margin: 0; color: rgb(255 255 255 / 82%); font-size: clamp(22px, 1.9vw, 29px); line-height: 1.5; }
+.heroImage { position: relative; min-height: 760px; overflow: hidden; }
+.heroImage::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(9 9 9 / 35%), transparent 36%), linear-gradient(180deg, transparent 70%, rgb(9 9 9 / 20%)); content: ""; }
+.heroImage img { object-fit: cover; object-position: center 42%; }
+.directory { padding: clamp(88px, 10vw, 152px) max(28px, calc((100vw - 1500px) / 2 + 40px)); }
+.directoryHeading { max-width: 920px; margin-bottom: clamp(64px, 8vw, 112px); }
+.directoryHeading h2 { margin: 24px 0 0; font-family: var(--font-display); font-size: clamp(54px, 6.2vw, 92px); font-weight: 400; letter-spacing: -.045em; line-height: .96; }
+.resourceList { border-bottom: var(--border-standard); }
+.resource { display: grid; grid-template-columns: minmax(340px, .92fr) minmax(0, 1.08fr); gap: clamp(52px, 7vw, 118px); align-items: center; padding-block: clamp(64px, 8vw, 112px); border-top: var(--border-standard); }
+.resource.reverse .resourceVisual { order: 2; }
+.resource.reverse .resourceCopy { order: 1; }
+.resourceVisual { position: relative; min-height: clamp(440px, 44vw, 650px); overflow: hidden; border-radius: 8px; background: #f2e1ea; }
+.resourceVisual img { object-position: center; }
+.coverImage { object-fit: cover; }
+.containVisual { border: 1px solid #e6dce6; background: #f8f5f1; }
+.containFrame { position: absolute; inset: clamp(18px, 2.5vw, 38px); }
+.containFrame img { object-fit: contain; }
+.resourceCopy { max-width: 700px; }
+.resourceMeta { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 18px; border-bottom: var(--border-standard); color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.resourceMeta span:last-child { color: var(--color-accent); text-align: right; }
+.prompt { margin: 34px 0 16px; color: var(--color-accent); font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
+.resourceCopy h3 { margin: 0 0 28px; font-family: var(--font-display); font-size: clamp(48px, 5.3vw, 78px); font-weight: 400; letter-spacing: -.045em; line-height: .96; text-wrap: balance; }
+.description { max-width: 650px; margin: 0; font-size: clamp(21px, 1.8vw, 27px); line-height: 1.55; }
+.detail { margin: 26px 0 32px; color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
+.cta, .startCta { display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 22px; padding: 17px 28px; border: 1px solid var(--color-accent); border-radius: 5px; background: var(--color-accent); color: white; font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
+.cta:hover, .cta:focus-visible, .startCta:hover, .startCta:focus-visible { border-color: var(--color-ink); background: var(--color-ink); color: white; }
+.cta:focus-visible, .startCta:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
+.patternGraphic { display: flex; height: 100%; min-height: inherit; flex-direction: column; justify-content: space-between; padding: clamp(36px, 5vw, 72px); background: var(--color-accent); color: white; }
+.patternGraphic::after { position: absolute; width: clamp(150px, 20vw, 270px); height: clamp(150px, 20vw, 270px); border: 1px solid rgb(255 255 255 / 42%); border-radius: 50%; content: ""; right: -8%; bottom: -6%; }
+.patternGraphic span { position: relative; z-index: 1; font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+.patternGraphic strong { position: relative; z-index: 1; font-family: var(--font-display); font-size: clamp(50px, 6.2vw, 88px); font-weight: 400; letter-spacing: -.05em; line-height: .86; }
+.patternGraphic em { font-weight: 400; }
+.startHere { padding: clamp(90px, 10vw, 150px) max(28px, calc((100vw - 1180px) / 2 + 40px)); border-block: 1px solid #e6dce6; background: #f2e1ea; color: #2d2226; text-align: center; }
+.startHere h2 { margin: 24px auto 30px; font-family: var(--font-display); font-size: clamp(58px, 7vw, 98px); font-weight: 400; letter-spacing: -.05em; line-height: .92; }
+.startHere > p:not(.eyebrow) { max-width: 720px; margin: 0 auto 38px; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }
+@media (max-width: 900px) {
+  .hero { min-height: auto; grid-template-columns: 1fr; }
+  .heroCopy { min-height: 620px; padding-top: 160px; }
+  .heroImage { min-height: 620px; }
+  .resource { gap: 44px; }
+}
+@media (max-width: 760px) {
+  .heroCopy { min-height: auto; padding: 140px var(--space-section-inline-mobile) 70px; }
+  .heroCopy h1 { font-size: 60px; }
+  .heroCopy > p:last-child { font-size: 21px; }
+  .heroImage { min-height: 540px; }
+  .directory { padding: 78px var(--space-section-inline-mobile); }
+  .directoryHeading { margin-bottom: 54px; }
+  .directoryHeading h2 { font-size: 52px; }
+  .resource { grid-template-columns: 1fr; gap: 38px; padding-block: 58px; }
+  .resource.reverse .resourceVisual, .resource.reverse .resourceCopy { order: initial; }
+  .resourceVisual { min-height: 420px; }
+  .resourceCopy h3 { font-size: 48px; }
+  .description { font-size: 21px; }
+  .patternGraphic strong { font-size: 58px; }
+  .startHere { padding: 82px var(--space-section-inline-mobile); }
+  .startHere h2 { font-size: 58px; }
+}
