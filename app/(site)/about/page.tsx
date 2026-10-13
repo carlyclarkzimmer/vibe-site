@@ -154,6 +154,123 @@ export default function AboutPage() {
       </div>
     </section>
 
+    <section className={styles.personalNote} id="personal-note" aria-labelledby="personal-note-heading">
+      <div className={styles.personalNoteHeader}>
+        <p className={styles.eyebrow}>A more personal note</p>
+        <p>Life, beyond the business</p>
+      </div>
+
+      <h2 id="personal-note-heading">The art of making room for a life you love.</h2>
+
+      <div className={styles.personalStory}>
+        <figure className={styles.personalFigure}>
+          <div className={styles.personalPhoto}>
+            <Image
+              src="/carly-about-ireland.jpg"
+              alt="Carly photographing the Cliffs of Moher in Ireland"
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+              unoptimized
+            />
+          </div>
+          <figcaption>01 / Ireland, my soul’s home</figcaption>
+        </figure>
+        <div className={styles.personalCopy}>
+          <h3><em>Almost seven years in Ireland changed how I see everything.</em></h3>
+          <p>I lived abroad in Ireland for nearly seven years, and it’s still where a piece of my heart lives. I remember realizing that I didn’t even know what some of my closest friends did for work until we’d known each other for almost two years. Imagine that! I loved being somewhere that felt less interested in what you did for a living and more interested in who you were, your stories, your relationships, and how you spent your days. <strong>That experience shaped how I think about success, and eventually, the work I do with business owners today.</strong></p>
+        </div>
+      </div>
+
+      <div className={`${styles.personalStory} ${styles.personalStoryReverse}`}>
+        <div className={styles.personalCopy}>
+          <p className={styles.personalLabel}>02 / The artist</p>
+          <h3>For 12 years, my creativity was waiting for permission.</h3>
+          <p>I spent twelve years away from making art because there was always something more important to finish first. The work. The responsibilities. The never-ending list. Eventually, I realized I was postponing something that made me feel most like myself. <strong>So I started making art again. Not because everything was done, but because I stopped making creativity wait.</strong></p>
+        </div>
+        <figure className={styles.personalFigure}>
+          <div className={styles.personalPhoto}>
+            <Image
+              src="/carly-about-painting.jpg"
+              alt="Carly smiling beside one of her large abstract paintings"
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+              unoptimized
+            />
+          </div>
+          <figcaption>02 / The return to creativity</figcaption>
+        </figure>
+      </div>
+
+      <div className={styles.personalGallery}>
+        <p className={styles.personalLabel}>03 / What I’m making room for</p>
+        <div className={styles.personalGalleryGrid}>
+          <figure>
+            <div className={`${styles.galleryPhoto} ${styles.husbandPhoto}`}>
+              <Image
+                src="/carly-about-husband-sailing.jpg"
+                alt="Carly and Devin sailing together off the west coast of Ireland"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
+                unoptimized
+              />
+            </div>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>Devin and I have spent 16+ years creating a life on our own terms. From working remotely in Europe long before it was a thing, to sailing the Caribbean and the wild west coast of Ireland, living abroad, and adventuring through Costa Rica.</span>
+              <strong>We&apos;ve always been willing to do things a little differently if it meant building a life that felt true to us.</strong>
+            </figcaption>
+          </figure>
+          <figure>
+            <div className={styles.galleryPhoto}>
+              <Image
+                src="/carly-about-cats-clean.jpg"
+                alt="Ollie Baby and Margarita sitting together"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
+                unoptimized
+              />
+            </div>
+            <figcaption>In September 2025, two little kittens from Brooklyn adopted us and promptly stole our hearts! Ollie Baby and Margarita, affectionately known as <strong>“the girls,”</strong> have been running the household ever since. 🐈💕</figcaption>
+          </figure>
+          <figure>
+            <div className={`${styles.galleryPhoto} ${styles.kidsPhoto}`}>
+              <Image
+                src="/carly-about-nieces-nephews.jpg"
+                alt="Carly smiling with one of her nieces"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 23vw"
+                unoptimized
+              />
+            </div>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>After several unsuccessful rounds of fertility treatments, Devin and I began imagining what family could look like in a different way.</span>
+              <span>And I&apos;ve fully embraced being the cool auntie to our ten nieces and nephews (and all our friends&apos; kids!). The one who lets them play with spray paint and carve jack-o&apos;-lanterns with REAL knives. 😂</span>
+            </figcaption>
+          </figure>
+          <figure>
+            <div className={styles.galleryPhoto}>
+              <Image
+                src="/carly-about-connemara.jpg"
+                alt="Carly cooking outdoors beside the sea in Connemara, Ireland"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 23vw"
+                unoptimized
+              />
+            </div>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>As a Sagittarius with Aries rising, I LOVE a good adventure, especially one that takes me to my favorite place on the edge of the world in Connemara, Ireland.</span>
+              <span>But I&apos;m just as happy getting lost in a great romantasy novel, hunting for treasures at the thrift store, tending to my garden, or enjoying the little pleasures of everyday life.</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div className={styles.personalClosing}>
+        <p>Recovering perfectionist. Lifelong overachiever. Artist. Traveler. Old soul.</p>
+        <p>I believe in intuition <em>and</em> evidence, meaningful work, and building a life on my own terms.</p>
+        <blockquote>I’m no longer building my life around who I learned I had to be. I’m building from who I actually am now.</blockquote>
+      </div>
+    </section>
+
     <section className={styles.closing}><p className={styles.eyebrow}>Your next chapter</p><h2>Your business gets to be successful. <em>And you get to have a life.</em></h2><p>If you’re ready to stop being the person everything depends on, come see the different ways we can work together.</p><Link className={styles.cta} href="/services">Show Me My Options</Link></section>
   </>;
 }
