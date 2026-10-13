@@ -21,6 +21,8 @@
 .containVisual { border: 1px solid #e6dce6; background: #f8f5f1; }
 .containFrame { position: absolute; inset: clamp(18px, 2.5vw, 38px); }
 .containFrame img { object-fit: contain; }
+.portraitVisual { min-height: auto; aspect-ratio: 4 / 5; }
+.portraitVisual .containFrame { inset: 0; }
 .resourceCopy { max-width: 700px; }
 .resourceMeta { display: flex; justify-content: space-between; gap: 24px; padding-bottom: 18px; border-bottom: var(--border-standard); color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; }
 .resourceMeta span:last-child { color: var(--color-accent); text-align: right; }
@@ -29,13 +31,14 @@
 .description { max-width: 650px; margin: 0; font-size: clamp(21px, 1.8vw, 27px); line-height: 1.55; }
 .detail { margin: 26px 0 32px; color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; }
 .cta, .startCta { display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 22px; padding: 17px 28px; border: 1px solid var(--color-accent); border-radius: 5px; background: var(--color-accent); color: white; font-family: var(--font-interface); font-size: 11px; font-weight: 700; letter-spacing: .14em; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
-.cta:hover, .cta:focus-visible, .startCta:hover, .startCta:focus-visible { border-color: var(--color-ink); background: var(--color-ink); color: white; }
+.cta:hover, .cta:focus-visible, .startCta:hover, .startCta:focus-visible { border-color: #fe0564; background: #fe0564; color: white; }
 .cta:focus-visible, .startCta:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
-.patternGraphic { display: flex; height: 100%; min-height: inherit; flex-direction: column; justify-content: space-between; padding: clamp(36px, 5vw, 72px); background: var(--color-accent); color: white; }
-.patternGraphic::after { position: absolute; width: clamp(150px, 20vw, 270px); height: clamp(150px, 20vw, 270px); border: 1px solid rgb(255 255 255 / 42%); border-radius: 50%; content: ""; right: -8%; bottom: -6%; }
+.patternGraphic { display: flex; height: 100%; min-height: inherit; flex-direction: column; justify-content: space-between; padding: clamp(36px, 5vw, 72px); background: #2d2226; color: white; }
+.patternGraphic::before { position: absolute; inset: 0 0 auto; height: 7px; background: var(--color-accent); content: ""; }
+.patternGraphic::after { position: absolute; width: clamp(150px, 20vw, 270px); height: clamp(150px, 20vw, 270px); border: 1px solid rgb(254 5 100 / 62%); border-radius: 50%; content: ""; right: -8%; bottom: -6%; }
 .patternGraphic span { position: relative; z-index: 1; font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
 .patternGraphic strong { position: relative; z-index: 1; font-family: var(--font-display); font-size: clamp(50px, 6.2vw, 88px); font-weight: 400; letter-spacing: -.05em; line-height: .86; }
-.patternGraphic em { font-weight: 400; }
+.patternGraphic em { color: #f2e1ea; font-weight: 400; }
 .startHere { padding: clamp(90px, 10vw, 150px) max(28px, calc((100vw - 1180px) / 2 + 40px)); border-block: 1px solid #e6dce6; background: #f2e1ea; color: #2d2226; text-align: center; }
 .startHere h2 { margin: 24px auto 30px; font-family: var(--font-display); font-size: clamp(58px, 7vw, 98px); font-weight: 400; letter-spacing: -.05em; line-height: .92; }
 .startHere > p:not(.eyebrow) { max-width: 720px; margin: 0 auto 38px; font-size: clamp(22px, 1.8vw, 27px); line-height: 1.55; }

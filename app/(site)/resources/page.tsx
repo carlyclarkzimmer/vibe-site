@@ -29,9 +29,9 @@ const resources = [
     description: "Honest conversations about how thriving online business owners stopped turning their freedom back into a job, and what opened up when they did.",
     detail: "Audio series · Listen at your own pace",
     cta: "Explore the Audio Series",
-    imageSrc: "/beyond-the-bottleneck-cover.png",
-    imageAlt: "Beyond the Bottleneck audio series cover featuring Carly Clark Zimmer",
-    imageStyle: "contain",
+    imageSrc: "/beyond-the-bottleneck-contributor-cover.png",
+    imageAlt: "Beyond the Bottleneck free audio series featuring Carly Clark Zimmer and its contributors",
+    imageStyle: "portraitContain",
   },
   {
     category: "Newsletter",
@@ -50,8 +50,8 @@ const resources = [
     prompt: "Want to change one pattern?",
     title: "The Pattern Interrupt",
     href: "https://carlyclarkzimmer.thrivecart.com/the-pattern-interrupt/",
-    description: "30 days to identify one bottleneck, interrupt it, and build evidence that you can choose differently.",
-    detail: "One pattern · 30 days",
+    description: "In 21 days, we’ll identify one pattern that keeps putting you back in the bottleneck, interrupt it in real time, and use that shift to make one meaningful business change that gives you back time, energy, or capacity.",
+    detail: "One pattern · 21 days · One concrete change",
     cta: "Explore the Pattern Interrupt",
     imageSrc: null,
     imageAlt: "",
@@ -82,10 +82,10 @@ export default function ResourcesPage() {
         <div className={styles.resourceList}>
           {resources.map((resource, index) => (
             <article className={`${styles.resource} ${index % 2 ? styles.reverse : ""}`} key={resource.title}>
-              <div className={`${styles.resourceVisual} ${resource.imageStyle === "contain" ? styles.containVisual : ""}`}>
-                {resource.imageSrc && resource.imageStyle === "contain" ? (
+              <div className={`${styles.resourceVisual} ${resource.imageStyle === "contain" || resource.imageStyle === "portraitContain" ? styles.containVisual : ""} ${resource.imageStyle === "portraitContain" ? styles.portraitVisual : ""}`}>
+                {resource.imageSrc && (resource.imageStyle === "contain" || resource.imageStyle === "portraitContain") ? (
                   <div className={styles.containFrame}>
-                    <Image src={resource.imageSrc} alt={resource.imageAlt} fill sizes="(max-width: 760px) 100vw, 46vw" unoptimized />
+                    <Image src={resource.imageSrc} alt={resource.imageAlt} fill sizes="(max-width: 760px) 100vw, 46vw" unoptimized style={{ objectFit: "contain" }} />
                   </div>
                 ) : resource.imageSrc ? (
                   <Image src={resource.imageSrc} alt={resource.imageAlt} fill sizes="(max-width: 760px) 100vw, 46vw" unoptimized className={styles.coverImage} />
@@ -93,7 +93,7 @@ export default function ResourcesPage() {
                   <div className={styles.patternGraphic} aria-hidden="true">
                     <span>One pattern</span>
                     <strong>The Pattern<br /><em>Interrupt</em></strong>
-                    <span>30 intentional days</span>
+                    <span>21 days · One meaningful business change</span>
                   </div>
                 )}
               </div>
