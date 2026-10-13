@@ -27,7 +27,11 @@ export default function AboutPage() {
         <Image className={styles.heroImage} src="/carly-about-hero.png" alt="Carly Clark Zimmer seated on stone steps in a magenta velvet jacket" fill priority sizes="100vw" unoptimized />
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Carly Clark Zimmer Behavior Change and Business Coach</p>
+          <p className={styles.eyebrow}>
+            Carly Clark Zimmer:
+            <br />
+            Holistic Business Leadership Coach
+          </p>
           <h1>If your business is growing but your life outside of it keeps getting smaller, <em>something needs to change.</em></h1>
         </div>
       </header>

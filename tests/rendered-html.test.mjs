@@ -203,7 +203,9 @@ test("serves the complete Business Restoration About page", async () => {
 
   assert.equal(response.status, 200);
   assert.match(html, /About Carly Clark Zimmer \| Business Restoration Coach/i);
-  assert.match(html, /Carly Clark Zimmer Behavior Change and Business Coach/i);
+  assert.match(html, /Carly Clark Zimmer:/i);
+  assert.match(html, /Holistic Business Leadership Coach/i);
+  assert.doesNotMatch(html, /Carly Clark Zimmer Behavior Change and Business Coach/i);
   assert.match(html, /src="\/carly-about-hero\.png"/i);
   assert.match(
     html,
@@ -248,7 +250,7 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /aria-label="Site navigation"/i);
 
   const aboutOrder = [
-    "carly clark zimmer behavior change and business coach",
+    "carly clark zimmer:",
     "here’s the thing…",
     "the story underneath the work",
     "where do i come in?",
