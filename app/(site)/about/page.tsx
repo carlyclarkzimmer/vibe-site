@@ -185,7 +185,14 @@ export default function AboutPage() {
         <div className={styles.personalCopy}>
           <p className={styles.personalLabel}>02 / The artist</p>
           <h3>For 12 years, my creativity was waiting for permission.</h3>
-          <p>I spent twelve years away from making art because there was always something more important to finish first. The work. The responsibilities. The never-ending list. Eventually, I realized I was postponing something that made me feel most like myself. <strong>So I started making art again. Not because everything was done, but because I stopped making creativity wait.</strong></p>
+          <p>In the early 2000s, I was an art student, painting and creating work well beyond my years in school.</p>
+          <p>And then, little by little, I shut down that part of myself.</p>
+          <p>For almost 12 years, I barely picked up a paintbrush. I kept telling myself I&apos;d get back to making art once I had more time, but somehow the never-ending to-do list just kept getting longer.</p>
+          <p>Eventually, I had to admit that I was the one putting my creativity at the bottom of the list. And I really missed that part of myself.</p>
+          <p><strong>These days, I&apos;m making a conscious effort to give my creativity the same time and attention I&apos;ve spent years giving my business.</strong></p>
+          <p>And what&apos;s been fascinating is returning to art with all the skills I&apos;ve developed through years of coaching.</p>
+          <p>I still catch myself making up stories about how long a painting will take, whether it&apos;s worth my time, or whether I should be doing something more productive.</p>
+          <p><strong>But now I recognize those thoughts for what they are, and I&apos;m getting a whole lot better at not letting them make my decisions for me.</strong></p>
         </div>
         <figure className={styles.personalFigure}>
           <div className={styles.personalPhoto}>
