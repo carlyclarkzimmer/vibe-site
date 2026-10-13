@@ -205,7 +205,15 @@ export default function AboutPage() {
         <p className={styles.personalLabel}>03 / What I’m making room for</p>
         <div className={styles.personalGalleryGrid}>
           <figure>
-            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
+            <div className={styles.galleryPhoto}>
+              <Image
+                src="/carly-about-husband.jpg"
+                alt="Carly and her husband smiling together on a beach at sunset"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
+                unoptimized
+              />
+            </div>
             <figcaption>16+ years with my husband, and still choosing adventure.</figcaption>
           </figure>
           <figure>
