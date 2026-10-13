@@ -151,6 +151,18 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Less reactivity\. More space\./i);
   assert.match(html, /Deeper awareness\. New possibilities\./i);
   assert.match(html, /Sustainable growth\. A business that supports your life\./i);
+  assert.match(
+    html,
+    /Our Focused Intention: In just a few months, we rebuild your business so it supports your/i,
+  );
+  assert.doesNotMatch(html, /In just a few months, rebuild your business/i);
+  assert.match(html, /A Week Inside Business Restoration/i);
+  assert.match(html, /Small, intentional changes that add up to a whole new way of operating\./i);
+  assert.match(html, /Monday/i);
+  assert.match(html, /Friday/i);
+  assert.match(html, /You(?:&#x27;|')re learning how to enjoy the life you(?:&#x27;|')ve built\./i);
+  assert.match(html, /business-restoration\/week\/monday-notice-the-pattern\.png/i);
+  assert.match(html, /business-restoration\/week\/friday-build-the-evidence\.png/i);
   assert.match(html, /business-restoration\/stop-the-leaks-reading-nook\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
   assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
