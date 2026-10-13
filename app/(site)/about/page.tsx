@@ -39,24 +39,60 @@ export default function AboutPage() {
           <p>You built it because you wanted more autonomy, more flexibility, and more say over how you spend your time.</p>
           <p>But if every client request, team question, and business problem still comes back to you, that freedom gets eaten up fast.</p>
         </div>
-        <div className={styles.introGrid}>
-          <div><p className={styles.kicker}>Where do I come in?</p><p className={styles.introStatement}>I help successful service-based business owners stop being the person everything depends on, so the business can keep growing without taking over their life.</p></div>
-          <div className={styles.introPortrait}>
+      </section>
+    </div>
+
+    <section className={styles.story}>
+      <div className={styles.storyOpening}>
+        <div><p className={styles.eyebrow}>The story underneath the work</p><h2>I know what it’s like to build the cage yourself.</h2><p>I’m an elder millennial raised on work hard, be useful, don’t complain, and for the love of all the Goddesses, follow through. 😂</p><p>That work ethic helped me build two businesses, first a brick-and-mortar massage therapy practice on Long Island, then my coaching business.</p><p>And somehow, both times, I managed to rebuild a version of the exact cage I thought I had left behind when I stopped working for someone else.</p></div>
+        <figure className={styles.storyPhoto}>
+          <div className={styles.storyPhotoFrame}>
             <Image
-              src="/carly-about-where-i-come-in-seated.jpg"
-              alt="Carly Clark Zimmer seated in a green velvet jacket"
+              src="/carly-about-airport-client-call.jpg"
+              alt="Carly taking a client call from an airport"
               fill
               sizes="(max-width: 760px) 100vw, 38vw"
               unoptimized
             />
           </div>
+          <figcaption>
+            This is me, squeezing in a client call at an airport, during the pandemic, on my way to to my Grandmother&apos;s funeral, in the name of good client delivery.
+          </figcaption>
+        </figure>
+      </div>
+      <div className={styles.storyMoment}><p>One New Year’s Eve, I was tucked away in a back bedroom frantically trying to answer Slack messages while everyone I loved was downstairs, laughing and making memories without me.</p><h2>That was my oh shit moment.</h2><p>I realized I had become incredibly good at being needed, responsive, capable, and responsible… and somewhere along the way, my business had started eating the parts of my life I actually cared about.</p></div>
+      <div className={styles.lifeGrid}>
+        <div><p className={styles.kicker}>So I changed how I worked.</p><h2>I wanted more life.</h2><p>I wanted more room for the things that make me feel like myself outside of work, like painting, gardening, travel, long walks, getting completely absorbed in a romantasy novel, spending time with family, hanging out with my cats, or feeling the thrill of the perfect $8 thrift-store lamp score!</p><p>And that’s the kind of space I want my clients to have in their lives too.</p></div>
+        <div className={styles.lifePhoto}>
+          <Image
+            src="/carly-about-life-outside-work.jpg"
+            alt="Carly enjoying breakfast outdoors in Spain"
+            fill
+            sizes="(max-width: 760px) 100vw, 38vw"
+            unoptimized
+          />
         </div>
-        <div className={styles.howResult}>
-          <div><p className={styles.kicker}>How?</p><p>Through the Business Restoration Method, we find the bottlenecks draining your time, energy, and capacity, uncover the patterns underneath them, and rebuild the way your business operates so you’re not relying on overwork, over-responsibility, or constant availability to keep things moving.</p></div>
-          <div><p className={styles.kicker}>The result?</p><p>You make clearer decisions, protect your time, delegate without taking everything back, and actually move your own priorities forward.</p><p>Your business starts humming along, and you finally have room for your life to do the same.</p></div>
+      </div>
+    </section>
+
+    <section className={styles.intro}>
+      <div className={styles.introGrid}>
+        <div><p className={styles.kicker}>Where do I come in?</p><p className={styles.introStatement}>I help successful service-based business owners stop being the person everything depends on, so the business can keep growing without taking over their life.</p></div>
+        <div className={styles.introPortrait}>
+          <Image
+            src="/carly-about-where-i-come-in-seated.jpg"
+            alt="Carly Clark Zimmer seated in a green velvet jacket"
+            fill
+            sizes="(max-width: 760px) 100vw, 38vw"
+            unoptimized
+          />
         </div>
-      </section>
-    </div>
+      </div>
+      <div className={styles.howResult}>
+        <div><p className={styles.kicker}>How?</p><p>Through the Business Restoration Method, we find the bottlenecks draining your time, energy, and capacity, uncover the patterns underneath them, and rebuild the way your business operates so you’re not relying on overwork, over-responsibility, or constant availability to keep things moving.</p></div>
+        <div><p className={styles.kicker}>The result?</p><p>You make clearer decisions, protect your time, delegate without taking everything back, and actually move your own priorities forward.</p><p>Your business starts humming along, and you finally have room for your life to do the same.</p></div>
+      </div>
+    </section>
 
     <section className={styles.promises}>
       <div className={styles.sectionIntro}>
@@ -83,7 +119,6 @@ export default function AboutPage() {
           />
         </div>
         <div className={styles.promiseCloseCopy}>
-          <p>I’m not interested in making you “more productive”. Those are the exact behaviors we need to tackle to help you get your life back!</p>
           <p>The goal is for you to have enough space in your day to actually feel like yourself. 🫶</p>
         </div>
       </div>
@@ -99,39 +134,6 @@ export default function AboutPage() {
       <div className={styles.phaseList}>{phases.map((phase) => <article className={styles.phase} key={phase.number}><div className={styles.phaseHeading}><p>Phase {phase.number}</p><h3>{phase.title}</h3></div><div className={styles.phaseCopy}>{phase.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></article>)}</div>
     </section>
 
-    <section className={styles.story}>
-      <div className={styles.storyOpening}>
-        <figure className={styles.storyPhoto}>
-          <div className={styles.storyPhotoFrame}>
-            <Image
-              src="/carly-about-airport-client-call.jpg"
-              alt="Carly taking a client call from an airport"
-              fill
-              sizes="(max-width: 760px) 100vw, 38vw"
-              unoptimized
-            />
-          </div>
-          <figcaption>
-            This is me, squeezing in a client call at an airport, during the pandemic, on my way to to my Grandmother&apos;s funeral, in the name of good client delivery.
-          </figcaption>
-        </figure>
-        <div><p className={styles.eyebrow}>The story underneath the work</p><h2>I know what it’s like to build the cage yourself.</h2><p>I’m an elder millennial raised on work hard, be useful, don’t complain, and for the love of all the Goddesses, follow through. 😂</p><p>That work ethic helped me build two businesses, first a brick-and-mortar massage therapy practice on Long Island, then my coaching business.</p><p>And somehow, both times, I managed to rebuild a version of the exact cage I thought I had left behind when I stopped working for someone else.</p></div>
-      </div>
-      <div className={styles.storyMoment}><p>One New Year’s Eve, I was tucked away in a back bedroom frantically trying to answer Slack messages while everyone I loved was downstairs, laughing and making memories without me.</p><h2>That was my oh shit moment.</h2><p>I realized I had become incredibly good at being needed, responsive, capable, and responsible… and somewhere along the way, my business had started eating the parts of my life I actually cared about.</p></div>
-      <div className={styles.lifeGrid}>
-        <div><p className={styles.kicker}>So I changed how I worked.</p><h2>I wanted more life.</h2><p>I wanted more room for the things that make me feel like myself outside of work, like painting, gardening, travel, long walks, getting completely absorbed in a romantasy novel, spending time with family, hanging out with my cats, or feeling the thrill of the perfect $8 thrift-store lamp score!</p><p>And that’s the kind of space I want my clients to have in their lives too.</p></div>
-        <div className={styles.lifePhoto}>
-          <Image
-            src="/carly-about-life-outside-work.jpg"
-            alt="Carly enjoying breakfast outdoors in Spain"
-            fill
-            sizes="(max-width: 760px) 100vw, 38vw"
-            unoptimized
-          />
-        </div>
-      </div>
-    </section>
-
     <section className={styles.bio}>
       <div className={styles.bioHeading}><p className={styles.eyebrow}>A little about the person you’ll actually be working with</p><h2>Hi, I’m Carly.</h2></div>
       <div className={styles.bioGrid}>
@@ -144,7 +146,7 @@ export default function AboutPage() {
             unoptimized
           />
         </div>
-        <div className={styles.bioCopy}><p>I’m Carly Clark Zimmer, an ICF Professional Certified Coach (PCC) with eight+ years of experience coaching entrepreneurs and leaders through the decisions, patterns, and business changes that come with growth.</p><p>Before coaching, I spent 12 years as a licensed massage therapist, which is really where my obsession with noticing patterns began. I learned to look beyond what was showing up in the body and get curious about how stress, lifestyle, communication, and our relationship with ourselves were contributing to it.</p><p>My work today brings together behavioral change, identity work, and practical business strategy to help you change not only what you’re doing, but the way you’re operating underneath it.</p><p>And yes, I’m still doing this work too. I’m an Enneagram 1 with a strong 4 and 8 right on its heels, which means I can bounce between “let’s do this the right way,” “but does it actually feel like me?” and “okay, enough, I’ll just handle it.” 😅</p><p>Add in a 2/4 Generator and Aries rising, and you get someone who genuinely loves people and connection, needs a lot of alone time, and can move pretty fast when something clicks.</p><p>I’m an elder millennial with an old soul, the only daughter with three brothers, raised in a working-class family where hard work is a family value. I’m happiest on a long walk, spending hours in the garden, or curled up with a spicy romantasy novel while my cats, Ollie and Margarita, are nearby.</p><p>You can also catch me rearranging furniture because I need the room to feel different, hunting for thrift-store scores, and listening to Taylor Swift while I do it.</p></div>
+        <div className={styles.bioCopy}><p>I’m Carly Clark Zimmer, an ICF Professional Certified Coach (PCC) with eight+ years of experience coaching entrepreneurs and leaders through the decisions, patterns, and business changes that come with growth.</p><p>Before coaching, I spent 12 years as a licensed massage therapist, which is really where my obsession with noticing patterns began. I learned to look beyond what was showing up in the body and get curious about how stress, lifestyle, communication, and our relationship with ourselves were contributing to it.</p><p>My work today brings together behavioral change, identity work, and practical business strategy to help you change not only what you’re doing, but the way you’re operating underneath it.</p><p>And yes, I’m still doing this work too. I’m an Enneagram 1 with a strong 4 and 8 right on its heels, which means I can bounce between “let’s do this the right way,” “but does it actually feel like me?” and “okay, enough, I’ll just handle it.” 😅</p><p>Add in a 2/4 Generator and Aries rising, and you get someone who genuinely loves people and connection, needs a lot of alone time, and can move pretty fast when something clicks.</p><p>I’m an old soul, the only daughter with three brothers, raised in a working-class family where hard work is a family value.</p><p>You can also catch me rearranging furniture because I need the room to feel different, and listening to Taylor Swift while I do it.</p></div>
       </div>
     </section>
 
