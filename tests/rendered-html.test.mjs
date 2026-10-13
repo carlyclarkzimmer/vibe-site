@@ -252,6 +252,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /src="\/carly-about-ireland\.jpg"/i);
   assert.match(html, /alt="Carly photographing the Cliffs of Moher in Ireland"/i);
   assert.match(html, /For 12 years, my creativity was waiting for permission\./i);
+  assert.match(html, /In the early 2000s, I was an art student, painting and creating work well beyond my years in school\./i);
+  assert.match(html, /These days, I(?:&apos;|')m making a conscious effort to give my creativity the same time and attention/i);
+  assert.match(html, /But now I recognize those thoughts for what they are/i);
+  assert.doesNotMatch(html, /I spent twelve years away from making art/i);
   assert.match(html, /src="\/carly-about-painting\.jpg"/i);
   assert.match(html, /alt="Carly smiling beside one of her large abstract paintings"/i);
   assert.match(html, /What I’m making room for/i);
