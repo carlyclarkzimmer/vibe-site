@@ -263,7 +263,11 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /src="\/carly-about-nieces-nephews\.jpg"/i);
   assert.match(html, /alt="Carly smiling with one of her nieces"/i);
   assert.match(html, /Ten nieces and nephews\. A whole lot of love, laughter, and family time\./i);
-  assert.match(html, /Photo coming soon/i);
+  assert.match(html, /src="\/carly-about-connemara\.jpg"/i);
+  assert.match(html, /alt="Carly cooking outdoors beside the sea in Connemara, Ireland"/i);
+  assert.match(html, /As a Sagittarius with Aries rising, I LOVE a good adventure/i);
+  assert.match(html, /But I(?:&apos;|')m just as happy getting lost in a great romantasy novel/i);
+  assert.doesNotMatch(html, /Photo coming soon/i);
   assert.equal((html.match(/role="img"/gi) ?? []).length, 0);
   assert.match(html, /src="\/carly-about-bio-green\.jpg"/i);
   assert.match(

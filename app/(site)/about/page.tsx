@@ -241,8 +241,19 @@ export default function AboutPage() {
             <figcaption>Ten nieces and nephews. A whole lot of love, laughter, and family time.</figcaption>
           </figure>
           <figure>
-            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
-            <figcaption>Gardening, books, thrifting, cats, and the ordinary pleasures.</figcaption>
+            <div className={styles.galleryPhoto}>
+              <Image
+                src="/carly-about-connemara.jpg"
+                alt="Carly cooking outdoors beside the sea in Connemara, Ireland"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 23vw"
+                unoptimized
+              />
+            </div>
+            <figcaption className={styles.galleryCaptionLong}>
+              <span>As a Sagittarius with Aries rising, I LOVE a good adventure, especially one that takes me to my favorite place on the edge of the world in Connemara, Ireland.</span>
+              <span>But I&apos;m just as happy getting lost in a great romantasy novel, hunting for treasures at the thrift store, tending to my garden, or enjoying the little pleasures of everyday life.</span>
+            </figcaption>
           </figure>
         </div>
       </div>
