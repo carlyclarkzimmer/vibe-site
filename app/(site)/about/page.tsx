@@ -164,9 +164,14 @@ export default function AboutPage() {
 
       <div className={styles.personalStory}>
         <figure className={styles.personalFigure}>
-          <div className={styles.photoPlaceholder} aria-hidden="true">
-            <span>Photo coming soon</span>
-            <small>Ireland</small>
+          <div className={styles.personalPhoto}>
+            <Image
+              src="/carly-about-ireland.jpg"
+              alt="Carly photographing the Cliffs of Moher in Ireland"
+              fill
+              sizes="(max-width: 900px) 100vw, 46vw"
+              unoptimized
+            />
           </div>
           <figcaption>01 / Ireland, my soul’s home</figcaption>
         </figure>
