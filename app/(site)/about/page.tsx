@@ -217,8 +217,16 @@ export default function AboutPage() {
             <figcaption>16+ years with my husband, and still choosing adventure.</figcaption>
           </figure>
           <figure>
-            <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>
-            <figcaption>Ten nieces and nephews. A whole lot of love, laughter, and family time.</figcaption>
+            <div className={styles.galleryPhoto}>
+              <Image
+                src="/carly-about-cats.jpg"
+                alt="Carly relaxing at home with Margarita and Ollie"
+                fill
+                sizes="(max-width: 760px) 100vw, (max-width: 900px) 50vw, 31vw"
+                unoptimized
+              />
+            </div>
+            <figcaption>“The girls,” our darling Margarita and Ollie Baby.</figcaption>
           </figure>
           <figure>
             <div className={styles.galleryPlaceholder} aria-hidden="true"><span>Photo coming soon</span></div>

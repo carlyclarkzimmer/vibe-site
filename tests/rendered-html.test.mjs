@@ -257,6 +257,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /What I’m making room for/i);
   assert.match(html, /src="\/carly-about-husband\.jpg"/i);
   assert.match(html, /alt="Carly and her husband smiling together on a beach at sunset"/i);
+  assert.match(html, /src="\/carly-about-cats\.jpg"/i);
+  assert.match(html, /alt="Carly relaxing at home with Margarita and Ollie"/i);
+  assert.match(html, /“The girls,” our darling Margarita and Ollie Baby\./i);
+  assert.doesNotMatch(html, /Ten nieces and nephews/i);
   assert.match(html, /Photo coming soon/i);
   assert.equal((html.match(/role="img"/gi) ?? []).length, 0);
   assert.match(html, /src="\/carly-about-bio-green\.jpg"/i);
