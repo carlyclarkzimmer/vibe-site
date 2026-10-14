@@ -241,6 +241,15 @@ test("serves the Living Business Lounge sales page and approved checkout details
   assert.equal(response.status, 200);
   assert.match(html, /rel="canonical" href="https:\/\/carlyclarkzimmer\.com\/lounge\/"/i);
   assert.match(html, /aria-label="Site navigation"/i);
+  assert.match(html, /id="lounge-hero"/i);
+  assert.match(html, /src="\/living-business-lounge-hero\.jpg"/i);
+  assert.match(html, /alt="Carly Clark Zimmer smiling beside a stone wall"/i);
+  assert.match(html, /she just needs the accountability to follow through\./i);
+  assert.doesNotMatch(html, /and wants support actually doing it\./i);
+  assert.match(html, /This is an anti-membership\./i);
+  assert.match(html, /No massive amounts of content to consume/i);
+  assert.match(html, /what you(?:&#x27;|’)ve built!/i);
+  assert.ok(html.indexOf('id="anti-membership-heading"') < html.indexOf('id="introduction-heading"'));
   assert.match(html, /You probably don(?:&#x27;|’)t need another course telling you what to do\./i);
   assert.match(html, /How we(?:&#x27;|’)ll work/i);
   assert.match(html, /1st and 3rd Tuesday of the month at 11am Eastern/i);

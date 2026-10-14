@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 const joinHref = "https://carlyclarkzimmer.thrivecart.com/living-business-lounge/";
@@ -6,14 +7,14 @@ const joinHref = "https://carlyclarkzimmer.thrivecart.com/living-business-lounge
 export const metadata: Metadata = {
   title: "The Living Business Lounge | Carly Clark Zimmer",
   description:
-    "Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.",
+    "Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.",
   alternates: { canonical: "https://carlyclarkzimmer.com/lounge/" },
   openGraph: {
     type: "website",
     siteName: "Carly Clark Zimmer",
     title: "The Living Business Lounge",
     description:
-      "Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.",
+      "Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.",
     url: "https://carlyclarkzimmer.com/lounge/",
   },
 };
@@ -29,14 +30,38 @@ function JoinButton({ className = "" }: { className?: string }) {
 export default function LoungePage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-labelledby="lounge-heading">
+      <section className={styles.hero} id="lounge-hero" aria-labelledby="lounge-heading">
+        <div className={styles.heroVisual}>
+          <Image
+            className={styles.heroImage}
+            src="/living-business-lounge-hero.jpg"
+            alt="Carly Clark Zimmer smiling beside a stone wall"
+            fill
+            priority
+            sizes="100vw"
+            unoptimized
+          />
+        </div>
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroInner}>
           <p className={styles.eyebrow}>Ongoing coaching</p>
-          <h1 id="lounge-heading">The Living Business <em>Lounge</em></h1>
-          <p className={styles.heroLead}>Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.</p>
+          <h1 id="lounge-heading">The Living Business Lounge</h1>
+          <p className={styles.heroLead}>Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.</p>
           <JoinButton />
         </div>
         <span className={styles.heroRule} aria-hidden="true" />
+      </section>
+
+      <section className={styles.antiMembership} aria-labelledby="anti-membership-heading">
+        <div className={styles.antiMembershipInner}>
+          <h2 id="anti-membership-heading">This is an anti-membership.</h2>
+          <div className={styles.antiMembershipCopy}>
+            <p>No massive amounts of content to consume or feel bad about NOT consuming. Instead, this is an intentional community to help you follow through on what&apos;s most important to you, especially when client work keeps taking priority over your dreams, both personal and professional.</p>
+            <p>We&apos;re going to make sure your intentions are clear AND achievable each quarter (no more trying to squeeze a year&apos;s worth of work into a quarter!)</p>
+            <p>And you&apos;re going to have an expert at your side helping you bust through the patterns and internal programming that keep telling you things are too urgent to take that walk or let that email sit until tomorrow.</p>
+            <p className={styles.antiMembershipClosing}>Your business GETS to be a living entity, it GETS to grow and change with you! And you GET to enjoy what you&apos;ve built!</p>
+          </div>
+        </div>
       </section>
 
       <section className={styles.introduction} aria-labelledby="introduction-heading">
