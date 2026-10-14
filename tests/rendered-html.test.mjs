@@ -266,7 +266,12 @@ test("serves the Living Business Lounge sales page and approved checkout details
   assert.match(html, /she just needs the accountability to follow through\./i);
   assert.doesNotMatch(html, /and wants support actually doing it\./i);
   assert.match(html, /This is an anti-membership\./i);
+  assert.match(html, /src="\/overwhelmed-by-business-advice\.png"/i);
+  assert.match(html, /You know what to do, let(?:&#x27;|’)s make space to do it\./i);
   assert.match(html, /No massive amounts of content to consume/i);
+  assert.ok(html.indexOf('id="anti-membership-heading"') < html.indexOf('overwhelmed-by-business-advice.png'));
+  assert.ok(html.indexOf('overwhelmed-by-business-advice.png') < html.indexOf('You know what to do'));
+  assert.ok(html.indexOf('You know what to do') < html.indexOf('No massive amounts of content'));
   assert.match(html, /what you(?:&#x27;|’)ve built!/i);
   assert.ok(html.indexOf('id="anti-membership-heading"') < html.indexOf('id="introduction-heading"'));
   assert.match(html, /You probably don(?:&#x27;|’)t need another course telling you what to do\./i);

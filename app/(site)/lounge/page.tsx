@@ -54,8 +54,20 @@ export default function LoungePage() {
 
       <section className={styles.antiMembership} aria-labelledby="anti-membership-heading">
         <div className={styles.antiMembershipInner}>
-          <h2 id="anti-membership-heading">This is an anti-membership.</h2>
+          <div className={styles.antiMembershipVisual}>
+            <h2 id="anti-membership-heading">This is an anti-membership.</h2>
+            <Image
+              className={styles.antiMembershipImage}
+              src="/overwhelmed-by-business-advice.png"
+              alt="Business owner pausing at her laptop amid stacks of books and notes"
+              width={1536}
+              height={1024}
+              sizes="(max-width: 900px) 100vw, 42vw"
+              unoptimized
+            />
+          </div>
           <div className={styles.antiMembershipCopy}>
+            <h3 className={styles.antiMembershipHeadline}>You know what to do, let&apos;s make space to do it.</h3>
             <p>No massive amounts of content to consume or feel bad about NOT consuming. Instead, this is an intentional community to help you follow through on what&apos;s most important to you, especially when client work keeps taking priority over your dreams, both personal and professional.</p>
             <p>We&apos;re going to make sure your intentions are clear AND achievable each quarter (no more trying to squeeze a year&apos;s worth of work into a quarter!)</p>
             <p>And you&apos;re going to have an expert at your side helping you bust through the patterns and internal programming that keep telling you things are too urgent to take that walk or let that email sit until tomorrow.</p>
