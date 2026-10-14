@@ -78,7 +78,11 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /The Living Business Lounge/i);
   assert.match(html, /Restorative Reset/i);
   assert.ok(html.indexOf("5-Minute Laser Coach") < html.indexOf("Restorative Reset"));
-  assert.ok(html.indexOf("Restorative Reset") < html.indexOf("The Pattern Interrupt"));
+  assert.ok(html.indexOf("The Pattern Interrupt") < html.indexOf("Restorative Reset"));
+  assert.match(
+    html,
+    /21 days to identify one bottleneck, interrupt it, and build evidence that you can choose differently\./i,
+  );
   assert.match(
     html,
     /href="https:\/\/carlyclarkzimmer\.as\.me\/restorative-reset"[^>]*target="_blank"[^>]*rel="noreferrer"/i,
