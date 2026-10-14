@@ -184,6 +184,9 @@ export default function AboutPage() {
         <div className={styles.personalCopy}>
           <h3><em>Almost seven years in Ireland changed how I see everything.</em></h3>
           <p>I lived abroad in Ireland for nearly seven years, and it’s still where a piece of my heart lives. I remember realizing that I didn’t even know what some of my closest friends did for work until we’d known each other for almost two years. Imagine that! I loved being somewhere that felt less interested in what you did for a living and more interested in who you were, your stories, your relationships, and how you spent your days. <strong>That experience shaped how I think about success, and eventually, the work I do with business owners today.</strong></p>
+          <a className={styles.irelandLetterLink} href="/love">
+            Read “A Love Letter to Éire” <span aria-hidden="true">→</span>
+          </a>
         </div>
       </div>
 
