@@ -11,6 +11,7 @@
 
 .approach,
 .meetCarly,
+.restorativeReset,
 .darkSplit,
 .recommendation {
   --services-content-max: 1500px;
@@ -169,6 +170,54 @@
   color: #2d2226;
 }
 
+.restorativeReset {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(44px, 6vw, 110px);
+  padding-block: clamp(78px, 8vw, 118px);
+  border-top: var(--border-standard);
+  background: var(--color-surface-muted);
+}
+
+.resetHeading p {
+  margin: 0 0 20px;
+  color: var(--color-accent);
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.resetHeading h2 {
+  margin: 0;
+  font-size: clamp(48px, 5.4vw, 78px);
+  letter-spacing: -0.045em;
+  line-height: 0.98;
+  text-wrap: balance;
+}
+
+.resetBody p {
+  margin: 0 0 0.95em;
+  font-size: clamp(22px, 2vw, 28px);
+  line-height: 1.48;
+}
+
+.resetBody .resetLead {
+  font-size: clamp(26px, 2.3vw, 32px);
+}
+
+.resetClosing {
+  margin-top: 1.4em !important;
+}
+
+.resetBody a {
+  margin-top: 18px;
+}
+
 .servicesShowcase {
   position: relative;
   z-index: 1;
@@ -286,6 +335,11 @@
 }
 
 @media (max-width: 760px) {
+  .restorativeReset {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 34px;
+  }
+
   .hero {
     min-height: 720px;
     padding: 140px 24px 64px;
