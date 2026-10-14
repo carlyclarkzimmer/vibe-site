@@ -170,6 +170,33 @@
   color: #2d2226;
 }
 
+.otherWays {
+  position: relative;
+  z-index: 1;
+  padding: clamp(90px, 9vw, 140px) 24px;
+  background: var(--color-paper);
+  text-align: center;
+}
+
+.otherWaysRule {
+  display: block;
+  width: 84px;
+  height: 2px;
+  margin: 0 auto 34px;
+  background: var(--color-accent);
+}
+
+.otherWays h2 {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: var(--font-display);
+  font-size: clamp(52px, 6vw, 92px);
+  font-weight: 400;
+  letter-spacing: -0.045em;
+  line-height: 1.02;
+  text-wrap: balance;
+}
+
 .restorativeReset {
   position: relative;
   z-index: 1;
@@ -237,6 +264,65 @@
 
 .resetBody a {
   margin-top: 18px;
+}
+
+.loungeIntroduction {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 650px;
+  align-items: center;
+  padding: clamp(90px, 9vw, 140px) max(28px, calc((100vw - 1500px) / 2 + 40px));
+  overflow: hidden;
+  background: var(--color-surface-dark);
+  color: white;
+}
+
+.loungeIntroductionVisual { position: absolute; inset: 0; }
+
+.loungeIntroductionImage {
+  object-fit: cover;
+  object-position: center center;
+}
+
+.loungeIntroductionOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgb(12 11 12 / 86%) 0%, rgb(12 11 12 / 70%) 36%, rgb(12 11 12 / 12%) 76%, rgb(12 11 12 / 8%) 100%);
+}
+
+.loungeIntroductionContent {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+}
+
+.loungeEyebrow {
+  margin: 0 0 26px !important;
+  color: #f2e1ea;
+  font-family: var(--font-interface) !important;
+  font-size: 12px !important;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.loungeIntroduction h2 {
+  margin: 0 0 30px;
+  font-family: var(--font-display);
+  font-size: clamp(58px, 6.2vw, 94px);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  line-height: 0.94;
+  text-transform: uppercase;
+  text-wrap: balance;
+}
+
+.loungeIntroductionContent > p:not(.loungeEyebrow) {
+  max-width: 630px;
+  margin: 0 0 36px;
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.42;
 }
 
 .servicesShowcase {
@@ -366,6 +452,18 @@
     aspect-ratio: 2 / 3;
     margin-top: 30px;
   }
+
+  .otherWays { padding: 80px 24px; }
+  .otherWays h2 { font-size: clamp(48px, 12vw, 68px); }
+
+  .loungeIntroduction { display: block; min-height: 0; padding: clamp(390px, 57svh, 520px) 24px 85px; }
+  .loungeIntroductionVisual { bottom: auto; height: clamp(390px, 57svh, 520px); }
+  .loungeIntroductionImage { object-position: 63% center; }
+  .loungeIntroductionOverlay { background: linear-gradient(180deg, rgb(12 11 12 / 30%) 0%, rgb(12 11 12 / 0%) 25%, rgb(12 11 12 / 0%) 40%, var(--color-surface-dark) 55%); }
+  .loungeIntroductionContent { padding-top: 18px; }
+  .loungeIntroduction h2 { font-size: clamp(43px, 10.5vw, 72px); overflow-wrap: anywhere; }
+  .loungeIntroductionContent > p:not(.loungeEyebrow) { font-size: 23px; }
+  .loungeIntroductionContent a { width: 100%; text-align: center; }
 
   .hero {
     min-height: 720px;

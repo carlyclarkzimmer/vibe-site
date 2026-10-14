@@ -113,6 +113,12 @@
   color: white;
 }
 
+:global(body:has(#home-hero, #services-hero, #about-hero, #contact-hero, #resources-hero, #lounge-hero)) .navigation > a:not(.monogram):is(:hover, :focus-visible) {
+  border-color: #fe0564;
+  background: #fe0564;
+  color: white;
+}
+
 .mobileMenu {
   display: none;
 }

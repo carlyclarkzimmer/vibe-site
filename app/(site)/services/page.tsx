@@ -168,6 +168,11 @@ export default function ServicesPage() {
           />
         </Section>
 
+        <section className={styles.otherWays} aria-labelledby="other-ways-heading">
+          <span className={styles.otherWaysRule} aria-hidden="true" />
+          <h2 id="other-ways-heading">Other ways to work with Carly</h2>
+        </section>
+
         <Section className={styles.restorativeReset} id="restorative-reset">
           <div className={styles.resetHeading}>
             <p>A Private, Two-Hour Working Session</p>
@@ -213,6 +218,26 @@ export default function ServicesPage() {
             </Button>
           </div>
         </Section>
+
+        <section className={styles.loungeIntroduction} aria-labelledby="services-lounge-heading">
+          <div className={styles.loungeIntroductionVisual}>
+            <Image
+              className={styles.loungeIntroductionImage}
+              src="/living-business-lounge-hero.jpg"
+              alt="Carly Clark Zimmer smiling beside a stone wall"
+              fill
+              sizes="100vw"
+              unoptimized
+            />
+          </div>
+          <div className={styles.loungeIntroductionOverlay} aria-hidden="true" />
+          <div className={styles.loungeIntroductionContent}>
+            <p className={styles.loungeEyebrow}>Ongoing coaching</p>
+            <h2 id="services-lounge-heading">The Living Business Lounge</h2>
+            <p>Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.</p>
+            <Button href="/lounge">Explore the Living Business Lounge</Button>
+          </div>
+        </section>
 
         <EditorialTestimonial
           testimonial={
