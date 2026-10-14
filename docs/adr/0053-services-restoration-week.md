@@ -20,6 +20,10 @@ photograph on the left and the copy on the right. Use original project-owned ima
 stored under `public/business-restoration/week/` and the existing Bodoni Moda, EB Garamond, and
 Montserrat brand typography.
 
+Tuesday uses an over-the-shoulder voice-note photograph with the speaker's face concealed, while
+Friday uses a rear-view river kayaking photograph without mountains. These images make the daily
+actions explicit without repeating the larger phase imagery.
+
 ## Consequences
 
 The Services page gains a more concrete narrative of the coaching experience without introducing a

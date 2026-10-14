@@ -162,7 +162,8 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Friday/i);
   assert.match(html, /You(?:&#x27;|')re learning how to enjoy the life you(?:&#x27;|')ve built\./i);
   assert.match(html, /business-restoration\/week\/monday-black-woman-nature\.png/i);
-  assert.match(html, /business-restoration\/week\/friday-build-the-evidence\.png/i);
+  assert.match(html, /business-restoration\/week\/tuesday-voice-note-v2\.png/i);
+  assert.match(html, /business-restoration\/week\/friday-river-kayak-v2\.png/i);
   assert.match(html, /business-restoration\/stop-the-leaks-reading-nook\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
   assert.match(html, /business-restoration\/rebuild-the-business-backbone\.jpg/i);
