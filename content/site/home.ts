@@ -99,8 +99,7 @@ export const homeContent = {
       {
         prompt: "Want ongoing support?",
         title: "The Living Business Lounge",
-        href: "https://app.acuityscheduling.com/catalog/21337638/?productId=2269284&clearCart=true",
-        newTab: true,
+        href: "/lounge",
         description:
           "Group coaching for the real-life decisions, boundaries, and patterns that come up as your business evolves.",
       },
