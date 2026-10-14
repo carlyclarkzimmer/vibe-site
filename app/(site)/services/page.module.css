@@ -176,9 +176,16 @@
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
   gap: clamp(44px, 6vw, 110px);
+  align-items: stretch;
   padding-block: clamp(78px, 8vw, 118px);
   border-top: var(--border-standard);
   background: var(--color-surface-muted);
+}
+
+.resetHeading {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
 }
 
 .resetHeading p {
@@ -198,6 +205,20 @@
   letter-spacing: -0.045em;
   line-height: 0.98;
   text-wrap: balance;
+}
+
+.resetPortrait {
+  position: relative;
+  flex: 1 1 auto;
+  min-height: 600px;
+  margin-top: clamp(30px, 3.5vw, 50px);
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.resetPortrait img {
+  object-fit: cover;
+  object-position: center 40%;
 }
 
 .resetBody p {
@@ -338,6 +359,12 @@
   .restorativeReset {
     grid-template-columns: minmax(0, 1fr);
     gap: 34px;
+  }
+
+  .resetPortrait {
+    min-height: 0;
+    aspect-ratio: 2 / 3;
+    margin-top: 30px;
   }
 
   .hero {

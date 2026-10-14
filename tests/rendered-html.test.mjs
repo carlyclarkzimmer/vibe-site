@@ -76,6 +76,7 @@ test("server-renders the shared-navigation homepage", async () => {
   );
   assert.ok(lowerHtml.indexOf('id="laser-coach"') < lowerHtml.indexOf("meet carly"));
   assert.match(html, /The Living Business Lounge/i);
+  assert.match(html, /href="\/lounge"/i);
   assert.match(html, /Restorative Reset/i);
   assert.ok(html.indexOf("5-Minute Laser Coach") < html.indexOf("Restorative Reset"));
   assert.ok(html.indexOf("The Pattern Interrupt") < html.indexOf("Restorative Reset"));
@@ -159,6 +160,8 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Ways to Work Together/i);
   assert.match(html, /That’s where the Business Restoration Method comes in\./i);
   assert.match(html, /id="restorative-reset"/i);
+  assert.match(html, /restorative-reset-carly\.jpg/i);
+  assert.match(html, /alt="Carly Clark Zimmer smiling in a teal blazer"/i);
   assert.match(html, /A Private, Two-Hour Working Session/i);
   assert.match(html, /Together, we(?:&#x27;|')ll create a practical 90-day plan/i);
   assert.match(html, /so your business starts making more room for YOU\./i);
@@ -197,6 +200,7 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /laurel-testimonial\.m4v/i);
   assert.match(html, /laurel-poster\.jpg/i);
   assert.match(html, /Real Decisions\. Real Changes\./i);
+  assert.match(html, /href="\/lounge"/i);
   assert.match(html, /aine-client-message\.png/i);
   assert.match(html, /jessica-client-message\.png/i);
   assert.match(html, /Grounded in experience\. Informed by multiple disciplines\./i);
@@ -228,6 +232,24 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.doesNotMatch(html, /Laser Coaching Club/i);
   assert.doesNotMatch(html, /What happens when you wait/i);
   assert.match(html, /aria-label="Site navigation"/i);
+});
+
+test("serves the Living Business Lounge sales page and approved checkout details", async () => {
+  const response = await render("/lounge");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /rel="canonical" href="https:\/\/carlyclarkzimmer\.com\/lounge\/"/i);
+  assert.match(html, /aria-label="Site navigation"/i);
+  assert.match(html, /You probably don(?:&#x27;|’)t need another course telling you what to do\./i);
+  assert.match(html, /How we(?:&#x27;|’)ll work/i);
+  assert.match(html, /1st and 3rd Tuesday of the month at 11am Eastern/i);
+  assert.match(html, /Shared Voxer Community support between calls/i);
+  assert.match(html, /\$197\/month/i);
+  assert.match(html, /There is no monthly minimum commitment\./i);
+  assert.match(html, /there are no refunds/i);
+  assert.match(html, /href="https:\/\/carlyclarkzimmer\.thrivecart\.com\/living-business-lounge\/"[^>]*target="_blank"/i);
+  assert.doesNotMatch(html, /productId=2269284/i);
 });
 
 test("serves the complete Business Restoration About page", async () => {
