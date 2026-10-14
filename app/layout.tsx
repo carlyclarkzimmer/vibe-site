@@ -7,6 +7,7 @@ import {
   Playfair_Display,
 } from "next/font/google";
 import { GlobalPageFooter } from "../components/site/GlobalPageFooter";
+import { ScrollBerryText } from "../components/ui/ScrollBerryText";
 import { siteMeta } from "../content/site/home";
 import "./globals.css";
 
@@ -55,6 +56,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${bodoniModa.variable} ${cormorantGaramond.variable} ${ebGaramond.variable} ${montserrat.variable} ${playfairDisplay.variable}`}
       >
         {children}
+        <ScrollBerryText />
         <GlobalPageFooter />
       </body>
     </html>
