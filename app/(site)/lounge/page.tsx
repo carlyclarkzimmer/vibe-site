@@ -7,14 +7,14 @@ const joinHref = "https://carlyclarkzimmer.thrivecart.com/living-business-lounge
 export const metadata: Metadata = {
   title: "The Living Business Lounge | Carly Clark Zimmer",
   description:
-    "Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.",
+    "Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.",
   alternates: { canonical: "https://carlyclarkzimmer.com/lounge/" },
   openGraph: {
     type: "website",
     siteName: "Carly Clark Zimmer",
     title: "The Living Business Lounge",
     description:
-      "Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.",
+      "Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.",
     url: "https://carlyclarkzimmer.com/lounge/",
   },
 };
@@ -46,7 +46,7 @@ export default function LoungePage() {
         <div className={styles.heroInner}>
           <p className={styles.eyebrow}>Ongoing coaching</p>
           <h1 id="lounge-heading">The Living Business <em>Lounge</em></h1>
-          <p className={styles.heroLead}>Ongoing coaching for the business owner who knows what she wants to do, and wants support actually doing it.</p>
+          <p className={styles.heroLead}>Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.</p>
           <JoinButton />
         </div>
         <span className={styles.heroRule} aria-hidden="true" />
