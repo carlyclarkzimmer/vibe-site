@@ -12,6 +12,22 @@ type CampaignHeroProps = {
 export function CampaignHero({ content }: CampaignHeroProps) {
   return (
     <header className={styles.hero} id="top">
+      <div className={styles.copy}>
+        <Eyebrow className={styles.eyebrow}>{content.eyebrow}</Eyebrow>
+        <EditorialHeading as="h1" className={styles.title} size="hero">
+          {content.titleStart} <i>{content.titleItalic}</i>
+          {" "}{content.titleEnd}
+        </EditorialHeading>
+        <p className={styles.description}>
+          {content.descriptionLines.map((line) => (
+            <span key={line}>{line} </span>
+          ))}
+        </p>
+        <Button className={styles.heroCta} href="#register">
+          <span aria-hidden="true" className={styles.ctaStar}>✦</span>
+          {content.cta}
+        </Button>
+      </div>
       <div className={styles.photoWrap}>
         <div className={styles.photoFrame}>
           <Image
@@ -31,23 +47,6 @@ export function CampaignHero({ content }: CampaignHeroProps) {
             </p>
           </div>
         </div>
-      </div>
-      <div className={styles.shade} />
-      <div className={styles.copy}>
-        <Eyebrow className={styles.eyebrow}>{content.eyebrow}</Eyebrow>
-        <EditorialHeading as="h1" className={styles.title} size="hero">
-          {content.titleStart} <i>{content.titleItalic}</i>
-          {" "}{content.titleEnd}
-        </EditorialHeading>
-        <p className={styles.description}>
-          {content.descriptionLines.map((line) => (
-            <span key={line}>{line} </span>
-          ))}
-        </p>
-        <Button className={styles.heroCta} href="#register">
-          <span aria-hidden="true" className={styles.ctaStar}>✦</span>
-          {content.cta}
-        </Button>
       </div>
     </header>
   );
