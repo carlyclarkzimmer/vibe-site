@@ -17,3 +17,4 @@ Create `/lounge` as a navigable main-site page under `app/(site)/`. Keep its dis
 - Visitors can review how the Lounge works, what is included, fit, pricing, and policies before leaving for checkout.
 - The checkout remains provider-owned; this application does not store payment or member data.
 - Future changes to price, schedule, or policies require Carly's approval and should be updated in the route-owned page copy.
+- The hero uses Carly's supplied wide portrait as full-bleed photography behind transparent navigation. On narrow screens, the photo occupies the top of the hero while the approved headline and CTA continue on a dark surface below, preserving her face and text readability.

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import styles from "./page.module.css";
 
 const joinHref = "https://carlyclarkzimmer.thrivecart.com/living-business-lounge/";
@@ -29,7 +30,19 @@ function JoinButton({ className = "" }: { className?: string }) {
 export default function LoungePage() {
   return (
     <main className={styles.page}>
-      <section className={styles.hero} aria-labelledby="lounge-heading">
+      <section className={styles.hero} id="lounge-hero" aria-labelledby="lounge-heading">
+        <div className={styles.heroVisual}>
+          <Image
+            className={styles.heroImage}
+            src="/living-business-lounge-hero.jpg"
+            alt="Carly Clark Zimmer smiling beside a stone wall"
+            fill
+            priority
+            sizes="100vw"
+            unoptimized
+          />
+        </div>
+        <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroInner}>
           <p className={styles.eyebrow}>Ongoing coaching</p>
           <h1 id="lounge-heading">The Living Business <em>Lounge</em></h1>
