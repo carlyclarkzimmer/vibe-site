@@ -118,7 +118,7 @@ export default function HomePage() {
           alt: "Laurie J. smiling outdoors",
         }}
         followUp={{
-          href: "/client-results",
+          href: "/services",
           label: "See more client results",
         }}
       />

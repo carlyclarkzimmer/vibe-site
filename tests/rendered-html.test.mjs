@@ -81,7 +81,7 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /Laurie J\.<\/strong>/i);
   assert.match(html, /Financial Freedom Coach<\/span>/i);
   assert.match(html, /href="\/about"[^>]*>\s*Read more about Carly/i);
-  assert.match(html, /href="\/client-results"[^>]*>\s*See more client results/i);
+  assert.match(html, /href="\/services"[^>]*>\s*See more client results/i);
   assert.doesNotMatch(html, /“Before working with Carly/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
@@ -163,7 +163,7 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Friday/i);
   assert.match(html, /You(?:&#x27;|')re learning how to enjoy the life you(?:&#x27;|')ve built\./i);
   assert.match(html, /business-restoration\/week\/monday-black-woman-nature\.png/i);
-  assert.match(html, /business-restoration\/week\/tuesday-voice-note-v2\.png/i);
+  assert.match(html, /business-restoration\/week\/tuesday-voice-note-studio-green\.png/i);
   assert.match(html, /business-restoration\/week\/friday-river-kayak-v2\.png/i);
   assert.match(html, /business-restoration\/stop-the-leaks-reading-nook\.jpg/i);
   assert.match(html, /business-restoration\/open-the-walls\.jpg/i);
@@ -320,7 +320,10 @@ test("serves the complete Business Restoration About page", async () => {
   assert.doesNotMatch(html, /hunting for thrift-store scores/i);
   assert.doesNotMatch(html, /I’m not interested in making you “more productive”/i);
   assert.match(html, /I’m an old soul, the only daughter with three brothers/i);
-  assert.match(html, /rearranging furniture because I need the room to feel different, and listening to Taylor Swift/i);
+  assert.doesNotMatch(html, /rearranging furniture because I need the room to feel different, and listening to Taylor Swift/i);
+  assert.match(html, /spending a few weeks every year in Ireland/i);
+  assert.match(html, /taking a week off to sail in Tortola while being completely off the clock/i);
+  assert.match(html, /supporting my local community!/i);
 });
 
 test("serves Carly’s Love Letter to Éire as a shared-navigation editorial page", async () => {
