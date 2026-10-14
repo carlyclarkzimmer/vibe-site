@@ -111,6 +111,19 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.doesNotMatch(html, /react-loading-skeleton/i);
 });
 
+test("limits the shared berry scroll treatment to dark editorial text", async () => {
+  const [root, effect] = await Promise.all([
+    readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
+    readFile(new URL("../components/ui/ScrollBerryText.tsx", import.meta.url), "utf8"),
+  ]);
+
+  assert.match(root, /<ScrollBerryText\s*\/>/);
+  assert.match(effect, /pathname === "\/beyond-the-bottleneck-2026"/);
+  assert.match(effect, /isDarkNeutral\(from\)/);
+  assert.match(effect, /prefers-reduced-motion: reduce/);
+  assert.match(effect, /--color-accent/);
+});
+
 test("implements the homepage Laser Coach inline submission states", async () => {
   const source = await readFile(
     new URL("../app/(site)/_components/HomeLaserCoachOptIn.tsx", import.meta.url),
