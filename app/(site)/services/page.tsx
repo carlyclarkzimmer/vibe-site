@@ -172,6 +172,15 @@ export default function ServicesPage() {
           <div className={styles.resetHeading}>
             <p>A Private, Two-Hour Working Session</p>
             <h2>Restorative Reset</h2>
+            <div className={styles.resetPortrait}>
+              <Image
+                src="/restorative-reset-carly.jpg"
+                alt="Carly Clark Zimmer smiling in a teal blazer"
+                fill
+                sizes="(max-width: 760px) 100vw, 42vw"
+                unoptimized
+              />
+            </div>
           </div>
           <div className={styles.resetBody}>
             <p className={styles.resetLead}>
