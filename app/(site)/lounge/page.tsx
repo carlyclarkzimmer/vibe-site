@@ -106,7 +106,13 @@ export default function LoungePage() {
             <p>Then we keep coming back to a simple process:</p>
           </div>
         </div>
-        <p className={styles.process}><strong>Bring the Decision Point → Talk through it/receive some coaching if needed→ Make the Decision → Test It → Collect the Evidence</strong></p>
+        <ol className={styles.process} aria-label="The Lounge decision process">
+          <li><span aria-hidden="true">01</span>Bring the Decision Point</li>
+          <li><span aria-hidden="true">02</span>Talk through it/receive some coaching if needed</li>
+          <li><span aria-hidden="true">03</span>Make the Decision</li>
+          <li><span aria-hidden="true">04</span>Test It</li>
+          <li><span aria-hidden="true">05</span>Collect the Evidence</li>
+        </ol>
         <div className={styles.reality}>
           <p>Because sometimes you know exactly what you need to do, until a client pushes back.</p>
           <p>Or the launch doesn&apos;t go as planned.</p>
