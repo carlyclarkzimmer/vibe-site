@@ -79,6 +79,36 @@
   text-transform: uppercase;
 }
 
+.followUp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 32px;
+  border-bottom: 1px solid #991f5d;
+  color: #991f5d;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+.followUp:hover,
+.followUp:focus-visible {
+  border-color: #fe0564;
+  color: #fe0564;
+}
+
+.followUp:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 5px;
+}
+
 @media (max-width: 600px) {
   .section {
     padding: 64px 24px;
