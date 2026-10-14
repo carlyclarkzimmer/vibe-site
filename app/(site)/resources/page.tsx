@@ -65,7 +65,7 @@ export default function ResourcesPage() {
       <section className={styles.hero} aria-labelledby="resources-heading">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>Resources</p>
-          <h1 id="resources-heading">A thoughtful place to begin.</h1>
+          <h1 id="resources-heading">A place to begin.</h1>
           <p>Choose the kind of support you need right now: quick clarity, a story to listen to, ongoing perspective, or focused behavior change.</p>
         </div>
         <div className={styles.heroImage}>
