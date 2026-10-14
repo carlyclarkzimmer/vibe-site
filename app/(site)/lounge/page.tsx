@@ -45,11 +45,23 @@ export default function LoungePage() {
         <div className={styles.heroOverlay} aria-hidden="true" />
         <div className={styles.heroInner}>
           <p className={styles.eyebrow}>Ongoing coaching</p>
-          <h1 id="lounge-heading">The Living Business <em>Lounge</em></h1>
+          <h1 id="lounge-heading">The Living Business Lounge</h1>
           <p className={styles.heroLead}>Ongoing coaching for the business owner who knows what she wants to do, she just needs the accountability to follow through.</p>
           <JoinButton />
         </div>
         <span className={styles.heroRule} aria-hidden="true" />
+      </section>
+
+      <section className={styles.antiMembership} aria-labelledby="anti-membership-heading">
+        <div className={styles.antiMembershipInner}>
+          <h2 id="anti-membership-heading">This is an anti-membership.</h2>
+          <div className={styles.antiMembershipCopy}>
+            <p>No massive amounts of content to consume or feel bad about NOT consuming. Instead, this is an intentional community to help you follow through on what&apos;s most important to you, especially when client work keeps taking priority over your dreams, both personal and professional.</p>
+            <p>We&apos;re going to make sure your intentions are clear AND achievable each quarter (no more trying to squeeze a year&apos;s worth of work into a quarter!)</p>
+            <p>And you&apos;re going to have an expert at your side helping you bust through the patterns and internal programming that keep telling you things are too urgent to take that walk or let that email sit until tomorrow.</p>
+            <p className={styles.antiMembershipClosing}>Your business GETS to be a living entity, it GETS to grow and change with you! And you GET to enjoy what you&apos;ve built!</p>
+          </div>
+        </div>
       </section>
 
       <section className={styles.introduction} aria-labelledby="introduction-heading">

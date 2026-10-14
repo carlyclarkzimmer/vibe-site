@@ -6,14 +6,20 @@
 .heroOverlay { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(12 11 12 / 82%) 0%, rgb(12 11 12 / 62%) 37%, rgb(12 11 12 / 16%) 72%, rgb(12 11 12 / 8%) 100%); }
 .heroInner { position: relative; z-index: 1; max-width: 760px; }
 .hero .eyebrow { color: #f2e1ea; }
-.hero h1 { max-width: 760px; margin: 26px 0 30px; font-family: var(--font-display); font-size: clamp(70px, 7.5vw, 112px); font-weight: 400; letter-spacing: -.055em; line-height: .9; text-wrap: balance; }
-.hero h1 em, .how h2 em, .included h2 em { font-weight: 400; }
+.hero h1 { max-width: 760px; margin: 26px 0 30px; font-family: var(--font-display); font-size: clamp(64px, 6.4vw, 96px); font-weight: 400; letter-spacing: -.05em; line-height: .94; text-transform: uppercase; text-wrap: balance; }
+.how h2 em, .included h2 em { font-weight: 400; }
 .heroLead { max-width: 610px; margin: 0 0 44px; color: rgb(255 255 255 / 94%); font-size: clamp(24px, 2.2vw, 32px); line-height: 1.4; }
 .heroRule { position: absolute; right: 0; bottom: 0; left: 0; height: 7px; background: var(--color-accent); }
 .joinButton { display: inline-flex; min-height: 60px; align-items: center; justify-content: center; gap: 24px; padding: 18px 28px; border: 1px solid var(--color-accent); border-radius: 4px; background: var(--color-accent); color: white; font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .12em; line-height: 1.35; text-align: center; text-decoration: none; text-transform: uppercase; transition: background var(--transition-standard), border-color var(--transition-standard), color var(--transition-standard); }
 .joinButton:hover, .joinButton:focus-visible { border-color: #fe0564; background: #fe0564; color: white; }
 .joinButton:focus-visible, .investment a:focus-visible { outline: var(--focus-ring); outline-offset: 4px; }
 .joinButton span { font-size: 18px; font-weight: 400; }
+.antiMembership { padding: clamp(90px, 10vw, 150px) max(28px, calc((100vw - 1500px) / 2 + 40px)); background: #f2e1ea; }
+.antiMembershipInner { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(50px, 8vw, 150px); }
+.antiMembership h2 { max-width: 650px; margin: 0; font-family: var(--font-display); font-size: clamp(55px, 6vw, 92px); font-weight: 400; letter-spacing: -.045em; line-height: .98; text-wrap: balance; }
+.antiMembershipCopy p { margin: 0 0 1em; font-size: clamp(24px, 2.15vw, 30px); line-height: 1.5; }
+.antiMembershipCopy p:last-child { margin-bottom: 0; }
+.antiMembershipCopy .antiMembershipClosing { margin-top: 1.6em; padding-top: .9em; border-top: 1px solid rgb(45 34 38 / 20%); color: var(--color-accent); font-family: var(--font-display); font-size: clamp(32px, 3.2vw, 48px); line-height: 1.2; }
 .introduction, .how, .included { padding: clamp(90px, 10vw, 150px) max(28px, calc((100vw - 1500px) / 2 + 40px)); }
 .sectionLabel { display: flex; align-items: center; gap: 18px; margin-bottom: clamp(52px, 6vw, 82px); }
 .sectionLabel > span { color: var(--color-text-subtle); font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .1em; }
@@ -59,7 +65,7 @@
 .investmentDetails .lastWord { margin-top: 1.5em; color: white; }
 
 @media (max-width: 900px) {
-  .howGrid, .fitInner, .investmentInner { grid-template-columns: 1fr; gap: 50px; }
+  .antiMembershipInner, .howGrid, .fitInner, .investmentInner { grid-template-columns: 1fr; gap: 50px; }
   .hero { min-height: 680px; }
   .heroImage { object-position: 61% center; }
   .investmentDetails { padding-top: 0; }
@@ -71,9 +77,13 @@
   .heroImage { object-position: 63% center; }
   .heroOverlay { background: linear-gradient(180deg, rgb(12 11 12 / 30%) 0%, rgb(12 11 12 / 0%) 22%, rgb(12 11 12 / 0%) 40%, var(--color-surface-dark) 55%); }
   .heroInner { padding-top: 18px; }
-  .hero h1 { font-size: clamp(56px, 14vw, 90px); }
+  .hero h1 { font-size: clamp(43px, 10.5vw, 72px); overflow-wrap: anywhere; }
   .heroLead { font-size: 23px; }
-  .introduction, .how, .included, .fit, .investment { padding: 78px 24px; }
+  .antiMembership, .introduction, .how, .included, .fit, .investment { padding: 78px 24px; }
+  .antiMembershipInner { gap: 40px; }
+  .antiMembership h2 { font-size: 50px; }
+  .antiMembershipCopy p { font-size: 22px; }
+  .antiMembershipCopy .antiMembershipClosing { font-size: 38px; }
   .sectionLabel { margin-bottom: 44px; }
   .introduction h2, .how h2, .included h2, .fit h2, .investment h2 { font-size: 50px; }
   .introduction h2 { margin-bottom: 40px; }

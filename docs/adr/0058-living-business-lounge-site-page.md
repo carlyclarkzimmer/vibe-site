@@ -18,3 +18,4 @@ Create `/lounge` as a navigable main-site page under `app/(site)/`. Keep its dis
 - The checkout remains provider-owned; this application does not store payment or member data.
 - Future changes to price, schedule, or policies require Carly's approval and should be updated in the route-owned page copy.
 - The hero uses Carly's supplied wide portrait as full-bleed photography behind transparent navigation. On narrow screens, the photo occupies the top of the hero while the approved headline and CTA continue on a dark surface below, preserving her face and text readability.
+- The hero title uses the existing site display font in uppercase. An unnumbered anti-membership message sits between the hero and numbered sales narrative, using the established pale-pink section treatment.
