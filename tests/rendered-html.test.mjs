@@ -160,6 +160,12 @@ test("serves the full Services page inside the shared site shell", async () => {
   assert.match(html, /Ways to Work Together/i);
   assert.match(html, /That’s where the Business Restoration Method comes in\./i);
   assert.match(html, /id="restorative-reset"/i);
+  assert.match(html, /Other ways to work with Carly/i);
+  assert.match(html, /id="services-lounge-heading"/i);
+  assert.match(html, /href="\/lounge"[^>]*>Explore the Living Business Lounge/i);
+  assert.ok(html.indexOf('id="other-ways-heading"') < html.indexOf('id="restorative-reset"'));
+  assert.ok(html.indexOf('id="restorative-reset"') < html.indexOf('id="services-lounge-heading"'));
+  assert.ok(html.indexOf('id="services-lounge-heading"') < html.indexOf('Diane I.'));
   assert.match(html, /restorative-reset-carly\.jpg/i);
   assert.match(html, /alt="Carly Clark Zimmer smiling in a teal blazer"/i);
   assert.match(html, /A Private, Two-Hour Working Session/i);
