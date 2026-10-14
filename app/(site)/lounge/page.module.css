@@ -17,6 +17,9 @@
 .antiMembership { padding: clamp(90px, 10vw, 150px) max(28px, calc((100vw - 1500px) / 2 + 40px)); background: #f2e1ea; }
 .antiMembershipInner { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(50px, 8vw, 150px); }
 .antiMembership h2 { max-width: 650px; margin: 0; font-family: var(--font-display); font-size: clamp(55px, 6vw, 92px); font-weight: 400; letter-spacing: -.045em; line-height: .98; text-wrap: balance; }
+.antiMembershipVisual { display: flex; flex-direction: column; gap: clamp(36px, 5vw, 70px); }
+.antiMembershipImage { display: block; width: 100%; height: auto; }
+.antiMembershipHeadline { margin: 0 0 .85em; color: var(--color-accent); font-family: var(--font-display); font-size: clamp(28px, 3vw, 46px); font-weight: 400; letter-spacing: -.025em; line-height: 1.15; text-wrap: balance; }
 .antiMembershipCopy p { margin: 0 0 1em; font-size: clamp(24px, 2.15vw, 30px); line-height: 1.5; }
 .antiMembershipCopy p:last-child { margin-bottom: 0; }
 .antiMembershipCopy .antiMembershipClosing { margin-top: 1.6em; padding-top: .9em; border-top: 1px solid rgb(45 34 38 / 20%); color: var(--color-accent); font-family: var(--font-display); font-size: clamp(32px, 3.2vw, 48px); line-height: 1.2; }
@@ -82,6 +85,7 @@
   .antiMembership, .introduction, .how, .included, .fit, .investment { padding: 78px 24px; }
   .antiMembershipInner { gap: 40px; }
   .antiMembership h2 { font-size: 50px; }
+  .antiMembershipHeadline { font-size: 25px; }
   .antiMembershipCopy p { font-size: 22px; }
   .antiMembershipCopy .antiMembershipClosing { font-size: 38px; }
   .sectionLabel { margin-bottom: 44px; }
