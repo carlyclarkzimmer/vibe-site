@@ -251,6 +251,7 @@ test("serves the complete Business Restoration About page", async () => {
   assert.match(html, /Almost seven years in Ireland changed how I see everything\./i);
   assert.match(html, /src="\/carly-about-ireland\.jpg"/i);
   assert.match(html, /alt="Carly photographing the Cliffs of Moher in Ireland"/i);
+  assert.match(html, /href="\/love"[^>]*>\s*Read “A Love Letter to Éire”/i);
   assert.match(html, /For 12 years, my creativity was waiting for permission\./i);
   assert.match(html, /In the early 2000s, I was an art student, painting and creating work well beyond my years in school\./i);
   assert.match(html, /These days, I(?:&apos;|')m making a conscious effort to give my creativity the same time and attention/i);
@@ -318,6 +319,23 @@ test("serves the complete Business Restoration About page", async () => {
   assert.doesNotMatch(html, /I’m not interested in making you “more productive”/i);
   assert.match(html, /I’m an old soul, the only daughter with three brothers/i);
   assert.match(html, /rearranging furniture because I need the room to feel different, and listening to Taylor Swift/i);
+});
+
+test("serves Carly’s Love Letter to Éire as a shared-navigation editorial page", async () => {
+  const response = await render("/love");
+  const html = await response.text();
+
+  assert.equal(response.status, 200);
+  assert.match(html, /<title>A Love Letter to Éire \| Carly Clark Zimmer<\/title>/i);
+  assert.match(html, /aria-label="Site navigation"/i);
+  assert.match(html, /src="\/carly-about-ireland\.jpg"/i);
+  assert.match(html, /alt="Carly photographing the Cliffs of Moher in Ireland"/i);
+  assert.match(html, /By the time you read this, I’ll be on my way back to America/i);
+  assert.match(html, /My soul had come home\./i);
+  assert.match(html, /Ireland is different\./i);
+  assert.match(html, /Grá go deo,/i);
+  assert.doesNotMatch(html, /href="\/about#personal-note"/i);
+  assert.equal((html.match(/<footer\b/gi) ?? []).length, 1);
 });
 
 test("serves a branded 404 with clear routes back into the site", async () => {
@@ -1206,4 +1224,10 @@ test("renders the approved equity pledge once on every page type", async () => {
       `${path} should place the pledge above the legal footer`,
     );
   }
+
+  const loveResponse = await render("/love");
+  assert.equal(loveResponse.status, 200);
+  const loveHtml = await loveResponse.text();
+  assert.doesNotMatch(loveHtml, /id="equity-pledge-heading"/i);
+  assert.match(loveHtml, /Privacy Policy/i);
 });

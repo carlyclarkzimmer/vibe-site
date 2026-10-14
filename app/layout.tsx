@@ -6,8 +6,7 @@ import {
   Montserrat,
   Playfair_Display,
 } from "next/font/google";
-import { EquityPledge } from "../components/EquityPledge";
-import { SiteFooter } from "../components/site/SiteFooter";
+import { GlobalPageFooter } from "../components/site/GlobalPageFooter";
 import { siteMeta } from "../content/site/home";
 import "./globals.css";
 
@@ -56,8 +55,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         className={`${bodoniModa.variable} ${cormorantGaramond.variable} ${ebGaramond.variable} ${montserrat.variable} ${playfairDisplay.variable}`}
       >
         {children}
-        <EquityPledge />
-        <SiteFooter />
+        <GlobalPageFooter />
       </body>
     </html>
   );
