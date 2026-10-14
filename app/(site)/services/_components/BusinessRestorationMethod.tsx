@@ -36,8 +36,8 @@ const restorationWeek = [
     day: "Tuesday",
     title: "A Fresh Perspective",
     image: {
-      src: "/business-restoration/week/tuesday-fresh-perspective.png",
-      alt: "A calm desk with a notebook, reading glasses, earbuds, and a potted plant",
+      src: "/business-restoration/week/tuesday-voice-note-v2.png",
+      alt: "A brown-haired woman with red nails recording a voice note on her phone",
     },
     copy: (
       <>
@@ -81,8 +81,8 @@ const restorationWeek = [
     day: "Friday",
     title: "Build the Evidence",
     image: {
-      src: "/business-restoration/week/friday-build-the-evidence.png",
-      alt: "A woman kayaking on a peaceful mountain lake after finishing work early",
+      src: "/business-restoration/week/friday-river-kayak-v2.png",
+      alt: "A kayaker seen from behind paddling along a peaceful tree-lined river",
     },
     copy: (
       <>
