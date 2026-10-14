@@ -38,8 +38,9 @@
 .howGrid { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr); gap: clamp(50px, 8vw, 150px); }
 .how h2 { max-width: 600px; }
 .prose { max-width: 770px; }
-.process { margin: clamp(60px, 7vw, 100px) 0 0; padding: clamp(34px, 4.5vw, 66px) 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); color: var(--color-accent); font-family: var(--font-display); font-size: clamp(28px, 3vw, 44px); font-weight: 400; line-height: 1.35; }
-.process strong { font-weight: 400; }
+.process { max-width: 1050px; margin: clamp(60px, 7vw, 100px) 0 0 auto; padding: 0; border-top: 1px solid var(--color-border); list-style: none; }
+.process li { display: grid; grid-template-columns: 64px minmax(0, 1fr); gap: clamp(20px, 3vw, 42px); align-items: baseline; padding: clamp(20px, 2.8vw, 34px) 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-display); font-size: clamp(26px, 2.7vw, 40px); font-weight: 400; line-height: 1.22; }
+.process li span { color: var(--color-accent); font-family: var(--font-interface); font-size: 12px; font-weight: 700; letter-spacing: .14em; }
 .reality { max-width: 1050px; margin: clamp(60px, 7vw, 100px) 0 0 auto; }
 .reality p { padding-bottom: .65em; border-bottom: 1px solid var(--color-border); }
 .reality .realityClosing { margin: 1.2em 0 0; padding: 0; border: 0; font-family: var(--font-display); font-size: clamp(38px, 4.5vw, 70px); line-height: 1.05; }
@@ -93,7 +94,7 @@
   .introduction h2 { margin-bottom: 40px; }
   .introductionCopy > p, .prose p, .reality p, .includedClosing, .fitGoal, .investmentDetails p { font-size: 22px; }
   .introStatement { font-size: 40px !important; }
-  .process { font-size: 28px; overflow-wrap: anywhere; }
+  .process li { grid-template-columns: 32px minmax(0, 1fr); gap: 16px; font-size: 27px; }
   .reality .realityClosing { font-size: 42px; }
   .includedList > div { grid-template-columns: 40px 1fr; gap: 18px; }
   .includedList p, .fit li { font-size: 21px; }

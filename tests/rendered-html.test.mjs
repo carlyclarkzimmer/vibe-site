@@ -276,6 +276,9 @@ test("serves the Living Business Lounge sales page and approved checkout details
   assert.ok(html.indexOf('id="anti-membership-heading"') < html.indexOf('id="introduction-heading"'));
   assert.match(html, /You probably don(?:&#x27;|’)t need another course telling you what to do\./i);
   assert.match(html, /How we(?:&#x27;|’)ll work/i);
+  assert.match(html, /aria-label="The Lounge decision process"/i);
+  assert.ok(html.indexOf('Bring the Decision Point') < html.indexOf('Collect the Evidence'));
+  assert.doesNotMatch(html, /Bring the Decision Point →/i);
   assert.match(html, /1st and 3rd Tuesday of the month at 11am Eastern/i);
   assert.match(html, /Shared Voxer Community support between calls/i);
   assert.match(html, /\$197\/month/i);
