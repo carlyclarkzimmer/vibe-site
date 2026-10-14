@@ -80,6 +80,8 @@ test("server-renders the shared-navigation homepage", async () => {
   assert.match(html, /laurie-j-testimonial\.png/i);
   assert.match(html, /Laurie J\.<\/strong>/i);
   assert.match(html, /Financial Freedom Coach<\/span>/i);
+  assert.match(html, /href="\/about"[^>]*>\s*Read more about Carly/i);
+  assert.match(html, /href="\/client-results"[^>]*>\s*See more client results/i);
   assert.doesNotMatch(html, /“Before working with Carly/i);
   assert.equal((html.match(/aria-label="Site navigation"/gi) ?? []).length, 1);
   assert.match(html, /Work With Carly/i);
@@ -89,7 +91,6 @@ test("server-renders the shared-navigation homepage", async () => {
     (html.match(/href="https:\/\/carlyclarkzimmer\.as\.me"[^>]*target="_blank"/gi) ?? []).length,
     2,
   );
-  assert.doesNotMatch(html, /href="\/client-results"/i);
   assert.doesNotMatch(html, /href="\/links"/i);
   assert.doesNotMatch(html, /carlyclarkzimmer\.com\/services/i);
   assert.doesNotMatch(html, /https:\/\/www\.google\.com\/recaptcha\/api\.js/i);

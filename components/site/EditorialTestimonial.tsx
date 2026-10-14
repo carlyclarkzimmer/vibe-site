@@ -9,6 +9,10 @@ type TestimonialPhoto = {
 
 type EditorialTestimonialProps = {
   clientName: string;
+  followUp?: {
+    href: string;
+    label: string;
+  };
   photo?: TestimonialPhoto;
   professionalTitle: string;
   testimonial: ReactNode;
@@ -16,6 +20,7 @@ type EditorialTestimonialProps = {
 
 export function EditorialTestimonial({
   clientName,
+  followUp,
   photo,
   professionalTitle,
   testimonial,
@@ -40,6 +45,11 @@ export function EditorialTestimonial({
           <strong>{clientName}</strong>
           <span>{professionalTitle}</span>
         </figcaption>
+        {followUp ? (
+          <a className={styles.followUp} href={followUp.href}>
+            {followUp.label} <span aria-hidden="true">→</span>
+          </a>
+        ) : null}
       </figure>
     </section>
   );

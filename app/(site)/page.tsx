@@ -103,6 +103,9 @@ export default function HomePage() {
           {homeContent.meetCarly.closingParagraphs.map((paragraph) => (
             <p key={paragraph.text}>{paragraph.text}</p>
           ))}
+          <a className={styles.editorialLink} href="/about">
+            Read more about Carly <span aria-hidden="true">→</span>
+          </a>
         </div>
       </Section>
       <WorkTogetherShowcase />
@@ -113,6 +116,10 @@ export default function HomePage() {
         photo={{
           src: "/laurie-j-testimonial.png",
           alt: "Laurie J. smiling outdoors",
+        }}
+        followUp={{
+          href: "/client-results",
+          label: "See more client results",
         }}
       />
     </>

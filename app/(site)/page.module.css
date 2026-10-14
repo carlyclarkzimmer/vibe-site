@@ -143,7 +143,7 @@
 
 .laserCoachEyebrow {
   margin: 0 0 8px;
-  color: var(--color-deep-emerald);
+  color: #991f5d;
   font-family: var(--font-interface);
   font-size: 12px;
   font-weight: 600;
@@ -163,12 +163,12 @@
 
 .laserCoach h2 {
   margin: 0;
-  color: var(--color-deep-amethyst);
+  color: var(--color-cool-charcoal);
   white-space: nowrap;
 }
 
 .laserCoach h2 em {
-  color: var(--color-aubergine);
+  color: #991f5d;
   font-style: italic;
 }
 
@@ -218,12 +218,12 @@
 }
 
 .laserCoachField input:focus-visible {
-  border: 2px solid var(--color-deep-emerald);
+  border: 2px solid #991f5d;
   outline: none;
 }
 
 .laserCoachField input[aria-invalid="true"] {
-  border-color: var(--color-deep-emerald);
+  border-color: #991f5d;
 }
 
 .laserCoachError {
@@ -236,9 +236,9 @@
 .laserCoachForm button {
   min-height: 44px;
   padding: 12px 28px;
-  border: 1px solid var(--color-deep-emerald);
+  border: 1px solid #991f5d;
   border-radius: 6px;
-  background: var(--color-deep-emerald);
+  background: #991f5d;
   color: white;
   cursor: pointer;
   font-family: var(--font-interface);
@@ -466,6 +466,36 @@
 
 .meetCarlyClosing p:last-child {
   margin-bottom: 0;
+}
+
+.editorialLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 20px;
+  border-bottom: 1px solid #991f5d;
+  color: #991f5d;
+  font-family: var(--font-interface);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color var(--transition-standard),
+    color var(--transition-standard);
+}
+
+.editorialLink:hover,
+.editorialLink:focus-visible {
+  border-color: #fe0564;
+  color: #fe0564;
+}
+
+.editorialLink:focus-visible {
+  outline: var(--focus-ring);
+  outline-offset: 5px;
 }
 
 .meetCarlyImage {
