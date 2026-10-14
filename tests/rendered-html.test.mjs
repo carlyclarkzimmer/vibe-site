@@ -76,6 +76,13 @@ test("server-renders the shared-navigation homepage", async () => {
   );
   assert.ok(lowerHtml.indexOf('id="laser-coach"') < lowerHtml.indexOf("meet carly"));
   assert.match(html, /The Living Business Lounge/i);
+  assert.match(html, /Restorative Reset/i);
+  assert.ok(html.indexOf("5-Minute Laser Coach") < html.indexOf("Restorative Reset"));
+  assert.ok(html.indexOf("Restorative Reset") < html.indexOf("The Pattern Interrupt"));
+  assert.match(
+    html,
+    /href="https:\/\/carlyclarkzimmer\.as\.me\/restorative-reset"[^>]*target="_blank"[^>]*rel="noreferrer"/i,
+  );
   assert.match(html, /<blockquote>Before working with Carly, I was constantly busy but unclear\./i);
   assert.match(html, /laurie-j-testimonial\.png/i);
   assert.match(html, /Laurie J\.<\/strong>/i);
@@ -147,6 +154,14 @@ test("serves the full Services page inside the shared site shell", async () => {
   );
   assert.match(html, /Ways to Work Together/i);
   assert.match(html, /That’s where the Business Restoration Method comes in\./i);
+  assert.match(html, /id="restorative-reset"/i);
+  assert.match(html, /A Private, Two-Hour Working Session/i);
+  assert.match(html, /Together, we(?:&#x27;|')ll create a practical 90-day plan/i);
+  assert.match(html, /so your business starts making more room for YOU\./i);
+  assert.match(
+    html,
+    /href="https:\/\/carlyclarkzimmer\.as\.me\/restorative-reset"[^>]*target="_blank"[^>]*rel="noreferrer"/i,
+  );
   assert.match(html, /Think of your business like an architecturally beautiful home\./i);
   assert.match(html, /Here(?:&#x27;|')s what that looks like\./i);
   assert.match(html, /Less reactivity\. More space\./i);

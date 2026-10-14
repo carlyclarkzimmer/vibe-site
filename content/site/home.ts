@@ -81,6 +81,14 @@ export const homeContent = {
         description: "Cut through the overthinking and find your next move.",
       },
       {
+        prompt: "A Private, Two-Hour Working Session",
+        title: "Restorative Reset",
+        href: "https://carlyclarkzimmer.as.me/restorative-reset",
+        newTab: true,
+        description:
+          "Get clear on what deserves your time, energy, and attention over the next 90 days, and what you can finally put down.",
+      },
+      {
         prompt: "Want to change one pattern?",
         title: "The Pattern Interrupt",
         href: "https://carlyclarkzimmer.thrivecart.com/the-pattern-interrupt/",

@@ -13,6 +13,7 @@ import { FeaturedVideoTestimonial } from "./_components/FeaturedVideoTestimonial
 import styles from "./page.module.css";
 
 const recommendationHref = "https://carlyclarkzimmer.as.me/connect";
+const restorativeResetHref = "https://carlyclarkzimmer.as.me/restorative-reset";
 const title = "Carly Clark Zimmer | Clarity for Life and Business Transitions";
 const description =
   "For people who know something needs to change but are unsure what comes next. Private intensives and ongoing support for clarity and grounded decisions during life and business transitions.";
@@ -165,6 +166,43 @@ export default function ServicesPage() {
             phases={restorationPhases}
             applyHref="https://carlyclarkzimmer.as.me/connect"
           />
+        </Section>
+
+        <Section className={styles.restorativeReset} id="restorative-reset">
+          <div className={styles.resetHeading}>
+            <p>A Private, Two-Hour Working Session</p>
+            <h2>Restorative Reset</h2>
+          </div>
+          <div className={styles.resetBody}>
+            <p className={styles.resetLead}>
+              <strong>
+                Get clear on what deserves your time, energy, and attention over the next 90 days,
+                and what you can finally put down.
+              </strong>
+            </p>
+            <p>
+              When you&apos;re the person who can handle just about everything, it&apos;s easy to find
+              yourself carrying far more than you actually need to.
+            </p>
+            <p>
+              In this focused session, we&apos;ll take an honest look at how you&apos;re spending your
+              time and energy, what&apos;s creating unnecessary pressure, and where your business may
+              be asking more of you than you want to give.
+            </p>
+            <p>
+              Together, we&apos;ll create a practical 90-day plan grounded in your values, your
+              capacity, and what matters most in your life outside of work.
+            </p>
+            <p className={styles.resetClosing}>
+              <strong>
+                You&apos;ll walk away knowing what to prioritize, what to stop carrying, and what
+                needs to change so your business starts making more room for YOU.
+              </strong>
+            </p>
+            <Button href={restorativeResetHref} newTab>
+              Book a Restorative Reset
+            </Button>
+          </div>
         </Section>
 
         <EditorialTestimonial
