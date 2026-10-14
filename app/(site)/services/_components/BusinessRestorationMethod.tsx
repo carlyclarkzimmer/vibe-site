@@ -36,7 +36,7 @@ const restorationWeek = [
     day: "Tuesday",
     title: "A Fresh Perspective",
     image: {
-      src: "/business-restoration/week/tuesday-voice-note-v2.png",
+      src: "/business-restoration/week/tuesday-voice-note-studio-green.png",
       alt: "A brown-haired woman with red nails recording a voice note on her phone",
     },
     copy: (
