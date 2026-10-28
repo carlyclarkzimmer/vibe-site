@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1000" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <filter id="paper" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency=".48" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+  <g fill="none" stroke-linecap="round">
+    <path d="M860-100C1150 30 1220 170 1510 250M920-50C1180 65 1310 180 1510 200" stroke="#ed89b7" stroke-width="95" opacity=".07"/>
+    <path d="M1020 450C1220 300 1330 400 1530 310M1000 500C1230 360 1370 440 1530 380" stroke="#68123f" stroke-width="110" opacity=".12"/>
+    <path d="M740 940C1040 750 1210 950 1510 750M840 1010C1100 810 1250 1000 1510 850" stroke="#ed89b7" stroke-width="100" opacity=".07"/>
+    <path d="M-70 930C120 850 220 1000 380 970" stroke="#68123f" stroke-width="65" opacity=".1"/>
+  </g>
+  <path d="M0 0H1440V1000H0Z" filter="url(#paper)" opacity=".055"/>
+</svg>
