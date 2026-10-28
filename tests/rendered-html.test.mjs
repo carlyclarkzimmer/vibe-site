@@ -1320,8 +1320,8 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   const html = await response.text();
   assert.match(html, /The Restoration Studio \| Carly Clark Zimmer/);
   assert.match(html, /Friday, November 6, 2026/);
-  assert.match(html, /12:00–1:00 PM ET/);
-  assert.match(html, /carly-restoration-studio\.png/);
+  assert.match(html, /12–1:15 PM Eastern/);
+  assert.match(html, /carly-restoration-studio-painting\.jpg/);
   assert.match(html, /href="#register"/);
   assert.match(html, /id="register"/);
   assert.match(html, /action="https:\/\/www\.getdrip\.com\/forms\/994182651\/submissions"/);
@@ -1336,5 +1336,13 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.doesNotMatch(html, /Your text here|Beyond the Bottleneck Audio Series 2026|api\.leadpages\.io/);
   assert.doesNotMatch(html, /aria-label="Main navigation"/i);
   assert.match(html, /No artistic experience necessary\./);
-  assert.match(html, /One practical change you can begin making to protect time for what matters\./);
+  assert.match(html, /Live on Zoom/);
+  assert.match(html, /Creative Coaching Workshop/);
+  assert.match(html, /75 minutes drawing/);
+  assert.match(html, /Before the Black Friday sprint kicks in/);
+  assert.match(html, /Reflect with coaching prompts/);
+  assert.doesNotMatch(html, /12:00–1:00 PM ET/);
+  assert.match(html, /ICF Professional Certified Coach/);
+  assert.match(html, /Save My Spot/);
+  assert.match(html, /One practical change you can begin making in your business to create more space for what matters\./);
 });
