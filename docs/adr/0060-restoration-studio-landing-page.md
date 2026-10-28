@@ -60,3 +60,31 @@ hero, concentrated toward the photograph and edges. An irregular white mat
 sits behind the unmodified photo, with the existing offset teal backing and
 a hand-shaped pink paint swipe. The photograph is never clipped or retouched.
 These decorative assets contain no motion and do not change copy or form behavior.
+
+## October 28 studio build brief
+
+The latest owner brief supersedes the berry-background direction with a route-local
+ivory studio surface. Preserve the full supplied hero photograph and organic
+white paper edge, without face alteration or recoloring. Replace the generated
+supporting-image pair with a clearly labeled original-artwork placeholder in
+section two, identified by `restoration-studio-artwork.jpg`; do not show a broken
+image or generate replacement art. Keep existing assets for recoverability.
+The owner specifies 12–1 PM Eastern in this brief, so visible duration is 60
+minutes. The received brief ends mid-sentence; additional directions are pending.
+
+## Supplied artwork image
+
+Replace the section-two placeholder with the owner-supplied chalk-pastel image
+at `public/restoration-studio-artwork.png`. Preserve its colors and full
+proportions, add descriptive alt text, and retain “Art in the making.” as the
+caption. No artwork attribution or participant identity is inferred.
+
+## Restrained hero-only studio accents
+
+Add lightweight decorative SVG paint droplets at three peripheral positions,
+a raspberry dry-brush underline below the headline, and fine-grain ivory paper
+texture. User-approved pigment accents include coral, ochre, teal, and lavender.
+CSS pseudo-elements keep all decorations out of the accessibility tree and
+layout flow; the hero clips edge overflow and decorations ignore pointer input.
+No copy, photo, typography, layout structure, CTA behavior, or other section
+changes are part of this refinement.

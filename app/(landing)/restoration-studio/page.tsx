@@ -20,19 +20,24 @@ export default function RestorationStudioPage() {
           <h1 id="studio-title">{event.headline}</h1>
           <p className={styles.description}>{event.description}</p>
           <p className={styles.heroInvitation}>Before the Black Friday sprint kicks in, take a break from your business to-do list and reconnect with your creative side.</p>
-          <p className={styles.heroInvitation}>We’ll spend 75 minutes drawing, exploring ideas, and using guided coaching prompts to discover what you want more room for—and one business change that could help make that possible.</p>
+          <p className={styles.heroInvitation}>We’ll spend 60 minutes drawing, exploring ideas, and using guided coaching prompts to discover what you want more room for—and one business change that could help make that possible.</p>
           <p className={styles.eventDetails}><span>{event.date}</span><span>{event.time} <span aria-hidden="true">·</span> {event.location}</span></p>
           <a className={styles.button} href="#register">{event.cta}<span aria-hidden="true">↗</span></a>
           <p className={styles.artNote}>No artistic experience necessary.</p>
         </div>
         <div className={styles.photo}>
           <img src="/carly-restoration-studio-painting.jpg" alt="Carly Clark Zimmer holding paintbrushes in front of her paintings" width={4032} height={3024} fetchPriority="high" />
-          <svg className={styles.brushstroke} aria-hidden="true" viewBox="0 0 180 42"><path d="M4 17 17 13 24 15 38 9 55 11 70 7 87 9 104 5 118 8 134 5 150 9 164 7 160 12 177 13 170 18 176 21 158 24 161 28 141 27 123 31 103 29 85 34 67 31 51 35 34 32 22 35 26 29 10 30 14 25 2 25 10 21Z" /><path d="m9 32 35 2 37-2 45-4 39-3-16 5-39 3-44 4-29-1Zm2-19 34-7 31 1 35-5 31 3-39 1-28 4-31-1Z" /></svg>
+
         </div>
       </section>
       </div>
 
       <section className={styles.experience} aria-labelledby="experience-title">
+        <div className={styles.experienceLayout}>
+          <figure className={styles.artwork}>
+            <img src="/restoration-studio-artwork.png" alt="Hands blending colorful chalk pastels into expressive abstract marks on black paper" width={1974} height={2040} loading="lazy" />
+            <figcaption>Art in the making.</figcaption>
+          </figure>
         <div className={styles.prose}>
           <p className={styles.eyebrow}>Make Room for What Matters</p>
           <div className={styles.creativeHeading}>
@@ -43,17 +48,11 @@ export default function RestorationStudioPage() {
           <ol className={styles.workshopSteps}>
             {event.steps.map((step) => <li key={step.title}><h3>{step.title}</h3><p>{step.description}</p></li>)}
           </ol>
-          <figure className={styles.creativeGallery}>
-            <div className={styles.creativeImages}>
-              <div><img src="/restoration-studio-collage.png" alt="Illustrative image of hands drawing and arranging paper collage" width={1536} height={1024} loading="lazy" /></div>
-              <div><img src="/restoration-studio-virtual-creative.png" alt="Illustrative image of a woman making art beside a laptop for a virtual workshop" width={1536} height={1024} loading="lazy" /></div>
-            </div>
-            <figcaption>AI-generated creative-process imagery.</figcaption>
-          </figure>
           <div className={styles.takeaways}>
             <h3>You&apos;ll leave with:</h3>
             <ul>{event.takeaways.map((takeaway) => <li key={takeaway}>{takeaway}</li>)}</ul>
           </div>
+        </div>
         </div>
       </section>
 
