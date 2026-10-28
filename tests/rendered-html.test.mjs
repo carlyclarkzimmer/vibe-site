@@ -1313,3 +1313,28 @@ test("renders the approved equity pledge once on every page type", async () => {
   assert.doesNotMatch(loveHtml, /id="equity-pledge-heading"/i);
   assert.match(loveHtml, /Privacy Policy/i);
 });
+
+test("Restoration Studio renders a focused event landing page and campaign-specific Drip form", async () => {
+  const response = await render("/restoration-studio");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /The Restoration Studio \| Carly Clark Zimmer/);
+  assert.match(html, /Friday, November 6, 2026/);
+  assert.match(html, /12:00–1:00 PM ET/);
+  assert.match(html, /carly-restoration-studio\.png/);
+  assert.match(html, /href="#register"/);
+  assert.match(html, /id="register"/);
+  assert.match(html, /action="https:\/\/www\.getdrip\.com\/forms\/994182651\/submissions"/);
+  assert.match(html, /data-drip-embedded-form="994182651"/);
+  assert.match(html, /name="fields\[first_name\]"/);
+  assert.match(html, /<input(?=[^>]*name="fields\[email\]")(?=[^>]*required)(?=[^>]*type="email")[^>]*>/);
+  assert.match(html, /name="tags\[\]"[^>]*value="Restoration Studio Nov 6th 2026"/);
+  assert.match(html, /name="fields\[optin_source\]"[^>]*value="Restoration Studio November 6th – Vibe site"/);
+  assert.match(html, /data-sitekey="6LdKtHUtAAAAAKOHfTjUMdNYjc0H1vfetOitEMMP"/);
+  assert.match(html, /href="\/privacy"[^>]*target="_blank"/);
+  assert.equal((html.match(/<form\b/g) ?? []).length, 1);
+  assert.doesNotMatch(html, /Your text here|Beyond the Bottleneck Audio Series 2026|api\.leadpages\.io/);
+  assert.doesNotMatch(html, /aria-label="Main navigation"/i);
+  assert.match(html, /No artistic experience necessary\./);
+  assert.match(html, /One practical change you can begin making to protect time for what matters\./);
+});
