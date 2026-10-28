@@ -3,7 +3,7 @@ export const restorationStudio = {
   headline: "Creative Coaching Workshop",
   description: "A free, live workshop for successful, hardworking business owners and entrepreneurs.",
   date: "Friday, November 6, 2026",
-  time: "12–1:15 PM Eastern",
+  time: "12–1 PM Eastern",
   location: "Live on Zoom",
   cta: "Save My Spot",
   steps: [

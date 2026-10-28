@@ -1320,7 +1320,7 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   const html = await response.text();
   assert.match(html, /The Restoration Studio \| Carly Clark Zimmer/);
   assert.match(html, /Friday, November 6, 2026/);
-  assert.match(html, /12–1:15 PM Eastern/);
+  assert.match(html, /12–1 PM Eastern/);
   assert.match(html, /carly-restoration-studio-painting\.jpg/);
   assert.match(html, /href="#register"/);
   assert.match(html, /id="register"/);
@@ -1338,9 +1338,13 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.match(html, /No artistic experience necessary\./);
   assert.match(html, /Live on Zoom/);
   assert.match(html, /Creative Coaching Workshop/);
-  assert.match(html, /75 minutes drawing/);
+  assert.match(html, /60 minutes drawing/);
   assert.match(html, /Before the Black Friday sprint kicks in/);
   assert.match(html, /Reflect with coaching prompts/);
+  assert.match(html, /src="\/restoration-studio-artwork\.png"/);
+  assert.doesNotMatch(html, /Image placeholder|Original artwork to be supplied/);
+  assert.doesNotMatch(html, /src="\/restoration-studio-(?:collage|virtual-creative)\.png"/);
+  assert.doesNotMatch(html, /75 minutes|1:15 PM/);
   assert.doesNotMatch(html, /12:00–1:00 PM ET/);
   assert.match(html, /ICF Professional Certified Coach/);
   assert.match(html, /Save My Spot/);
