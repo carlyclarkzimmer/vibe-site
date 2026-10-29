@@ -4,9 +4,9 @@
 .heroBand::after { content: ""; position: absolute; width: 215px; height: 160px; right: -16px; top: -23px; z-index: -1; background: url("/restoration-hero-splatter-upper.svg") center / contain no-repeat; pointer-events: none; }
 .hero { position: relative; }
 .hero::after { content: ""; position: absolute; left: -40px; bottom: -35px; width: 190px; height: 140px; background: url("/restoration-hero-splatter-lower.svg") center / contain no-repeat; opacity: .65; pointer-events: none; }
-.workshopWord { display: inline-block; position: relative; white-space: nowrap; padding-bottom: .12em; }
-.workshopWord::after { content: ""; position: absolute; left: 4%; bottom: -.1em; width: 88%; height: .2em; background: url("/restoration-workshop-underline.svg") center / 100% 100% no-repeat; opacity: .95; pointer-events: none; }
-.photo::before { content: ""; position: absolute; inset: -22% -18% -24% -14%; z-index: -2; background: url("/restoration-hero-watercolor.webp") center / 100% 100% no-repeat; pointer-events: none; opacity: .85; }
+.headlineAccent { display: inline-block; position: relative; white-space: nowrap; padding-bottom: .12em; }
+.headlineAccent::after { content: ""; position: absolute; left: 4%; bottom: -.1em; width: 88%; height: .2em; background: url("/restoration-workshop-underline.svg") center / 100% 100% no-repeat; opacity: .95; pointer-events: none; }
+.photo::before { content: ""; position: absolute; inset: -22% -18% -24% -14%; z-index: -2; background: url("/restoration-hero-watercolor-bright-pink.webp") center / 100% 100% no-repeat; pointer-events: none; opacity: .85; }
 .heroBand .button { background: #ff37b0; border-color: #ff37b0; color: var(--color-paper); }
 .heroBand .button:hover, .heroBand .button:focus-visible { background: #d5ff3f; border-color: #d5ff3f; color: var(--color-ink); }
 .skipLink { position: absolute; top: 12px; left: 12px; transform: translateY(-180%); z-index: 10; background: var(--color-paper); padding: 12px; }
@@ -93,9 +93,12 @@
   .hero h1 { order: 2; font-size: clamp(37px, 9.6vw, 65px); margin-bottom: 12px; }
   .heroCopy > .description { order: 3; margin-top: 8px; margin-bottom: 10px; }
   .heroInvitation { order: 4; margin-bottom: 0; }
-  .hero > .photo { order: 5; margin: 35px 10px 28px 0; padding: 9px; }
+  .hero > .photo { order: 6; margin: 35px 10px 28px 0; padding: 9px; }
   .photo::before { inset: -17% -14% -18% -13%; opacity: .8; }
-  .heroCopy > .eventDetails { order: 6; margin: 12px 0 0; }
-  .heroCopy > .button { order: 7; justify-self: start; }
-  .heroCopy > .artNote { order: 8; margin-top: -8px; }
+  .heroCopy > .eventDetails { order: 7; margin: 12px 0 0; }
+  .heroCopy > .button { order: 8; justify-self: start; }
+  .heroCopy > .artNote { order: 5; margin: 0; }
 }
+
+.hero .artNote { font-style: normal; }
+.hero .button { max-width: 100%; gap: 16px; white-space: normal; text-align: center; justify-content: center; }
