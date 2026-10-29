@@ -1,6 +1,6 @@
 export const restorationStudio = {
   title: "The Restoration Studio",
-  headline: "A Creative Reset for Your Next Chapter",
+  headline: "A Creative Reset for Your Next Season",
   description: "You built your business for the freedom to enjoy your life outside of it. Are you?",
   heroCta: "COME MAKE SOMETHING WITH ME!",
   heroDetails: "Friday, November 6 | 12–1:15 PM Eastern | Free & Live on Zoom",
