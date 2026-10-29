@@ -4,9 +4,9 @@
 .heroBand::after { content: ""; position: absolute; width: 215px; height: 160px; right: -16px; top: -23px; z-index: -1; background: url("/restoration-hero-splatter-upper.svg") center / contain no-repeat; pointer-events: none; }
 .hero { position: relative; }
 .hero::after { content: ""; position: absolute; left: -40px; bottom: -35px; width: 190px; height: 140px; background: url("/restoration-hero-splatter-lower.svg") center / contain no-repeat; opacity: .65; pointer-events: none; }
-.hero h1 { position: relative; }
-.hero h1::after { content: ""; position: absolute; left: 4px; bottom: -12px; width: 175px; height: 18px; background: url("/restoration-hero-dry-brush.svg") center / 100% 100% no-repeat; opacity: .7; transform: rotate(-2deg); pointer-events: none; }
-.photo::before { content: ""; position: absolute; left: -57px; bottom: -43px; width: 190px; height: 145px; z-index: -2; background: url("/restoration-hero-splatter-photo.svg") center / contain no-repeat; pointer-events: none; }
+.workshopWord { display: inline-block; position: relative; white-space: nowrap; padding-bottom: .12em; }
+.workshopWord::after { content: ""; position: absolute; left: 4%; bottom: -.1em; width: 88%; height: .2em; background: url("/restoration-workshop-underline.svg") center / 100% 100% no-repeat; opacity: .95; pointer-events: none; }
+.photo::before { content: ""; position: absolute; inset: -22% -18% -24% -14%; z-index: -2; background: url("/restoration-hero-watercolor.webp") center / 100% 100% no-repeat; pointer-events: none; opacity: .85; }
 .heroBand .button { background: #ff37b0; border-color: #ff37b0; color: var(--color-paper); }
 .heroBand .button:hover, .heroBand .button:focus-visible { background: #d5ff3f; border-color: #d5ff3f; color: var(--color-ink); }
 .skipLink { position: absolute; top: 12px; left: 12px; transform: translateY(-180%); z-index: 10; background: var(--color-paper); padding: 12px; }
@@ -68,8 +68,6 @@
   .photo { margin: 10px 10px 16px 0; padding: 9px; }
   .heroBand::after { width: 115px; height: 95px; right: -30px; top: -24px; opacity: .65; }
   .hero::after { width: 120px; height: 90px; left: -25px; bottom: -26px; }
-  .photo::before { width: 130px; height: 100px; left: -34px; bottom: -29px; }
-  .hero h1::after { width: 125px; height: 13px; bottom: -10px; }
   .drawnArrow { width: 65px; height: 50px; right: 3px; bottom: -8px; }
   .experience { margin-inline: 24px; padding: 38px 0 45px; }
   .experienceLayout { grid-template-columns: 1fr; gap: 40px; }
@@ -82,3 +80,22 @@
   .host { font-size: 18px; padding: 0 25px 45px; }
 }
 @media (prefers-reduced-motion: reduce) { .button { transition: none; } }
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hero { grid-template-columns: 1.06fr .94fr; gap: clamp(24px, 3vw, 35px); padding-inline: clamp(24px, 3vw, 30px); }
+  .hero h1 { font-size: clamp(39px, 4.8vw, 50px); }
+  .photo::before { inset: -20% -17% -22% -10%; }
+}
+@media (max-width: 767px) {
+  .hero { grid-template-columns: minmax(0, 1fr); padding: 48px 24px 40px; gap: 22px; }
+  .heroCopy { display: contents; }
+  .heroCopy > .eyebrow { order: 1; }
+  .hero h1 { order: 2; font-size: clamp(37px, 9.6vw, 65px); margin-bottom: 12px; }
+  .heroCopy > .description { order: 3; margin-top: 8px; margin-bottom: 10px; }
+  .heroInvitation { order: 4; margin-bottom: 0; }
+  .hero > .photo { order: 5; margin: 35px 10px 28px 0; padding: 9px; }
+  .photo::before { inset: -17% -14% -18% -13%; opacity: .8; }
+  .heroCopy > .eventDetails { order: 6; margin: 12px 0 0; }
+  .heroCopy > .button { order: 7; justify-self: start; }
+  .heroCopy > .artNote { order: 8; margin-top: -8px; }
+}
