@@ -88,3 +88,14 @@ CSS pseudo-elements keep all decorations out of the accessibility tree and
 layout flow; the hero clips edge overflow and decorations ignore pointer input.
 No copy, photo, typography, layout structure, CTA behavior, or other section
 changes are part of this refinement.
+
+## Complete watercolor hero brief
+
+Preserve hero copy, registration behavior, original photo, and typography. Attach
+the textured underline to a non-wrapping “Workshop” span, keeping a visible gap
+below the letterforms and scaling its width with the word. Add one transparent
+watercolor composition behind the photograph. At widths below 768px, use CSS
+ordering for headline/copy, photograph, then event details and CTA; preserve
+normal semantic DOM order. Tablet sizing keeps both columns uncrowded.
+Validate 1440, 1024, 768, 430, 390, and 320px widths. The written brief is complete;
+a separate visual-reference image was not attached.
