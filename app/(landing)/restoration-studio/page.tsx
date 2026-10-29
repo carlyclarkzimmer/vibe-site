@@ -35,7 +35,7 @@ export default function RestorationStudioPage() {
       <section className={styles.experience} aria-labelledby="experience-title">
         <div className={styles.experienceLayout}>
           <figure className={styles.artwork}>
-            <img src="/restoration-studio-artwork.png" alt="Hands blending colorful chalk pastels into expressive abstract marks on black paper" width={1974} height={2040} loading="lazy" />
+            <img src="/restoration-studio-artwork-natural.webp" alt="Hands blending colorful chalk pastels into expressive abstract marks on black paper" width={1233} height={1276} loading="lazy" />
             <figcaption>Art in the making.</figcaption>
           </figure>
         <div className={styles.prose}>

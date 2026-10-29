@@ -1344,7 +1344,7 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.match(html, /No art experience necessary\. Just curiosity\./);
   assert.match(html, /Identify Where You(?:&#x27;|&#39;|')re At Choice/);
   assert.match(html, /all-the-work-must-be-complete narrative and start to rewrite it/);
-  assert.match(html, /src="\/restoration-studio-artwork\.png"/);
+  assert.match(html, /src="\/restoration-studio-artwork-natural\.webp"/);
   assert.doesNotMatch(html, /Image placeholder|Original artwork to be supplied/);
   assert.doesNotMatch(html, /src="\/restoration-studio-(?:collage|virtual-creative)\.png"/);
   assert.doesNotMatch(html, /12:00–1:00 PM ET/);
