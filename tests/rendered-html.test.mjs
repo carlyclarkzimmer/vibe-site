@@ -1338,7 +1338,7 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.match(html, /No artistic experience necessary\./);
   assert.match(html, /Live on Zoom/);
   assert.match(html, /Creative Coaching Workshop/);
-  assert.match(html.replace(/<!--[\s\S]*?-->/g, ""), /<h1[^>]*>A Creative Reset for Your <span[^>]*>Next Chapter<\/span><\/h1>/);
+  assert.match(html.replace(/<!--[\s\S]*?-->/g, ""), /<h1[^>]*>A Creative Reset for Your <span[^>]*>Next Season<\/span><\/h1>/);
   assert.match(html, /Before the Black Friday rush and end-of-year busyness/);
   assert.match(html, /COME MAKE SOMETHING WITH ME!/);
   assert.match(html, /No art experience necessary\. Just curiosity\./);
