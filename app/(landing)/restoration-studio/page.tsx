@@ -17,13 +17,13 @@ export default function RestorationStudioPage() {
       <section className={styles.hero} aria-labelledby="studio-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>{event.title}</p>
-          <h1 id="studio-title">{event.headline.replace(/ Workshop$/, "")} <span className={styles.workshopWord}>Workshop</span></h1>
-          <p className={styles.description}>{event.description}</p>
-          <p className={styles.heroInvitation}>Before the Black Friday sprint kicks in, take a break from your business to-do list and reconnect with your creative side.</p>
-          <p className={styles.heroInvitation}>We’ll spend 60 minutes drawing, exploring ideas, and using guided coaching prompts to discover what you want more room for—and one business change that could help make that possible.</p>
-          <p className={styles.eventDetails}><span>{event.date}</span><span>{event.time} <span aria-hidden="true">·</span> {event.location}</span></p>
-          <a className={styles.button} href="#register">{event.cta}<span aria-hidden="true">↗</span></a>
-          <p className={styles.artNote}>No artistic experience necessary.</p>
+          <h1 id="studio-title">{event.headline.replace(/Next Chapter$/, "")}<span className={styles.headlineAccent}>Next Chapter</span></h1>
+          <p className={styles.description}><strong>{event.description}</strong></p>
+          <p className={styles.heroInvitation}>Before the Black Friday rush and end-of-year busyness, come spend an hour reconnecting with the parts of yourself that have been waiting for a little attention.</p>
+          <p className={styles.heroInvitation}>Through simple creative exercises, visual mapping, and guided coaching, we&apos;ll explore what you want your next chapter to look and feel like, and what might need to shift in your business to support it.</p>
+          <p className={styles.artNote}><strong>No art experience necessary. Just curiosity. 🎨</strong></p>
+          <p className={styles.eventDetails}>{event.heroDetails}</p>
+          <a className={styles.button} href="#register">{event.heroCta}</a>
         </div>
         <div className={styles.photo}>
           <img src="/carly-restoration-studio-painting.jpg" alt="Carly Clark Zimmer holding paintbrushes in front of her paintings" width={4032} height={3024} fetchPriority="high" />

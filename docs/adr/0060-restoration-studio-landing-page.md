@@ -99,3 +99,11 @@ ordering for headline/copy, photograph, then event details and CTA; preserve
 normal semantic DOM order. Tablet sizing keeps both columns uncrowded.
 Validate 1440, 1024, 768, 430, 390, and 320px widths. The written brief is complete;
 a separate visual-reference image was not attached.
+
+## Approved creative-reset hero copy
+
+Use Carly’s supplied “A Creative Reset for Your Next Chapter” headline and
+hero paragraphs verbatim, with “COME MAKE SOMETHING WITH ME!” as the hero CTA.
+Keep the inline registration copy and behavior unchanged. The decorative
+underline follows “Next Chapter.” Hero event details use Carly’s supplied
+November 6, 12–1 PM ET, Free & Live on Zoom line.

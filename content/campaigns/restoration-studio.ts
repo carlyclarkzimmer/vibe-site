@@ -1,14 +1,16 @@
 export const restorationStudio = {
   title: "The Restoration Studio",
-  headline: "Creative Coaching Workshop",
-  description: "A free, live workshop for successful, hardworking business owners and entrepreneurs.",
+  headline: "A Creative Reset for Your Next Chapter",
+  description: "You built your business for the freedom to enjoy your life outside of it. Are you?",
+  heroCta: "COME MAKE SOMETHING WITH ME!",
+  heroDetails: "Friday, November 6 | 12–1:15 PM Eastern | Free & Live on Zoom",
   date: "Friday, November 6, 2026",
-  time: "12–1 PM Eastern",
+  time: "12–1:15 PM Eastern",
   location: "Live on Zoom",
   cta: "Save My Spot",
   steps: [
     { title: "Make something", description: "Spend time drawing and exploring what you want more room for outside work." },
-    { title: "Reflect with coaching prompts", description: "Identify the patterns that keep pulling you back into work." },
+    { title: "Identify Where You're At Choice", description: "We'll find the hard-working, all-the-work-must-be-complete narrative and start to rewrite it" },
     { title: "Choose one practical change", description: "Decide what could shift in how you work to create more space for what matters." },
   ],
   takeaways: [

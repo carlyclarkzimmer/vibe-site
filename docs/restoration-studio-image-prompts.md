@@ -15,6 +15,12 @@ Use case: photorealistic-natural. Asset type: supporting editorial photo for a v
 
 ## Transparent watercolor hero accent
 
+### Brighter pink color adjustment
+
+Built-in image edit of the original watercolor, with the supplied section-two artwork as the color reference. Optimized asset: `public/restoration-hero-watercolor-bright-pink.webp`.
+
+EDIT IMAGE 1 ONLY. Image 1 is the transparent watercolor decorative asset to modify. Image 2 is a COLOR REFERENCE ONLY: its bright hot-pink chalk marks on black paper. Make a restrained color adjustment to image 1: brighten and slightly increase saturation of its existing raspberry/pink pigment areas toward the vivid fuchsia/hot pink in image 2, about 15–20% more luminous and lively. Do not change the watercolor composition, silhouettes, shapes, positions, diagonal upper-right/lower-left corner arrangement, center empty space, grain, paint texture, edges, brushstrokes or splatters. Keep teal, sage, coral, ochre, lavender and other colors unchanged. Preserve the same image dimensions and true transparent alpha background, with the large central opening unchanged. Do not insert any objects, letters, photography, hands, chalk or black paper from image 2. Do not recolor everything pink; modify only existing pink areas. Keep natural translucent watercolor variation, not flat neon. Output a new transparent asset.
+
 Built-in image generation; optimized with preserved alpha as `public/restoration-hero-watercolor.webp`.
 
 Create one transparent-background decorative artwork asset for an elegant artist-studio website hero, no text or people. Real watercolor pigment on handmade paper, an airy irregular crescent composition around a LARGE EMPTY TRANSPARENT rectangular central area where a photograph will be placed. Concentrate translucent organic raspberry and hot pink pigment blooms upper right and lower left, with soft coral/blush, golden ochre, deep teal/sage and small lavender accents. Irregular pooling, fine paper-grain pigment, dry brush wisps, a few scattered naturally sized droplets, uneven feathered edges. Light and airy, contemporary gallery quality, asymmetric, not a solid rectangular background, no generic gradients, no cartoon shapes, no frames, no lettering. Center and far left mostly transparent. Wide composition, beautiful lively pigments but plenty of transparent negative space. Output true alpha transparency.
