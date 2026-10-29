@@ -17,7 +17,7 @@ export default function RestorationStudioPage() {
       <section className={styles.hero} aria-labelledby="studio-title">
         <div className={styles.heroCopy}>
           <p className={styles.eyebrow}>{event.title}</p>
-          <h1 id="studio-title">{event.headline}</h1>
+          <h1 id="studio-title">{event.headline.replace(/ Workshop$/, "")} <span className={styles.workshopWord}>Workshop</span></h1>
           <p className={styles.description}>{event.description}</p>
           <p className={styles.heroInvitation}>Before the Black Friday sprint kicks in, take a break from your business to-do list and reconnect with your creative side.</p>
           <p className={styles.heroInvitation}>We’ll spend 60 minutes drawing, exploring ideas, and using guided coaching prompts to discover what you want more room for—and one business change that could help make that possible.</p>
