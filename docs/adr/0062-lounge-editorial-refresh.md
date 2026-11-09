@@ -37,3 +37,10 @@ continues to use the sitewide scroll behavior.
 Use the owner-supplied watercolor-framed studio portrait for Creative Reset.
 Preserve the original image; route-local CSS masks soften only its outer edges
 to blend the watercolor into the section background.
+
+## Four pillars
+
+Add the owner-approved Community, Accountability, Creativity, and Focus copy
+verbatim between the introduction and fit sections. Use a route-local two-column
+editorial grid that stacks on mobile, with fine berry rules and the supplied
+closing sentence spanning the section. No other copy or shared styling changes.
