@@ -1344,3 +1344,18 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.match(html, /Save My Spot/);
   assert.match(html, /One practical change you can begin making in your business to create more space for what matters\./);
 });
+
+test("creative reset replay leads to the Lounge without a signup gate", async () => {
+  const response = await render("/creative-reset");
+  assert.equal(response.status, 200);
+  const html = await response.text();
+  assert.match(html, /Creative Reset Workshop Replay/);
+  assert.match(html, /player\.vimeo\.com\/video\/1244380793\?h=c2e2ffa47c&amp;dnt=1/);
+  assert.match(html, /title="The Restoration Studio: A Creative Reset/);
+  assert.match(html, /allowFullScreen/i);
+  assert.match(html, /href="https:\/\/vimeo.com\/1244380793\/c2e2ffa47c"/);
+  assert.match(html, /href="https:\/\/carlyclarkzimmer\.com\/lounge"[^>]*target="_blank"/);
+  assert.match(html, /designated Voxer support week/);
+  assert.ok(html.indexOf("<iframe") < html.indexOf('id="lounge-title"'));
+  assert.doesNotMatch(html, /<form|aria-label="Site navigation"/i);
+});
