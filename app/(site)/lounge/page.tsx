@@ -51,6 +51,16 @@ export default function LoungePage() {
       <div className={styles.heroVisual}><Image src="/living-business-lounge-hero.jpg" alt="Carly Clark Zimmer smiling beside a stone wall" fill priority sizes="100vw" className={styles.heroImage} unoptimized /></div>
     </section>
     <section className={styles.introduction}><Prose lines={copy.intro} /><JoinButton /></section>
+    <section className={`${styles.section} ${styles.pillars}`} aria-labelledby="pillars-heading">
+      <h2 id="pillars-heading">Four pillars of the Living Business Lounge</h2>
+      <div className={styles.pillarGrid}>
+        <div><h3>Community.</h3><p>An intimate group of business owners who genuinely get to know each other. I want to know your business goals, of course, and I also want to know what you&apos;re excited about in your life outside of work so I can help you make space for it!</p></div>
+        <div><h3>Accountability.</h3><p>The kind that comes from having people who remember what you said mattered, notice when old patterns are getting in your way, and help you figure out what to do differently.</p></div>
+        <div><h3>Creativity.</h3><p>More opportunities to play, experiment, make things, and reconnect with parts of ourselves that don&apos;t always get much attention when we&apos;re busy running businesses.</p></div>
+        <div><h3>Focus.</h3><p>Making thoughtful decisions about where you want to spend your time and energy, and having a place to return to those decisions when life inevitably gets busy.</p></div>
+      </div>
+      <p className={styles.pillarsClosing}>And I want all of this to feel supportive, enjoyable, and genuinely useful in your everyday life.</p>
+    </section>
     <section className={styles.section} aria-labelledby="fit-heading"><h2 id="fit-heading">Who It’s For</h2>
       <ul className={styles.fitList}>{copy.fit.filter(x => x.startsWith('- ')).map(x => {
         const text=x.slice(2); const stop=text.indexOf('. ')+1;
