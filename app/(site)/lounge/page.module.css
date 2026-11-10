@@ -287,6 +287,6 @@
 .closing figure.closingPhotograph { display: block; width: 100%; max-width: 720px; height: auto; aspect-ratio: auto; margin: 0 auto; padding: 0; background: transparent; }
 .closing figure.closingPhotograph img { display: block; width: 100%; height: auto; object-fit: contain; }
 
-/* Trim only the upper background of the selected coaching portrait. */
-.benefit3 .coachingPhotograph { aspect-ratio: 3 / 4; overflow: hidden; }
-.coachingPhotograph img { height: 100%; object-fit: cover; object-position: center bottom; }
+/* Preserve the full composition of the final selected coaching portrait. */
+.benefit3 .coachingPhotograph { aspect-ratio: auto; }
+.coachingPhotograph img { height: auto; object-fit: contain; }
