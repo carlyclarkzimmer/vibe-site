@@ -92,3 +92,6 @@ CSS-only top crop; berry-jacket 097 portrait for resources; original Studio
 photo without watercolor; berry-jacket 092 portrait for the closing invitation.
 Preserve the source files and natural colors. Only these selected assets are
 part of the release; rejected photo alternatives remain outside tracked source.
+
+The final group-coaching selection is portrait 076, superseding 027 during
+release preparation. Preserve its full frame; the previous top crop is removed.
