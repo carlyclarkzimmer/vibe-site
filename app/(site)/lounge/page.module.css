@@ -28,30 +28,26 @@
 .fitList strong { display: block; margin-bottom: 12px; font-weight: 600; }
 .quiet { background: #eeebe7; }
 .split { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 110px); }
-.reading { max-width: 850px; margin: 70px 0 0 auto; }
-.process { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 28px; list-style: none; padding: 0; margin: 70px 0 0; }
-.process li { border-top: 1px solid var(--color-accent); padding-top: 24px; }
-.stepNumber { font-family: var(--font-interface); font-size: 11px; color: var(--color-accent); letter-spacing: .15em; }
-.process h3 { margin: 20px 0; font-size: clamp(25px, 2.2vw, 33px); }
-.process h3 span { color: var(--color-accent); }
-.process p { font-size: 21px; margin: 0; }
 .blush { background: var(--lounge-blush); }
 .outcomes { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 90px; }
 .outcomes > div { border-top: 1px solid var(--lounge-rule); padding-top: 30px; }
 .outcomes p { margin: 0; }
 .benefit { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 7vw, 110px); padding: 55px 0; border-top: 1px solid var(--lounge-rule); }
 .benefit h3 { margin-top: 24px; }
-.studio { background: #f0e8e1; }
-.studio .eyebrow { margin-bottom: 24px; }
 .artwork { margin-top: 48px; }
 .artwork img { display: block; width: 100%; height: auto; mask-image: linear-gradient(to right, transparent, black 5%, black 94%, transparent), linear-gradient(to bottom, transparent, black 6%, black 91%, transparent); mask-composite: intersect; }
-.studio > .joinButton { margin-top: 48px; }
+.includedClosing { max-width: 960px; padding-top: 55px; border-top: 1px solid var(--lounge-rule); }
+.includedClosing .joinButton { margin-top: 35px; }
 .investment { background: #282324; color: white; }
 .price { font-family: var(--font-display); font-size: clamp(45px, 5vw, 72px) !important; margin: 24px 0 40px; }
+.commitment { max-width: 450px; font-weight: 700; }
+.investment .joinButton { margin-top: 20px; }
+.investmentNote { margin: 30px 0 0; font-size: clamp(16px, 1.25vw, 19px) !important; font-style: italic; }
+.investmentNote a { color: inherit; text-underline-offset: 4px; }
 .closing { max-width: 900px; margin: auto; }
 .closing > .joinButton { margin: 35px 0; }
-@media(max-width: 1100px) { .section { padding-inline: 32px; } .process { gap: 18px; } }
-@media(max-width: 900px) { .hero { grid-template-columns: 1fr; } .heroCopy { padding: 145px 28px 65px; } .heroVisual { min-height: 0; aspect-ratio: 1.4; } .heroImage { object-position: center; } .split,.benefit { grid-template-columns: 1fr; gap: 25px; } .process { grid-template-columns: 1fr; gap: 0; } .process li { padding: 25px 0; } .process h3 { display: inline; margin-left: 20px; } .process p { margin-top: 16px; max-width: 650px; } .process h3 span { display: none; } .artwork { max-width: 550px; margin-bottom: 30px; } }
+@media(max-width: 1100px) { .section { padding-inline: 32px; } }
+@media(max-width: 900px) { .hero { grid-template-columns: 1fr; } .heroCopy { padding: 145px 28px 65px; } .heroVisual { min-height: 0; aspect-ratio: 1.4; } .heroImage { object-position: center; } .split,.benefit { grid-template-columns: 1fr; gap: 25px; } .artwork { max-width: 550px; margin-bottom: 30px; } }
 @media(max-width: 600px) { .section { padding: 70px 24px; } .heroCopy { padding-inline: 24px; } .hero h1 { font-size: clamp(42px, 11.7vw, 68px); } .fitList,.outcomes { grid-template-columns: 1fr; gap: 0; } .outcomes > div { padding-bottom: 35px; } .page h2 { margin-bottom: 32px; } .joinButton { width: 100%; } .introduction { padding: 65px 24px; } .benefit { padding: 40px 0; } .prose .pullQuote { margin: 30px 0; } }
 /* Restore the original photo-backed Lounge hero and transparent navigation. */
 .hero { position: relative; display: flex; align-items: center; min-height: max(740px, 90svh); overflow: hidden; padding: 165px max(28px, calc((100vw - 1500px) / 2 + 40px)) 100px; background: #171717; color: white; border-bottom: 7px solid var(--color-accent); }
