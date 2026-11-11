@@ -56,7 +56,7 @@ export default function LoungePage() {
     </section>
     <section className={`${styles.section} ${styles.introduction}`} aria-labelledby="introduction-heading">
       <div className={styles.featureHeading}><span className={styles.sectionNumber} aria-hidden="true">01 /</span><h2 id="introduction-heading">Remember when being your own boss was supposed to be fun?</h2></div>
-      <figure className={styles.introPhotograph}><Image src="/lounge-mediterranean-terrace.png" alt="Sunlit Mediterranean terrace overlooking the sea, with a wicker chair and a stone table holding a laptop, notebook, coffee, and flowers" width={1672} height={941} sizes="100vw" unoptimized /></figure>
+      <figure className={styles.introPhotograph}><Image src="/lounge-carly-seaside-afternoon.jpg" alt="Carly leaning on a seaside balcony railing at sunset, overlooking the ocean" width={1024} height={957} sizes="100vw" unoptimized /></figure>
       <div className={styles.introCopy}><Prose lines={copy.intro} /><JoinButton /></div>
     </section>
     <section className={`${styles.section} ${styles.pillars}`} aria-labelledby="pillars-heading">
