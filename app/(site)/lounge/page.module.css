@@ -290,3 +290,7 @@
 /* Preserve the full composition of the final selected coaching portrait. */
 .benefit3 .coachingPhotograph { aspect-ratio: auto; }
 .coachingPhotograph img { height: auto; object-fit: contain; }
+
+/* Remove the awning from the selected seaside photo without editing its pixels. */
+.introduction figure.introPhotograph { aspect-ratio: 1024 / 857; overflow: hidden; }
+.introduction figure.introPhotograph img { height: 100%; object-fit: cover; object-position: center bottom; }
