@@ -1321,8 +1321,8 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.equal(response.status, 200);
   const html = await response.text();
   assert.match(html, /The Restoration Studio \| Carly Clark Zimmer/);
-  assert.match(html, /Friday, November 6, 2026/);
-  assert.match(html, /12–1:15 PM Eastern/);
+  assert.match(html, /Free On-Demand Creative Workshop · Watch at Your Own Pace/);
+  assert.doesNotMatch(html, /Friday, November|12–1:15|Live on Zoom|Black Friday/);
   assert.match(html, /carly-restoration-studio-painting\.jpg/);
   assert.match(html, /href="#register"/);
   assert.match(html, /id="register"/);
@@ -1338,10 +1338,10 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.doesNotMatch(html, /Your text here|Beyond the Bottleneck Audio Series 2026|api\.leadpages\.io/);
   assert.doesNotMatch(html, /aria-label="Main navigation"/i);
   assert.match(html, /No artistic experience necessary\./);
-  assert.match(html, /Live on Zoom/);
   assert.match(html, /Creative Coaching Workshop/);
   assert.match(html.replace(/<!--[\s\S]*?-->/g, ""), /<h1[^>]*>A Creative Reset for Your <span[^>]*>Next Season<\/span><\/h1>/);
-  assert.match(html, /Before the Black Friday rush and end-of-year busyness/);
+  assert.match(html, /Step away from your business to-do list/);
+  assert.match(html, /Sign up for immediate access to the workshop/);
   assert.match(html, /COME MAKE SOMETHING WITH ME!/);
   assert.match(html, /No art experience necessary\. Just curiosity\./);
   assert.match(html, /Identify Where You(?:&#x27;|&#39;|')re At Choice/);
@@ -1351,7 +1351,7 @@ test("Restoration Studio renders a focused event landing page and campaign-speci
   assert.doesNotMatch(html, /src="\/restoration-studio-(?:collage|virtual-creative)\.png"/);
   assert.doesNotMatch(html, /12:00–1:00 PM ET/);
   assert.match(html, /ICF Professional Certified Coach/);
-  assert.match(html, /Save My Spot/);
+  assert.match(html, /Get the Workshop/);
   assert.match(html, /One practical change you can begin making in your business to create more space for what matters\./);
 });
 
