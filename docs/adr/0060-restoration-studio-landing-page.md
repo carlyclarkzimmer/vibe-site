@@ -107,3 +107,10 @@ hero paragraphs verbatim, with “COME MAKE SOMETHING WITH ME!” as the hero CT
 Keep the inline registration copy and behavior unchanged. The decorative
 underline follows “Next Chapter.” Hero event details use Carly’s supplied
 November 6, 12–1 PM ET, Free & Live on Zoom line.
+# Evergreen workshop update — November 11, 2026
+
+Carly approved converting the landing page to an on-demand workshop. Remove
+the live date and seasonal invitation, keep the existing Drip form, tag and
+workflow, and use `https://carlyclarkzimmer.com/creative-reset` as Drip’s
+post-submission redirect. The same workflow delivers the replay link by email.
+The redirect remains owned by Drip; the page preserves a normal form POST.

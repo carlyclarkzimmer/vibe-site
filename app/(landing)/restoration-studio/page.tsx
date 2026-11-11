@@ -19,8 +19,8 @@ export default function RestorationStudioPage() {
           <p className={styles.eyebrow}>{event.title}</p>
           <h1 id="studio-title">{event.headline.replace(/Next Season$/, "")}<span className={styles.headlineAccent}>Next Season</span></h1>
           <p className={styles.description}><strong>{event.description}</strong></p>
-          <p className={styles.heroInvitation}>Before the Black Friday rush and end-of-year busyness, come spend an hour reconnecting with the parts of yourself that have been waiting for a little attention.</p>
-          <p className={styles.heroInvitation}>Through simple creative exercises, visual mapping, and guided coaching, we&apos;ll explore what you want your next chapter to look and feel like, and what might need to shift in your business to support it.</p>
+          <p className={styles.heroInvitation}>Step away from your business to-do list and reconnect with the parts of yourself that have been waiting for a little attention.</p>
+          <p className={styles.heroInvitation}>Through simple creative exercises, visual mapping, and guided coaching, you&apos;ll explore what you want your next chapter to look and feel like, and what might need to shift in your business to support it.</p>
           <p className={styles.artNote}><strong>No art experience necessary. Just curiosity. 🎨</strong></p>
           <p className={styles.eventDetails}>{event.heroDetails}</p>
           <a className={styles.button} href="#register">{event.heroCta}</a>
@@ -41,7 +41,7 @@ export default function RestorationStudioPage() {
         <div className={styles.prose}>
           <p className={styles.eyebrow}>Make Room for What Matters</p>
           <div className={styles.creativeHeading}>
-            <h2 id="experience-title">What we’ll do.</h2>
+            <h2 id="experience-title">What you’ll do.</h2>
             <svg className={styles.drawnArrow} aria-hidden="true" viewBox="0 0 130 100"><path d="M10 12C75 0 104 37 88 73M67 57l20 21 24-19" /></svg>
           </div>
           <p>A creative break with a practical takeaway.</p>
@@ -59,8 +59,9 @@ export default function RestorationStudioPage() {
       <section id="register" className={styles.registration} aria-labelledby="register-title">
         <div className={styles.registrationCopy}>
           <p className={styles.eyebrow}>{event.title}</p>
-          <h2 id="register-title">Save your spot.</h2>
-          <p className={styles.eventDetails}><span>{event.date}</span><span>{event.time} <span aria-hidden="true">·</span> {event.location}</span></p>
+          <h2 id="register-title">Get the workshop.</h2>
+          <p className={styles.eventDetails}>{event.heroDetails}</p>
+          <p>Sign up for immediate access to the workshop. You&apos;ll also receive the access link by email.</p>
           <p>No artistic experience necessary. Paper and markers or colored pencils are enough; magazines and collage supplies are optional.</p>
           <p className={styles.offer}>Free Creative Coaching Workshop</p>
         </div>
